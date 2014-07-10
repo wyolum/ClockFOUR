@@ -1,7 +1,7 @@
 #include <avr/pgmspace.h>
 #include <string.h>
 #include "mem_font.h"
-#include "ClockTHREE.h"
+#include "ClockFOUR.h"
 
 static prog_char font8x7[] PROGMEM  = {
   0b00000000, //
@@ -531,7 +531,6 @@ static prog_char font8x7[] PROGMEM  = {
  */
 void MemFont::getChar(char letter, uint8_t color, uint32_t* out){
   uint8_t c;
-  color = getColor(color);
   if(letter >= 32){
     for(uint8_t i=0; i < 7; i++){
       out[i] &= 0xff000000;

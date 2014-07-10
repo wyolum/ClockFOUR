@@ -1,8 +1,8 @@
 /*
-  ClockTHREE.h -- ClockTHREE RGB LED Matrix library for Arduino
+  ClockFOUR.h -- ClockFOUR RGB LED Matrix library for Arduino
 
   Justin Shaw
-  The hardware and software for ClockTHREE have been enabled by the 
+  The hardware and software for ClockFOUR have been enabled by the 
   open souce Peggy2.  Thanks to the Evil Mad Science Team for making them
   available.
   
@@ -50,55 +50,28 @@ With the understanding that:
      the license terms of this work. The best way to do this is with a link 
      to this web page.
 */
-#ifndef ClockTHREE_h
-#define ClockTHREE_h 
-#define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
+#ifndef ClockFOUR_h
+#define ClockFOUR_h 
+
 // #define PEGGY2 // uncomment this line for Peggy2
 
 // Arduino 1.0 compatibility
-#if defined(ARDUINO) && ARDUINO >= 100
+
 #include "Arduino.h"
-#define WIRE_READ Wire.read();
-#else
-#include "WProgram.h"
-#define WIRE_READ Wire.receive()
-#endif
 
 #include <inttypes.h>
 #include "SPI.h"
 #include "rtcBOB.h"
-// #include "Screen.h"
-#ifdef CLOCKTHREEJR
+
 const int     N_ROW = 8;
-const int N_RGB_ROW = 0;
 const int     N_COL = 16;
-const int   N_COLOR = 2;
 
-#elif defined PEGGY2
-const int     N_ROW = 25;
-const int N_RGB_ROW = 0;
-const int     N_COL = 25;
-const int   N_COLOR = 2;
-
-#else
-const int     N_ROW = 12;
-const int N_RGB_ROW = 10;
-const int     N_COL = 16;
-const int   N_COLOR = 9;
-#endif
+const int       DBG = 13;
+const int   MODE_PIN = 3;
+const int   ENTER_PIN = 3;
+const int   DEC_PIN = 3;
 
 const unsigned long BAUDRATE = 112500;
-
-const int COL_DRIVER_ENABLE = 17;
-
-const int SPEAKER_PIN = 10;
-const int DBG = 16;
-const int MODE_PIN = 2;
-const int INC_PIN = 3;
-const int DEC_PIN = 15;
-const int ENTER_PIN = 8;
-
-const int LDR_PIN = 0;
 
 // bitmasks for the colors
 const unsigned long RGBW_MASKS[] = {
@@ -109,20 +82,13 @@ const unsigned long RGBW_MASKS[] = {
 };
 
 const uint8_t      DARK = 0b000;
-const uint8_t      RED = 0b001;
+const uint8_t       RED = 0b001;
 const uint8_t     GREEN = 0b010;
 const uint8_t      BLUE = 0b100;
 const uint8_t GREENBLUE = GREEN | BLUE;
 const uint8_t  REDGREEN = RED | GREEN;
 const uint8_t   REDBLUE = RED | BLUE;
 const uint8_t     WHITE = 0b111;
-
-// not a real color, use temperature for color;
-const uint8_t TEMPERATURE_COLOR = 8; 
-const uint8_t BLUE_TEMP_C = 15;
-const uint8_t WHITE_TEMP_C = 33;
-
-const uint8_t MONO = BLUE;
 
 // cold to warm
 const uint8_t COLORS[9] = {
@@ -134,44 +100,21 @@ const uint8_t COLORS[9] = {
   REDGREEN,
   RED,
   WHITE,
-  TEMPERATURE_COLOR // hidden color for temperature control
 };
 
-class ClockTHREE {//:public Screen{ 
+class ClockFOUR {//:public Screen{ 
  public:
-  ClockTHREE(); 
+  ClockFOUR(); 
     
   // Hardware initialization
   void init();
   
-  // Scan current display 1 time (if display is not NULL)
-  void refresh();
-
-  // Scan current display n times (if display is not NULL)
-  void refresh(int n);
-  void refresh_old(int n);
-
   // Gradually change display to new_display in over "steps" screens
   // return pointer to old display
   uint32_t *fadeto(uint32_t *new_display, uint32_t steps);
 
-  // Interleave two images at specified duty cycle.
-  void blend(uint32_t *new_display, 
-	     uint8_t k,
-	     uint8_t n,
-	     uint32_t cycles);
-  
   // Clears the display: LEDs set to OFF
   void clear(void);
-
-  /* 
-   * Set the hold time between column writes defaults to 50
-   * (my_delay = # of times noop is called)
-   */
-  void set_column_hold(uint16_t _my_delay);
-    
-  void setcol(uint8_t xpos, uint32_t col);
-  uint32_t getcol(uint8_t xpos);
 
   // Turn a pixel to color (0 == off)
   void setPixel(uint8_t xpos, uint8_t ypos, uint8_t color);
@@ -182,13 +125,8 @@ class ClockTHREE {//:public Screen{
   //Draw a line from (x1,y1) to (x2,y2)
   void line(double x1, double y1, double x2, double y2, uint8_t color);
 
-  // Draw an ellipse centered at x, y with radius rx in the x direction and
-  // ry in the y direction
-  void ellipsalArc(double cx, double cy, 
-		   double sma, double smi, double orientation, 
-		   uint8_t color);
   /*
-   * Draw an arc of an ellipse centered at x, y with 
+   * Draw an ellipse centered at x, y with 
    * semi-major axis sma
    * semi-minor axis smi
    * with semimajor axis oriented by orientation angle in radians
@@ -229,10 +167,6 @@ class ClockTHREE {//:public Screen{
   // turn display off
   void off();
 
-  // play a note
-  void note(uint16_t freq);
-  void note(uint16_t freq, uint16_t duration_ms);
-  void nonote();
 /*
  * Uses RTC if available or INT if not.
  */
@@ -242,12 +176,10 @@ class ClockTHREE {//:public Screen{
   uint8_t xpos;
   uint8_t ypos;
   uint16_t my_delay;
-  uint8_t n_disp_col; // number of columns in the display data (at least N_COL, may be more)
   
  private:
 };
 uint8_t getColor(uint8_t color);
-void _delay(unsigned int n);
 
 #endif
 

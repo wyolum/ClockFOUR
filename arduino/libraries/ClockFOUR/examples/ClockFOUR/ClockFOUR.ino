@@ -1,5 +1,5 @@
 /*
-  Delivery ClockTHREE Word Clock App
+  Delivery ClockFOUR Word Clock App
   Display time 12:12 PM in words using english template
   Supports different modes:
   Normal
@@ -23,7 +23,7 @@
 #include <string.h>
 #include "Time.h"
 #include "MsTimer2.h"
-#include "ClockTHREE.h"
+#include "ClockFOUR.h"
 #include "SPI.h"
 
 
@@ -56,7 +56,7 @@ typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
 inline void do_nothing(void){}  // empty call back
 
 /*
- * ClockTHREE is mode driven.  A Mode is like a mini arduino program 
+ * ClockFOUR is mode driven.  A Mode is like a mini arduino program 
  * with its own setup and loop functions as well as an exit function
  * to clean up and prevent memory leeks.  Only one mode can be 
  * active at a time.  The active mode defines behaviors for events 
@@ -97,12 +97,7 @@ const uint8_t MODE_MODE = 2;
 
 // Sub Modes (this cannot be accessed though Mode mode selection.)
 const uint8_t SECONDS_MODE = 3;
-const uint8_t TEMPERATURE_MODE = 4;
-const uint8_t SER_DISPLAY_MODE = 5;
-
-// Temperature unit constants
-const uint8_t DEG_C = 0;
-const uint8_t DEG_F = 1;
+const uint8_t SER_DISPLAY_MODE = 4;
 
 /* last_mode_id is used for returning to previous mode.  
  * Usually best to return to NORMAL_MODE, but this allows sub-modes to return
@@ -129,10 +124,6 @@ Mode SerDisplayMode = {SER_DISPLAY_MODE,
 		       return_to_normal,return_to_normal,return_to_normal,
 		       return_to_normal};
 
-Mode TemperatureMode = {TEMPERATURE_MODE, 'X', 
-			Temperature_setup, Temperature_loop, Temperature_exit, 
-			Temperature_inc, Temperature_dec, Temperature_mode,
-			Temperature_mode};
 Mode SetTimeMode = {SET_TIME_MODE, 
 		    'S', SetTime_setup,SetTime_loop,SetTime_exit,
 		    SetTime_inc, SetTime_dec, SetTime_mode, SetTime_enter};
@@ -225,7 +216,7 @@ unsigned long last_inc_time = 0;    // for debounce
 unsigned long last_dec_time = 0;    // for debounce
 unsigned long last_enter_time = 0;    // for debounce
 
-ClockTHREE c3;                      // ClockTHREE singleton
+ClockFOUR c4;                      // ClockFOUR singleton
 
 //Font font = Font();                 // Only font at this time.
 MemFont font = MemFont();
@@ -237,7 +228,6 @@ uint8_t MM, DD, hh, mm, ss;
 uint8_t ahh, amm, ass;              // time of day time (tod) variables.
 boolean tick = true;                // tick is true whenever a second changes (false when change has been dealt with)
 unit_t SetTime_unit = YEAR;         // Part of time being set {YEAR | MONTH | DAY | HOUR | MINUTE}
-uint8_t temp_unit = DEG_C;          // Temperature display units {DEG_C | DEC_F}
 uint8_t sync_msg_byte_counter = 0;  // How many byte in a row has sync byte been recieved 
 
 // language constants
@@ -329,26 +319,19 @@ void tick_interrupt(){
  */
 void update_time(){
   // update global time variables.  resync with Time.h
-  c3.refresh();  // keep display going.
   YY = year();
-  c3.refresh();
   MM = month();
-  c3.refresh();
   DD = day();
-  c3.refresh();
   hh = hour();
-  c3.refresh();
   mm = minute();
-  c3.refresh();
   ss = second();
-  c3.refresh();
 }
 
 // Main setup function
 void setup(void){
   Serial.begin(BAUDRATE);
   Wire.begin();
-  c3.init();
+  c4.init();
   
   mode_p = &NormalMode;
 
@@ -361,13 +344,11 @@ void setup(void){
   // Sub Modes
   Modes[SECONDS_MODE] = SecondsMode;
   Modes[SER_DISPLAY_MODE] = SerDisplayMode;
-  Modes[TEMPERATURE_MODE] = TemperatureMode;
   mode_p->setup();
 
   attachInterrupt(0, mode_interrupt, FALLING); // Does not work on C2
   attachInterrupt(1, inc_interrupt, FALLING);  // Does not work on C2
-  c3.setdisplay(display); // 2x actual LED array size for staging data. // required by fade to
-  c3.set_column_hold(50);
+  c4.setdisplay(display); // 2x actual LED array size for staging data. // required by fade to
 
   if(digitalRead(MODE_PIN)){
     self_test();
@@ -414,7 +395,7 @@ void loop(void){
     enter_interrupt();
   }
   /* with auto reset, 
-   * serial connection to C3 causes a reset so entering serial mode
+   * serial connection to C4 causes a reset so entering serial mode
    * manually is fuitless.  This is way better anyway.
    */
   Serial_loop();
@@ -481,7 +462,7 @@ void Normal_loop(void) {
   if(is_dst(standard_time)){
     spm += 3600;
     spm %= 86400;
-    // c3.setPixel(7, 7, 1);
+    // c4.setPixel(7, 7, 1);
   }
 #endif
   uint16_t time_inc = spm / 300;  // 5-minute time increment are we in
@@ -507,20 +488,18 @@ void Normal_loop(void) {
   
     // read minutes hack for next time incement
     minutes_hack(minute_hack_inc, tmp_d);
-    c3.fadeto(tmp_d, 16); // 16 fade steps to new display
+    c4.fadeto(tmp_d, 16); // 16 fade steps to new display
 
     last_min_hack_inc = minute_hack_inc;
     last_time_inc = time_inc;
   }
   // Keep active LEDs lit
-  // my_refresh(1000);
   count++;
 #ifdef AUTO_DIM
   uint8_t ldr_val;
   ldr_val = analogRead(LDR_PIN);
-  c3.dim = (ldr_val - MIN_LDR_VAL) * 16 / (MAX_LDR_VAL - MIN_LDR_VAL)
+  c4.dim = (ldr_val - MIN_LDR_VAL) * 16 / (MAX_LDR_VAL - MIN_LDR_VAL)
 #endif
-  c3.refresh(16);
 }
 /*
   Get ready for next mode.
@@ -533,23 +512,19 @@ void Normal_exit(void) {
 */
 void Normal_inc(void) {
 #ifdef DIM
-  if(c3.dim > 1){
-    c3.dim /= 2;
+  if(c4.dim > 1){
+    c4.dim /= 2;
   }
-  Serial.println(c3.dim);
+  Serial.println(c4.dim);
 #else
   switchmodes(SECONDS_MODE);
 #endif
 }
 void Normal_dec(void) {
-#ifdef DIM
-  if(c3.dim < 15){
-    c3.dim *= 2;
+  if(c4.dim < 15){
+    c4.dim *= 2;
   }
-  Serial.println(c3.dim);
-#else
-  switchmodes(TEMPERATURE_MODE);
-#endif
+  Serial.println(c4.dim);
 }
 void Normal_mode(void) {
   switchmodes(MODE_MODE);
@@ -564,7 +539,6 @@ void Seconds_loop(){
     tick = false;
     two_digits(ss);
   }
-  c3.refresh(16);
 }
 void Seconds_exit(void) {
 }
@@ -572,43 +546,7 @@ void Seconds_mode(){
   switchmodes(last_mode_id);
 }
 
-// Sub mode of normal mode ** display temp
-void Temperature_setup(void){
-  if(temp_unit == DEG_C){
-    // faceplate.display_word(c3, MONO, c_led);
-  }
-  else{
-    // faceplate.display_word(c3, MONO, f_led);
-  }
-}
-void Temperature_loop(){
-  int8_t temp = getTemp();
-  if(temp_unit == DEG_F){
-    temp = toF(temp);
-  }
-  two_digits(temp);
-  c3.refresh(16);
-}
-void Temperature_exit(void) {
-}
-// toggle temp_unit
-void Temperature_inc(){
-  if(temp_unit == DEG_F){
-    temp_unit = DEG_C;
-  }
-  else{
-    temp_unit = DEG_F;
-  }
-}
-void Temperature_dec(){
-  switchmodes(last_mode_id);
-}
-void Temperature_mode(){
-  switchmodes(last_mode_id);
-}
-
 void SerDisplay_loop(){
-  c3.refresh(16);
 }
 
 // Begin SetTime Mode Code 
@@ -624,63 +562,62 @@ void SetTime_loop(void) {
   switch(SetTime_unit){
   case YEAR:
     if(count % 200 > 75){
-      c3.clear();
+      c4.clear();
       two_digits(YY % 100);
     }
     else{
-      c3.clear();
-      font.getChar('Y', MONO, display + 5);  
+      c4.clear();
+      font.getChar('Y', BLUE, display + 5);  
     }
-    // faceplate.display_word(c3, MONO, year_led);
+    // faceplate.display_word(c4, BLUE, year_led);
     break;
   case MONTH:
     if(count % 200 > 75){
-      c3.clear();
+      c4.clear();
       two_digits(MM);
     }
     else{
-      c3.clear();
-      font.getChar('M', MONO, display + 5);  
+      c4.clear();
+      font.getChar('M', BLUE, display + 5);  
     }
-    // faceplate.display_word(c3, MONO, month_led);
+    // faceplate.display_word(c4, BLUE, month_led);
     break;
   case DAY:
     if(count % 200 > 75){
-      c3.clear();
+      c4.clear();
       two_digits(DD);
     }
     else{
-      c3.clear();
-      font.getChar('D', MONO, display + 5);  
+      c4.clear();
+      font.getChar('D', BLUE, display + 5);  
     }
-    // faceplate.display_word(c3, MONO, day_led);
+    // faceplate.display_word(c4, BLUE, day_led);
     break;
   case HOUR:
     if(count % 200 > 75){
-      c3.clear();
+      c4.clear();
       two_digits(hh);
     }
     else{
-      c3.clear();
-      font.getChar('H', MONO, display + 5);  
+      c4.clear();
+      font.getChar('H', BLUE, display + 5);  
     }
-    // faceplate.display_word(c3, MONO, hour_led);
+    // faceplate.display_word(c4, BLUE, hour_led);
     break;
   case MINUTE:
     if(count % 200 > 75){
-      c3.clear();
+      c4.clear();
       two_digits(mm);
     }
     else{
-      c3.clear();
-      font.getChar('M', MONO, display + 5);  
+      c4.clear();
+      font.getChar('M', BLUE, display + 5);  
     }
-    // faceplate.display_word(c3, MONO, minute_led);
+    // faceplate.display_word(c4, BLUE, minute_led);
     break;
   default:
     break;
   }
-  c3.refresh(16);
 }
 /*
   Get ready for next mode.
@@ -765,7 +702,7 @@ void SetTime_dec(void) {
   }
 }
 void SetTime_mode(void) {
-  c3.clear();
+  c4.clear();
   switch(SetTime_unit){
   case YEAR:
     SetTime_unit = MONTH;
@@ -806,7 +743,6 @@ void Serial_loop(void) {
 
 	  MSG_DEFS[msg_i]->cb();
 	  //two_digits(val);
-	  //c3.refresh(10000);
 	}
 	else{
 	  // Got a sync message unexpectedly. Get ready for new message.
@@ -890,7 +826,6 @@ void Serial_send_err(char *err){
   // Serial.print(len + 2, BYTE);
   Serial.write(len + 2);
   Serial.print(err);
-  c3.note(55);
   // Serial.print(serial_msg);
 }
 
@@ -988,19 +923,18 @@ void Serial_mode(void) {
 
 // Begin Mode Mode Code
 void Mode_setup(void) {
-  // font.getChar('M', MONO, display);
+  // font.getChar('M', BLUE, display);
   mode_counter = 1;
-  font.getChar(Modes[mode_counter].sym, MONO, display + 5);
+  font.getChar(Modes[mode_counter].sym, BLUE, display + 5);
 }
 void Mode_loop(void) {
-  c3.refresh(16);
 }
 void Mode_exit(void) {
 }
 void Mode_inc(void) {
   mode_counter++;
   mode_counter %= N_MAIN_MODE - 1; // skip ModeMode
-  font.getChar(Modes[mode_counter].sym, MONO, display + 5);
+  font.getChar(Modes[mode_counter].sym, BLUE, display + 5);
 }
 void Mode_dec(void) {
   if(mode_counter == 0){
@@ -1009,7 +943,7 @@ void Mode_dec(void) {
   else{
     mode_counter--;
   }
-  font.getChar(Modes[mode_counter].sym, MONO, display + 5);
+  font.getChar(Modes[mode_counter].sym, BLUE, display + 5);
 }
 void Mode_enter(void) {
   switchmodes(mode_counter);
@@ -1019,10 +953,10 @@ void switchmodes(uint8_t new_mode_id){
   // only switch if we are not in this mode already ... or not...
   // if(new_mode_id != mode_p->id){
   last_mode_id = mode_p->id;
-  c3.clear(); // clear both screens
-  c3.setdisplay(display + N_COL); 
-  c3.clear(); // clear both screens
-  c3.setdisplay(display);
+  c4.clear(); // clear both screens
+  c4.setdisplay(display + N_COL); 
+  c4.clear(); // clear both screens
+  c4.setdisplay(display);
   mode_p->exit();
   mode_p = &Modes[new_mode_id];
   mode_p->setup();
@@ -1034,13 +968,13 @@ void return_to_normal(){
   switchmodes(NORMAL_MODE);
 }
 void two_digits(uint8_t val){
-  font.getChar('0' + val / 10, MONO, display + 2);
-  font.getChar('0' + val % 10, MONO, display + 9);
+  font.getChar('0' + val / 10, BLUE, display + 2);
+  font.getChar('0' + val % 10, BLUE, display + 9);
 }
 
 void two_digits(uint8_t val, uint32_t *display){
-  font.getChar('0' + val / 10, MONO, display + 2);
-  font.getChar('0' + val % 10, MONO, display + 9);
+  font.getChar('0' + val / 10, BLUE, display + 2);
+  font.getChar('0' + val % 10, BLUE, display + 9);
 }
 
 /*
@@ -1048,14 +982,14 @@ void two_digits(uint8_t val, uint32_t *display){
  */
 void add_char(char letter, uint32_t* display, uint8_t col){
   uint32_t data[8];
-  font.getChar(letter, MONO, data);
+  font.getChar(letter, BLUE, data);
   for(uint8_t i = 0; i < 7; i++){
     display[col + i] |= (data[i] & 0b00000000111111111111111111111111);
   }
 }
 void two_letters(char* letters){
-  font.getChar(letters[0], MONO, display + 2);
-  font.getChar(letters[1], MONO, display + 9);
+  font.getChar(letters[0], BLUE, display + 2);
+  font.getChar(letters[1], BLUE, display + 9);
 }
 
 uint8_t my_random_value = 0;
@@ -1067,7 +1001,6 @@ int my_random(uint8_t min, uint8_t max){
 
 void too_big_fireworks(){ // will not fit special effect // need SD!
   int x, y;
-  c3.refresh(1800);
   //while(1){
     memset(display, 0, N_COL * N_DISPLAY * sizeof(uint32_t));
     for(int k = 0; k < 8; k++){
@@ -1077,37 +1010,35 @@ void too_big_fireworks(){ // will not fit special effect // need SD!
       x = my_random(3, 13);
       y = my_random(3, 10);
       int istart = my_random(0, 10);
-      c3.setdisplay(display + istart * N_COL);
-      // c3.line(7, 11, x, y, WHITE);
+      c4.setdisplay(display + istart * N_COL);
+      // c4.line(7, 11, x, y, WHITE);
       for(int i = istart; i < istart + 10; i++){
-	c3.setdisplay(display + i * N_COL);
-	c3.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
-	c3.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
-	c3.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
+	c4.setdisplay(display + i * N_COL);
+	c4.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
+	c4.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
+	c4.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
       }
       x = my_random(0, 16);
       y = my_random(0, 9);
       istart = my_random(0, 100);
       if(istart < 10){
 	for(int i = istart; i < istart + 10; i++){
-	  c3.setdisplay(display + i * N_COL);
-	  c3.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
-	  c3.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
-	  c3.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
+	  c4.setdisplay(display + i * N_COL);
+	  c4.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
+	  c4.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
+	  c4.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
 	}
       }
       int iter = my_random(1, 2);
       for(int j = 0; j < iter; j++){
 	for(int i = 0; i < N_DISPLAY; i++){
-	  c3.setdisplay(display + N_COL * i);
-	  c3.refresh(100);
+	  c4.setdisplay(display + N_COL * i);
 	}
       }
     }
     memset(display, 0, N_COL * N_DISPLAY * sizeof(uint32_t));
     for(int i = 0; i < N_COL * 4 + 12; i++){
-      c3.setdisplay(display + i);
-      c3.refresh(180);
+      c4.setdisplay(display + i);
     }
     //  }
 }
@@ -1224,15 +1155,13 @@ void self_test(){
     display[5] = 0b01000010;
     display[6] = 0b10000001;
     while(1){
-      c3.refresh(1000);
     }
   }
   while(true){
     state = !state;
     for(uint8_t i = 0; i < 8; i++){
       for(uint8_t j = 0; j < 16; j++){
-	c3.setPixel(j, i, state);
-	c3.refresh(100);
+	c4.setPixel(j, i, state);
       }
     }
   }
