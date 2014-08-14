@@ -1,20 +1,25 @@
 
+
 #include <avr/pgmspace.h>
-//#include <TimerOne.h>
 #include <Time.h>
 #include "english_v2.h"
 
-#define TiMPIN			A0
-#define BUTTON_L		A1
-#define BUTTON_R		A2
+#define TiMPIN				A0
+#define BUTTON_L			8
+#define BUTTON_R			12
+#define PIN_LOW				10
 
-#define BUTTON_L_IDX	1
-#define BUTTON_R_IDX	2
+#define BUTTON_L_IDX		1
+#define BUTTON_R_IDX		2
 
-/*// Stores the current time, in half-seconds, since the beginning of the day.
-uint16_t g_time2Hz = 0;
-uint16_t g_time1Hz = 0;
-uint16_t g_timeMinutes = 0;*/
+#define LONG_PRESS_MILLIS	2000
+
+typedef struct KeyStates{
+	uint8_t justPressed;	// Buttons that have just been pressed
+	uint8_t longPressed;	// Buttons that have been pressed for a long time
+	uint8_t up;				// Buttons that are pressed
+	uint8_t down;			// Buttons that are released
+};
 
 void setup() {
 	// Setup the GPIO
@@ -23,37 +28,63 @@ void setup() {
 	pinMode(BUTTON_R, INPUT);
 	digitalWrite(BUTTON_R, HIGH);
 	
+	pinMode(PIN_LOW, OUTPUT);
+	digitalWrite(PIN_LOW, LOW);
+	
 	// Start the serial port
 	Serial.begin(9600);
 	
 	// Initialise the display
 	disp_init();
-	
-/*	// Interrupt timer 1 every 1/2 a second
-	Timer1.initialize(500000);
-	Timer1.attachInterrupt(twiceASecond);*/
 }
 
 void loop() {
+	static int prev_sec = second();
+	static int prev_min = minute();
+	int sec;
+	int min;
+	
 	uint16_t ledStates[8] = { 0 };
-	uint8_t keys;
+	KeyStates *keys = NULL;
 		
 	keys = getKeys();
 	
 	// Depending on the keys just pressed, take the necessary action
+	switch(keys->longPressed) {
+	case BUTTON_L_IDX:
+		Serial.println("Pressed left a long time");
+		break;
+	case BUTTON_R_IDX:
+		Serial.println("Pressed right a long time");
+		break;
+	case BUTTON_L_IDX | BUTTON_R_IDX:
+		Serial.println("Pressed left and right a long time");
+		break;
+	default:
+		break;
+	}
 	
-	displayWord(ledStates, g_timeMinutes >> 1);
+	sec = second();
+	min = minute();
+	if(prev_sec != sec) {
+		if(prev_min != min) {
+			int totalMinutes = (hour() * 60) + min;
+			displayWord(ledStates, totalMinutes / 5);
+			prev_min = min;
+		}
 
-	// Make the bottom right LED blink every second
-	ledStates[7] |= second() & 0x01;
+		// Make the bottom right LED blink every second
+		ledStates[7] |= sec & 0x01;
+		prev_sec = sec;
 
-	disp_display(ledStates);
+		disp_display(ledStates);
+	}
 }
 
 void displayWord(uint16_t *ledStates, int time) {
 	// Loop through every line
-	Serial.print("Time: ");
-	Serial.println(time);
+//	Serial.print("Time: ");
+//	Serial.println(time);
 
 	for(int dispIdx = 0; dispIdx < 4; dispIdx++) {
 
@@ -82,15 +113,15 @@ void displayWord(uint16_t *ledStates, int time) {
 }
 
 // Returns a byte with the idx of any newly pressed keys set to '1'. Also includes debouncing.
-uint8_t getKeys() {
+struct KeyStates *getKeys() {
 	static uint8_t debounce[4];			// Stores the queue of the push button states
 	static uint8_t debounceIdx = 0;		// Stores the index we are current at within the debounce queue
-	static uint8_t buttons;				// Stores the state of the buttons
+	static uint8_t states;				// Stores the state of the keys
+	static long timeInStates = 0;		// Records the amount of time <states> has been in its current state
 	
-	uint8_t prevButtons;				// Temp variable used for comparison with previous button states
+	static KeyStates keys;
+	
 	uint8_t pressed = 0;				// Holds which buttons are currently pressed
-	uint8_t up;							// Indicates which buttons have been pressed for a long time
-	uint8_t down;						// Indicates which buttons have been released for a long time
 	
 	if(digitalRead(BUTTON_L) == LOW) {
 		pressed |= BUTTON_L_IDX;
@@ -103,19 +134,28 @@ uint8_t getKeys() {
 	debounce[debounceIdx++] = pressed;
 	debounceIdx &= 3;
 	
-	down = debounce[0] & debounce[1] & debounce[2] & debounce[3];
-	up = debounce[0] | debounce[1] | debounce[2] | debounce[3];
+	keys.down = debounce[0] & debounce[1] & debounce[2] & debounce[3];
+	keys.up = debounce[0] | debounce[1] | debounce[2] | debounce[3];
 	
 	// Determine which buttons have freshly been pressed and return the result
-	prevButtons = buttons;
-	buttons &= up;
-	buttons |= down;
-	return buttons & (buttons ^ prevButtons);
+	uint8_t prevStates = states;
+	states &= keys.up;
+	states |= keys.down;
+	keys.justPressed = states & (states ^ prevStates);
+	
+	if(states != 0) {
+		if(states != prevStates) {
+			timeInStates = millis();
+		} else {
+			if(millis() - timeInStates > LONG_PRESS_MILLIS) {
+				keys.longPressed = keys.up;
+			}
+		}
+	} else {
+		keys.longPressed = 0;
+	}
+	
+	return &keys;
 }
 
-/*void twiceASecond() {
-	g_time2Hz++;
-	g_time1Hz = g_time2Hz >> 1;
-	g_timeMinutes = g_time1Hz % 60;
-}*/
 
