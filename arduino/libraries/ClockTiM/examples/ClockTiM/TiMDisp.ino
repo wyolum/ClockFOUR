@@ -21,6 +21,36 @@ void disp_init() {
 	strip.show(); // Initialize all pixels to 'off'
 }
 
+
+void loadWords(uint16_t *ledStates, int time) {
+	// Loop through every line
+	for(int dispIdx = 0; dispIdx < 4; dispIdx++) {
+
+		// Get the display bits
+		uint8_t disp = pgm_read_byte(DISPLAYS + time * 4 + 1 + dispIdx);
+
+		// Loop through every bit
+		for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
+			// Check if the given bit is set
+			if(disp & 0x01) {
+				// It is! Get the index in WORDS
+				uint8_t wordsOffset = bitIdx + dispIdx * 8;
+				uint8_t x = pgm_read_byte(WORDS + 3 * wordsOffset + 1);
+				uint8_t y = pgm_read_byte(WORDS + 3 * wordsOffset + 2);
+				uint8_t length = pgm_read_byte(WORDS + 3 * wordsOffset + 3);
+
+				// Now draw the line in the buffer
+				for(int pix = x; pix < x + length; pix++) {
+					ledStates[y] |= 1 << (15 - pix);
+				}
+			}
+			// Select the next bit
+			disp >>= 1;
+		}
+	}
+}
+
+
 void disp_display(uint16_t *ledStates) {
 	for(int y = 0; y < 8; y++) {
 		for(int x = 0; x < 16; x++) {
@@ -33,6 +63,7 @@ void disp_display(uint16_t *ledStates) {
 	}
 	strip.show();
 }
+
 
 // Input a value 0 to 255 to get a color value.
 // The colours are a transition r - g - b - back to r.
@@ -47,6 +78,7 @@ uint32_t disp_wheel(byte WheelPos) {
 		return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
 	}
 }
+
 
 void disp_rainbow(uint16_t *ledStates, uint8_t wait) {
 	for(int colour = 0; colour < 256; colour++) {
