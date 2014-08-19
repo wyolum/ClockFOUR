@@ -281,6 +281,10 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
             if len(lines[i]) > j:
                 can.drawCentredString(x - h_off, y  - v_off, case(lines[i][j]))
                 # can.drawCentredString(x - h_off, y  - v_off, (lines[i][j]).upper())
+
+# draw an apostrophe
+    can.drawCentredString(146 * mm, 81 * mm, "'")            
+
     if showtime:
         can.setFillColor((1, 1, 1))
         timechars = [[0, 0], [0, 1],  # it 
@@ -505,13 +509,13 @@ if __name__ == '__main__':
     create_faceplate('english_TiM_lower %s' % (font), english_TiM, lower, font, 30,
                      baffles=False,
                      do_corner_holes=False,
-                     reverse=False,
+                     reverse=True,
                      showtime=False,
                      color=None)
     create_faceplate('english_TiM_UPPER %s' % (font), english_TiM, upper, font, 30,
                      baffles=False,
                      do_corner_holes=False,
-                     reverse=False,
+                     reverse=True,
                      showtime=False,
                      color=None)
 ##    if False: ## test a single font
