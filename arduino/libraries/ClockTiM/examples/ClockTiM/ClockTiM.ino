@@ -31,7 +31,7 @@
 typedef struct KeyStates{
 	uint8_t justPressed;	// Buttons that have just been pressed
 	uint8_t longPressed;	// Buttons that have just been pressed for a long time
-	uint8_t repeated;		// Buttons that are automatically repeating
+	uint8_t repeated;	// Buttons that are automatically repeating
 };
 
 /************* Settings struct definition *************/
