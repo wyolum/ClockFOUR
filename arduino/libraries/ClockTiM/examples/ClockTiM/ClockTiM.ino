@@ -36,7 +36,7 @@ typedef struct KeyStates{
 
 /************* Settings struct definition *************/
 typedef union Settings {
-	// WARNING: array has to be at least as large as there are elements in the struct
+	// WARNING: array has to be at least as large as the number of elements in the struct
 	uint8_t array[3];
 	struct {
 		uint8_t useGPS;
@@ -67,6 +67,9 @@ void setup() {
 	
 	// Initialise the display
 	disp_init();
+	
+	// Load the settings from the EEPROM
+	loadSettings();
 }
 
 
@@ -122,7 +125,7 @@ void loop() {
 }
 
 
-// This needs to be placed above whereever it's called from as the Arduino compiler seems to have
+// This needs to be placed above where ever it's called from as the Arduino compiler seems to have
 // trouble dealing with function pointers as parameters.
 uint8_t changeSetting(uint8_t origValue, uint8_t min, uint8_t max, void (*dispFunc)(uint8_t)) {
 	KeyStates *keys = NULL;
@@ -134,7 +137,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t min, uint8_t max, void (*dispFu
 		keys = getKeys(true, 1000);
 		if(keys->justPressed == BUTTON_L_IDX) {
 			break;
-			} else if(keys->justPressed == BUTTON_R_IDX || keys->repeated == BUTTON_R_IDX) {
+		} else if(keys->justPressed == BUTTON_R_IDX || keys->repeated == BUTTON_R_IDX) {
 			value++;
 			if(value > max) {
 				value = min;
@@ -209,6 +212,10 @@ void clockConfig() {
 			break;
 		}
 	}
+	
+	// TODO: save these new settings to the arduino Time library
+	
+	// TODO: load the new time into the RTC
 	
 	saveSettings();
 	PRINT_DEBUG("Exiting configuration mode");
