@@ -1,3 +1,5 @@
+#include <Adafruit_GFX.h>
+#include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
 #include <Wire.h>
 #include "RTClib.h"
@@ -15,7 +17,7 @@
 
 const int KnobPin = A6;    // select the input pin for the potentiometer
 const int LDRPin = A7;     // select the input pin for the LDR
-const int stripPin = 5;       //select the pin the strip is on
+const int DisplayPin = 5;       //select the pin the strip is on
 const int numLEDS = 128;        //number of LEDS in the astrip
 const int Button1 = 6;
 const int Button2 = 7;
@@ -25,11 +27,35 @@ int KnobValue, LDRValue = 0;  // variable to store the value coming from the sen
 
 RTC_Millis rtc;
 
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(numLEDS, DisplayPin, NEO_GRB + NEO_KHZ800);
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(numLEDS, stripPin, NEO_GRB + NEO_KHZ800);
+// MATRIX DECLARATION:
+// Parameter 1 = width of NeoPixel matrix
+// Parameter 2 = height of matrix
+// Parameter 3 = pin number (most are valid)
+// Parameter 4 = matrix layout flags, add together as needed:
+//   NEO_MATRIX_TOP, NEO_MATRIX_BOTTOM, NEO_MATRIX_LEFT, NEO_MATRIX_RIGHT:
+//     Position of the FIRST LED in the matrix; pick two, e.g.
+//     NEO_MATRIX_TOP + NEO_MATRIX_LEFT for the top-left corner.
+//   NEO_MATRIX_ROWS, NEO_MATRIX_COLUMNS: LEDs are arranged in horizontal
+//     rows or in vertical columns, respectively; pick one or the other.
+//   NEO_MATRIX_PROGRESSIVE, NEO_MATRIX_ZIGZAG: all rows/columns proceed
+//     in the same order, or alternate lines reverse direction; pick one.
+//   See example below for these values in action.
+// Parameter 5 = pixel type flags, add together as needed:
+//   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
+//   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
+//   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
+//   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
+
+Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(16, 8, DisplayPin,
+  NEO_MATRIX_BOTTOM     + NEO_MATRIX_LEFT +
+  NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE,
+  NEO_GRB            + NEO_KHZ800);
+
 
 void setup() {
-  pinMode(stripPin, OUTPUT);  // declare the ledPin as an OUTPUT:
+  pinMode(DisplayPin, OUTPUT);  // declare the ledPin as an OUTPUT:
   pinMode(KnobPin, INPUT);    // declare the KnobPin as an INPUT:
   pinMode(LDRPin, INPUT);     // declare the LDRPin as an INPUT:
   pinMode(Button1, INPUT);    // declare the Button1 as an INPUT:
@@ -37,8 +63,9 @@ void setup() {
   pinMode(Button2, INPUT);    // declare the Button2 as an INPUT:
   digitalWrite(Button2, HIGH);
   
-  strip.begin();              // initialize the LED strip
-  strip.show();               // initialise all pixels to off
+  strip.begin();
+  matrix.begin();              // initialize the LED strip
+  matrix.show();               // initialise all pixels to off
   
   Serial.begin(9600);         // start the serial port
   
@@ -81,6 +108,8 @@ void loop() {
   PRINT_DEBUG(LDRValue);
   PRINT_DEBUG("  | ");
 
+
+ 
    
   if (LDRValue < 350) {
     Brightness = 12;
@@ -90,15 +119,32 @@ void loop() {
     else Brightness = map(LDRValue,350,1000,12,255);
   
   strip.setBrightness(Brightness);
+  matrix.setBrightness(Brightness);
 
   if (KnobValue < 50){ 
     //light off 
-    PRINTLN_DEBUG("light off");
-    for(int i=0; i<strip.numPixels(); i++) {
-      strip.setPixelColor(i, strip.Color(0, 0, 0));
-
+    PRINTLN_DEBUG("Seconds mode!");
+    matrix.fillScreen(0);
+    if (now.second()<10) {
+      matrix.setCursor(2, 1);
+      matrix.print(F("0"));
+      matrix.setCursor(8, 1);
+      matrix.print((now.second()));
     }
-    strip.show();
+    else {
+      matrix.setCursor(2, 1);
+      matrix.print((now.second()));
+    }
+  
+    matrix.show();
+
+
+
+
+//    for(int i=0; i<matrix.numPixels(); i++) {
+//      strip.setPixelColor(i, strip.Color(0, 0, 0));
+//    }
+//    strip.show();
   }
   else if (KnobValue < 150){
     //rainbow!
@@ -115,7 +161,7 @@ void loop() {
     //solid colour
     int colour = map(KnobValue, 300, 999, 0, 255);
     PRINT_DEBUG(colour);
-    for(int i=0; i<strip.numPixels(); i++) {
+    for(int i=0; i<matrix.numPixels(); i++) {
       strip.setPixelColor(i, Wheel(colour));
 
     }
