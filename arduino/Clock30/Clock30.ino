@@ -1,4 +1,6 @@
 #include <Adafruit_NeoPixel.h>
+#include <Wire.h>
+#include "RTClib.h"
 
 /************* Enable/disable debug mode *************/
 #define DEBUG
@@ -21,6 +23,7 @@ const int Button2 = 7;
 int j, Brightness = 0;
 int KnobValue, LDRValue = 0;  // variable to store the value coming from the sensor
 
+RTC_Millis rtc;
 
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(numLEDS, stripPin, NEO_GRB + NEO_KHZ800);
@@ -38,14 +41,35 @@ void setup() {
   strip.show();               // initialise all pixels to off
   
   Serial.begin(9600);         // start the serial port
+  
+  Wire.begin();
+  
+    rtc.begin(DateTime(F(__DATE__), F(__TIME__)));  // Set the RTC to the date and time code was compiled
+
+    // To set the RTC with an explicit date & time, for example to set
+    // January 21, 2014 at 3am you would call:
+    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+  
 }
 
 
-
-
 void loop() {
-
-
+// Show the time from the RTC
+    DateTime now = rtc.now();
+    
+    PRINT_DEBUG(now.year());
+    PRINT_DEBUG('/');
+    PRINT_DEBUG(now.month());
+    PRINT_DEBUG('/');
+    PRINT_DEBUG(now.day());
+    PRINT_DEBUG(' ');
+    PRINT_DEBUG(now.hour());
+    PRINT_DEBUG(':');
+    PRINT_DEBUG(now.minute());
+    PRINT_DEBUG(':');
+    PRINT_DEBUG(now.second());
+    PRINT_DEBUG(" | ");
+  
   // read the value from the sensor:
   KnobValue = analogRead(KnobPin);
   LDRValue = analogRead(LDRPin);  

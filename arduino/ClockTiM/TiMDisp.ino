@@ -24,10 +24,10 @@ void disp_init() {
 
 void loadWords(uint16_t *ledStates, int time) {
 	// Loop through every line
-	for(int dispIdx = 0; dispIdx < 4; dispIdx++) {
+	for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
 
 		// Get the display bits
-		uint8_t disp = pgm_read_byte(DISPLAYS + time * 4 + 1 + dispIdx);
+		uint8_t disp = pgm_read_byte(DISPLAY_hour + time * 2 + 1 + dispIdx);
 
 		// Loop through every bit
 		for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
@@ -35,9 +35,9 @@ void loadWords(uint16_t *ledStates, int time) {
 			if(disp & 0x01) {
 				// It is! Get the index in WORDS
 				uint8_t wordsOffset = bitIdx + dispIdx * 8;
-				uint8_t x = pgm_read_byte(WORDS + 3 * wordsOffset + 1);
-				uint8_t y = pgm_read_byte(WORDS + 3 * wordsOffset + 2);
-				uint8_t length = pgm_read_byte(WORDS + 3 * wordsOffset + 3);
+				uint8_t x = pgm_read_byte(WORDS_min + 3 * wordsOffset + 1);
+				uint8_t y = pgm_read_byte(WORDS_min + 3 * wordsOffset + 2);
+				uint8_t length = pgm_read_byte(WORDS_min + 3 * wordsOffset + 3);
 
 				// Now draw the line in the buffer
 				for(int pix = x; pix < x + length; pix++) {
