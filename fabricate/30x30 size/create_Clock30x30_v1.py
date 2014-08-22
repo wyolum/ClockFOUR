@@ -36,7 +36,7 @@ FIFTEENSIXTEEN
 SEVENTEENTHREE
 EIGHTEENELEVEN
 NINETEENTWELVE
-EMINUTESTPASTO
+VMINUTESTPASTO
 TWONEIGHTENSIX
 THREENINELEVEN
 FOURFIVETWELVE
@@ -86,9 +86,9 @@ corner_holes = array([ ## mount posts
         (WIDTH - .15 * inch, HEIGHT - .15 * inch, mount_r)])
 
 
-#fontdir = 'C:\Users\David\Documents\GitHub\ClockFOUR\fabricate\fonts'
-fontdir = './fonts'
-fontpath = ['./fonts/', 'C:\Users\David\Documents\GitHub\ClockFOUR\fabricate\fonts']
+fontdir = 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts'
+#fontdir = './fonts'
+fontpath = ['C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts']
 fontnames = ['HELVETICA-BOLD', 'Helvetica-Bold',
              'HELVETICA', 'Helvetica','Times-Roman','TIMES-ROMAN', 'IMFePIrm28P'
              ]
@@ -427,7 +427,7 @@ h_baffle = asym_baffle(BAFFLE_H,
                          overhangs=(BAFFLE_T/2 + 3 * mm, BAFFLE_T/2 + 3 * mm),
                          overhang_heights=(None, None),
                          overhang_tapers=(False, False),
-                         board_catches=(True, True),
+                         jump_strips=False,
                          margin=0.016
                          )
 v_baffle = asym_baffle(BAFFLE_H,
@@ -437,7 +437,7 @@ v_baffle = asym_baffle(BAFFLE_H,
                          overhangs=(BAFFLE_T/2 + 3 * mm, BAFFLE_T/2 + 3 * mm),
                          overhang_heights=(None, None),
                          overhang_tapers=(False, False),
-                         board_catches=(True, True),
+                         jump_strips=True,
                          margin=0.016
                          )
 ##h_baffle = x30_h_baffle(BAFFLE_H,
@@ -517,25 +517,19 @@ def makeGlam():
 if __name__ == '__main__':
 ##    create_backplate()
     create_baffles()
-##    add_font('Kranky')
 
-    add_font('IMFePIrm28P', 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts')    
-    font = 'IMFePIrm28P'
-    create_faceplate('english_30_lower %s' % (font), english_30, lower, font, 30,
-                     baffles=True,
+    font = 'Codystar-Regular'
+    add_font(font, 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts')    
+    create_faceplate('english_30_lower %s' % (font), english_30, lower, font, 32,
+                     baffles=False,
                      do_corner_holes=False,
                      reverse=False,
                      showtime=False,
                      color=None)
-    create_faceplate('english_30_UPPER %s' % (font), english_30, upper, font, 30,
-                     baffles=True,
+    create_faceplate('english_30_UPPER %s' % (font), english_30, upper, font, 32,
+                     baffles=False,
                      do_corner_holes=False,
                      reverse=False,
                      showtime=False,
                      color=None)
-##    if False: ## test a single font
-##        add_font('plantin', 'fonts/CustomerFonts/plantin.ttf')
-##        create_faceplate('eng_plantin_lower_v3', english_v3, lower, 'plantin', 35, False,
-##                         color=None)
-##        create_faceplate('eng_plantin_lower_v3_blk_', english_v3, lower, 'plantin', 35, False,
-##                         color=black, showtime=True)
+
