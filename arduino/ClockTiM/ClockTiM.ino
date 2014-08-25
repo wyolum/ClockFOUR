@@ -74,12 +74,12 @@ void setup() {
 
 
 void loop() {
-	static int prev_sec = second();
-	static int prev_min = minute();
+	static int prev_sec = second() - 1;
+	static int prev_min = minute() - 1;
 	int sec;
 	int min;
 	
-	uint16_t ledStates[8] = { 0 };
+	static uint16_t ledStates[8] = { 0 };
 	KeyStates *keys = NULL;
 	
 	keys = getKeys();
@@ -117,6 +117,7 @@ void loop() {
 		}
 
 		// Make the bottom right LED blink every second
+		ledStates[7] &= 0xFE;
 		ledStates[7] |= sec & 0x01;
 		prev_sec = sec;
 
@@ -181,7 +182,7 @@ void clockConfig() {
 			{
 				uint8_t hours = hour();
 				PRINT_DEBUG("Now entering hour value");
-				hours = changeSetting(hours, 0, 23, exampleDisplayFunction);
+				hours = changeSetting(hours, 0, 23, matrixPrintFirst);
 			}
 			break;
 			
@@ -189,7 +190,7 @@ void clockConfig() {
 			{
 				uint8_t minute10 = minute() / 10;
 				PRINT_DEBUG("Now entering minute10 value");
-				minute10 = changeSetting(minute10, 0, 6, exampleDisplayFunction);
+				minute10 = changeSetting(minute10, 0, 6, matrixPrintFirst);
 			}
 			break;
 			
@@ -197,7 +198,7 @@ void clockConfig() {
 			{
 				uint8_t minute1 = minute() % 10;
 				PRINT_DEBUG("Now entering minute1 value");
-				minute1 = changeSetting(minute1, 0, 9, exampleDisplayFunction);
+				minute1 = changeSetting(minute1, 0, 9, matrixPrintSecond);
 			}
 			break;
 			

@@ -1,3 +1,5 @@
+#include <Adafruit_GFX.h>
+#include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
 
 // Parameter 1 = number of pixels in strip
@@ -9,16 +11,46 @@
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip(128, TiMPIN, NEO_GRB + NEO_KHZ800);
 
+// MATRIX DECLARATION:
+// Parameter 1 = width of NeoPixel matrix
+// Parameter 2 = height of matrix
+// Parameter 3 = pin number (most are valid)
+// Parameter 4 = matrix layout flags, add together as needed:
+//   NEO_MATRIX_TOP, NEO_MATRIX_BOTTOM, NEO_MATRIX_LEFT, NEO_MATRIX_RIGHT:
+//     Position of the FIRST LED in the matrix; pick two, e.g.
+//     NEO_MATRIX_TOP + NEO_MATRIX_LEFT for the top-left corner.
+//   NEO_MATRIX_ROWS, NEO_MATRIX_COLUMNS: LEDs are arranged in horizontal
+//     rows or in vertical columns, respectively; pick one or the other.
+//   NEO_MATRIX_PROGRESSIVE, NEO_MATRIX_ZIGZAG: all rows/columns proceed
+//     in the same order, or alternate lines reverse direction; pick one.
+//   See example below for these values in action.
+// Parameter 5 = pixel type flags, add together as needed:
+//   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
+//   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
+//   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
+//   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
+Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(16, 8, TiMPIN, NEO_MATRIX_BOTTOM + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE, NEO_GRB + NEO_KHZ800);
+int brightness = 50;
+
 void disp_init() {
 	
 	// IMPORTANT: To reduce NeoPixel burnout risk, add 1000 uF capacitor across
 	// pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input
 	// and minimize distance between Arduino and first pixel.  Avoid connecting
 	// on a live circuit...if you must, connect GND first.
-
-
+	
+	matrix.begin();				// initialize the LED strip
 	strip.begin();
-	strip.show(); // Initialize all pixels to 'off'
+	
+	strip.setBrightness(brightness);
+	matrix.setBrightness(brightness);
+	
+	strip.show();				// Initialize all pixels to 'off'
+}
+
+
+inline void setBrightness(int value) {
+	brightness = value;
 }
 
 
@@ -55,7 +87,7 @@ void disp_display(uint16_t *ledStates) {
 	for(int y = 0; y < 8; y++) {
 		for(int x = 0; x < 16; x++) {
 			if(ledStates[y] & (1 << x)) {
-				strip.setPixelColor(y * 16 + x, strip.Color(63,   63,   63));
+				strip.setPixelColor(y * 16 + x, strip.Color(255, 255, 255));
 			} else {
 				strip.setPixelColor(y * 16 + x, strip.Color(0,   0,   0));
 			}
@@ -95,4 +127,23 @@ void disp_rainbow(uint16_t *ledStates, uint8_t wait) {
 		strip.show();
 		delay(wait);
 	}
+}
+
+
+inline void matrixPrintFirst(uint8_t value) {
+	matrix.setCursor(2, 1);
+	matrixDisplayVal(value);
+}
+
+
+inline void matrixPrintSecond(uint8_t value) {
+	matrix.setCursor(8, 1);
+	matrixDisplayVal(value);
+}
+
+
+void matrixDisplayVal(uint8_t value) {
+	matrix.fillScreen(0);
+	matrix.print(value);
+	matrix.show();
 }
