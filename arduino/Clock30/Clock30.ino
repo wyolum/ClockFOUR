@@ -2,7 +2,9 @@
 #include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
 #include <Wire.h>
-#include "RTClib.h"
+#include <RTClib.h>
+#include "LANGUAGE_English_TiM.h"
+
 
 /************* Enable/disable debug mode *************/
 #define DEBUG
@@ -19,8 +21,8 @@ const int KnobPin = A6;    // select the input pin for the potentiometer
 const int LDRPin = A7;     // select the input pin for the LDR
 const int DisplayPin = 5;       //select the pin the strip is on
 const int numLEDS = 128;        //number of LEDS in the astrip
-const int Button1 = 6;
-const int Button2 = A0;
+//const int Button1 = 6;
+//const int Button2 = A0;
 
 int j, Brightness = 0;
 int KnobValue, LDRValue = 0;  // variable to store the value coming from the sensor
@@ -58,10 +60,10 @@ void setup() {
   pinMode(DisplayPin, OUTPUT);  // declare the ledPin as an OUTPUT:
   pinMode(KnobPin, INPUT);    // declare the KnobPin as an INPUT:
   pinMode(LDRPin, INPUT);     // declare the LDRPin as an INPUT:
-  pinMode(Button1, INPUT);    // declare the Button1 as an INPUT:
-  digitalWrite(Button1, HIGH);
-  pinMode(Button2, INPUT);    // declare the Button2 as an INPUT:
-  digitalWrite(Button2, HIGH);
+//  pinMode(Button1, INPUT);    // declare the Button1 as an INPUT:
+//  digitalWrite(Button1, HIGH);
+//  pinMode(Button2, INPUT);    // declare the Button2 as an INPUT:
+//  digitalWrite(Button2, HIGH);
   
   strip.begin();
   matrix.begin();              // initialize the LED strip
@@ -81,7 +83,9 @@ void setup() {
 
 
 void loop() {
-// Show the time from the RTC
+    uint16_t ledStates[8] = { 0 };
+  
+  // Show the time from the RTC
     DateTime now = rtc.now();
     
     PRINT_DEBUG(now.year());
@@ -169,13 +173,16 @@ void loop() {
     PRINTLN_DEBUG(" solid colour");
   }  
   else {
-    PRINTLN_DEBUG("all white");
+    PRINTLN_DEBUG("Show the time, bitches");
 
-    for(int i=0; i<strip.numPixels(); i++) {
-      strip.setPixelColor(i, strip.Color(255, 255, 255));
-    }
-    strip.show();
-    
+//    for(int i=0; i<strip.numPixels(); i++) {
+//      strip.setPixelColor(i, strip.Color(255, 255, 255));
+//    }
+//    strip.show();
+
+
+      getWords(ledStates, now.hour(), now.minute() );
+      displayBuffer(ledStates);
   }
 }
 
@@ -215,4 +222,117 @@ void rainbow(uint8_t wait) {
   delay(wait);
 }
 
+void getWords(uint16_t *ledStates, int hours, int minutes) {
+// get the time of day
+  int tod_idx, hour_idx, min_idx = 0;
 
+  min_idx = minutes / 5;
+  PRINT_DEBUG("min_idx ");
+  PRINT_DEBUG(min_idx);
+  
+  if (minutes > 30) {
+  hour_idx = hours + 1;
+  }
+  else hour_idx = hours;
+  PRINT_DEBUG(" hour_idx ");
+  PRINT_DEBUG(hour_idx);
+  
+  if ((hours * 12 + minutes / 5) <= (0 * 12 + 15 / 5))
+    tod_idx = 0;
+    else if ((hours * 12 + minutes / 5) <= (11 * 12 + 45 / 5))
+      tod_idx = 1;
+      else if ((hours * 12 + minutes / 5) <= (12 * 12 + 15 / 5))
+        tod_idx = 2;
+        else if ((hours * 12 + minutes / 5) <= (18 * 12 + 0 / 5))
+          tod_idx = 3;
+          else if ((hours * 12 + minutes / 5) <= (23 * 12 + 45 / 5))
+            tod_idx = 4;
+            else tod_idx = 0;
+  PRINT_DEBUG(" tod_idx");
+  PRINTLN_DEBUG(tod_idx);
+
+  for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
+    // Get the display bits
+    uint8_t disp = pgm_read_byte(DISPLAY_tod + tod_idx * 2 + 1 + dispIdx);
+    
+    // Loop through every bit
+    for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
+      // Check if the given bit is set
+      if(disp & 0x01) {
+        // It is! Get the index in WORDS
+        uint8_t wordsOffset = bitIdx + dispIdx * 8;
+        uint8_t x = pgm_read_byte(WORDS_tod + 3 * wordsOffset + 1);
+        uint8_t y = pgm_read_byte(WORDS_tod + 3 * wordsOffset + 2);
+        uint8_t length = pgm_read_byte(WORDS_tod + 3 * wordsOffset + 3);
+        
+        // Now draw the line in the buffer
+        for(int pix = x; pix < x + length; pix++) {
+          ledStates[y] |= 1 << (15 - pix);
+        }
+      }
+      // Select the next bit
+      disp >>= 1;
+    }
+  }
+  // get the hours
+    for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
+    // Get the display bits
+    uint8_t disp = pgm_read_byte(DISPLAY_hour + hour_idx * 2 + 1 + dispIdx);
+    
+    // Loop through every bit
+    for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
+      // Check if the given bit is set
+      if(disp & 0x01) {
+        // It is! Get the index in WORDS
+        uint8_t wordsOffset = bitIdx + dispIdx * 8;
+        uint8_t x = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 1);
+        uint8_t y = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 2);
+        uint8_t length = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 3);
+        
+        // Now draw the line in the buffer
+        for(int pix = x; pix < x + length; pix++) {
+          ledStates[y] |= 1 << (15 - pix);
+        }
+      }
+      // Select the next bit
+      disp >>= 1;
+    }
+  }
+  // Get the minutes
+    for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
+    // Get the display bits
+    uint8_t disp = pgm_read_byte(DISPLAY_min + min_idx * 2 + 1 + dispIdx);
+    
+    // Loop through every bit
+    for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
+      // Check if the given bit is set
+      if(disp & 0x01) {
+        // It is! Get the index in WORDS
+        uint8_t wordsOffset = bitIdx + dispIdx * 8;
+        uint8_t x = pgm_read_byte(WORDS_min + 3 * wordsOffset + 1);
+        uint8_t y = pgm_read_byte(WORDS_min + 3 * wordsOffset + 2);
+        uint8_t length = pgm_read_byte(WORDS_min + 3 * wordsOffset + 3);
+        
+        // Now draw the line in the buffer
+        for(int pix = x; pix < x + length; pix++) {
+          ledStates[y] |= 1 << (15 - pix);
+        }
+      }
+      // Select the next bit
+      disp >>= 1;
+    }
+  }
+}
+
+void displayBuffer(uint16_t *ledStates) {
+  for(int y = 0; y < 8; y++) {
+    for(int x = 0; x < 16; x++) {
+      if(ledStates[y] & (1 << x)) {
+        strip.setPixelColor(127 - (y * 16 + x), strip.Color(200,   200,   200));
+      } else {
+        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+      }
+    }
+  }
+  strip.show();
+}
