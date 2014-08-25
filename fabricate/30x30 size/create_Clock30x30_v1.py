@@ -59,8 +59,8 @@ class Image:
 
 
 PCB_OFF = .05 * inch
-HEIGHT = 290 * mm + 2 * PCB_OFF
-WIDTH = 290 * mm + 2 * PCB_OFF
+HEIGHT = 275 * mm + 2 * PCB_OFF
+WIDTH = 275 * mm + 2 * PCB_OFF
 BEND_R = 10 * mm
 EDGE_THICKNESS = 3 * mm
 # EDGE_THICKNESS = .075 * inch
@@ -209,7 +209,7 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
     dx = 16.67 * mm
     nx = 14
 
-    y0 = (HEIGHT - pcb_h)/2 + 0.3 * inch
+    y0 = (HEIGHT - pcb_h)/2 + 0.4 * inch
     dy = 17.946 * mm
     ny = 13
 
@@ -275,10 +275,10 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
             if len(lines[i]) > j:
                 can.drawCentredString(x - h_off, y  - v_off, case(lines[i][j]))
                 # can.drawCentredString(x - h_off, y  - v_off, (lines[i][j]).upper())
-
+#########################################################
 # draw an apostrophe
-    can.drawCentredString(175 * mm, 35 * mm, "'")            
-
+    can.drawCentredString(168* mm, 31 * mm, "'")            
+#########################################################
     if showtime:
         can.setFillColor((1, 1, 1))
         timechars = [[0, 0], [0, 1],  # it 
@@ -412,8 +412,8 @@ def create_backplate():
 
 
 
-BAFFLE_H = 30.00 * mm
-BAFFLE_T = 2 * mm
+BAFFLE_H = 25.00 * mm
+BAFFLE_T = .6 * mm
 W = 11 * inch
 H = 8 * inch
 PAGE_MARGIN = 2 * cm
@@ -422,7 +422,7 @@ DY = 17.946 * mm
 
 h_baffle = asym_baffle(BAFFLE_H,
                          BAFFLE_T,
-                         n_notch=15,
+                         n_notch=14,
                          delta=DX,
                          overhangs=(BAFFLE_T/2 + 3 * mm, BAFFLE_T/2 + 3 * mm),
                          overhang_heights=(None, None),
@@ -432,7 +432,7 @@ h_baffle = asym_baffle(BAFFLE_H,
                          )
 v_baffle = asym_baffle(BAFFLE_H,
                          BAFFLE_T,
-                         n_notch=14,
+                         n_notch=13,
                          delta=DY,
                          overhangs=(BAFFLE_T/2 + 3 * mm, BAFFLE_T/2 + 3 * mm),
                          overhang_heights=(None, None),
@@ -518,18 +518,18 @@ if __name__ == '__main__':
 ##    create_backplate()
     create_baffles()
 
-    font = 'Codystar-Regular'
+    font = 'SpecialElite'
     add_font(font, 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts')    
     create_faceplate('english_30_lower %s' % (font), english_30, lower, font, 32,
                      baffles=False,
                      do_corner_holes=False,
-                     reverse=False,
+                     reverse=True,
                      showtime=False,
                      color=None)
     create_faceplate('english_30_UPPER %s' % (font), english_30, upper, font, 32,
                      baffles=False,
                      do_corner_holes=False,
-                     reverse=False,
+                     reverse=True,
                      showtime=False,
                      color=None)
 
