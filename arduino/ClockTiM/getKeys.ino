@@ -33,11 +33,11 @@ struct KeyStates *getKeys(boolean repeat, long repeatAfter) {
 	
 	lastCheck = ms;
 	
-	if(digitalRead(BUTTON_L) == LOW) {
+	if(cs_BUTTON_L.capacitiveSensor(30) >= 100) {
 		pressed |= BUTTON_L_IDX;
 	}
 	
-	if(digitalRead(BUTTON_R) == LOW) {
+	if(cs_BUTTON_R.capacitiveSensor(30) >= 100) {
 		pressed |= BUTTON_R_IDX;
 	}
 	

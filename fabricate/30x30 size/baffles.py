@@ -98,10 +98,10 @@ def asym_baffle(baffle_height,
     p.lineTo(n_notch * delta, 0)
     if jump_strips: 
         for i in range(n_notch):
-            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) + 5 * mm, 0)
-            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) + 5 * mm, 2 * mm)
-            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) - 5 * mm, 2 * mm)
-            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) - 5 * mm, 0)
+            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) + 5.1 * mm, 0)
+            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) + 5.1 * mm, 1 * mm)
+            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) - 5.1 * mm, 1 * mm)
+            p.lineTo( (n_notch * delta) - ((i+1)* delta - (delta / 2)) - 5.1 * mm, 0)
             p.lineTo( (n_notch * delta) - ((i+1) * delta), 0)
     p.lineTo(0, 0)
     return p

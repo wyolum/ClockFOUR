@@ -20,7 +20,7 @@ const int LDRPin = A7;     // select the input pin for the LDR
 const int DisplayPin = 5;       //select the pin the strip is on
 const int numLEDS = 128;        //number of LEDS in the astrip
 const int Button1 = 6;
-const int Button2 = 7;
+const int Button2 = A0;
 
 int j, Brightness = 0;
 int KnobValue, LDRValue = 0;  // variable to store the value coming from the sensor

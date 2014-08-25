@@ -3,6 +3,7 @@
 #include <avr/pgmspace.h>
 #include <Time.h>
 #include "Language_English_TiM.h"
+#include <CapacitiveSensor.h>
 
 /************* Enable/disable debug mode *************/
 #define DEBUG
@@ -15,10 +16,14 @@
 
 
 /************* Pin settings *************/
-#define TiMPIN				A0
-#define BUTTON_L			8
-#define BUTTON_R			12
-#define PIN_LOW				10
+#define TiMPIN				5 //A0
+//#define BUTTON_L			6 //8
+//#define BUTTON_R			A0 //12
+//#define PIN_LOW				10
+
+CapacitiveSensor   cs_BUTTON_L = CapacitiveSensor(A1,6); 
+CapacitiveSensor   cs_BUTTON_R = CapacitiveSensor(A1,A0);
+
 
 /************* Button definitions *************/
 #define BUTTON_L_IDX		1
@@ -54,16 +59,16 @@ extern Settings clockSettings;
 
 void setup() {
 	// Setup the GPIO
-	pinMode(BUTTON_L, INPUT);
-	digitalWrite(BUTTON_L, HIGH);
-	pinMode(BUTTON_R, INPUT);
-	digitalWrite(BUTTON_R, HIGH);
+//	pinMode(BUTTON_L, INPUT);
+//	digitalWrite(BUTTON_L, HIGH);
+//	pinMode(BUTTON_R, INPUT);
+//	digitalWrite(BUTTON_R, HIGH);
 	
-	pinMode(PIN_LOW, OUTPUT);
-	digitalWrite(PIN_LOW, LOW);
+//	pinMode(PIN_LOW, OUTPUT);
+//	digitalWrite(PIN_LOW, HIGH);
 	
 	// Start the serial port
-	Serial.begin(115200);
+	Serial.begin(9600);
 	
 	// Initialise the display
 	disp_init();
@@ -77,7 +82,7 @@ void loop() {
 	static int prev_sec = second();
 	static int prev_min = minute();
 	int sec;
-	int min;
+	int mins;
 	
 	uint16_t ledStates[8] = { 0 };
 	KeyStates *keys = NULL;
@@ -108,12 +113,12 @@ void loop() {
 	}
 	
 	sec = second();
-	min = minute();
+	mins = minute();
 	if(prev_sec != sec) {
-		if(prev_min != min) {
-			int totalMinutes = (hour() * 60) + min;
+		if(prev_min != mins) {
+			int totalMinutes = (hour() * 60) + mins;
 			loadWords(ledStates, totalMinutes / 5);
-			prev_min = min;
+			prev_min = mins;
 		}
 
 		// Make the bottom right LED blink every second
@@ -127,7 +132,7 @@ void loop() {
 
 // This needs to be placed above where ever it's called from as the Arduino compiler seems to have
 // trouble dealing with function pointers as parameters.
-uint8_t changeSetting(uint8_t origValue, uint8_t min, uint8_t max, void (*dispFunc)(uint8_t)) {
+uint8_t changeSetting(uint8_t origValue, uint8_t mins, uint8_t max, void (*dispFunc)(uint8_t)) {
 	KeyStates *keys = NULL;
 	uint8_t value = origValue;
 	
@@ -140,7 +145,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t min, uint8_t max, void (*dispFu
 		} else if(keys->justPressed == BUTTON_R_IDX || keys->repeated == BUTTON_R_IDX) {
 			value++;
 			if(value > max) {
-				value = min;
+				value = mins;
 			}
 			dispFunc(value);
 		}
