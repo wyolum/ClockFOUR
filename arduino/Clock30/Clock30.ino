@@ -79,7 +79,7 @@ void setup() {
     // January 21, 2014 at 3am you would call:
     // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
   
-}
+} 
 
 
 void loop() {
@@ -113,14 +113,15 @@ void loop() {
   PRINT_DEBUG("  | ");
 
 
- 
+  getWords(ledStates, now.hour(), now.minute() );
+   
    
   if (LDRValue < 350) {
-    Brightness = 12;
+    Brightness = 50;
   } else if (LDRValue > 1000) {
       Brightness = 255;
     }  
-    else Brightness = map(LDRValue,350,1000,12,255);
+    else Brightness = map(LDRValue,350,1000,50,255);
   
   strip.setBrightness(Brightness);
   matrix.setBrightness(Brightness);
@@ -152,37 +153,31 @@ void loop() {
   }
   else if (KnobValue < 150){
     //rainbow!
-    rainbowCycle(map(KnobValue, 50, 149, 0, 50));
+//    rainbowCycle(map(KnobValue, 50, 149, 0, 50));
     PRINT_DEBUG("rainbow1 - delay ");
     PRINTLN_DEBUG(map(KnobValue, 50, 149, 0, 50));
+    displayBuffer2(ledStates, map(KnobValue, 50, 149, 0, 50));
+    
+    
   }else if (KnobValue < 300){
     //rainbow!
-    rainbow(map(KnobValue, 150, 299, 0, 50));
+    displayBuffer3(ledStates, map(KnobValue, 150, 299, 0, 50));
     PRINT_DEBUG("rainbow2 - delay ");
     PRINTLN_DEBUG(map(KnobValue, 150, 299, 0, 50));
+    
   }
   else  if (KnobValue <1000){
     //solid colour
     int colour = map(KnobValue, 300, 999, 0, 255);
-    PRINT_DEBUG(colour);
-    for(int i=0; i<matrix.numPixels(); i++) {
-      strip.setPixelColor(i, Wheel(colour));
-
-    }
-    strip.show();
-    PRINTLN_DEBUG(" solid colour");
-  }  
+    PRINT_DEBUG("Show the time, solid colour ");
+    PRINTLN_DEBUG(colour);
+    displayBuffer(ledStates, colour);
+   
+  } 
+  
   else {
-    PRINTLN_DEBUG("Show the time, bitches");
-
-//    for(int i=0; i<strip.numPixels(); i++) {
-//      strip.setPixelColor(i, strip.Color(255, 255, 255));
-//    }
-//    strip.show();
-
-
-      getWords(ledStates, now.hour(), now.minute() );
-      displayBuffer(ledStates);
+    PRINTLN_DEBUG("Show the time, all white");
+      displayBuffer_WHITE(ledStates);
   }
 }
 
@@ -227,15 +222,15 @@ void getWords(uint16_t *ledStates, int hours, int minutes) {
   int tod_idx, hour_idx, min_idx = 0;
 
   min_idx = minutes / 5;
-  PRINT_DEBUG("min_idx ");
-  PRINT_DEBUG(min_idx);
+//  PRINT_DEBUG("min_idx ");
+//  PRINT_DEBUG(min_idx);
   
   if (minutes > 30) {
   hour_idx = hours + 1;
   }
   else hour_idx = hours;
-  PRINT_DEBUG(" hour_idx ");
-  PRINT_DEBUG(hour_idx);
+//  PRINT_DEBUG(" hour_idx ");
+//  PRINT_DEBUG(hour_idx);
   
   if ((hours * 12 + minutes / 5) <= (0 * 12 + 15 / 5))
     tod_idx = 0;
@@ -248,8 +243,8 @@ void getWords(uint16_t *ledStates, int hours, int minutes) {
           else if ((hours * 12 + minutes / 5) <= (23 * 12 + 45 / 5))
             tod_idx = 4;
             else tod_idx = 0;
-  PRINT_DEBUG(" tod_idx");
-  PRINTLN_DEBUG(tod_idx);
+//  PRINT_DEBUG(" tod_idx");
+//  PRINTLN_DEBUG(tod_idx);
 
   for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
     // Get the display bits
@@ -324,15 +319,60 @@ void getWords(uint16_t *ledStates, int hours, int minutes) {
   }
 }
 
-void displayBuffer(uint16_t *ledStates) {
+void displayBuffer(uint16_t *ledStates, int colour) {
   for(int y = 0; y < 8; y++) {
     for(int x = 0; x < 16; x++) {
       if(ledStates[y] & (1 << x)) {
-        strip.setPixelColor(127 - (y * 16 + x), strip.Color(200,   200,   200));
+        strip.setPixelColor(127 - (y * 16 + x), Wheel(colour));
       } else {
         strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
       }
     }
   }
   strip.show();
+}
+
+void displayBuffer_WHITE(uint16_t *ledStates) {
+  for(int y = 0; y < 8; y++) {
+    for(int x = 0; x < 16; x++) {
+      if(ledStates[y] & (1 << x)) {
+        strip.setPixelColor(127 - (y * 16 + x), strip.Color(235,   255,   255));
+      } else {
+        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+      }
+    }
+  }
+  strip.show();
+}
+
+void displayBuffer2(uint16_t *ledStates, int wait) {
+  j++;
+  if (j > 255) j=0;
+  for(uint16_t y = 0; y < 8; y++) {
+    for(uint16_t x = 0; x < 16; x++) {
+      if(ledStates[y] & (1 << x)) {
+        strip.setPixelColor((127 - (y * 16 + x)), Wheel(j));
+        } else {
+        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+        }     
+    }
+  }
+  strip.show();
+  delay(wait);
+}
+
+void displayBuffer3(uint16_t *ledStates, int wait) {
+  j++;
+  if (j > 255) j=0;
+  for(uint16_t y = 0; y < 8; y++) {
+    for(uint16_t x = 0; x < 16; x++) {
+      if(ledStates[y] & (1 << x)) {
+        strip.setPixelColor(127 - (y * 16 + x), Wheel((127 - (y * 16 + x))* 256 / strip.numPixels() + j & 255));
+        } else {
+        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+        }     
+    }
+  }
+  strip.show();
+  delay(wait);
 }
