@@ -1,8 +1,8 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
-#include <Wire.h>
-#include <RTClib.h>
+#include <Wire.h>           //http://arduino.cc/en/Reference/Wire (included with Arduino IDE)
+#include <DS3231.h>    //http://github.com/JChristensen/DS3232RTC
 #include "LANGUAGE_English_TiM.h"
 
 
@@ -27,7 +27,8 @@ const int numLEDS = 128;        //number of LEDS in the astrip
 int j, Brightness = 0;
 int KnobValue, LDRValue = 0;  // variable to store the value coming from the sensor
 
-RTC_Millis rtc;
+RTClib rtc;
+DS3231 rtc2;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(numLEDS, DisplayPin, NEO_GRB + NEO_KHZ800);
 
@@ -73,17 +74,30 @@ void setup() {
   
   Wire.begin();
   
-    rtc.begin(DateTime(F(__DATE__), F(__TIME__)));  // Set the RTC to the date and time code was compiled
+  rtc2.setHour(12);
+  rtc2.setMinute(15);
+//    rtc2.set(DateTime(F(__DATE__), F(__TIME__)));  // Set the RTC to the date and time code was compiled
 
     // To set the RTC with an explicit date & time, for example to set
     // January 21, 2014 at 3am you would call:
-    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+//     rtc.adjust(DateTime(2014, 1, 21, 12, 14, 45));
   
 } 
 
 
 void loop() {
     uint16_t ledStates[8] = { 0 };
+  
+  // Get the temperature from the RTC
+    int t = rtc2.getTemperature();
+    float celsius = t / 4.0;
+    float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
+  
+    PRINT_DEBUG("Temp ");
+    PRINT_DEBUG(celsius);
+    PRINT_DEBUG("deg C, ");
+    PRINT_DEBUG(fahrenheit);
+    PRINT_DEBUG(" deg F | ");
   
   // Show the time from the RTC
     DateTime now = rtc.now();
@@ -146,10 +160,6 @@ void loop() {
 
 
 
-//    for(int i=0; i<matrix.numPixels(); i++) {
-//      strip.setPixelColor(i, strip.Color(0, 0, 0));
-//    }
-//    strip.show();
   }
   else if (KnobValue < 150){
     //rainbow!
@@ -232,15 +242,15 @@ void getWords(uint16_t *ledStates, int hours, int minutes) {
 //  PRINT_DEBUG(" hour_idx ");
 //  PRINT_DEBUG(hour_idx);
   
-  if ((hours * 12 + minutes / 5) <= (0 * 12 + 15 / 5))
+  if ((hours * 12 + minutes / 5) < (0 * 12 + 15 / 5))
     tod_idx = 0;
-    else if ((hours * 12 + minutes / 5) <= (11 * 12 + 45 / 5))
+    else if ((hours * 12 + minutes / 5) < (11 * 12 + 45 / 5))
       tod_idx = 1;
-      else if ((hours * 12 + minutes / 5) <= (12 * 12 + 15 / 5))
+      else if ((hours * 12 + minutes / 5) < (12 * 12 + 15 / 5))
         tod_idx = 2;
-        else if ((hours * 12 + minutes / 5) <= (18 * 12 + 0 / 5))
+        else if ((hours * 12 + minutes / 5) < (18 * 12 + 0 / 5))
           tod_idx = 3;
-          else if ((hours * 12 + minutes / 5) <= (23 * 12 + 45 / 5))
+          else if ((hours * 12 + minutes / 5) < (23 * 12 + 45 / 5))
             tod_idx = 4;
             else tod_idx = 0;
 //  PRINT_DEBUG(" tod_idx");
