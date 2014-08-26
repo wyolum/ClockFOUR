@@ -30,7 +30,7 @@ Adafruit_NeoPixel strip(128, TiMPIN, NEO_GRB + NEO_KHZ800);
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(16, 8, TiMPIN, NEO_MATRIX_BOTTOM + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE, NEO_GRB + NEO_KHZ800);
-int brightness = 50;
+int brightness = 196;
 
 void disp_init() {
 	
@@ -67,13 +67,13 @@ void loadWords(uint16_t *ledStates, int time) {
 			if(disp & 0x01) {
 				// It is! Get the index in WORDS
 				uint8_t wordsOffset = bitIdx + dispIdx * 8;
-				uint8_t x = pgm_read_byte(WORDS_min + 3 * wordsOffset + 1);
-				uint8_t y = pgm_read_byte(WORDS_min + 3 * wordsOffset + 2);
-				uint8_t length = pgm_read_byte(WORDS_min + 3 * wordsOffset + 3);
+				uint8_t x = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 1);
+				uint8_t y = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 2);
+				uint8_t length = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 3);
 
 				// Now draw the line in the buffer
 				for(int pix = x; pix < x + length; pix++) {
-					ledStates[y] |= 1 << (15 - pix);
+					ledStates[7 - y] |= 1 << pix;
 				}
 			}
 			// Select the next bit
@@ -130,20 +130,13 @@ void disp_rainbow(uint16_t *ledStates, uint8_t wait) {
 }
 
 
-inline void matrixPrintFirst(uint8_t value) {
-	matrix.setCursor(2, 1);
-	matrixDisplayVal(value);
-}
-
-
-inline void matrixPrintSecond(uint8_t value) {
-	matrix.setCursor(8, 1);
-	matrixDisplayVal(value);
-}
-
-
 void matrixDisplayVal(uint8_t value) {
 	matrix.fillScreen(0);
+	if(value < 10) {
+		matrix.setCursor(8, 1);
+	} else {
+		matrix.setCursor(2, 1);
+	}
 	matrix.print(value);
 	matrix.show();
 }

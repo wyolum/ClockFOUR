@@ -2,8 +2,8 @@
 
 #include <avr/pgmspace.h>
 #include <Time.h>
+
 #include "Language_English_TiM.h"
-#include <CapacitiveSensor.h>
 
 /************* Enable/disable debug mode *************/
 #define DEBUG
@@ -16,13 +16,10 @@
 
 
 /************* Pin settings *************/
-#define TiMPIN				5 //A0
-//#define BUTTON_L			6 //8
-//#define BUTTON_R			A0 //12
-//#define PIN_LOW				10
-
-CapacitiveSensor   cs_BUTTON_L = CapacitiveSensor(A1,6); 
-CapacitiveSensor   cs_BUTTON_R = CapacitiveSensor(A1,A0);
+#define TiMPIN				5
+#define BUTTON_L			6
+#define BUTTON_R			A0
+#define CAP_SENSE			A1
 
 
 /************* Button definitions *************/
@@ -31,7 +28,7 @@ CapacitiveSensor   cs_BUTTON_R = CapacitiveSensor(A1,A0);
 
 /************* Get keys definitions *************/
 #define LONG_PRESS_MILLIS	2000
-#define REPEAT_DELAY		100
+#define REPEAT_DELAY		200
 
 typedef struct KeyStates{
 	uint8_t justPressed;	// Buttons that have just been pressed
@@ -51,21 +48,10 @@ typedef union Settings {
 };
 extern Settings clockSettings;
 
-// The arduino compiler seems to have trouble getting the prototype from a function that takes
-// a function pointer as input. It is therefore included here.
-//uint8_t changeSetting(uint8_t origValue, uint8_t min, uint8_t max, void (*dispFunc)(uint8_t));
 
 /**** Main Code ****/
 
 void setup() {
-	// Setup the GPIO
-//	pinMode(BUTTON_L, INPUT);
-//	digitalWrite(BUTTON_L, HIGH);
-//	pinMode(BUTTON_R, INPUT);
-//	digitalWrite(BUTTON_R, HIGH);
-	
-//	pinMode(PIN_LOW, OUTPUT);
-//	digitalWrite(PIN_LOW, HIGH);
 	
 	// Start the serial port
 	Serial.begin(9600);
@@ -117,13 +103,13 @@ void loop() {
 	if(prev_sec != sec) {
 		if(prev_min != mins) {
 			int totalMinutes = (hour() * 60) + mins;
-			loadWords(ledStates, totalMinutes / 5);
+			loadWords(ledStates, totalMinutes % 10);
 			prev_min = mins;
 		}
 
 		// Make the bottom right LED blink every second
-		ledStates[7] &= 0xFE;
-		ledStates[7] |= sec & 0x01;
+		ledStates[0] &= 0x7F;
+		ledStates[0] |= sec & 0x80;
 		prev_sec = sec;
 
 		disp_display(ledStates);
@@ -187,23 +173,15 @@ void clockConfig() {
 			{
 				uint8_t hours = hour();
 				PRINT_DEBUG("Now entering hour value");
-				hours = changeSetting(hours, 0, 23, matrixPrintFirst);
+				hours = changeSetting(hours, 0, 23, matrixDisplayVal);
 			}
 			break;
 			
 		case MINUTE10:
 			{
-				uint8_t minute10 = minute() / 10;
+				uint8_t minute10 = minute();
 				PRINT_DEBUG("Now entering minute10 value");
-				minute10 = changeSetting(minute10, 0, 6, matrixPrintFirst);
-			}
-			break;
-			
-		case MINUTE1:
-			{
-				uint8_t minute1 = minute() % 10;
-				PRINT_DEBUG("Now entering minute1 value");
-				minute1 = changeSetting(minute1, 0, 9, matrixPrintSecond);
+				minute10 = changeSetting(minute10, 0, 59, matrixDisplayVal);
 			}
 			break;
 			

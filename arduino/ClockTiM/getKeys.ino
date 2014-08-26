@@ -1,5 +1,10 @@
 
+#include <CapacitiveSensor.h>
+
 #define DEBOUNCE_TIME	10
+
+CapacitiveSensor cs_BUTTON_L = CapacitiveSensor(CAP_SENSE, BUTTON_L);
+CapacitiveSensor cs_BUTTON_R = CapacitiveSensor(CAP_SENSE, BUTTON_R);
 
 struct KeyStates *getKeys() {
 	return getKeys(false, LONG_PRESS_MILLIS);
@@ -33,11 +38,14 @@ struct KeyStates *getKeys(boolean repeat, long repeatAfter) {
 	
 	lastCheck = ms;
 	
-	if(cs_BUTTON_L.capacitiveSensor(30) >= 100) {
+	long left = cs_BUTTON_L.capacitiveSensor(30);
+	long right = cs_BUTTON_R.capacitiveSensor(30);
+	
+	if(left >= 100) {
 		pressed |= BUTTON_L_IDX;
 	}
 	
-	if(cs_BUTTON_R.capacitiveSensor(30) >= 100) {
+	if(right >= 100) {
 		pressed |= BUTTON_R_IDX;
 	}
 	
