@@ -36,7 +36,7 @@ static uint8_t WORDS_min[] PROGMEM = {   // minute words
 static uint8_t DISPLAY_min[] PROGMEM = {
    2, 			 // number of bytes per state
 //
-//       oh-tqatf         tp       xx:MM
+//        oh-tqatf         tp       xx:MM
 	0b10000000, 0b0000000,   // xx:00 - 0
 	0b00000001, 0b0000001,   // xx:05 - 1
 	0b00000010, 0b0000001,   // xx:10 - 2

@@ -1,8 +1,8 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
-#include <Wire.h>           //http://arduino.cc/en/Reference/Wire (included with Arduino IDE)
-#include <DS3231.h>    //http://github.com/JChristensen/DS3232RTC
+#include <Wire.h>      
+#include <DS3231.h>
 #include "LANGUAGE_English_TiM.h"
 
 
@@ -74,6 +74,9 @@ void setup() {
   
   Wire.begin();
   
+  rtc2.setYear(14);
+  rtc2.setMonth(8);
+  rtc2.setDate(26);
   rtc2.setHour(12);
   rtc2.setMinute(15);
 //    rtc2.set(DateTime(F(__DATE__), F(__TIME__)));  // Set the RTC to the date and time code was compiled
@@ -89,15 +92,14 @@ void loop() {
     uint16_t ledStates[8] = { 0 };
   
   // Get the temperature from the RTC
-    int t = rtc2.getTemperature();
-    float celsius = t / 4.0;
+    float celsius = rtc2.getTemperature();
     float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
   
     PRINT_DEBUG("Temp ");
     PRINT_DEBUG(celsius);
     PRINT_DEBUG("deg C, ");
     PRINT_DEBUG(fahrenheit);
-    PRINT_DEBUG(" deg F | ");
+    PRINT_DEBUG("deg F | ");
   
   // Show the time from the RTC
     DateTime now = rtc.now();
@@ -333,9 +335,9 @@ void displayBuffer(uint16_t *ledStates, int colour) {
   for(int y = 0; y < 8; y++) {
     for(int x = 0; x < 16; x++) {
       if(ledStates[y] & (1 << x)) {
-        strip.setPixelColor(127 - (y * 16 + x), Wheel(colour));
+        strip.setPixelColor((strip.numPixels() - 1) - (y * 16 + x), Wheel(colour));
       } else {
-        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+        strip.setPixelColor((strip.numPixels() - 1) - (y * 16 + x), strip.Color(0,   0,   0));
       }
     }
   }
@@ -346,9 +348,9 @@ void displayBuffer_WHITE(uint16_t *ledStates) {
   for(int y = 0; y < 8; y++) {
     for(int x = 0; x < 16; x++) {
       if(ledStates[y] & (1 << x)) {
-        strip.setPixelColor(127 - (y * 16 + x), strip.Color(235,   255,   255));
+        strip.setPixelColor((strip.numPixels() - 1) - (y * 16 + x), strip.Color(235,   255,   255));
       } else {
-        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+        strip.setPixelColor((strip.numPixels() - 1) - (y * 16 + x), strip.Color(0,   0,   0));
       }
     }
   }
@@ -361,9 +363,9 @@ void displayBuffer2(uint16_t *ledStates, int wait) {
   for(uint16_t y = 0; y < 8; y++) {
     for(uint16_t x = 0; x < 16; x++) {
       if(ledStates[y] & (1 << x)) {
-        strip.setPixelColor((127 - (y * 16 + x)), Wheel(j));
+        strip.setPixelColor(((strip.numPixels() - 1) - (y * 16 + x)), Wheel(j));
         } else {
-        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+        strip.setPixelColor((strip.numPixels() - 1) - (y * 16 + x), strip.Color(0,   0,   0));
         }     
     }
   }
@@ -377,9 +379,9 @@ void displayBuffer3(uint16_t *ledStates, int wait) {
   for(uint16_t y = 0; y < 8; y++) {
     for(uint16_t x = 0; x < 16; x++) {
       if(ledStates[y] & (1 << x)) {
-        strip.setPixelColor(127 - (y * 16 + x), Wheel((127 - (y * 16 + x))* 256 / strip.numPixels() + j & 255));
+        strip.setPixelColor((strip.numPixels() - 1) - (y * 16 + x), Wheel(((strip.numPixels() - 1) - (y * 16 + x))* 256 / strip.numPixels() + j & 255));
         } else {
-        strip.setPixelColor(127 - (y * 16 + x), strip.Color(0,   0,   0));
+        strip.setPixelColor((strip.numPixels() - 1) - (y * 16 + x), strip.Color(0,   0,   0));
         }     
     }
   }
