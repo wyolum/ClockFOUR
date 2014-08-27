@@ -48,15 +48,11 @@ int LDRValue = 0;        // variable to store the value coming from the LDR sens
 
 
 void display_init() {
+  matrix.begin();				// initialize the LED strip
+  strip.begin();
 
-	matrix.begin();				// initialize the LED strip
-	strip.begin();
-
-	strip.show();				// Initialize all pixels to 'off'
-        matrix.show();
-        
-	strip.setBrightness(brightness);	// Set initial brightness
-	matrix.setBrightness(brightness);
+  strip.show();				// Initialize all pixels to 'off'
+  matrix.show();
 }
 
 
