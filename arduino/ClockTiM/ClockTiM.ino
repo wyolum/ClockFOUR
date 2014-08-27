@@ -145,15 +145,14 @@ uint8_t changeSetting(uint8_t origValue, uint8_t mins, uint8_t max, void (*dispF
 typedef enum ConfigMode {
 	GPS = 0,
 	HOUR,
-	MINUTE10,
-	MINUTE1,
+	MINUTE,
 	TEMP_CF,
 	LAST_MODE
 };
 
 // A bit of a hack - if we skip setting the time (because it is set through GPS)
 // we jump to skip time. Not very elegant but will do for now
-#define SKIP_TIME	MINUTE1
+#define SKIP_TIME	MINUTE
 
 void clockConfig() {
 	// Loop through all the configuration modes
@@ -177,11 +176,11 @@ void clockConfig() {
 			}
 			break;
 			
-		case MINUTE10:
+		case MINUTE:
 			{
-				uint8_t minute10 = minute();
-				PRINT_DEBUG("Now entering minute10 value");
-				minute10 = changeSetting(minute10, 0, 59, matrixDisplayVal);
+				uint8_t minute60 = minute();
+				PRINT_DEBUG("Now entering minute value");
+				minute60 = changeSetting(minute60, 0, 59, matrixDisplayVal);
 			}
 			break;
 			
