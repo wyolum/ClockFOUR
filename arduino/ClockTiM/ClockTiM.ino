@@ -1,9 +1,6 @@
 
-
 #include <avr/pgmspace.h>
 #include <Time.h>
-
-#include "Language_English_TiM.h"
 
 /************* Enable/disable debug mode *************/
 #define DEBUG
@@ -30,7 +27,7 @@
 #define LONG_PRESS_MILLIS	2000
 #define REPEAT_DELAY		200
 
-typedef struct KeyStates{
+typedef struct KeyStates {
 	uint8_t justPressed;	// Buttons that have just been pressed
 	uint8_t longPressed;	// Buttons that have just been pressed for a long time
 	uint8_t repeated;	// Buttons that are automatically repeating
@@ -65,12 +62,6 @@ void setup() {
 
 
 void loop() {
-	static int prev_sec = second() - 1;
-	static int prev_min = minute() - 1;
-	int sec;
-	int mins;
-	
-	static uint16_t ledStates[8] = { 0 };
 	KeyStates *keys = NULL;
 	
 	keys = getKeys();
@@ -83,11 +74,12 @@ void loop() {
 		
 	case BUTTON_R_IDX:
 		// A long press on the right button will change colour
+		
+		// Perhaps enter colour settings mode?
+		
+		// This will have to do for now
 		clockSettings.colour++;
-		clockSettings.colour &= 0x03;
 		saveSettings();
-		PRINT_DEBUG("New colour: ");
-		PRINT_DEBUG(clockSettings.colour);
 		break;
 		
 	case BUTTON_L_IDX | BUTTON_R_IDX:
@@ -98,22 +90,16 @@ void loop() {
 		break;
 	}
 	
-	sec = second();
-	mins = minute();
-	if(prev_sec != sec) {
-		if(prev_min != mins) {
-			int totalMinutes = (hour() * 60) + mins;
-			loadWords(ledStates, totalMinutes % 10);
-			prev_min = mins;
-		}
+//	uint16_t totalMinutes = (hour() * 60) + minute();
 
-		// Make the bottom right LED blink every second
-		ledStates[0] &= 0x7F;
-		ledStates[0] |= sec & 0x80;
-		prev_sec = sec;
-
-		disp_display(ledStates);
+	static uint16_t totalMinutes = 1400;
+	showTime(totalMinutes++);
+	
+	if(totalMinutes == 1440) {
+		totalMinutes = 0;
 	}
+	
+	delay(500);
 }
 
 

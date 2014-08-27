@@ -54,12 +54,12 @@ inline void setBrightness(int value) {
 }
 
 
-void loadWords(uint16_t *ledStates, int time) {
+void loadWords(uint8_t *display, uint8_t *words, uint16_t ledStates[8], int wordIdx) {
 	// Loop through every line
 	for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
 
 		// Get the display bits
-		uint8_t disp = pgm_read_byte(DISPLAY_hour + time * 2 + 1 + dispIdx);
+		uint8_t disp = pgm_read_byte(display + wordIdx * 2 + 1 + dispIdx);
 
 		// Loop through every bit
 		for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
@@ -67,9 +67,9 @@ void loadWords(uint16_t *ledStates, int time) {
 			if(disp & 0x01) {
 				// It is! Get the index in WORDS
 				uint8_t wordsOffset = bitIdx + dispIdx * 8;
-				uint8_t x = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 1);
-				uint8_t y = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 2);
-				uint8_t length = pgm_read_byte(WORDS_hour + 3 * wordsOffset + 3);
+				uint8_t x = pgm_read_byte(words + 3 * wordsOffset + 1);
+				uint8_t y = pgm_read_byte(words + 3 * wordsOffset + 2);
+				uint8_t length = pgm_read_byte(words + 3 * wordsOffset + 3);
 
 				// Now draw the line in the buffer
 				for(int pix = x; pix < x + length; pix++) {
@@ -83,7 +83,7 @@ void loadWords(uint16_t *ledStates, int time) {
 }
 
 
-void disp_display(uint16_t *ledStates) {
+void disp_display(uint16_t ledStates[8]) {
 	for(int y = 0; y < 8; y++) {
 		for(int x = 0; x < 16; x++) {
 			if(ledStates[y] & (1 << x)) {
@@ -108,24 +108,6 @@ uint32_t disp_wheel(byte WheelPos) {
 	} else {
 		WheelPos -= 170;
 		return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
-	}
-}
-
-
-void disp_rainbow(uint16_t *ledStates, uint8_t wait) {
-	for(int colour = 0; colour < 256; colour++) {
-		for(int y = 0; y < 8; y++) {
-			for(int x = 0; x < 16; x++) {
-				int ledIdx = y * 16 + x;
-				if(ledStates[y] & (1 << x)) {
-					strip.setPixelColor(ledIdx, disp_wheel((ledIdx + colour) & 255));
-				} else {
-					strip.setPixelColor(ledIdx, strip.Color(0,   0,   0));
-				}
-			}
-		}
-		strip.show();
-		delay(wait);
 	}
 }
 

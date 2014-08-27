@@ -10,6 +10,10 @@ struct KeyStates *getKeys() {
 	return getKeys(false, LONG_PRESS_MILLIS);
 }
 
+struct KeyStates *getRepeatKeys(long repeatAfter) {
+	return getKeys(true, repeatAfter);
+}
+
 // Returns a byte with the idx of any newly pressed keys set to '1'. Also includes debouncing.
 struct KeyStates *getKeys(boolean repeat, long repeatAfter) {
 	static uint8_t debounce[4] = { 0 };			// Stores the queue of the push button states
