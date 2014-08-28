@@ -1,0 +1,49 @@
+Power-up
+-
+Display code version "1.0"
+L | R held down <go to Self test>
+- or -
+wait 1 second then <go to Time mode>
+
+_________________
+Self test mode
+_________________
+Display "Test"
+- cycle R, G, B pixels (mostly to check for bad pixels)
+
+L | R - <go to Time mode>
+
+
+_________________
+Time mode
+_________________
+L - Seconds display 
+L - Temperature display
+L - back to Time mode
+
+R - next colour/speed
+R held - next colour group
+
+L&R held - settings mode
+L - enter
+R - selection ++
+
+_________________
+Settings mode
+_________________
+Display "Set"
+Display "Hour"
+Display current hour from RTC
+R - Hour ++ (0 - 23, repeating)
+<hour is selected>
+L - 
+Display "Min"
+Display current minute from RTC
+R - Minute ++ (0-59, repeating)
+L - 
+Display "T units"
+Display current setting as "oC or oF"
+R - C/F toggle
+L - 
+Display "OK"
+<Return to Time mode>
