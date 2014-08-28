@@ -87,7 +87,7 @@ void loop() {
 	
 	// As buttons pressed are notified in a queue, detecting whether two
 	// buttons are pressed needs to be done separately
-	if(areBothLongPressed()) {
+	if(bothLongPressed()) {
 		clockConfig();
 	}
 	

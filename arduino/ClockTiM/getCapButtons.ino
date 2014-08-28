@@ -5,8 +5,8 @@
 // Queue definitions
 #define QUEUE_SIZE		8
 uint8_t queue[QUEUE_SIZE] = {0};
-uint8_t front = -1;
-uint8_t rear = -1;
+int8_t front = -1;
+int8_t rear = -1;
 
 // Initialse all the button related stuff
 CapacitiveSensor cs_BUTTON_L = CapacitiveSensor(CAP_SENSE, BUTTON_L);
@@ -57,7 +57,7 @@ void buttonRRepeat() {
 }
 
 // Returns true if both buttons have been pressed for a long time
-boolean areBothLongPressed() {
+boolean bothLongPressed() {
 	return oneButton_L.isLongPressed() && oneButton_R.isLongPressed();
 }
 
@@ -76,21 +76,26 @@ void addToQeue(uint8_t value) {
 	
 	noInterrupts();
 	
+	// If front is just behind rear we have a full queue
 	if((front == 0 && rear == QUEUE_SIZE - 1) || front == rear + 1) {
 		// Queue is full
 		return;
 	}
 	
 	if(front == -1) {
+		// The queue is empty, start using real indices
 		front = rear = 0;
 	} else {
+		// Update the rear index to point to the next empty location
 		if(rear == QUEUE_SIZE - 1) {
+			// We've gone full loop
 			rear = 0;
 		} else {
 			rear++;
 		}
 	}
 	
+	// Store the value on the queue
 	queue[rear] = value;
 	
 	interrupts();
@@ -102,7 +107,8 @@ uint8_t popEvent() {
 	
 	noInterrupts();
 	
-	if(front==-1)
+	// Check if the queue is empty
+	if(front == -1)
 	{
 		// Queue underflow
 		return NO_EVENT;
@@ -111,9 +117,12 @@ uint8_t popEvent() {
 	retVal = queue[front];
 	
 	if(front == rear) {
+		// The last item has been popped. Indicate that the queue is empty.
 		front = rear = -1;
 	} else {
+		// Update the front index to point to the next value in the queue
 		if(front == QUEUE_SIZE - 1) {
+			// We've gone full loop
 			front = 0;
 		} else {
 			front++;
@@ -126,7 +135,9 @@ uint8_t popEvent() {
 }
 
 // Deletes all contents of the queue
-void clearQueue() {
+inline void clearQueue() {
+	noInterrupts();
 	front = -1;
 	rear = -1;
+	interrupts();
 }
