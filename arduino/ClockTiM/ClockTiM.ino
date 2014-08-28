@@ -115,6 +115,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t mins, uint8_t max, void (*dispF
 		switch(popEvent()) {
 			
 		case BL_CLICK:
+		case BL_PRESS:
 			return value;
 			
 		case BR_CLICK:
