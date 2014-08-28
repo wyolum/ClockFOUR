@@ -23,6 +23,63 @@ L - back to Time mode
 
 R - next colour/speed
 R held - next colour group
+Display <Group><Colour/Speed>, e.g. "A0" for White, "A2" for Red, "B1" for solid colour fade w/ 500ms delay
+(Remember last colour/speed shown when switching groups)
+
+Group A - Solid colours
+	0-White
+	1-Pink
+	2-Red
+	3-Orange
+	4-Yellow
+	5-Green
+	6-Blue
+	7-Purple
+	<repeat>
+
+
+Group B - Solid colours
+	0-White
+	1-Hot pink
+	2-Blood orange
+	3-Lemon lime
+	4-Neon green
+	5-Teal
+	6-Turquois
+	7-Light purple
+	<repeat>
+
+Group C - Solid colour fade
+	Speed 1 - delay 500
+	Speed 2 - delay 200
+	Speed 3 - delay 100
+	Speed 4 - delay 50
+	Speed 5 - delay 10
+	<repeat>
+
+Group D	- Rainbow colour fade
+	Speed 1 - delay 500
+	Speed 2 - delay 200
+	Speed 3 - delay 100
+	Speed 4 - delay 50
+	Speed 5 - delay 10
+	<repeat>
+
+Group E - Randomly coloured letters
+	Speed 0 - colours only change when words change
+	Speed 1 - colours change once per minute
+	Speed 2 - colours change every 15 seconds
+	Speed 3 - colours change every 5 seconds
+	Speed 4 - colours change every second
+	Speed 5 - delay 100ms
+	Speed 6 - delay 10ms
+	<repeat>
+
+Group F	- Simulated fire
+
+
+<back to Group A>
+
 
 L&R held - settings mode
 L - enter
