@@ -14,26 +14,12 @@ const TimeFrame timeOfDay[5] = {
 	{ 1020, 1415 },		// Evening, 17:00 until 23:30
 };
 
-const TimeFrame hoursOff[] = {
-	
-};
-
-const TimeFrame minsOff[] = {
-	
-};
-
-void showTime(uint16_t mins) {
-	
-	uint16_t ledStates[8] = { 0 };
+void loadTime(uint16_t ledStates[8], uint16_t mins) {
 	
 	// Select the minutes and the hour
 	uint8_t minsDisp = mins % 60;
 	uint8_t hours = mins / 60;
-	
-	boolean pm;
-	
-	Serial.print(mins);
-	Serial.println(" mins");
+	uint8_t hoursDisp;
 	
 	// First check whether we are doing 'to' the hour, in which case we need to increment the hour
 	if(minsDisp >= 35) {
@@ -45,7 +31,7 @@ void showTime(uint16_t mins) {
 		}
 	}
 
-	uint8_t hoursDisp = hours;
+	hoursDisp = hours;
 	
 	// The 24 hour period is split into two 12 hour periods
 	if(hoursDisp >= 12) {
@@ -79,6 +65,4 @@ void showTime(uint16_t mins) {
 			break;
 		}
 	}
-	
-	disp_display(ledStates);
 }

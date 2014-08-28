@@ -11,27 +11,12 @@
 #define PRINT_DEBUG(x)
 #endif
 
-
 /************* Pin settings *************/
 #define TiMPIN				5
 #define BUTTON_L			6
 #define BUTTON_R			A0
 #define CAP_SENSE			A1
 
-
-/************* Button definitions *************/
-#define BUTTON_L_IDX		1
-#define BUTTON_R_IDX		2
-
-/************* Get keys definitions *************/
-#define LONG_PRESS_MILLIS	2000
-#define REPEAT_DELAY		200
-
-typedef struct KeyStates {
-	uint8_t justPressed;	// Buttons that have just been pressed
-	uint8_t longPressed;	// Buttons that have just been pressed for a long time
-	uint8_t repeated;	// Buttons that are automatically repeating
-};
 
 /************* Settings struct definition *************/
 typedef union Settings {
@@ -46,10 +31,23 @@ typedef union Settings {
 extern Settings clockSettings;
 
 
+/************* Types of button inputs *************/
+typedef enum EventTypes {
+	NO_EVENT = 0,
+	BL_CLICK,
+	BL_PRESS,
+	BL_REPEAT,
+	BR_CLICK,
+	BR_PRESS,
+	BR_REPEAT
+};
+
+#define REPEAT_DELAY		200
+
+
 /**** Main Code ****/
 
 void setup() {
-	
 	// Start the serial port
 	Serial.begin(9600);
 	
@@ -58,23 +56,24 @@ void setup() {
 	
 	// Load the settings from the EEPROM
 	loadSettings();
+	
+	// Initialise the buttons
+	buttonsInit();
 }
 
 
 void loop() {
-	KeyStates *keys = NULL;
-	
-	keys = getKeys();
-	
-	// Depending on the keys just pressed, take the necessary action
-	switch(keys->longPressed) {
-	case BUTTON_L_IDX:
-		PRINT_DEBUG("Pressed left a long time");
+	uint16_t ledStates[8] = { 0 };
+		
+	buttonsTick();
+		
+	// Depending on the buttons pressed, take the necessary action
+	switch(popEvent()) {
+	case BL_CLICK:
+		PRINT_DEBUG("Click left");
 		break;
 		
-	case BUTTON_R_IDX:
-		// A long press on the right button will change colour
-		
+	case BR_CLICK:		
 		// Perhaps enter colour settings mode?
 		
 		// This will have to do for now
@@ -82,45 +81,60 @@ void loop() {
 		saveSettings();
 		break;
 		
-	case BUTTON_L_IDX | BUTTON_R_IDX:
-		clockConfig();
-		break;
-		
 	default:
 		break;
 	}
 	
-//	uint16_t totalMinutes = (hour() * 60) + minute();
-
-	static uint16_t totalMinutes = 1400;
-	showTime(totalMinutes++);
-	
-	if(totalMinutes == 1440) {
-		totalMinutes = 0;
+	// As buttons pressed are notified in a queue, detecting whether two
+	// buttons are pressed needs to be done separately
+	if(areBothLongPressed()) {
+		clockConfig();
 	}
 	
-	delay(500);
+	// Show the time!
+	uint16_t totalMinutes = (hour() * 60) + minute();
+	loadTime(ledStates, totalMinutes);
+	disp_display(ledStates);
 }
 
 
 // This needs to be placed above where ever it's called from as the Arduino compiler seems to have
 // trouble dealing with function pointers as parameters.
 uint8_t changeSetting(uint8_t origValue, uint8_t mins, uint8_t max, void (*dispFunc)(uint8_t)) {
-	KeyStates *keys = NULL;
 	uint8_t value = origValue;
+	static long lastRepeat = 0;
 	
 	dispFunc(value);
 	
+	// Wait for the user to remove their grubby fingers before continuing.
+	waitWhilePressed();
+	
 	while(true) {
-		keys = getKeys(true, 1000);
-		if(keys->justPressed == BUTTON_L_IDX) {
-			break;
-		} else if(keys->justPressed == BUTTON_R_IDX || keys->repeated == BUTTON_R_IDX) {
+		buttonsTick();
+		
+		switch(popEvent()) {
+			
+		case BL_CLICK:
+			return value;
+			
+		case BR_CLICK:
+		case BR_PRESS:
+		case BR_REPEAT:
+			if(millis() - lastRepeat < REPEAT_DELAY) {
+				break;
+			}
+			
+			lastRepeat = millis();
+		
 			value++;
 			if(value > max) {
 				value = mins;
 			}
 			dispFunc(value);
+			break;
+			
+		default:
+			break;
 		}
 	}
 	return value;
@@ -146,7 +160,7 @@ void clockConfig() {
 		switch(mode) {
 		case GPS:
 			{
-				PRINT_DEBUG("Now entering GPS value");
+				PRINT_DEBUG("Now entering GPS value");				
 				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, exampleDisplayFunction);
 				if(clockSettings.useGPS) {
 					mode = SKIP_TIME;

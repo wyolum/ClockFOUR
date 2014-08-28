@@ -1,5 +1,5 @@
 // -----
-// OneButton.h - Library for detecting button clicks, doubleclicks and long press pattern on a single button.
+// OneCapSensor.h - Library for detecting button clicks, doubleclicks and long press pattern on a single button.
 // This class is implemented for use with the Arduino environment.
 // Copyright (c) by Matthias Hertel, http://www.mathertel.de
 // This work is licensed under a BSD style license. See http://www.mathertel.de/License.aspx
@@ -11,10 +11,11 @@
 // 23.03.2014 Enhanced long press functionalities by adding longPressStart and longPressStop callbacks
 // -----
 
-#ifndef OneButton_h
-#define OneButton_h
+#ifndef OneCapSensor_h
+#define OneCapSensor_h
 
 #include "Arduino.h"
+#include <CapacitiveSensor.h>
 
 // ----- Callback function types -----
 
@@ -23,11 +24,11 @@ extern "C" {
 }
 
 
-class OneButton
+class OneCapSensor
 {
 public:
   // ----- Constructor -----
-  OneButton(int pin, int active);
+  OneCapSensor(CapacitiveSensor *capButton);
   
   // ----- Set runtime parameters -----
 
@@ -60,7 +61,8 @@ private:
   int _buttonPressed;
 
   bool _isLongPressed;
-
+  CapacitiveSensor *_capButton;
+  
   // These variables will hold functions acting as event source.
   callbackFunction _clickFunc;
   callbackFunction _doubleClickFunc;
