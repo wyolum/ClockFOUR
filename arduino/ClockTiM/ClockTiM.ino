@@ -44,6 +44,13 @@ typedef enum EventTypes {
 
 #define REPEAT_DELAY		200
 
+// Temperature unit constants
+const uint8_t DEG_C = 0;
+const uint8_t DEG_F = 1;
+
+const uint8_t last_mode = 0;
+const uint8_t current_mode = 0;
+long time_in_mode = 0;
 
 /**** Main Code ****/
 
@@ -66,37 +73,72 @@ void loop() {
 	uint16_t ledStates[8] = { 0 };
 		
 	buttonsTick();
-		
-	// Depending on the buttons pressed, take the necessary action
-	switch(popEvent()) {
-	case BL_CLICK:
-		PRINT_DEBUG("Click left");
-		break;
-		
-	case BR_CLICK:		
-		// Perhaps enter colour settings mode?
-		
-		// This will have to do for now
-		clockSettings.colour++;
-		saveSettings();
-		break;
-		
-	default:
-		break;
-	}
 	
-	// As buttons pressed are notified in a queue, detecting whether two
-	// buttons are pressed needs to be done separately
-	if(bothLongPressed()) {
-		clockConfig();
-	}
+        switch(current_mode); {
+        case 0:        // start-up mode
+                start_loop();
+                break;
+                
+        case 1:        // Normal time mode
+                Normal_loop();
+                switch(popEvent()) {
+                case BL_CLICK:
+                        last_mode = 1;
+                        current_mode = 3;
+                        break;
+                        
+                case BR_Click:
+                        clockSettings.colour++;
+                        saveSettings();
+                        break;
+                        
+                case BR_PRESS:
+                        last_mode = 1;
+                        current_mode = 5;
+                        break;
+                        
+                default:
+                        break;
+                }
+                if(bothLongPressed()) {
+		last_mode = 1;
+                current_mode = 2;
+                }
+
+        case 2:        // Time set mode
+                clockConfig();  // returns to mode 1 when completed
+                break;
+
+        case 3:        // Seconds mode
+                // seconds mode procedure here
+                break;
+
+        case 4:        // Temperature mode
+                // temperature mode procedure here
+                break;
+
+        case 5:        // Colour select mode
+                // colour select mode procedure here
+                break;
+
+        default:
+                break;
+        }       
 	
-	// Show the time!
-	uint16_t totalMinutes = (hour() * 60) + minute();
-	loadTime(ledStates, totalMinutes);
-	disp_display(ledStates);
 }
 
+
+void start_loop() {
+  // display the start logo
+  // if button pressed, go to self test mode
+}
+
+void normal_loop() {
+  // Show the time!
+  uint16_t totalMinutes = (hour() * 60) + minute();
+  loadTime(ledStates, totalMinutes);
+  disp_display(ledStates);
+}
 
 // This needs to be placed above where ever it's called from as the Arduino compiler seems to have
 // trouble dealing with function pointers as parameters.
@@ -202,6 +244,7 @@ void clockConfig() {
 	// TODO: load the new time into the RTC
 	
 	saveSettings();
+        current_mode = 1;
 	PRINT_DEBUG("Exiting configuration mode");
 }
 

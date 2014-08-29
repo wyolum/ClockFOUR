@@ -84,7 +84,7 @@ void getWords(uint16_t *ledStates, int hours, int minutes) {
 //  PRINT_DEBUG("min_idx ");
 //  PRINT_DEBUG(min_idx);
   
-  if (minutes > 30) {
+  if (minutes > 35) {
   hour_idx = hours + 1;
   }
   else hour_idx = hours;
@@ -105,7 +105,7 @@ void getWords(uint16_t *ledStates, int hours, int minutes) {
 //  PRINT_DEBUG(" tod_idx");
 //  PRINTLN_DEBUG(tod_idx);
 
-  uint8_t tod_bytes = pgm_read_byte(DISPLAY_tod);
+  uint8_t tod_bytes = 2; //pgm_read_byte(DISPLAY_tod);
   
   for(int dispIdx = 0; dispIdx < tod_bytes; dispIdx++) {
     // Get the display bits

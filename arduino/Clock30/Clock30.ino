@@ -77,8 +77,8 @@ void setup() {
   rtc2.setYear(14);
   rtc2.setMonth(8);
   rtc2.setDate(26);
-  rtc2.setHour(19);
-  rtc2.setMinute(15);
+  rtc2.setHour(10);
+  rtc2.setMinute(30);
 //    rtc2.set(DateTime(F(__DATE__), F(__TIME__)));  // Set the RTC to the date and time code was compiled
   
 } 

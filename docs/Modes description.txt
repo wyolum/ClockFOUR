@@ -17,12 +17,31 @@ L | R - <go to Time mode>
 _________________
 Time mode
 _________________
-L - Seconds display 
-L - Temperature display
-L - back to Time mode
+L - go to Seconds mode
+R - Colour++
+R held - go to Colour/Group select mode
 
-R - next colour/speed
-R held - next colour group
+L & R held - go to Time Set mode
+
+_________________
+Seconds mode
+_________________
+L - go to Temperature mode
+
+
+_________________
+Temperature mode
+_________________
+L - go to Time mode
+L held - toggle between deg F and deg C
+
+_________________
+Colour/Group select mode
+_________________
+R - colour ++
+R held - group ++
+no button for 1 sec - go to Time mode
+
 Display <Group><Colour/Speed>, e.g. "A0" for White, "A2" for Red, "B1" for solid colour fade w/ 500ms delay
 (Remember last colour/speed shown when switching groups)
 
@@ -81,13 +100,12 @@ Group F	- Simulated fire
 <back to Group A>
 
 
-L&R held - settings mode
+_________________
+Time set mode
+_________________
 L - enter
 R - selection ++
 
-_________________
-Settings mode
-_________________
 Display "Set"
 Display "Hour"
 Display current hour from RTC
@@ -98,9 +116,5 @@ Display "Min"
 Display current minute from RTC
 R - Minute ++ (0-59, repeating)
 L - 
-Display "T units"
-Display current setting as "oC or oF"
-R - C/F toggle
-L - 
-Display "OK"
+Display "OK" for 1 second
 <Return to Time mode>

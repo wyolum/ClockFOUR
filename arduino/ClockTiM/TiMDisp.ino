@@ -46,6 +46,7 @@ void disp_init() {
 	matrix.setBrightness(brightness);
 	
 	strip.show();				// Initialize all pixels to 'off'
+        matrix.show()
 }
 
 
