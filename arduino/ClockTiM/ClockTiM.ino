@@ -7,8 +7,10 @@
 
 #ifdef DEBUG
 #define PRINT_DEBUG(x)		Serial.println(x)
+#define PRINTLN_DEBUG(x)        Serial.println(x)
 #else
 #define PRINT_DEBUG(x)
+#define PRINTLN_DEBUG(x)
 #endif
 
 /************* Pin settings *************/
@@ -48,9 +50,20 @@ typedef enum EventTypes {
 const uint8_t DEG_C = 0;
 const uint8_t DEG_F = 1;
 
-const uint8_t last_mode = 0;
-const uint8_t current_mode = 0;
+uint8_t last_mode = 0;
+
 long time_in_mode = 0;
+
+typedef enum ClockModes {
+	NORMAL_MODE = 0,
+	CONFIG_MODE,
+	SECONDS_MODE,
+	TEMP_MODE,
+	COLOUR_MODE,
+	MODE_COUNT			// Mode count, being the last item in the enum, will always hold the number of nodes
+};
+
+ClockModes current_mode = NORMAL_MODE;
 
 /**** Main Code ****/
 
@@ -66,75 +79,85 @@ void setup() {
 	
 	// Initialise the buttons
 	buttonsInit();
+
+        start_loop();
+        
 }
 
 
 void loop() {
-	uint16_t ledStates[8] = { 0 };
-		
 	buttonsTick();
 	
-        switch(current_mode); {
-        case 0:        // start-up mode
-                start_loop();
-                break;
-                
-        case 1:        // Normal time mode
-                Normal_loop();
+        switch(current_mode) {
+        case NORMAL_MODE:        // Normal time mode
+                normal_loop();
                 switch(popEvent()) {
                 case BL_CLICK:
-                        last_mode = 1;
-                        current_mode = 3;
+                        last_mode = NORMAL_MODE;
+                        current_mode = SECONDS_MODE;
                         break;
                         
-                case BR_Click:
+                case BR_CLICK:
                         clockSettings.colour++;
                         saveSettings();
                         break;
                         
                 case BR_PRESS:
-                        last_mode = 1;
-                        current_mode = 5;
+                        last_mode = NORMAL_MODE;
+                        current_mode = COLOUR_MODE;
                         break;
                         
                 default:
                         break;
                 }
                 if(bothLongPressed()) {
-		last_mode = 1;
-                current_mode = 2;
+		last_mode = NORMAL_MODE;
+                current_mode = CONFIG_MODE;
                 }
 
-        case 2:        // Time set mode
+        case CONFIG_MODE:        // Time set mode
                 clockConfig();  // returns to mode 1 when completed
                 break;
 
-        case 3:        // Seconds mode
+        case SECONDS_MODE:        // Seconds mode
                 // seconds mode procedure here
                 break;
 
-        case 4:        // Temperature mode
+        case TEMP_MODE:        // Temperature mode
                 // temperature mode procedure here
                 break;
 
-        case 5:        // Colour select mode
+        case COLOUR_MODE:        // Colour select mode
                 // colour select mode procedure here
                 break;
 
         default:
                 break;
-        }       
-	
+        }       	
 }
 
 
 void start_loop() {
+PRINT_DEBUG("Entering start_loop");
+  delay(1000);
+  buttonsTick();
+
   // display the start logo
-  // if button pressed, go to self test mode
+
+    int key = popEvent();
+  if ((key = BL_CLICK) | (key = BR_CLICK)) {
+    self_test();
+  } else current_mode = NORMAL_MODE;
+}
+
+void self_test() {
+  PRINTLN_DEBUG("We are now in Self Test mode!");
 }
 
 void normal_loop() {
   // Show the time!
+  PRINT_DEBUG("Normal Loop");
+  uint16_t ledStates[8] = { 0 };
   uint16_t totalMinutes = (hour() * 60) + minute();
   loadTime(ledStates, totalMinutes);
   disp_display(ledStates);
@@ -244,7 +267,7 @@ void clockConfig() {
 	// TODO: load the new time into the RTC
 	
 	saveSettings();
-        current_mode = 1;
+        current_mode = NORMAL_MODE;
 	PRINT_DEBUG("Exiting configuration mode");
 }
 
