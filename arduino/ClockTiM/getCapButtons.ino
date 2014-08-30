@@ -56,20 +56,7 @@ void buttonRRepeat() {
 	addToQeue(BR_REPEAT);
 }
 
-// Returns true if both buttons have been pressed for a long time
-boolean bothLongPressed() {
-	return oneButton_L.isLongPressed() && oneButton_R.isLongPressed();
-}
 
-// Blocks until both buttons have been released from a long press
-void waitWhilePressed() {
-	while(oneButton_L.isLongPressed() || oneButton_R.isLongPressed()) {
-		// Loop until both buttons are released
-		buttonsTick();
-	}
-	
-	clearQueue();
-}
 
 // Pushes a byte onto the queue
 void addToQeue(uint8_t value) {

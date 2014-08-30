@@ -12,10 +12,10 @@ typedef union Settings {
 };
 */
 
-extern Settings clockSettings;
+//extern Settings clockSettings;
 
 
-Settings clockSettings;
+//Settings clockSettings;
 
 void saveSettings() {
 	// Save settings to EEPROM

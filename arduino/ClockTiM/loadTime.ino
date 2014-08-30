@@ -1,3 +1,5 @@
+/*
+
 
 #include "Language_English_TiM.h"
 
@@ -66,3 +68,5 @@ void loadTime(uint16_t ledStates[8], uint16_t mins) {
 		}
 	}
 }
+
+*/
