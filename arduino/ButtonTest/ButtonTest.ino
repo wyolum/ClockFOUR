@@ -6,7 +6,7 @@
 #define DEBUG
 
 #ifdef DEBUG
-#define PRINT_DEBUG(x)		Serial.println(x)
+#define PRINT_DEBUG(x)		Serial.print(x)
 #define PRINTLN_DEBUG(x)        Serial.println(x)
 #else
 #define PRINT_DEBUG(x)
@@ -76,7 +76,7 @@ void loop() {
         }
         
         if(bothLongPressed()) {
-          printbuttonpress(99);
+            PRINTLN_DEBUG("Double press detected! ");
         }
 
 }

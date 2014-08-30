@@ -1,9 +1,10 @@
 
 #include <avr/pgmspace.h>
 #include <Time.h>
+#include "LANGUAGE_English_TiM.h"
 
 /************* Enable/disable debug mode *************/
-#define DEBUG
+#define DEBUG  // comment this line out to disable debugging
 
 #ifdef DEBUG
 #define PRINT_DEBUG(x)		Serial.println(x)
@@ -13,6 +14,70 @@
 #define PRINTLN_DEBUG(x)
 #endif
 
+/************* ClockFOUR is mode driven *************/
+// Define modes
+typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
+inline void do_nothing(void){}  // empty call back
+
+struct Mode{
+  uint8_t id;        // Mode ID
+  CallBackPtr setup; // to be called when Mode is initialized
+  CallBackPtr loop;  // to be called as often as possible when mode is active
+  CallBackPtr exit;  // to be called when mode is exited
+  CallBackPtr BL_C;  // to be called when BUTTON_LEFT is clicked
+  CallBackPtr BL_P;   // to be called when BUTTON_LEFT is pressed (held)
+  CallBackPtr BL_R;   // to be called when BUTTON_LEFT is repeated
+  CallBackPtr BR_C;  // to be called when BUTTON_RIGHT is clicked
+  CallBackPtr BR_P;   // to be called when BUTTON_RIGHT is pressed (held)
+  CallBackPtr BR_R;   // to be called when BUTTON_RIGHT is repeated
+};
+
+// active mode pointer
+Mode *mode_p;
+
+// MODE Constants
+const uint8_t N_MODE = 5;
+
+const uint8_t NORMAL_MODE = 0;
+const uint8_t SET_TIME_MODE = 1;
+const uint8_t SECONDS_MODE = 2;
+const uint8_t TEMPERATURE_MODE = 3;
+const uint8_t SET_COLOUR_MODE = 4;
+
+// Temperature unit constants
+const uint8_t DEG_C = 0;
+const uint8_t DEG_F = 1;
+
+/* last_mode_id is used for returning to previous mode.  
+ * Usually best to return to NORMAL_MODE, but this allows sub-modes to return
+ * to the mode that invoked them.
+ */
+uint8_t last_mode_id = NORMAL_MODE; // the last mode clock was in...
+
+// indexed by mode.id
+Mode Modes[N_MODE];
+
+//Time units
+typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit_t;
+
+// Begin mode declarations
+Mode NormalMode = {NORMAL_MODE, 
+		    Normal_setup, Normal_loop, Normal_exit, 
+		    Normal_BLC, do_nothing, do_nothing, Normal_BRC, Normal_BRP, do_nothing};
+Mode SetTimeMode = {SET_TIME_MODE, 
+		    SetTime_setup,SetTime_loop,SetTime_exit,
+		    BLC, BLP, BLR, BRC, BRP, BRR};
+Mode SecondsMode = {SECONDS_MODE, 
+		    Seconds_setup, Seconds_loop, Seconds_exit, 
+		    Seconds_BLC, do_nothing, do_nothing, Seconds_BRC, do_nothing, do_nothing};
+Mode TemperatureMode = {TEMPERATURE_MODE, 
+		    Temperature_setup, Temperature_loop, Temperature_exit, 
+		    BLC, BLP, BLR, BRC, BRP, BRR};
+Mode SetTColourMode = {SET_COLOUR_MODE, 
+		    SetColour_setup,SetColour_loop,SetColour_exit,
+		    BLC, BLP, BLR, BRC, BRP, BRR};
+
+
 /************* Pin settings *************/
 #define TiMPIN				5
 #define BUTTON_L			6
@@ -20,17 +85,7 @@
 #define CAP_SENSE			A1
 
 
-/************* Settings struct definition *************/
-typedef union Settings {
-	// WARNING: array has to be at least as large as the number of elements in the struct
-	uint8_t array[3];
-	struct {
-		uint8_t useGPS;
-		uint8_t useDegF;
-		uint8_t colour;
-	};
-};
-extern Settings clockSettings;
+
 
 
 /************* Types of button inputs *************/
@@ -79,8 +134,9 @@ void setup() {
 	
 	// Initialise the buttons
 	buttonsInit();
-
-        start_loop();
+        current_mode = NORMAL_MODE;
+        
+//        start_loop();
         
 }
 
@@ -91,6 +147,7 @@ void loop() {
         switch(current_mode) {
         case NORMAL_MODE:        // Normal time mode
                 normal_loop();
+                waitWhilePressed();
                 switch(popEvent()) {
                 case BL_CLICK:
                         last_mode = NORMAL_MODE;
@@ -106,13 +163,13 @@ void loop() {
                         last_mode = NORMAL_MODE;
                         current_mode = COLOUR_MODE;
                         break;
-                        
+                                             
                 default:
-                        break;
+                        donothing();
                 }
                 if(bothLongPressed()) {
-		last_mode = NORMAL_MODE;
-                current_mode = CONFIG_MODE;
+//		last_mode = NORMAL_MODE;
+//                current_mode = CONFIG_MODE;
                 }
 
         case CONFIG_MODE:        // Time set mode
@@ -132,10 +189,14 @@ void loop() {
                 break;
 
         default:
+                donothing();
                 break;
         }       	
 }
 
+
+void donothing() {
+}
 
 void start_loop() {
 PRINT_DEBUG("Entering start_loop");
