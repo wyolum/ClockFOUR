@@ -60,7 +60,7 @@ Mode Modes[N_MODE];
 //Time units
 typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit_t;
 
-// Begin mode declarations
+// Mode declarations
 Mode NormalMode = {NORMAL_MODE, 
 		    Normal_setup, Normal_loop, Normal_exit, 
 		    Normal_BLC, do_nothing, do_nothing, Normal_BRC, Normal_BRP, do_nothing};
@@ -76,6 +76,25 @@ Mode TemperatureMode = {TEMPERATURE_MODE,
 Mode SetTColourMode = {SET_COLOUR_MODE, 
 		    SetColour_setup,SetColour_loop,SetColour_exit,
 		    BLC, BLP, BLR, BRC, BRP, BRR};
+
+uint8_t mode_counter;               // Used for selecting mode
+unsigned long count = 0;            // Number of interations current mode has been running.
+uint16_t YY;                        // current time variables.
+uint8_t MM, DD, hh, mm, ss;
+uint8_t ahh, amm, ass;              // time of day time (tod) variables.
+unit_t SetTime_unit = YEAR;         // Part of time being set {YEAR | MONTH | DAY | HOUR | MINUTE}
+uint8_t temp_unit = DEG_C;          // Temperature display units {DEG_C | DEC_F}
+
+// language constants
+uint8_t n_minute_states;            // number of minute states to cycle through
+uint8_t n_minute_bytes;             // number of bytes used for each minute time incriment
+uint8_t n_hour_states;              // number of hour states to cycle through
+uint8_t n_hour_bytes;               // number of bytes used for each hour time incriment
+uint8_t n_tod_states;               // number of time of day states to cycle through
+uint8_t n_tod_bytes;                // number of bytes used for each time of day incriment
+
+uint16_t display_idx;                // number of minutes past midnight (0 to 1439)
+
 
 
 /************* Pin settings *************/
