@@ -1,28 +1,37 @@
 
-/************* Settings struct definition *************/
-/*
-typedef union Settings {
-	// WARNING: array has to be at least as large as the number of elements in the struct
-	uint8_t array[3];
-	struct {
-		uint8_t useGPS;
-		uint8_t useDegF;
-		uint8_t colour;
-	};
-};
-*/
+#include <EEPROM.h>
 
-//extern Settings clockSettings;
+#define EEPROM_VERSION		0x01
 
+Settings clockSettings = { 0 };
 
-//Settings clockSettings;
 
 void saveSettings() {
 	// Save settings to EEPROM
+	uint8_t addr = 1;
+	for(int i = 0; i < sizeof(clockSettings); i++) {
+		EEPROM.write(addr, clockSettings.array[i]);
+		addr++;
+	}
 }
 
 
 void loadSettings() {
 	// Load the settings from EEPROM
+	uint8_t addr = 1;
+	
+	// Takes into account the situation where the program is launched for the very first time
+	// Clear the eeprom in that case.
+	if(EEPROM.read(0) != EEPROM_VERSION) {
+		EEPROM.write(0, EEPROM_VERSION);
+		
+		// clockSettings should be empty right now, assuming loadSettings is called at the beginning of the program
+		saveSettings();
+	}
+	
+	for(int i = 0; i < sizeof(clockSettings); i++) {
+		clockSettings.array[i] = EEPROM.read(addr);
+		addr++;
+	}
 }
 

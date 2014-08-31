@@ -1,6 +1,6 @@
 #include <Adafruit_GFX.h>
-#include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
+#include <PixelState.h>
 
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = Arduino pin number (most are valid)
@@ -9,28 +9,7 @@
 //   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
-Adafruit_NeoPixel strip(128, TiMPIN, NEO_GRB + NEO_KHZ800);
-
-// MATRIX DECLARATION:
-// Parameter 1 = width of NeoPixel matrix
-// Parameter 2 = height of matrix
-// Parameter 3 = pin number (most are valid)
-// Parameter 4 = matrix layout flags, add together as needed:
-//   NEO_MATRIX_TOP, NEO_MATRIX_BOTTOM, NEO_MATRIX_LEFT, NEO_MATRIX_RIGHT:
-//     Position of the FIRST LED in the matrix; pick two, e.g.
-//     NEO_MATRIX_TOP + NEO_MATRIX_LEFT for the top-left corner.
-//   NEO_MATRIX_ROWS, NEO_MATRIX_COLUMNS: LEDs are arranged in horizontal
-//     rows or in vertical columns, respectively; pick one or the other.
-//   NEO_MATRIX_PROGRESSIVE, NEO_MATRIX_ZIGZAG: all rows/columns proceed
-//     in the same order, or alternate lines reverse direction; pick one.
-//   See example below for these values in action.
-// Parameter 5 = pixel type flags, add together as needed:
-//   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
-//   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
-//   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
-//   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
-Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(16, 8, TiMPIN, NEO_MATRIX_BOTTOM + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE, NEO_GRB + NEO_KHZ800);
-int brightness = 196;
+Adafruit_NeoPixel strip(TIM_WIDTH * TIM_HEIGHT, TiMPIN, NEO_GRB + NEO_KHZ800);
 
 void disp_init() {
 	
@@ -39,23 +18,18 @@ void disp_init() {
 	// and minimize distance between Arduino and first pixel.  Avoid connecting
 	// on a live circuit...if you must, connect GND first.
 	
-	matrix.begin();				// initialize the LED strip
-	strip.begin();
-	
-	strip.setBrightness(brightness);
-	matrix.setBrightness(brightness);
-	
+	strip.begin();				// initialize the LED strip
+	strip.setBrightness(196);
 	strip.show();				// Initialize all pixels to 'off'
-        matrix.show();
 }
 
 
 inline void setBrightness(int value) {
-	brightness = value;
+	strip.setBrightness(value);
 }
 
 
-void loadWords(uint8_t *display, uint8_t *words, uint16_t ledStates[8], int wordIdx) {
+void loadWords(int wordIdx, uint8_t *display, uint8_t *words, PixelStates *pixels) {
 	// Loop through every line
 	for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
 
@@ -74,7 +48,7 @@ void loadWords(uint8_t *display, uint8_t *words, uint16_t ledStates[8], int word
 
 				// Now draw the line in the buffer
 				for(int pix = x; pix < x + length; pix++) {
-					ledStates[7 - y] |= 1 << pix;
+					pixels->ledStates[7 - y] |= 1 << pix;
 				}
 			}
 			// Select the next bit
@@ -83,12 +57,15 @@ void loadWords(uint8_t *display, uint8_t *words, uint16_t ledStates[8], int word
 	}
 }
 
+void disp_display(PixelStates *pixels) {
+	disp_display(pixels, strip.Color(255, 255, 255));
+}
 
-void disp_display(uint16_t ledStates[8]) {
+void disp_display(PixelStates *pixels, uint32_t colour) {
 	for(int y = 0; y < 8; y++) {
 		for(int x = 0; x < 16; x++) {
-			if(ledStates[y] & (1 << x)) {
-				strip.setPixelColor(y * 16 + x, strip.Color(255, 255, 255));
+			if(pixels->ledStates[y] & (1 << x)) {
+				strip.setPixelColor(y * 16 + x, colour);
 			} else {
 				strip.setPixelColor(y * 16 + x, strip.Color(0,   0,   0));
 			}
@@ -97,6 +74,23 @@ void disp_display(uint16_t ledStates[8]) {
 	strip.show();
 }
 
+
+void disp_fancyFire(PixelStates *pixels, uint32_t colour) {
+	// Example of a display function
+	
+	// colour may not be used - it is included in the function prototype
+	// so that it is compatible with other display functions
+	
+	// For now let's just call the display function
+	disp_display(pixels);
+}
+
+void disp_random(PixelStates *pixels, uint32_t colour) {
+	// Another display function example
+	
+	// For now let's just call the display function
+	disp_display(pixels);
+}
 
 // Input a value 0 to 255 to get a color value.
 // The colours are a transition r - g - b - back to r.
@@ -113,13 +107,30 @@ uint32_t disp_wheel(byte WheelPos) {
 }
 
 
-void matrixDisplayVal(uint8_t value) {
-	matrix.fillScreen(0);
+void disp_displayVal(uint8_t value) {
+	PixelStates pixels(TIM_WIDTH, TIM_HEIGHT);
+	disp_loadVal(&pixels, value);
+	disp_display(&pixels);
+}
+
+
+void disp_loadVal(PixelStates *pixels, uint8_t value) {
 	if(value < 10) {
-		matrix.setCursor(8, 1);
+		pixels->setCursor(8, 1);
 	} else {
-		matrix.setCursor(2, 1);
+		pixels->setCursor(2, 1);
 	}
-	matrix.print(value);
-	matrix.show();
+	pixels->print(value);
+}
+
+
+void disp_TempCF(uint8_t value) {
+	PixelStates pixels(TIM_WIDTH, TIM_HEIGHT);
+	pixels.setCursor(8, 1);
+	if(value == 0) {
+		pixels.print("C");
+	} else {
+		pixels.print("F");
+	}
+	disp_display(&pixels);
 }

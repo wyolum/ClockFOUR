@@ -56,12 +56,25 @@ void buttonRRepeat() {
 	addToQeue(BR_REPEAT);
 }
 
+// Returns true if both buttons have been pressed for a long time
+boolean bothLongPressed() {
+	return oneButton_L.isLongPressed() && oneButton_R.isLongPressed();
+}
 
+// Blocks until both buttons have been released from a long press
+void waitWhilePressed() {
+	while(oneButton_L.isLongPressed() || oneButton_R.isLongPressed()) {
+		// Loop until both buttons are released
+		buttonsTick();
+	}
+	
+	clearQueue();
+}
 
 // Pushes a byte onto the queue
 void addToQeue(uint8_t value) {
 	
-	noInterrupts();
+//	noInterrupts();
 	
 	// If front is just behind rear we have a full queue
 	if((front == 0 && rear == QUEUE_SIZE - 1) || front == rear + 1) {
@@ -85,14 +98,14 @@ void addToQeue(uint8_t value) {
 	// Store the value on the queue
 	queue[rear] = value;
 	
-	interrupts();
+//	interrupts();
 }
 
 // Gets a value from the top of the queue
 uint8_t popEvent() {
 	uint8_t retVal;
 	
-	noInterrupts();
+//	noInterrupts();
 	
 	// Check if the queue is empty
 	if(front == -1)
@@ -116,15 +129,15 @@ uint8_t popEvent() {
 		}
 	}
 	
-	interrupts();
+//	interrupts();
 	
 	return retVal;
 }
 
 // Deletes all contents of the queue
 inline void clearQueue() {
-	noInterrupts();
+//	noInterrupts();
 	front = -1;
 	rear = -1;
-	interrupts();
+//	interrupts();
 }

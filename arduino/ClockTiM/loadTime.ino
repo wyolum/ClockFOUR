@@ -1,5 +1,3 @@
-/*
-
 
 #include "Language_English_TiM.h"
 
@@ -16,7 +14,7 @@ const TimeFrame timeOfDay[5] = {
 	{ 1020, 1415 },		// Evening, 17:00 until 23:30
 };
 
-void loadTime(uint16_t ledStates[8], uint16_t mins) {
+void loadTime(PixelStates *display, uint16_t mins) {
 	
 	// Select the minutes and the hour
 	uint8_t minsDisp = mins % 60;
@@ -46,13 +44,13 @@ void loadTime(uint16_t ledStates[8], uint16_t mins) {
 	// We indicate the hour number unless we are at around midnight Midnight or at noon
 	if(hours != 0 && !(hours == 12 && minsDisp == 0)) {
 		// Diplay the hour
-		loadWords(DISPLAY_hour, WORDS_hour, ledStates, hoursDisp);
+		loadWords(hoursDisp, DISPLAY_hour, WORDS_hour, display);
 	}
 	
 	// This conditional makes sure we don't print "o'clock" at midnight and at noon
 	if(!(hoursDisp == 0 && minsDisp == 0)) {
 		// Display the minutes
-		loadWords(DISPLAY_min, WORDS_min, ledStates, minsDisp);
+		loadWords(minsDisp, DISPLAY_min, WORDS_min, display);
 	}
 	
 	// Loop through the list of times of day to check which one we are
@@ -63,10 +61,8 @@ void loadTime(uint16_t ledStates[8], uint16_t mins) {
 	} 
 	for(int i = 0; i < (sizeof(timeOfDay) / sizeof(TimeFrame)); i++) {
 		if(todMins >= timeOfDay[i].start && todMins < timeOfDay[i].finish) {
-			loadWords(DISPLAY_tod, WORDS_tod, ledStates, i);
+			loadWords(i, DISPLAY_tod, WORDS_tod, display);
 			break;
 		}
 	}
 }
-
-*/
