@@ -13,7 +13,7 @@ void saveSettings() {
 		EEPROM.write(addr, clockSettings.array[i]);
 		addr++;
 	}
-        PRINT_DEBUG("\nSettings saved!");
+        PRINTLN_DEBUG("Settings saved!");
 }
 
 
@@ -34,6 +34,6 @@ void loadSettings() {
 		clockSettings.array[i] = EEPROM.read(addr);
 		addr++;
 	}
-        PRINT_DEBUG("\nSettings loaded from EPROM!");
+        PRINTLN_DEBUG("Settings loaded from EPROM!");
 }
 

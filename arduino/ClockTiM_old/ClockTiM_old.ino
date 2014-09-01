@@ -136,7 +136,7 @@ const uint8_t      BR_REPEAT = 6; // Max # events.
 
 void setup() {
 	// Start the serial port
-	Serial.begin(9600);
+	Serial.begin(115200);
 	Wire.begin();
 	disp_init();  	        // Initialise the display
 	loadSettings();  	// Load the settings from the EEPROM
@@ -178,7 +178,6 @@ void setup() {
 
 void loop() {
 	buttonsTick();
-	PRINT_DEBUG("Tick ");
         // process new events before calling mode loop()
         
         switch(popEvent()) {
