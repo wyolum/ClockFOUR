@@ -91,6 +91,66 @@ void disp_display(PixelStates *pixels, uint32_t colour) {
 	strip.show();
 }
 
+uint32_t lastRefresh;
+uint8_t j;
+void refresh_display (PixelStates *pixels, uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
+  unsigned long currentMillis = millis();
+  if ((unsigned long) (currentMillis - lastRefresh) >= fadeDelay) {  // Do nothing if we are within fadeDelay
+    uint8_t random_colour = random(0,255);
+    j++;
+    if (j > 255) j=0;
+    for(int y = 0; y < MATRIX_HEIGHT; y++) {
+      for(int x = 0; x < MATRIX_WIDTH; x++) {
+        if(pixels->ledStates[y] & (1 << x)) {
+          switch (mode) {
+          case 0: // All white
+                {
+                  strip.setPixelColor(y * MATRIX_WIDTH + x, strip.Color(235,   255,   255));   
+                }
+                break;
+              
+          case 1: // Solid colour
+                {
+                  strip.setPixelColor(y * MATRIX_WIDTH + x,  disp_wheel(colour));
+                
+                }
+                break;
+              
+          case 2: // Fade through solid colours
+                {
+                   strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(j)); 
+                }   
+                break;
+           
+          case 3: // Rainbow fade
+                {
+                  strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel((y * MATRIX_WIDTH + x)* (256 / strip.numPixels()) - j & 255));
+                }
+                break;    
+            case 4: // Random colour letters
+                {
+                  strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(random(0,255)));
+                }
+                break;  
+           case 5: // Random solid colours
+                {
+                  strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(random_colour));
+                }
+                break;                                    
+          default:
+                break;
+          }
+        } 
+          else {  // turn off any letters not in a current word
+            strip.setPixelColor(y * MATRIX_WIDTH + x, strip.Color(0,   0,   0));
+            }        
+        
+      }
+    }
+    strip.show(); 
+    lastRefresh = currentMillis;    
+  }
+}  
 
 void disp_fancyFire(PixelStates *pixels, uint32_t colour) {
 	// Example of a display function

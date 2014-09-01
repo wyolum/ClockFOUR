@@ -12,7 +12,7 @@
 #define PRINTLN_DEBUG(x)	Serial.println(x)
 #else
 #define PRINT_DEBUG(x)
-#define PRINT_DEBUG(x)
+#define PRINTLN_DEBUG(x)
 #endif
 
 /************* Pin settings *************/
@@ -46,24 +46,26 @@ typedef enum EventTypes {
 #define REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
 
 /************* Colour modes *************/
-typedef void (*ColourModeFunc)(PixelStates *, uint32_t);
+typedef void (*ColourModeFunc)(PixelStates *, uint8_t, uint8_t, uint16_t);
 typedef struct ColourMode {
 	ColourModeFunc function;
-	uint32_t colour;
+	uint8_t mode;
+        uint8_t colour;
+        uint16_t fade_delay;
 };
 
 #define COLOUR_MODE_COUNT	9
 
 ColourMode colourModes[COLOUR_MODE_COUNT] = {
-	{ disp_display, 0x00FFFFFF },		// All white
-	{ disp_display, 0x000000FF },		// All blue
-	{ disp_display, 0x0000FF00 },		// All green
-	{ disp_display, 0x00FF0000 },		// All red
-	{ disp_display, 0x00FFFF00 },		// All yellow
-	{ disp_display, 0x00FF00FF },		// All purple
-	{ disp_display, 0x0000FFFF },		// All cyan
-	{ disp_fancyFire, 0x0 },			// Fire
-	{ disp_random, 0x0 }				// Random
+	{ refresh_display,   0,   0,   0 },		// 0: All white
+  	{ refresh_display,   1,   0,   0 },		// 1: 
+	{ refresh_display,   1,   50,   0 },		// 2: 
+	{ refresh_display,   1,   100,   0 },		// 3: 
+	{ refresh_display,   1,   150,   0 },		// 4: 
+	{ refresh_display,   2,   0,   0 },		// 5: 
+	{ refresh_display,   3,   0,   100 },		// 6: 
+	{ refresh_display,   4,   0,   1000 },	        // 7: 
+	{ refresh_display,   5,   0,   1000 }		// 8: 
 };
 
 
@@ -142,8 +144,8 @@ void loop() {
 		// Update p_colourMode to the new display mode
 		p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
 		
-		PRINT_DEBUG("\nSwitched to mode");
-		PRINT_DEBUG(clockSettings.displayMode);
+		PRINT_DEBUG("Switched to mode");
+		PRINTLN_DEBUG(clockSettings.displayMode);
 		
 		saveSettings();
 		break;
@@ -152,15 +154,15 @@ void loop() {
 		// Perhaps enter colour settings mode?
 		
 		PRINT_DEBUG("Current colour");
-		PRINT_DEBUG(*p_colourMode);
+		PRINTLN_DEBUG(*p_colourMode);
 
 		(*p_colourMode)++;
 		if(*p_colourMode >= COLOUR_MODE_COUNT) {
 			*p_colourMode = 0;
 		}
 		
-		PRINT_DEBUG("\nSwitched to colour");
-		PRINT_DEBUG(*p_colourMode);
+		PRINT_DEBUG("Switched to colour");
+		PRINTLN_DEBUG(*p_colourMode);
 		
 		saveSettings();
 		break;
@@ -187,7 +189,7 @@ void loop() {
 	
 	// Figure out which colour mode we are using and then display the pixels
 	ColourMode cm = colourModes[*p_colourMode];
-	cm.function(&pixels, cm.colour);
+	cm.function(&pixels, cm.mode, cm.colour, cm.fade_delay);
 }
 
 
@@ -301,7 +303,7 @@ void clockConfig() {
 		switch(mode) {
 		case GPS:
 			{
-				PRINT_DEBUG("Now entering GPS value");
+				PRINTLN_DEBUG("Now entering GPS value");
 				
 				// TODO: Scroll 'GPS' across the screen
 				
@@ -318,7 +320,7 @@ void clockConfig() {
 				
 				// TODO: Scroll 'Hours' across the screen
 				
-				PRINT_DEBUG("Now entering hour value");
+				PRINTLN_DEBUG("Now entering hour value");
 				globalTime.Hour = changeSetting(globalTime.Hour, 0, 23, disp_displayVal);
 			}
 			break;
@@ -327,7 +329,7 @@ void clockConfig() {
 			{
 				// TODO: Scroll 'Mins' (?) across the screen
 				
-				PRINT_DEBUG("Now entering minute value");
+				PRINTLN_DEBUG("Now entering minute value");
 				globalTime.Minute = changeSetting(globalTime.Minute, 0, 59, disp_displayVal);
 				
 				// Set seconds to 0 for a clean start to the minute
@@ -342,7 +344,7 @@ void clockConfig() {
 			{
 				// TODO: Scroll 'Temp' across the screen
 				
-				PRINT_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");
+				PRINTLN_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");
 				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, disp_TempCF);
 			}
 			break;
@@ -356,11 +358,11 @@ void clockConfig() {
 	}	
 	
 	saveSettings();
-	PRINT_DEBUG("Exiting configuration mode");
+	PRINTLN_DEBUG("Exiting configuration mode");
 }
 
 
 void exampleDisplayFunction(uint8_t value) {
-	PRINT_DEBUG(value);
+	PRINTLN_DEBUG(value);
 }
 
