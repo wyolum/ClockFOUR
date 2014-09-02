@@ -173,13 +173,13 @@ void disp_random(PixelStates *pixels, uint32_t colour) {
 // The colours are a transition r - g - b - back to r.
 uint32_t disp_wheel(byte WheelPos) {
 	if(WheelPos < 85) {
-		return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
+		return strip.Color(255 - WheelPos * 3, WheelPos * 3, 0);
 	} else if(WheelPos < 170) {
 		WheelPos -= 85;
-		return strip.Color(255 - WheelPos * 3, 0, WheelPos * 3);
+		return strip.Color(0, 255 - WheelPos * 3, WheelPos * 3);
 	} else {
 		WheelPos -= 170;
-		return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+		return strip.Color(WheelPos * 3, 0, 255 - WheelPos * 3);
 	}
 }
 
@@ -203,6 +203,8 @@ void disp_loadVal(PixelStates *pixels, uint8_t value) {
 
 void disp_TempCF(uint8_t value) {
 	PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
+        pixels.setCursor(2,1);
+        pixels.print("o");
 	pixels.setCursor(8, 1);
 	if(value == 0) {
 		pixels.print("C");

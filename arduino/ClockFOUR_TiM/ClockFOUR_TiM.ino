@@ -1,8 +1,9 @@
 
 #include <avr/pgmspace.h>
+#include <Wire.h>      
+#include <DS3231.h>
 #include <Time.h>
 #include <PixelStates.h>
-#include <Wire.h>
 
 /************* Enable/disable debug mode *************/
 #define DEBUG
@@ -22,6 +23,7 @@
 #define CAP_SENSE			A1
 #define LDR_PIN                         A7
 
+
 /************* Some display settings *************/
 #define MATRIX_WIDTH			16
 #define MATRIX_HEIGHT			8
@@ -30,6 +32,8 @@
 
 /************* Global time variable *************/
 tmElements_t globalTime;
+RTClib rtc;
+DS3231 rtc2;
 
 /************* Types of button inputs *************/
 typedef enum EventTypes {
@@ -62,7 +66,7 @@ ColourMode colourModes[COLOUR_MODE_COUNT] = {
 	{ refresh_display,   1,   50,   0 },		// 2: 
 	{ refresh_display,   1,   100,   0 },		// 3: 
 	{ refresh_display,   1,   150,   0 },		// 4: 
-	{ refresh_display,   2,   0,   0 },		// 5: 
+	{ refresh_display,   2,   0,   100 },		// 5: 
 	{ refresh_display,   3,   0,   100 },		// 6: 
 	{ refresh_display,   4,   0,   1000 },	        // 7: 
 	{ refresh_display,   5,   0,   1000 }		// 8: 
@@ -92,8 +96,8 @@ typedef union Settings {
 	uint8_t array[6];
 	struct {
 		uint8_t useGPS;
-		uint8_t useDegF;					// 0 if degrees C, 1 if degrees F
-		uint8_t displayMode;				// Stores the display mode we are currently in
+		uint8_t useDegF;			// 0 if degrees C, 1 if degrees F
+		uint8_t displayMode;			// Stores the display mode we are currently in
 		uint8_t colourModes[MODE_COUNT];	// Each display mode has its own colour mode
 	};
 };
@@ -224,7 +228,15 @@ boolean displaySeconds(PixelStates *pixels) {
 
 boolean displayTemp(PixelStates *pixels) {
 	// TODO: fill with real temperature value
-	disp_loadVal(pixels, 23);
+//	disp_loadVal(pixels, 23);
+
+        float celsius = rtc2.getTemperature();
+        float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
+        
+        if (clockSettings.useDegF) {
+          disp_loadVal(pixels, fahrenheit);
+        } else disp_loadVal(pixels, celsius);
+
 }
 
 
