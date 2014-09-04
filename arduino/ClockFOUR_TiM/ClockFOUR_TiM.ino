@@ -58,18 +58,25 @@ typedef struct ColourMode {
         uint16_t fade_delay;
 };
 
-#define COLOUR_MODE_COUNT	9
+#define COLOUR_MODE_COUNT	16
 
 ColourMode colourModes[COLOUR_MODE_COUNT] = {
-	{ refresh_display,   0,   0,   0 },		// 0: All white
-  	{ refresh_display,   1,   0,   0 },		// 1: 
-	{ refresh_display,   1,   50,   0 },		// 2: 
-	{ refresh_display,   1,   100,   0 },		// 3: 
-	{ refresh_display,   1,   150,   0 },		// 4: 
-	{ refresh_display,   2,   0,   100 },		// 5: 
-	{ refresh_display,   3,   0,   100 },		// 6: 
-	{ refresh_display,   4,   0,   1000 },	        // 7: 
-	{ refresh_display,   5,   0,   1000 }		// 8: 
+	{ disp_refresh,   0,   0,   0 },		// 0: All white
+  	{ disp_refresh,   1,   0,   0 },		// 1: Red
+      	{ disp_refresh,   1,   20,   0 },		// 1: Orange
+        { disp_refresh,   1,   45,   0 },		// 1: Yellow
+        { disp_refresh,   1,   60,   0 },		// 1: Lemon lime
+        { disp_refresh,   1,   87,   0 },		// 1: Green
+        { disp_refresh,   1,   105,   0 },		// 1: Mint
+        { disp_refresh,   1,   120,   0 },		// 1: Light Blue
+        { disp_refresh,   1,   140,   0 },		// 1: Blue
+        { disp_refresh,   1,   170,   0 },		// 1: Dark Blue
+        { disp_refresh,   1,   183,   0 },		// 1: Purple
+        { disp_refresh,   1,   210,   0 },		// 1: Violet
+        { disp_refresh,   1,   248,   0 },		// 1: Red
+	{ disp_refresh,   2,   0,   100 },		// 5: 
+	{ disp_refresh,   3,   0,   100 },		// 6: 
+	{ disp_refresh,   4,   0,   1000 },	        // 7: 
 };
 
 
@@ -125,6 +132,10 @@ void setup() {
 	
 	// Initialise the buttons
 	buttonsInit();
+
+        // display a welcome message
+        setBrightness();
+        disp_ScrollWords("Welcome!", -40, 1);
 }
 
 
@@ -204,7 +215,7 @@ void updateTime() {
 
 }
 
-        uint16_t totalMinutes, seconds_count = 0;
+        uint16_t totalMinutes=1350, seconds_count = 0;
 boolean displayTime(PixelStates *pixels) {
 	// Show the time!
 //	uint16_t totalMinutes = (globalTime.Hour * 60) + globalTime.Minute;
@@ -317,7 +328,7 @@ void clockConfig() {
 			{
 				PRINTLN_DEBUG("Now entering GPS value");
 				
-				// TODO: Scroll 'GPS' across the screen
+				disp_ScrollWords("GPS:", -15, 3);
 				
 				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, exampleDisplayFunction);
 				if(clockSettings.useGPS) {
@@ -330,7 +341,7 @@ void clockConfig() {
 			{
 				updateTime();
 				
-				// TODO: Scroll 'Hours' across the screen
+				disp_ScrollWords("Hour:", -15, 6);
 				
 				PRINTLN_DEBUG("Now entering hour value");
 				globalTime.Hour = changeSetting(globalTime.Hour, 0, 23, disp_displayVal);
@@ -339,7 +350,7 @@ void clockConfig() {
 			
 		case MINUTE:
 			{
-				// TODO: Scroll 'Mins' (?) across the screen
+				disp_ScrollWords("Min:", -15, 9);
 				
 				PRINTLN_DEBUG("Now entering minute value");
 				globalTime.Minute = changeSetting(globalTime.Minute, 0, 59, disp_displayVal);
@@ -354,7 +365,7 @@ void clockConfig() {
 			
 		case TEMP_CF:
 			{
-				// TODO: Scroll 'Temp' across the screen
+				disp_ScrollWords("Temp:", -15, 12);
 				
 				PRINTLN_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");
 				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, disp_TempCF);

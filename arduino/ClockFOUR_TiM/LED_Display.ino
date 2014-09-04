@@ -47,11 +47,12 @@ inline void setBrightness() {
 }
 
 void loadWords(int wordIdx, uint8_t *display, uint8_t *words, PixelStates *pixels) {
-	// Loop through every line
-	for(int dispIdx = 0; dispIdx < 2; dispIdx++) {
+	uint8_t disp_bytes = pgm_read_byte(display);
+        // Loop through every line
+	for(int dispIdx = 0; dispIdx < disp_bytes; dispIdx++) {
 
 		// Get the display bits
-		uint8_t disp = pgm_read_byte(display + wordIdx * 2 + 1 + dispIdx);
+		uint8_t disp = pgm_read_byte(display + wordIdx * disp_bytes + 1 + dispIdx);
 
 		// Loop through every bit
 		for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
@@ -65,7 +66,7 @@ void loadWords(int wordIdx, uint8_t *display, uint8_t *words, PixelStates *pixel
 
 				// Now draw the line in the buffer
 				for(int pix = x; pix < x + length; pix++) {
-					pixels->ledStates[7 - y] |= 1 << pix;
+					pixels->ledStates[(MATRIX_HEIGHT - 1) - y] |= 1 << pix;
 				}
 			}
 			// Select the next bit
@@ -74,8 +75,9 @@ void loadWords(int wordIdx, uint8_t *display, uint8_t *words, PixelStates *pixel
 	}
 }
 
+
 void disp_display(PixelStates *pixels) {
-	disp_display(pixels, strip.Color(255, 255, 255));
+	disp_display(pixels, strip.Color(235, 255, 255));
 }
 
 void disp_display(PixelStates *pixels, uint32_t colour) {
@@ -93,7 +95,7 @@ void disp_display(PixelStates *pixels, uint32_t colour) {
 
 uint32_t lastRefresh;
 uint8_t j;
-void refresh_display (PixelStates *pixels, uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
+void disp_refresh (PixelStates *pixels, uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
   unsigned long currentMillis = millis();
   if ((unsigned long) (currentMillis - lastRefresh) >= fadeDelay) {  // Do nothing if we are within fadeDelay
     uint8_t random_colour = random(0,255);
@@ -184,6 +186,17 @@ uint32_t disp_wheel(byte WheelPos) {
 }
 
 
+void disp_ScrollWords(char *words, int scrollbuffer, uint8_t colour) {
+
+        for (int x = MATRIX_WIDTH; x > scrollbuffer; x--) { 
+          PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
+          pixels.setCursor(x-5,1);
+          pixels.print(words);
+          disp_refresh (&pixels, 1, colour, 0);
+          delay(100);
+        }
+}
+
 void disp_displayVal(uint8_t value) {
 	PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
 	disp_loadVal(&pixels, value);
@@ -202,7 +215,7 @@ void disp_loadVal(PixelStates *pixels, uint8_t value) {
 
 
 void disp_TempCF(uint8_t value) {
-	PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
+        PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
         pixels.setCursor(2,1);
         pixels.print("o");
 	pixels.setCursor(8, 1);
