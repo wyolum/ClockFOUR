@@ -136,6 +136,12 @@ void setup() {
         // display a welcome message
         setBrightness();
         disp_ScrollWords("Welcome!", -40, 1);
+        
+        // enter self test mode if a button has been held down
+        static PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
+        if (popEvent() != NO_EVENT) {
+        self_test(&pixels); 
+        }
 }
 
 
@@ -207,12 +213,8 @@ void loop() {
 	cm.function(&pixels, cm.mode, cm.colour, cm.fade_delay);
 }
 
-
 void updateTime() {
-	// For now it gets time from Time.h which is inaccurate.
-	// TODO: get time from RTC
-	breakTime(now(), globalTime);
-
+        DateTime now = rtc.now();
 }
 
         uint16_t totalMinutes=1350, seconds_count = 0;
@@ -253,7 +255,7 @@ boolean displayTemp(PixelStates *pixels) {
 
 // This needs to be placed above where ever it's called from as the Arduino compiler seems to have
 // trouble dealing with function pointers as parameters.
-uint8_t changeSetting(uint8_t origValue, uint8_t mins, uint8_t max, void (*dispFunc)(uint8_t)) {
+uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void (*dispFunc)(uint8_t)) {
 	uint8_t value = origValue;
 	static long lastRepeat = 0;
 	
@@ -281,8 +283,8 @@ uint8_t changeSetting(uint8_t origValue, uint8_t mins, uint8_t max, void (*dispF
 			lastRepeat = millis();
 			
 			value++;
-			if(value > max) {
-				value = mins;
+			if(value > maximum) {
+				value = minimum;
 			}
 			dispFunc(value);
 			break;
@@ -344,7 +346,7 @@ void clockConfig() {
 				disp_ScrollWords("Hour:", -15, 6);
 				
 				PRINTLN_DEBUG("Now entering hour value");
-				globalTime.Hour = changeSetting(globalTime.Hour, 0, 23, disp_displayVal);
+				rtc2.setHour(changeSetting(now.hour(), 0, 23, disp_displayVal));
 			}
 			break;
 			
@@ -353,7 +355,7 @@ void clockConfig() {
 				disp_ScrollWords("Min:", -15, 9);
 				
 				PRINTLN_DEBUG("Now entering minute value");
-				globalTime.Minute = changeSetting(globalTime.Minute, 0, 59, disp_displayVal);
+				rtc2.setMinute = changeSetting(rtc2.getMinute(), 0, 59, disp_displayVal);
 				
 				// Set seconds to 0 for a clean start to the minute
 				globalTime.Second = 0;

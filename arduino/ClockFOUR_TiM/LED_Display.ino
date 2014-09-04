@@ -190,9 +190,10 @@ void disp_ScrollWords(char *words, int scrollbuffer, uint8_t colour) {
 
         for (int x = MATRIX_WIDTH; x > scrollbuffer; x--) { 
           PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
-          pixels.setCursor(x-5,1);
+          pixels.setCursor(x-6,1);
           pixels.print(words);
           disp_refresh (&pixels, 1, colour, 0);
+          buttonsTick();
           delay(100);
         }
 }
@@ -225,6 +226,44 @@ void disp_TempCF(uint8_t value) {
 		pixels.print("F");
 	}
 	disp_display(&pixels);
+}
+
+void self_test(PixelStates *pixels) {
+  uint8_t c = 0;
+  uint8_t i = 0;
+  uint8_t seconds_count = 0;
+  uint16_t totalMinutes = 0;
+  while (popEvent() == NO_EVENT) {
+    i++;
+    PRINT_DEBUG("I = ");
+    PRINT_DEBUG (i);
+    PRINT_DEBUG(" ; C = ");
+    PRINTLN_DEBUG(c);
+    if (i > strip.numPixels()) {
+      i = 0;
+      c += 1;
+      if (c > 2) c = 0;
+    }
+    if (c == 0) strip.setPixelColor(i, strip.Color(128, 0, 0));
+    if (c == 1) strip.setPixelColor(i, strip.Color(0, 128, 0));
+    if (c == 2) strip.setPixelColor(i, strip.Color(0, 0, 128));
+    strip.show();
+    buttonsTick();
+    delay(10);
+  }
+  while (popEvent() == NO_EVENT) {
+    buttonsTick();
+    seconds_count+=10;
+    if (seconds_count > 60) {
+    totalMinutes++;
+    seconds_count = 0;
+    }
+    if (totalMinutes > 1439) totalMinutes = 0;
+    pixels->fillScreen(0);
+    loadTime(pixels, totalMinutes);
+    disp_refresh(pixels, 0, 0, 0);
+  }
+    
 }
 
 
