@@ -234,7 +234,6 @@ void self_test(PixelStates *pixels) {
   uint8_t seconds_count = 0;
   uint16_t totalMinutes = 0;
   while (popEvent() == NO_EVENT) {
-    i++;
     PRINT_DEBUG("I = ");
     PRINT_DEBUG (i);
     PRINT_DEBUG(" ; C = ");
@@ -249,6 +248,7 @@ void self_test(PixelStates *pixels) {
     if (c == 2) strip.setPixelColor(i, strip.Color(0, 0, 128));
     strip.show();
     buttonsTick();
+    i++;
     delay(10);
   }
   while (popEvent() == NO_EVENT) {

@@ -30,10 +30,9 @@
 #define MIN_BRIGHTNESS                  50
 #define MAX_BRIGHTNESS                  255
 
-/************* Global time variable *************/
-tmElements_t globalTime;
-RTClib rtc;
-DS3231 rtc2;
+/************* Global time variablesrtc *************/
+bool h12, PM;
+DS3231 rtc;
 
 /************* Types of button inputs *************/
 typedef enum EventTypes {
@@ -135,7 +134,7 @@ void setup() {
 
         // display a welcome message
         setBrightness();
-        disp_ScrollWords("Welcome!", -40, 1);
+        disp_ScrollWords("Clock4", -40, 1);
         
         // enter self test mode if a button has been held down
         static PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
@@ -198,9 +197,6 @@ void loop() {
 		clockConfig();
 	}
 	
-	// Get the latest time from the RTC
-	updateTime();
-	
         // Set the display brightness from the LDR
         setBrightness();
 
@@ -213,29 +209,17 @@ void loop() {
 	cm.function(&pixels, cm.mode, cm.colour, cm.fade_delay);
 }
 
-void updateTime() {
-        DateTime now = rtc.now();
-}
 
-        uint16_t totalMinutes=1350, seconds_count = 0;
 boolean displayTime(PixelStates *pixels) {
 	// Show the time!
-//	uint16_t totalMinutes = (globalTime.Hour * 60) + globalTime.Minute;
-
-// temporary code to fast forward time to check display accuracy
-        seconds_count++;
-        if (seconds_count > 60) {
-          totalMinutes++;
-          seconds_count = 0;
-        }
-        if (totalMinutes > 1439) totalMinutes = 0;
+	uint16_t totalMinutes = rtc.getHour(h12, PM) * 60 + rtc.getMinute();
         
 	loadTime(pixels, totalMinutes);
 }
 
 
 boolean displaySeconds(PixelStates *pixels) {
-	disp_loadVal(pixels, globalTime.Second);
+	disp_loadVal(pixels, rtc.getSecond());
 }
 
 
@@ -243,7 +227,7 @@ boolean displayTemp(PixelStates *pixels) {
 	// TODO: fill with real temperature value
 //	disp_loadVal(pixels, 23);
 
-        float celsius = rtc2.getTemperature();
+        float celsius = rtc.getTemperature();
         float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
         
         if (clockSettings.useDegF) {
@@ -314,7 +298,7 @@ typedef enum ConfigMode {
 void clockConfig() {
 	
 	uint8_t mode;
-	
+
 	// Don't give the GPS option if none is attached
 	if(gpsPresent()) {
 		mode = GPS;
@@ -340,13 +324,11 @@ void clockConfig() {
 			break;
 			
 		case HOUR:
-			{
-				updateTime();
-				
+			{				
 				disp_ScrollWords("Hour:", -15, 6);
 				
 				PRINTLN_DEBUG("Now entering hour value");
-				rtc2.setHour(changeSetting(now.hour(), 0, 23, disp_displayVal));
+				rtc.setHour(changeSetting(rtc.getHour(h12, PM), 0, 23, disp_displayVal));
 			}
 			break;
 			
@@ -355,13 +337,11 @@ void clockConfig() {
 				disp_ScrollWords("Min:", -15, 9);
 				
 				PRINTLN_DEBUG("Now entering minute value");
-				rtc2.setMinute = changeSetting(rtc2.getMinute(), 0, 59, disp_displayVal);
+				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, disp_displayVal));
 				
 				// Set seconds to 0 for a clean start to the minute
-				globalTime.Second = 0;
-				
-				// TODO: load the new time into the RTC
-				setTime(makeTime(globalTime));
+				rtc.setSecond(0);
+
 			}
 			break;
 			
