@@ -1,10 +1,6 @@
 
 #include "Language_English_TiM.h"
 
-
-
-
-
 typedef struct TimeFrame {
 	uint16_t start;
 	uint16_t finish;
@@ -15,10 +11,10 @@ const TimeFrame timeOfDay[5] = {
 	{ 35,   720 },		// Morning, 00:30am until 12:00
 	{ 720,  725 },		// Noon, 12:00 until 12:05
 	{ 725,  1020 },		// Afternoon, 12:30 until 17:00
-	{ 1020, 1415 },		// Evening, 17:00 until 23:30
+	{ 1020, 1415 }		// Evening, 17:00 until 23:30
 };
 
-void loadTime(PixelStates *display, uint16_t mins) {
+void loadTime(PixelStates *p_display, uint16_t mins) {
 	
 	// Select the minutes and the hour
 	uint8_t minsDisp = mins % 60;
@@ -40,13 +36,13 @@ void loadTime(PixelStates *display, uint16_t mins) {
 	// From now on we only need minsDisp in increments of 5 minutes
 	minsDisp /= 5;
 	
-        loadWords(hoursDisp, DISPLAY_hour, WORDS_hour, display);
+	loadWords(hoursDisp, DISPLAY_hour, WORDS_hour, p_display);
 
 	
 	// This conditional makes sure we don't print "o'clock" at midnight and at noon
 	if(!(hoursDisp == 0 && minsDisp == 0)) {
 		// Display the minutes
-		loadWords(minsDisp, DISPLAY_min, WORDS_min, display);
+		loadWords(minsDisp, DISPLAY_min, WORDS_min, p_display);
 	}
 	
 	// Loop through the list of times of day to check which one we are
@@ -57,7 +53,7 @@ void loadTime(PixelStates *display, uint16_t mins) {
 	} 
 	for(int i = 0; i < (sizeof(timeOfDay) / sizeof(TimeFrame)); i++) {
 		if(todMins >= timeOfDay[i].start && todMins < timeOfDay[i].finish) {
-			loadWords(i, DISPLAY_tod, WORDS_tod, display);
+			loadWords(i, DISPLAY_tod, WORDS_tod, p_display);
 			break;
 		}
 	}

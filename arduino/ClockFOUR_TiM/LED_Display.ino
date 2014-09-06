@@ -27,32 +27,35 @@ uint16_t LDR_Value = 0;
 uint8_t brightness = MIN_BRIGHTNESS;
 
 inline void setBrightness() {
-  LDR_Value = analogRead(LDR_PIN);  
-  if (LDR_Value < 350) {
-    brightness = MIN_BRIGHTNESS;
-  } else if (LDR_Value > 1000) {
-      brightness = MAX_BRIGHTNESS;
-    }  
-    else brightness = map(LDR_Value,350,1000,50,255);
-  
-  strip.setBrightness(brightness);
-  
-  /*
-  PRINT_DEBUG("LDR: ");
-  PRINT_DEBUG(LDR_Value);
-  PRINT_DEBUG(" Brightness: ");
-  PRINT_DEBUG(brightness);
-  PRINT_DEBUG(" | ");
-  */
+	
+	LDR_Value = analogRead(LDR_PIN);
+	
+	if (LDR_Value < 350) {
+		brightness = MIN_BRIGHTNESS;
+	} else if (LDR_Value > 1000) {
+		brightness = MAX_BRIGHTNESS;
+	} else {
+		brightness = map(LDR_Value, 350, 1000, 50, 255);
+	}
+	
+	strip.setBrightness(brightness);
+	
+	/*
+	PRINT_DEBUG("LDR: ");
+	PRINT_DEBUG(LDR_Value);
+	PRINT_DEBUG(" Brightness: ");
+	PRINT_DEBUG(brightness);
+	PRINT_DEBUG(" | ");
+	*/
 }
 
-void loadWords(int wordIdx, uint8_t *display, uint8_t *words, PixelStates *pixels) {
-	uint8_t disp_bytes = pgm_read_byte(display);
-        // Loop through every line
+void loadWords(int wordIdx, uint8_t *p_display, uint8_t *p_words, PixelStates *p_pixels) {
+	uint8_t disp_bytes = pgm_read_byte(p_display);
+	// Loop through every line
 	for(int dispIdx = 0; dispIdx < disp_bytes; dispIdx++) {
 
 		// Get the display bits
-		uint8_t disp = pgm_read_byte(display + wordIdx * disp_bytes + 1 + dispIdx);
+		uint8_t disp = pgm_read_byte(p_display + wordIdx * disp_bytes + 1 + dispIdx);
 
 		// Loop through every bit
 		for(int bitIdx = 0; bitIdx < 8; bitIdx++) {
@@ -60,13 +63,13 @@ void loadWords(int wordIdx, uint8_t *display, uint8_t *words, PixelStates *pixel
 			if(disp & 0x01) {
 				// It is! Get the index in WORDS
 				uint8_t wordsOffset = bitIdx + dispIdx * 8;
-				uint8_t x = pgm_read_byte(words + 3 * wordsOffset + 1);
-				uint8_t y = pgm_read_byte(words + 3 * wordsOffset + 2);
-				uint8_t length = pgm_read_byte(words + 3 * wordsOffset + 3);
+				uint8_t x = pgm_read_byte(p_words + 3 * wordsOffset + 1);
+				uint8_t y = pgm_read_byte(p_words + 3 * wordsOffset + 2);
+				uint8_t length = pgm_read_byte(p_words + 3 * wordsOffset + 3);
 
 				// Now draw the line in the buffer
 				for(int pix = x; pix < x + length; pix++) {
-					pixels->ledStates[(MATRIX_HEIGHT - 1) - y] |= 1 << pix;
+					p_pixels->ledStates[(MATRIX_HEIGHT - 1) - y] |= 1 << pix;
 				}
 			}
 			// Select the next bit
@@ -76,99 +79,110 @@ void loadWords(int wordIdx, uint8_t *display, uint8_t *words, PixelStates *pixel
 }
 
 
-void disp_display(PixelStates *pixels) {
-	disp_display(pixels, strip.Color(235, 255, 255));
+void disp_display(PixelStates *p_pixels) {
+	disp_display(p_pixels, strip.Color(235, 255, 255));
 }
 
-void disp_display(PixelStates *pixels, uint32_t colour) {
+void disp_display(PixelStates *p_pixels, uint32_t onColour) {
+	disp_display(p_pixels, onColour, strip.Color(0,   0,   0));
+}
+
+void disp_display(PixelStates *p_pixels, uint32_t onColour, uint32_t offColour) {
 	for(int y = 0; y < MATRIX_HEIGHT; y++) {
 		for(int x = 0; x < MATRIX_WIDTH; x++) {
-			if(pixels->ledStates[y] & (1 << x)) {
-				strip.setPixelColor(y * MATRIX_WIDTH + x, colour);
+			if(p_pixels->ledStates[y] & (1 << x)) {
+				strip.setPixelColor(y * MATRIX_WIDTH + x, onColour);
 			} else {
-				strip.setPixelColor(y * MATRIX_WIDTH + x, strip.Color(0,   0,   0));
+				strip.setPixelColor(y * MATRIX_WIDTH + x, offColour);
 			}
 		}
 	}
 	strip.show();
 }
 
-uint32_t lastRefresh;
-uint8_t j;
-void disp_refresh (PixelStates *pixels, uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
-  unsigned long currentMillis = millis();
-  if ((unsigned long) (currentMillis - lastRefresh) >= fadeDelay) {  // Do nothing if we are within fadeDelay
-    uint8_t random_colour = random(0,255);
-    j++;
-    if (j > 255) j=0;
-    for(int y = 0; y < MATRIX_HEIGHT; y++) {
-      for(int x = 0; x < MATRIX_WIDTH; x++) {
-        if(pixels->ledStates[y] & (1 << x)) {
-          switch (mode) {
-          case 0: // All white
-                {
-                  strip.setPixelColor(y * MATRIX_WIDTH + x, strip.Color(235,   255,   255));   
-                }
-                break;
-              
-          case 1: // Solid colour
-                {
-                  strip.setPixelColor(y * MATRIX_WIDTH + x,  disp_wheel(colour));
-                
-                }
-                break;
-              
-          case 2: // Fade through solid colours
-                {
-                   strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(j)); 
-                }   
-                break;
-           
-          case 3: // Rainbow fade
-                {
-                  strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel((y * MATRIX_WIDTH + x)* (256 / strip.numPixels()) - j & 255));
-                }
-                break;    
-            case 4: // Random colour letters
-                {
-                  strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(random(0,255)));
-                }
-                break;  
-           case 5: // Random solid colours
-                {
-                  strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(random_colour));
-                }
-                break;                                    
-          default:
-                break;
-          }
-        } 
-          else {  // turn off any letters not in a current word
-            strip.setPixelColor(y * MATRIX_WIDTH + x, strip.Color(0,   0,   0));
-            }        
-        
-      }
-    }
-    strip.show(); 
-    lastRefresh = currentMillis;    
-  }
-}  
+void disp_refresh (PixelStates *p_pixels, uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
+	static uint32_t lastRefresh;
+	static uint8_t j = 0;
+	
+	unsigned long currentMillis = millis();
+	
+	if ((unsigned long) (currentMillis - lastRefresh) >= fadeDelay) {  // Do nothing if we are within fadeDelay
+		
+		uint8_t random_colour = random(0,255);
+		
+		j++;
+		if (j > 255) {
+			j=0;
+		}
+		
+		for(int y = 0; y < MATRIX_HEIGHT; y++) {
+			for(int x = 0; x < MATRIX_WIDTH; x++) {
+				if(p_pixels->ledStates[y] & (1 << x)) {
+					switch (mode) {
+					case 0: // All white
+						{
+							strip.setPixelColor(y * MATRIX_WIDTH + x, strip.Color(235,   255,   255));
+						}
+						break;
+						
+					case 1: // Solid colour
+						{
+							strip.setPixelColor(y * MATRIX_WIDTH + x,  disp_wheel(colour));
+							
+						}
+						break;
+						
+					case 2: // Fade through solid colours
+						{
+							strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(j));
+						}
+						break;
+						
+					case 3: // Rainbow fade
+						{
+							strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel((y * MATRIX_WIDTH + x)* (256 / strip.numPixels()) - j & 255));
+						}
+						break;
+					case 4: // Random colour letters
+						{
+							strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(random(0,255)));
+						}
+						break;
+					case 5: // Random solid colours
+						{
+							strip.setPixelColor(y * MATRIX_WIDTH + x, disp_wheel(random_colour));
+						}
+						break;
+					default:
+						break;
+					}
+				}
+				else {  // turn off any letters not in a current word
+					strip.setPixelColor(y * MATRIX_WIDTH + x, strip.Color(0,   0,   0));
+				}
+				
+			}
+		}
+		strip.show();
+		lastRefresh = currentMillis;
+	}
+}
 
-void disp_fancyFire(PixelStates *pixels, uint32_t colour) {
+void disp_fancyFire(PixelStates *p_pixels, uint32_t colour) {
 	// Example of a display function
 	
 	// colour may not be used - it is included in the function prototype
 	// so that it is compatible with other display functions
 	
 	// For now let's just call the display function
-	disp_display(pixels);
+	disp_display(p_pixels);
 }
 
-void disp_random(PixelStates *pixels, uint32_t colour) {
+void disp_random(PixelStates *p_pixels, uint32_t colour) {
 	// Another display function example
 	
 	// For now let's just call the display function
-	disp_display(pixels);
+	disp_display(p_pixels);
 }
 
 // Input a value 0 to 255 to get a color value.
@@ -186,16 +200,16 @@ uint32_t disp_wheel(byte WheelPos) {
 }
 
 
-void disp_ScrollWords(char *words, int scrollbuffer, uint8_t colour) {
+void disp_ScrollWords(char *p_words, int scrollbuffer, uint8_t colour) {
 
-        for (int x = MATRIX_WIDTH; x > scrollbuffer; x--) { 
-          PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
-          pixels.setCursor(x-6,1);
-          pixels.print(words);
-          disp_refresh (&pixels, 1, colour, 0);
-          buttonsTick();
-          delay(100);
-        }
+	for (int x = MATRIX_WIDTH; x > scrollbuffer; x--) {
+		PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
+		pixels.setCursor(x-6,1);
+		pixels.print(p_words);
+		disp_refresh (&pixels, 1, colour, 0);
+		buttonsTick();
+		delay(100);
+	}
 }
 
 void disp_displayVal(uint8_t value) {
@@ -205,65 +219,79 @@ void disp_displayVal(uint8_t value) {
 }
 
 
-void disp_loadVal(PixelStates *pixels, uint8_t value) {
+void disp_loadVal(PixelStates *p_pixels, uint8_t value) {
 	if(value < 10) {
-		pixels->setCursor(8, 1);
+		p_pixels->setCursor(8, 1);
 	} else {
-		pixels->setCursor(2, 1);
+		p_pixels->setCursor(2, 1);
 	}
-	pixels->print(value);
+	p_pixels->print(value);
 }
 
 
 void disp_TempCF(uint8_t value) {
-        PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
-        pixels.setCursor(2,1);
-        pixels.print("o");
+	PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
+	pixels.setCursor(2,1);
+	pixels.print("o");
 	pixels.setCursor(8, 1);
 	if(value == 0) {
 		pixels.print("C");
-	} else {
+		} else {
 		pixels.print("F");
 	}
 	disp_display(&pixels);
 }
 
-void self_test(PixelStates *pixels) {
-  uint8_t c = 0;
-  uint8_t i = 0;
-  uint8_t seconds_count = 0;
-  uint16_t totalMinutes = 0;
-  while (popEvent() == NO_EVENT) {
-    PRINT_DEBUG("I = ");
-    PRINT_DEBUG (i);
-    PRINT_DEBUG(" ; C = ");
-    PRINTLN_DEBUG(c);
-    if (i > strip.numPixels()) {
-      i = 0;
-      c += 1;
-      if (c > 2) c = 0;
-    }
-    if (c == 0) strip.setPixelColor(i, strip.Color(128, 0, 0));
-    if (c == 1) strip.setPixelColor(i, strip.Color(0, 128, 0));
-    if (c == 2) strip.setPixelColor(i, strip.Color(0, 0, 128));
-    strip.show();
-    buttonsTick();
-    i++;
-    delay(10);
-  }
-  while (popEvent() == NO_EVENT) {
-    buttonsTick();
-    seconds_count+=10;
-    if (seconds_count > 60) {
-    totalMinutes++;
-    seconds_count = 0;
-    }
-    if (totalMinutes > 1439) totalMinutes = 0;
-    pixels->fillScreen(0);
-    loadTime(pixels, totalMinutes);
-    disp_refresh(pixels, 0, 0, 0);
-  }
-    
+void self_test(PixelStates *p_pixels) {
+	uint8_t c = 0;
+	uint8_t i = 0;
+	uint8_t seconds_count = 0;
+	uint16_t totalMinutes = 0;
+	while (popEvent() == NO_EVENT) {
+		PRINT_DEBUG("I = ");
+		PRINT_DEBUG (i);
+		PRINT_DEBUG(" ; C = ");
+		PRINTLN_DEBUG(c);
+		if (i > strip.numPixels()) {
+			i = 0;
+			c += 1;
+			if (c > 2) {
+				c = 0;
+			}
+		}
+		
+		switch(c) {
+		case 0:
+			strip.setPixelColor(i, strip.Color(128, 0, 0));
+			break;
+		case 1:
+			strip.setPixelColor(i, strip.Color(0, 128, 0));
+			break;
+		case 2:
+			strip.setPixelColor(i, strip.Color(0, 0, 128));
+			break;
+		} 
+		strip.show();
+		buttonsTick();
+		i++;
+		delay(10);
+	}
+	
+	while (popEvent() == NO_EVENT) {
+		buttonsTick();
+		seconds_count+=10;
+		if (seconds_count > 60) {
+			totalMinutes++;
+			seconds_count = 0;
+		}
+		if (totalMinutes > 1439) {
+			totalMinutes = 0;
+		}
+		p_pixels->fillScreen(0);
+		loadTime(p_pixels, totalMinutes);
+		disp_refresh(p_pixels, 0, 0, 0);
+	}
+	
 }
 
 
