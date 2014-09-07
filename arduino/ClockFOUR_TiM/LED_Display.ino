@@ -172,6 +172,16 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
 	}
 }
 
+void disp_showBWBitmap(uint8_t *bmp, uint32_t onColour, uint32_t offColour) {
+	pixBuffer_clear();
+	pixels.loadBitmap(0, 0, bmp);
+	disp_display(onColour, offColour);
+}
+
+void disp_showColourBitmap(uint8_t *bmp) {
+	// TODO: Implement this function
+}
+
 // Input a value 0 to 255 to get a color value.
 // The colours are a transition r - g - b - back to r.
 uint32_t wheel(byte WheelPos) {

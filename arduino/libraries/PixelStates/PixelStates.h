@@ -66,9 +66,7 @@ class PixelStates : public Adafruit_GFX {
 		bool getPixel(uint16_t ledIdx);
 		void clear();
 		void fillBuffer(uint8_t pixValue);
-		
-		// The array could be any size, so we just store the pointer
-		uint8_t *pixelStates;
+		void loadBitmap(uint16_t x, uint16_t y, uint8_t *arr);
 		
 	private:
 		const uint8_t type;
@@ -77,6 +75,9 @@ class PixelStates : public Adafruit_GFX {
 		const uint8_t tilesX;
 		const uint8_t tilesY;
 		const uint16_t arrSize;
+		
+		// The array could be any size, so we just store the pointer
+		uint8_t *pixelStates;
 };
 
 #endif // _PIXEL_STATES_H_

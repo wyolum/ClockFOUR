@@ -214,3 +214,27 @@ void PixelStates::fillBuffer(uint8_t pixValue) {
 }
 
 
+void PixelStates::loadBitmap(uint16_t x, uint16_t y, uint8_t *bmp) {
+	uint16_t bmp_w = bmp[0];
+	uint16_t bmp_h = bmp[1];
+	
+	uint8_t byteIdx = 2;
+	int8_t bitIdx = 7;
+	uint8_t value = bmp[byteIdx];
+	
+	for(uint16_t j = 0; j < bmp_h; j++) {
+		for(uint16_t i = 0; i < bmp_w; i++) {
+			
+			if((value & (1 << bitIdx)) != 0) {
+				drawPixel(x + i, y + j, 0x00FFFFFF);
+			}
+			
+			bitIdx--;
+			if(bitIdx < 0) {
+				bitIdx = 7;
+				byteIdx++;
+				value = bmp[byteIdx];
+			}
+		}
+	}
+}

@@ -4,6 +4,8 @@
 #include <DS3231.h>
 #include <Time.h>
 
+#include "bitmaps.h"
+
 /************* Enable/disable debug mode *************/
 #define DEBUG
 
@@ -320,7 +322,14 @@ void clockConfig() {
 			
 		case HOUR:
 			{				
-				disp_ScrollWords("Hour:", -15, 6);
+//				disp_ScrollWords("Hour:", -15, 6);
+
+				disp_showBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
+				delay(2000);
+				disp_showBitmap(Hour_bw_bmp, 0x00000000, 0x00FFFFFF);	// Black on white
+				delay(2000);
+				disp_showBitmap(Hour_bw_bmp, 0x00FF00FF, 0x0000FFFF);	// Some nasty colour combination
+				delay(2000);
 				
 				PRINTLN_DEBUG("Now entering hour value");
 				rtc.setHour(changeSetting(rtc.getHour(h12, PM), 0, 23, disp_displayVal));
