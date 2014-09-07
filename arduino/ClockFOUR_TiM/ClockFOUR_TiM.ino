@@ -3,7 +3,6 @@
 #include <Wire.h>      
 #include <DS3231.h>
 #include <Time.h>
-#include <PixelStates.h>
 
 /************* Enable/disable debug mode *************/
 #define DEBUG
@@ -49,7 +48,7 @@ typedef enum EventTypes {
 #define REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
 
 /************* Colour modes *************/
-typedef void (*ColourModeFunc)(PixelStates *, uint8_t, uint8_t, uint16_t);
+typedef void (*ColourModeFunc)(uint8_t, uint8_t, uint16_t);
 typedef struct ColourMode {
 	ColourModeFunc function;
 	uint8_t mode;
@@ -87,7 +86,7 @@ typedef enum DisplayModeIdx {
 	MODE_COUNT
 };
 
-typedef boolean (*DisplayModeFunc)(PixelStates *);
+typedef boolean (*DisplayModeFunc)(void);
 
 DisplayModeFunc displayModes[MODE_COUNT] = {
 	displayTime,
@@ -133,21 +132,19 @@ void setup() {
 	buttonsInit();
 
 	// display a welcome message
-	setBrightness();
+	disp_setBrightness();
 	disp_ScrollWords("Clock4", -40, 1);
+	
+	buttonsTick();
         
 	// enter self test mode if a button has been held down
-	PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
 	if (popEvent() != NO_EVENT) {
-		self_test(&pixels); 
+		self_test(); 
 	}
 }
 
 
-void loop() {
-	// Stores which pixels are on/off
-	static PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT);
-	
+void loop() {	
 	// p_colourMode stores a pointer to the current colour mode
 	uint8_t *p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
 	
@@ -198,39 +195,39 @@ void loop() {
 	}
 	
 	// Set the display brightness from the LDR
-	setBrightness();
+	disp_setBrightness();
 
 	// First clear all the LEDs, and then depending on the mode call its display function
-	pixels.fillScreen(0);
-	displayModes[clockSettings.displayMode](&pixels);
+	pixBuffer_clear();
+	displayModes[clockSettings.displayMode]();
 	
 	// Figure out which colour mode we are using and then display the pixels
 	ColourMode cm = colourModes[*p_colourMode];
-	cm.function(&pixels, cm.mode, cm.colour, cm.fade_delay);
+	cm.function(cm.mode, cm.colour, cm.fade_delay);
 }
 
 
-boolean displayTime(PixelStates *p_pixels) {
+boolean displayTime() {
 	// Show the time!
 	uint16_t totalMinutes = rtc.getHour(h12, PM) * 60 + rtc.getMinute();
         
-	loadTime(p_pixels, totalMinutes);
+	loadTime(totalMinutes);
 }
 
 
-boolean displaySeconds(PixelStates *p_pixels) {
-	disp_loadVal(p_pixels, rtc.getSecond());
+boolean displaySeconds() {
+	pixBuffer_loadVal(rtc.getSecond());
 }
 
 
-boolean displayTemp(PixelStates *p_pixels) {
+boolean displayTemp() {
 	float celsius = rtc.getTemperature();
 	float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
 
 	if (clockSettings.useDegF) {
-		disp_loadVal(p_pixels, fahrenheit);
+		pixBuffer_loadVal(fahrenheit);
 	} else {
-		disp_loadVal(p_pixels, celsius);
+		pixBuffer_loadVal(celsius);
 	}
 }
 
