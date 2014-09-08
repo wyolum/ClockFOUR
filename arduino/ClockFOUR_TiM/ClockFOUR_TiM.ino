@@ -74,9 +74,9 @@ ColourMode colourModes[COLOUR_MODE_COUNT] = {
 	{ disp_refresh,   1,   183, 0 },		// 1: Purple
 	{ disp_refresh,   1,   210, 0 },		// 1: Violet
 	{ disp_refresh,   1,   248, 0 },		// 1: Red
-	{ disp_refresh,   2,   0,   100 },		// 5: 
-	{ disp_refresh,   3,   0,   100 },		// 6: 
-	{ disp_refresh,   4,   0,   1000 },	    // 7: 
+	{ disp_refresh,   2,   0,   100 },		// 5: Slow colour fade
+	{ disp_refresh,   3,   0,   100 },		// 6: Rainbow fade
+	{ disp_refresh,   4,   0,   100 },	        // 7: Random coloured letters, twinkle
 };
 
 
@@ -212,8 +212,7 @@ void loop() {
 boolean displayTime() {
 	// Show the time!
 	uint16_t totalMinutes = rtc.getHour(h12, PM) * 60 + rtc.getMinute();
-        
-	loadTime(totalMinutes);
+        loadTime(totalMinutes);
 }
 
 
@@ -233,16 +232,13 @@ boolean displayTemp() {
 	}
 }
 
-
-// This needs to be placed above where ever it's called from as the Arduino compiler seems to have
-// trouble dealing with function pointers as parameters.
 uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void (*dispFunc)(uint8_t)) {
 	uint8_t value = origValue;
 	static long lastRepeat = 0;
 	
 	dispFunc(value);
 	
-	// Wait for the user to remove their grubby fingers before continuing.
+	// Wait for the user to remove their fingers before continuing.
 	waitWhilePressed();
 	
 	while(true) {
@@ -258,7 +254,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 		case BR_PRESS:
 		case BR_REPEAT:
 			if(millis() - lastRepeat < REPEAT_DELAY) {
-				break;
+			break;
 			}
 			
 			lastRepeat = millis();
