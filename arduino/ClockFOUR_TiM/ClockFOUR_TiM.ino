@@ -217,7 +217,7 @@ boolean displayTime() {
 
 
 boolean displaySeconds() {
-	pixBuffer_loadVal(rtc.getSecond(),0);
+	pixBuffer_loadVal(rtc.getSecond(), 2);
 }
 
 
@@ -226,9 +226,9 @@ boolean displayTemp() {
 	float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
 
 	if (clockSettings.useDegF) {
-		pixBuffer_loadVal(fahrenheit,1);
+		pixBuffer_loadVal(fahrenheit, 1);
 	} else {
-		pixBuffer_loadVal(celsius,1);
+		pixBuffer_loadVal(celsius, 1);
 	}
 }
 

@@ -199,32 +199,52 @@ uint32_t wheel(byte WheelPos) {
 
 void disp_displayVal(uint8_t value) {
 	pixels.clear();
-	pixBuffer_loadVal(value,0);
+	pixBuffer_loadVal(value, 0);
 	disp_display();
 }
 
-
-void pixBuffer_loadVal(uint8_t value, bool deg) {
-	if (deg == false) {
+// mode 0 = normal display, 1 = degree symbol, 2 = minute progress bar
+void pixBuffer_loadVal(uint8_t value, uint8_t disp_mode) {
+uint8_t k, ticks = 0;
+  	if (disp_mode == 0) {
           if(value < 10) {
 	  	pixels.setCursor(8, 1);
 	  } else {
 	  	pixels.setCursor(2, 1);
 	  }
-	  pixels.print(value);
-        } else { // print a degree symbol
-            pixels.drawPixel(14,1,0x00FFFFFF);
-            pixels.drawPixel(14,3,0x00FFFFFF);
-            pixels.drawPixel(13,2,0x00FFFFFF);
-            pixels.drawPixel(15,2,0x00FFFFFF);
-            if(value < 10) {
+        } else if (disp_mode == 1) { // print a degree symbol
+               pixels.drawPixel(14,1,0x00FFFFFF);
+               pixels.drawPixel(14,3,0x00FFFFFF);
+               pixels.drawPixel(13,2,0x00FFFFFF);
+               pixels.drawPixel(15,2,0x00FFFFFF);
+               if(value < 10) {
 	  	  pixels.setCursor(7, 1);
-	    } else {
-	  	  pixels.setCursor(1, 1);
-	    }
-	  
-          
+	       } else {
+	     	  pixels.setCursor(1, 1);
+	       }
+        }  else {  // (disp_mode == 2)
+             if(value < 10) {
+	  	pixels.setCursor(8, 0);
+	     } else {
+	   	pixels.setCursor(2, 0);
+	     }
+           ticks = rtc.getSecond()/15 + rtc.getMinute()%5 * 4;
+/*           
+           PRINT_DEBUG("ticks ");  
+           PRINT_DEBUG(ticks);
+           PRINT_DEBUG(" second/15 ");
+           PRINT_DEBUG(rtc.getSecond()/15);
+           PRINT_DEBUG(" Min %5 ");
+           PRINTLN_DEBUG(rtc.getMinute()%5);
+*/           
+           for (k = 0; k < (20); k++) {
+             if ((k < ticks) && (k > ticks - 5)) {
+               pixels.drawPixel(k, 7, 0x00FFFFFF);
+             } else pixels.drawPixel(k, 7, 0x00000000);
+           }
         }
+          
+        
       pixels.print(value);
 }
 
