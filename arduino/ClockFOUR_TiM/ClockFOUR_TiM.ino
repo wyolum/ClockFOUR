@@ -2,7 +2,7 @@
 #include <avr/pgmspace.h>
 #include <Wire.h>      
 #include <DS3231.h>
-#include <Time.h>
+//#include <Time.h>
 
 #include "bitmaps.h"
 
@@ -324,11 +324,11 @@ void clockConfig() {
 			{				
 //				disp_ScrollWords("Hour:", -15, 6);
 
-				disp_showBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
+				disp_showBWBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				delay(2000);
-				disp_showBitmap(Hour_bw_bmp, 0x00000000, 0x00FFFFFF);	// Black on white
+				disp_showBWBitmap(Hour_bw_bmp, 0x00000000, 0x00FFFFFF);	// Black on white
 				delay(2000);
-				disp_showBitmap(Hour_bw_bmp, 0x00FF00FF, 0x0000FFFF);	// Some nasty colour combination
+				disp_showBWBitmap(Hour_bw_bmp, 0x00FF00FF, 0x0000FFFF);	// Some nasty colour combination
 				delay(2000);
 				
 				PRINTLN_DEBUG("Now entering hour value");
