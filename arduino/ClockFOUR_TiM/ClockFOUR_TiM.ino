@@ -321,11 +321,7 @@ void clockConfig() {
 //				disp_ScrollWords("Hour:", -15, 6);
 
 				disp_showBWBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
-				delay(2000);
-				disp_showBWBitmap(Hour_bw_bmp, 0x00000000, 0x00FFFFFF);	// Black on white
-				delay(2000);
-				disp_showBWBitmap(Hour_bw_bmp, 0x00FF00FF, 0x0000FFFF);	// Some nasty colour combination
-				delay(2000);
+				waitDelayOrButton(2000);
 				
 				PRINTLN_DEBUG("Now entering hour value");
 				rtc.setHour(changeSetting(rtc.getHour(h12, PM), 0, 23, disp_displayVal));
@@ -363,6 +359,24 @@ void clockConfig() {
 	
 	saveSettings();
 	PRINTLN_DEBUG("Exiting configuration mode");
+}
+
+
+// Creates a delay loop that exits when either the time given
+// has passed, or one of the buttons has been pressed
+void waitDelayOrButton(uint16_t delayTime) {
+	unsigned long stopTime = millis() + delayTime;
+	
+	waitWhilePressed();
+	
+	while(millis() < stopTime) {
+		buttonsTick();
+		
+		if(popEvent() != NO_EVENT) {
+			// Some event has happened, quit the loop early
+			break;
+		}
+	}
 }
 
 
