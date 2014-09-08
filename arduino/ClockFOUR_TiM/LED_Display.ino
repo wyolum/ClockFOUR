@@ -199,25 +199,45 @@ uint32_t wheel(byte WheelPos) {
 
 void disp_displayVal(uint8_t value) {
 	pixels.clear();
-	pixBuffer_loadVal(value);
+	pixBuffer_loadVal(value,0);
 	disp_display();
 }
 
 
-void pixBuffer_loadVal(uint8_t value) {
-	if(value < 10) {
-		pixels.setCursor(8, 1);
-	} else {
-		pixels.setCursor(2, 1);
-	}
-	pixels.print(value);
+void pixBuffer_loadVal(uint8_t value, bool deg) {
+	if (deg == false) {
+          if(value < 10) {
+	  	pixels.setCursor(8, 1);
+	  } else {
+	  	pixels.setCursor(2, 1);
+	  }
+	  pixels.print(value);
+        } else { // print a degree symbol
+            pixels.drawPixel(14,1,0x00FFFFFF);
+            pixels.drawPixel(14,3,0x00FFFFFF);
+            pixels.drawPixel(13,2,0x00FFFFFF);
+            pixels.drawPixel(15,2,0x00FFFFFF);
+            if(value < 10) {
+	  	  pixels.setCursor(7, 1);
+	    } else {
+	  	  pixels.setCursor(1, 1);
+	    }
+	  
+          
+        }
+      pixels.print(value);
 }
 
 
 void disp_TempCF(uint8_t value) {
 	pixels.clear();
-	pixels.setCursor(2,1);
-	pixels.print("o");
+
+        // draw a degree symbol
+        pixels.drawPixel(3,1,0x00FFFFFF);
+        pixels.drawPixel(3,3,0x00FFFFFF);
+        pixels.drawPixel(2,2,0x00FFFFFF);
+        pixels.drawPixel(4,2,0x00FFFFFF);
+
 	pixels.setCursor(8, 1);
 	if(value == 0) {
 		pixels.print("C");
