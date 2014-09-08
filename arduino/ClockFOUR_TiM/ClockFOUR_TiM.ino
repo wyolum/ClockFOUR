@@ -330,8 +330,10 @@ void clockConfig() {
 			
 		case MINUTE:
 			{
-				disp_ScrollWords("Min:", -15, 9);
+				//disp_ScrollWords("Min:", -15, 9);
 				
+                                disp_showBWBitmap(Min_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
+				waitDelayOrButton(2000);
 				PRINTLN_DEBUG("Now entering minute value");
 				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, disp_displayVal));
 				
@@ -342,8 +344,11 @@ void clockConfig() {
 			
 		case TEMP_CF:
 			{
-				disp_ScrollWords("Temp:", -15, 12);
+				//disp_ScrollWords("Temp:", -15, 12);
 				
+                                disp_showBWBitmap(Temp_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
+				waitDelayOrButton(2000);
+
 				PRINTLN_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");
 				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, disp_TempCF);
 			}
