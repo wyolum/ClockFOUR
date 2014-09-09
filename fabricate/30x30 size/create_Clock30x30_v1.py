@@ -267,7 +267,7 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
             drawline(p, x, ymin, x, ymax)
         for y in baffle_ys:
             drawline(p, xmin, y, xmax, y)
-        p.drawOn(can, linewidth=2 * mm)
+        p.drawOn(can, linewidth=1 * mm)
 
     for i, y in enumerate(led_ys):
         for j, x in enumerate(led_xs):
@@ -521,7 +521,7 @@ if __name__ == '__main__':
     font = 'SpecialElite'
     add_font(font, 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts')    
     create_faceplate('english_30_lower %s' % (font), english_30, lower, font, 32,
-                     baffles=False,
+                     baffles=True,
                      do_corner_holes=False,
                      reverse=True,
                      showtime=False,

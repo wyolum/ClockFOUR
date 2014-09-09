@@ -217,7 +217,7 @@ boolean displayTime() {
 
 
 boolean displaySeconds() {
-	pixBuffer_loadVal(rtc.getSecond(), 2);
+	pixBuffer_loadVal(rtc.getSecond(), 0);  // put a "2" in the last place to activate the minute slider
 }
 
 
