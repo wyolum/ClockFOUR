@@ -61,9 +61,6 @@ class Image:
 PCB_OFF = .05 * inch
 HEIGHT = 275 * mm + 2 * PCB_OFF
 WIDTH = 275 * mm + 2 * PCB_OFF
-BEND_R = 10 * mm
-EDGE_THICKNESS = 3 * mm
-# EDGE_THICKNESS = .075 * inch
 
 MARGIN = 1 * inch
 
@@ -324,9 +321,9 @@ linewidth = None
 W = WIDTH + 2 * MARGIN
 H = HEIGHT + 2 * MARGIN
 
-def button_hole(x, y, p):
-    w = .3 * inch
-    h = .3 * inch
+def led_strip(x, y, p):
+    w = 16.67 * mm
+    h = 17.98 * mm
     p.translate(-x + w/2, -y + w/2)
     p.moveTo(0, 0)
     p.lineTo(w, 0)
@@ -340,9 +337,9 @@ def button_hole(x, y, p):
 pcb_w = 233.3 * mm
 pcb_h = 233.3 * mm
 def create_backplate():
-    can = canvas.Canvas('%s/backplate_jr_%s.pdf' % (directory, __version__),
+    can = canvas.Canvas('%s/backplate_30_%s.pdf' % (directory, __version__),
                         pagesize=(WIDTH + 2 * MARGIN, HEIGHT + 2 * MARGIN))
-    can.drawCentredString(WIDTH / 2, -MARGIN / 2, "ClockTHREEjr_v2 Backplate %s" % __version__)
+    can.drawCentredString(WIDTH / 2, -MARGIN / 2, "ClockFOUR_v1 Backplate %s" % __version__)
     if False:
         can.translate(W + 2 * MARGIN, 0)
         can.scale(-1, 1)
@@ -412,8 +409,8 @@ def create_backplate():
 
 
 
-BAFFLE_H = 25.00 * mm
-BAFFLE_T = .6 * mm
+BAFFLE_H = 22.50 * mm
+BAFFLE_T = 2 * mm
 W = 11 * inch
 H = 8 * inch
 PAGE_MARGIN = 2 * cm
