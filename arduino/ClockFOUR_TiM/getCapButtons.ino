@@ -37,11 +37,15 @@ void buttonLClick() {
 }
 
 void buttonLLongPress() {
-	addToQeue(BL_PRESS);
+	if(oneButton_R.isPressed() == false) {
+		addToQeue(BL_PRESS);
+	}
 }
 
 void buttonLRepeat() {
-	addToQeue(BL_REPEAT);
+	if(oneButton_R.isPressed() == false) {
+		addToQeue(BL_REPEAT);
+	}
 }
 
 void buttonRClick() {
@@ -49,11 +53,15 @@ void buttonRClick() {
 }
 
 void buttonRLongPress() {
-	addToQeue(BR_PRESS);
+	if(oneButton_L.isPressed() == false) {
+		addToQeue(BR_PRESS);
+	}
 }
 
 void buttonRRepeat() {
-	addToQeue(BR_REPEAT);
+	if(oneButton_L.isPressed() == false) {
+		addToQeue(BR_REPEAT);
+	}
 }
 
 // Returns true if both buttons have been pressed for a long time
@@ -63,7 +71,7 @@ boolean bothLongPressed() {
 
 // Blocks until both buttons have been released from a long press
 void waitWhilePressed() {
-	while(oneButton_L.isLongPressed() || oneButton_R.isLongPressed()) {
+	while(oneButton_L.isPressed() || oneButton_R.isPressed()) {
 		// Loop until both buttons are released
 		buttonsTick();
 	}

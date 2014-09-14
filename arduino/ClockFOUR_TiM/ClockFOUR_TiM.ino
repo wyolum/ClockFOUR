@@ -76,7 +76,7 @@ ColourMode colourModes[COLOUR_MODE_COUNT] = {
 	{ disp_refresh,   1,   248, 0 },		// 1: Red
 	{ disp_refresh,   2,   0,   100 },		// 5: Slow colour fade
 	{ disp_refresh,   3,   0,   100 },		// 6: Rainbow fade
-	{ disp_refresh,   4,   0,   100 },	        // 7: Random coloured letters, twinkle
+	{ disp_refresh,   4,   0,   100 },	    // 7: Random coloured letters, twinkle
 };
 
 
@@ -138,7 +138,7 @@ void setup() {
 	disp_ScrollWords("Clock4", -40, 1);
 	
 	buttonsTick();
-        
+		
 	// enter self test mode if a button has been held down
 	if (popEvent() != NO_EVENT) {
 		self_test(); 
@@ -186,14 +186,19 @@ void loop() {
 		saveSettings();
 		break;
 		
+	case BL_PRESS:
+		// Pick the colour
+		*p_colourMode = colourConfig(*p_colourMode);
+		saveSettings();
+		break;
+		
+	case BR_PRESS:
+		// Configure the clock
+		clockConfig();
+		break;
+		
 	default:
 		break;
-	}
-	 
-	// As buttons pressed are notified in a queue, detecting whether two
-	// buttons are pressed needs to be done separately
-	if(bothLongPressed()) {
-		clockConfig();
 	}
 	
 	// Set the display brightness from the LDR
@@ -212,7 +217,7 @@ void loop() {
 boolean displayTime() {
 	// Show the time!
 	uint16_t totalMinutes = rtc.getHour(h12, PM) * 60 + rtc.getMinute();
-        loadTime(totalMinutes);
+	loadTime(totalMinutes);
 }
 
 
@@ -223,9 +228,9 @@ boolean displaySeconds() {
 
 boolean displayTemp() {
 	float celsius = rtc.getTemperature();
-	float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
 
 	if (clockSettings.useDegF) {
+		float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
 		pixBuffer_loadVal(fahrenheit, 1);
 	} else {
 		pixBuffer_loadVal(celsius, 1);
@@ -235,8 +240,6 @@ boolean displayTemp() {
 uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void (*dispFunc)(uint8_t)) {
 	uint8_t value = origValue;
 	static long lastRepeat = 0;
-	
-	dispFunc(value);
 	
 	// Wait for the user to remove their fingers before continuing.
 	waitWhilePressed();
@@ -263,14 +266,31 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 			if(value > maximum) {
 				value = minimum;
 			}
-			dispFunc(value);
 			break;
 			
 		default:
 			break;
 		}
+	
+		dispFunc(value);
 	}
 	return value;
+}
+
+
+void colourWheelDisp(uint8_t colourMode) {
+	// Display function for the colour picker
+	ColourMode cm = colourModes[colourMode];
+	cm.function(cm.mode, cm.colour, cm.fade_delay);
+}
+
+
+uint8_t colourConfig(uint8_t colourMode) {
+	// Config function for the colour mode
+	pixBuffer_clear();
+	pixBuffer_loadBitmap(Circle_bw_bmp);
+	
+	return changeSetting(colourMode, 0, COLOUR_MODE_COUNT - 1, colourWheelDisp);
 }
 
 
@@ -317,9 +337,7 @@ void clockConfig() {
 			break;
 			
 		case HOUR:
-			{				
-//				disp_ScrollWords("Hour:", -15, 6);
-
+			{
 				disp_showBWBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 				
@@ -330,9 +348,7 @@ void clockConfig() {
 			
 		case MINUTE:
 			{
-				//disp_ScrollWords("Min:", -15, 9);
-				
-                                disp_showBWBitmap(Min_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
+				disp_showBWBitmap(Min_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 				PRINTLN_DEBUG("Now entering minute value");
 				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, disp_displayVal));
@@ -344,9 +360,7 @@ void clockConfig() {
 			
 		case TEMP_CF:
 			{
-				//disp_ScrollWords("Temp:", -15, 12);
-				
-                                disp_showBWBitmap(Temp_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
+				disp_showBWBitmap(Temp_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 
 				PRINTLN_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");

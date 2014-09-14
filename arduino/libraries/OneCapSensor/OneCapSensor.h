@@ -51,6 +51,7 @@ public:
   // call this function every some milliseconds for handling button events.
   void tick(void);
   bool isLongPressed();
+  bool isPressed();
 
 private:
   int _pin;        // hardware pin number. 

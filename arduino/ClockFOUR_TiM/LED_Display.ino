@@ -58,6 +58,10 @@ inline void pixBuffer_clear() {
 	pixels.clear();
 }
 
+inline void pixBuffer_loadBitmap(uint8_t *bmp) {
+	pixels.loadBitmap(0, 0, bmp);
+}
+
 void pixBuffer_loadWords(int wordIdx, uint8_t *p_display, uint8_t *p_words) {
 	uint8_t disp_bytes = pgm_read_byte(p_display);
 	// Loop through every line
@@ -174,7 +178,7 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
 
 void disp_showBWBitmap(uint8_t *bmp, uint32_t onColour, uint32_t offColour) {
 	pixBuffer_clear();
-	pixels.loadBitmap(0, 0, bmp);
+	pixBuffer_loadBitmap(bmp);
 	disp_display(onColour, offColour);
 }
 

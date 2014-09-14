@@ -21,7 +21,7 @@ OneCapSensor::OneCapSensor(CapacitiveSensor *capButton)
 {
   _capButton = capButton;
 
-  _clickTicks = 100;        // number of millisec that have to pass by before a click is detected.
+  _clickTicks = 300;        // number of millisec that have to pass by before a click is detected.
   _pressTicks = 1000;       // number of millisec that have to pass by before a long button press is detected.
  
   _state = 0; // starting with state 0: waiting for button to be pressed
@@ -88,6 +88,10 @@ void OneCapSensor::attachDuringLongPress(callbackFunction newFunction)
 // function to get the current long pressed state
 bool OneCapSensor::isLongPressed(){
   return _isLongPressed;
+}
+
+bool OneCapSensor::isPressed() {
+  return _state != 0;
 }
 
 void OneCapSensor::tick(void)
