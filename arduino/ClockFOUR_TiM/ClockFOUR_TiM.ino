@@ -76,7 +76,7 @@ ColourMode colourModes[COLOUR_MODE_COUNT] = {
 	{ disp_refresh,   1,   248, 0 },		// 1: Red
 	{ disp_refresh,   2,   0,   100 },		// 5: Slow colour fade
 	{ disp_refresh,   3,   0,   100 },		// 6: Rainbow fade
-	{ disp_refresh,   4,   0,   100 },	    // 7: Random coloured letters, twinkle
+	{ disp_refresh,   4,   0,   100 },		// 7: Random coloured letters, twinkle
 };
 
 
