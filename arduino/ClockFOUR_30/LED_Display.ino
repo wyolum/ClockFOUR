@@ -50,7 +50,7 @@ inline void disp_setBrightness() {
 	PRINT_DEBUG(LDR_Value);
 	PRINT_DEBUG(" Brightness: ");
 	PRINT_DEBUG(brightness);
-	PRINT_DEBUG(" | ");
+	PRINTLN_DEBUG(" | ");
 	*/
 }
 

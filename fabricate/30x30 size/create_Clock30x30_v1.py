@@ -409,7 +409,7 @@ def create_backplate():
 
 
 
-BAFFLE_H = 22.50 * mm
+BAFFLE_H = 26.50 * mm
 BAFFLE_T = 2 * mm
 W = 11 * inch
 H = 8 * inch
