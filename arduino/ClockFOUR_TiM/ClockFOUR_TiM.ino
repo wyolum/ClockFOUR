@@ -2,7 +2,6 @@
 #include <avr/pgmspace.h>
 #include <Wire.h>      
 #include <DS3231.h>
-//#include <Time.h>
 
 #include "bitmaps.h"
 
@@ -50,33 +49,21 @@ typedef enum EventTypes {
 #define REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
 
 /************* Colour modes *************/
-typedef void (*ColourModeFunc)(uint8_t, uint8_t, uint16_t);
-typedef struct ColourMode {
-	ColourModeFunc function;
-	uint8_t mode;
-	uint8_t colour;
-	uint16_t fade_delay;
+typedef enum ColourModes {
+	CM_ALL_WHITE = 0,
+	CM_SOLID_COLOUR,
+	CM_FADE,
+	CM_RAINBOW,
+	CM_PARTY,
+	COLOUR_MODE_COUNT
 };
 
-#define COLOUR_MODE_COUNT	16
-
-ColourMode colourModes[COLOUR_MODE_COUNT] = {
-	{ disp_refresh,   0,   0,   0 },		// 0: All white
-	{ disp_refresh,   1,   0,   0 },		// 1: Red
-	{ disp_refresh,   1,   20,  0 },		// 1: Orange
-	{ disp_refresh,   1,   45,  0 },		// 1: Yellow
-	{ disp_refresh,   1,   60,  0 },		// 1: Lemon lime
-	{ disp_refresh,   1,   87,  0 },		// 1: Green
-	{ disp_refresh,   1,   105, 0 },		// 1: Mint
-	{ disp_refresh,   1,   120, 0 },		// 1: Light Blue
-	{ disp_refresh,   1,   140, 0 },		// 1: Blue
-	{ disp_refresh,   1,   170, 0 },		// 1: Dark Blue
-	{ disp_refresh,   1,   183, 0 },		// 1: Purple
-	{ disp_refresh,   1,   210, 0 },		// 1: Violet
-	{ disp_refresh,   1,   248, 0 },		// 1: Red
-	{ disp_refresh,   2,   0,   100 },		// 5: Slow colour fade
-	{ disp_refresh,   3,   0,   100 },		// 6: Rainbow fade
-	{ disp_refresh,   4,   0,   100 },		// 7: Random coloured letters, twinkle
+uint16_t cm_fadeSpeed[COLOUR_MODE_COUNT] = {
+	0,		// 0: All white
+	0,		// 1: Colour selected from the colour wheel
+	100,	// 2: Slow colour fade
+	100,	// 3: Rainbow fade
+	100,	// 4: Random coloured letters, twinkle
 };
 
 
@@ -100,12 +87,13 @@ DisplayModeFunc displayModes[MODE_COUNT] = {
 /************* Settings struct definition *************/
 typedef union Settings {
 	// WARNING: array has to be at least as large as the number of elements in the struct
-	uint8_t array[6];
+	uint8_t array[9];
 	struct {
 		uint8_t useGPS;
 		uint8_t useDegF;					// 0 if degrees C, 1 if degrees F
 		uint8_t displayMode;				// Stores the display mode we are currently in
 		uint8_t colourModes[MODE_COUNT];	// Each display mode has its own colour mode
+		uint8_t colourVal[MODE_COUNT];		// Each display also has its own colour value
 	};
 };
 extern Settings clockSettings;
@@ -149,6 +137,7 @@ void setup() {
 void loop() {	
 	// p_colourMode stores a pointer to the current colour mode
 	uint8_t *p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
+	uint8_t *p_colourValue = &clockSettings.colourVal[clockSettings.displayMode];
 	
 	buttonsTick();
 	
@@ -163,7 +152,7 @@ void loop() {
 		// Update p_colourMode to the new display mode
 		p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
 		
-		PRINT_DEBUG("Switched to mode");
+		PRINT_DEBUG("Switched to display mode: ");
 		PRINTLN_DEBUG(clockSettings.displayMode);
 		
 		saveSettings();
@@ -172,7 +161,7 @@ void loop() {
 	case BR_CLICK:
 		// Perhaps enter colour settings mode?
 		
-		PRINT_DEBUG("Current colour");
+		PRINT_DEBUG("Current colour mode: ");
 		PRINTLN_DEBUG(*p_colourMode);
 
 		(*p_colourMode)++;
@@ -180,7 +169,7 @@ void loop() {
 			*p_colourMode = 0;
 		}
 		
-		PRINT_DEBUG("Switched to colour");
+		PRINT_DEBUG("Switched to colour mode:");
 		PRINTLN_DEBUG(*p_colourMode);
 		
 		saveSettings();
@@ -188,7 +177,8 @@ void loop() {
 		
 	case BR_PRESS:
 		// Pick the colour
-		*p_colourMode = colourConfig(*p_colourMode);
+		*p_colourValue = colourConfig(*p_colourValue);
+		*p_colourMode = CM_SOLID_COLOUR;
 		saveSettings();
 		break;
 		
@@ -209,24 +199,25 @@ void loop() {
 	displayModes[clockSettings.displayMode]();
 	
 	// Figure out which colour mode we are using and then display the pixels
-	ColourMode cm = colourModes[*p_colourMode];
-	cm.function(cm.mode, cm.colour, cm.fade_delay);
+	disp_refresh(*p_colourMode, *p_colourValue, cm_fadeSpeed[*p_colourMode]);
 }
 
 
 boolean displayTime() {
-	// Show the time!
+	// Sets and clears all pixels to show the current time in letters
 	uint16_t totalMinutes = rtc.getHour(h12, PM) * 60 + rtc.getMinute();
 	loadTime(totalMinutes);
 }
 
 
 boolean displaySeconds() {
+	// Sets and clear all pixels to show the current seconds count
 	pixBuffer_loadVal(rtc.getSecond(), 0);  // put a "2" in the last place to activate the minute slider
 }
 
 
 boolean displayTemp() {
+	// Gets the temperature from the RTC and loads it into pixel buffer it in degrees C or F depending on settings
 	float celsius = rtc.getTemperature();
 
 	if (clockSettings.useDegF) {
@@ -240,9 +231,6 @@ boolean displayTemp() {
 uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void (*dispFunc)(uint8_t)) {
 	uint8_t value = origValue;
 	static long lastRepeat = 0;
-	
-	// Wait for the user to remove their fingers before continuing.
-//	waitWhilePressed();
 	
 	while(true) {
 		buttonsTick();
@@ -279,9 +267,8 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 
 
 void colourWheelDisp(uint8_t colourMode) {
-	// Display function for the colour picker
-	ColourMode cm = colourModes[colourMode];
-	cm.function(cm.mode, cm.colour, cm.fade_delay);
+	// Configuration display function for the colour picker
+	disp_refresh(CM_SOLID_COLOUR, colourMode, cm_fadeSpeed[CM_SOLID_COLOUR]);
 }
 
 
@@ -290,7 +277,7 @@ uint8_t colourConfig(uint8_t colourMode) {
 	pixBuffer_clear();
 	pixBuffer_loadBitmap(Circle_bw_bmp);
 	
-	return changeSetting(colourMode, 0, COLOUR_MODE_COUNT - 1, colourWheelDisp);
+	return changeSetting(colourMode, 0, 255, colourWheelDisp);
 }
 
 
@@ -325,10 +312,11 @@ void clockConfig() {
 		switch(mode) {
 		case GPS:
 			{
-				PRINTLN_DEBUG("Now entering GPS value");
+				waitWhilePressed();
 				
 				disp_ScrollWords("GPS:", -15, 3);
 				
+				PRINTLN_DEBUG("Now entering GPS value");
 				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, exampleDisplayFunction);
 				if(clockSettings.useGPS) {
 					mode = SKIP_TIME;
@@ -338,6 +326,8 @@ void clockConfig() {
 			
 		case HOUR:
 			{
+				waitWhilePressed();
+				
 				disp_showBWBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 				
@@ -348,8 +338,11 @@ void clockConfig() {
 			
 		case MINUTE:
 			{
+				waitWhilePressed();
+				
 				disp_showBWBitmap(Min_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
+				
 				PRINTLN_DEBUG("Now entering minute value");
 				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, disp_displayVal));
 				
@@ -360,6 +353,8 @@ void clockConfig() {
 			
 		case TEMP_CF:
 			{
+				waitWhilePressed();
+			
 				disp_showBWBitmap(Temp_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 
