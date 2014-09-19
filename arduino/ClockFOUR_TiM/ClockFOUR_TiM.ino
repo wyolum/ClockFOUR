@@ -186,13 +186,13 @@ void loop() {
 		saveSettings();
 		break;
 		
-	case BL_PRESS:
+	case BR_PRESS:
 		// Pick the colour
 		*p_colourMode = colourConfig(*p_colourMode);
 		saveSettings();
 		break;
 		
-	case BR_PRESS:
+	case BL_PRESS:
 		// Configure the clock
 		clockConfig();
 		break;
@@ -242,7 +242,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 	static long lastRepeat = 0;
 	
 	// Wait for the user to remove their fingers before continuing.
-	waitWhilePressed();
+//	waitWhilePressed();
 	
 	while(true) {
 		buttonsTick();
