@@ -15,6 +15,8 @@
  #include <pins_arduino.h>
 #endif
 
+#include <avr/pgmspace.h>
+
 #include <Adafruit_GFX.h>
 
 #define ARRAY_SIZE(w, h)	((w * h) % 8) == 0 ? (w * h) / 8 : ((w * h) / 8) + 1
@@ -60,13 +62,14 @@ class PixelStates : public Adafruit_GFX {
 		PixelStates(uint8_t *array, int16_t w, int16_t h, uint8_t matrixType);
 		PixelStates(uint8_t *array, uint8_t matrixW, uint8_t matrixH, uint8_t tX, uint8_t tY, uint8_t matrixType);
 		
+		int16_t getPixelIdx(int16_t x, int16_t y);
 		void drawPixel(int16_t x, int16_t y, uint16_t color);
 		void setPixel(uint16_t ledIdx);
 		void clearPixel(uint16_t ledIdx);
 		bool getPixel(uint16_t ledIdx);
 		void clear();
 		void fillBuffer(uint8_t pixValue);
-		void loadBitmap(uint16_t x, uint16_t y, uint8_t *arr);
+		void loadBitmap(uint16_t x, uint16_t y, prog_uchar *arr);
 		
 	private:
 		const uint8_t type;

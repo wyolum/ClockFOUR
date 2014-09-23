@@ -29,8 +29,7 @@ PixelStates::PixelStates(uint8_t *array, uint8_t mW, uint8_t mH, uint8_t tX, uin
 	arrSize(ARRAY_SIZE(mW * tX, mH * tY)) { }
 
 	
-void PixelStates::drawPixel(int16_t x, int16_t y, uint16_t color) {
-	
+int16_t PixelStates::getPixelIdx(int16_t x, int16_t y) {
 	/*
 	
 	The following code is mostly copied from the NeoMatrix library.
@@ -56,7 +55,7 @@ void PixelStates::drawPixel(int16_t x, int16_t y, uint16_t color) {
 	<http://www.gnu.org/licenses/>. */
 	
 	if((x < 0) || (y < 0) || (x >= _width) || (y >= _height)) {
-		return;
+		return -1;
 	}
 
 	int16_t t;
@@ -162,10 +161,20 @@ void PixelStates::drawPixel(int16_t x, int16_t y, uint16_t color) {
 		}
 	}
 
+	return tileOffset + pixelOffset;
+}
+	
+void PixelStates::drawPixel(int16_t x, int16_t y, uint16_t color) {
+	uint16_t pixelIdx = getPixelIdx(x, y);
+
+	if(pixelIdx < 0) {
+		return;
+	}
+
 	if(color > 0) {
-		setPixel(tileOffset + pixelOffset);
+		setPixel(pixelIdx);
 	} else {
-		clearPixel(tileOffset + pixelOffset);
+		clearPixel(pixelIdx);
 	}
 }
 
@@ -214,13 +223,13 @@ void PixelStates::fillBuffer(uint8_t pixValue) {
 }
 
 
-void PixelStates::loadBitmap(uint16_t x, uint16_t y, uint8_t *bmp) {
-	uint16_t bmp_w = bmp[0];
-	uint16_t bmp_h = bmp[1];
+void PixelStates::loadBitmap(uint16_t x, uint16_t y, prog_uchar *bmp) {
+	uint16_t bmp_w = pgm_read_byte(bmp);
+	uint16_t bmp_h = pgm_read_byte(bmp + 1);
 	
 	uint8_t byteIdx = 2;
 	int8_t bitIdx = 7;
-	uint8_t value = bmp[byteIdx];
+	uint8_t value = pgm_read_byte(bmp + byteIdx);
 	
 	for(uint16_t j = 0; j < bmp_h; j++) {
 		for(uint16_t i = 0; i < bmp_w; i++) {
@@ -233,7 +242,7 @@ void PixelStates::loadBitmap(uint16_t x, uint16_t y, uint8_t *bmp) {
 			if(bitIdx < 0) {
 				bitIdx = 7;
 				byteIdx++;
-				value = bmp[byteIdx];
+				value = pgm_read_byte(bmp + byteIdx);
 			}
 		}
 	}

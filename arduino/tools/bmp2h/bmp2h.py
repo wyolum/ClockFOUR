@@ -49,9 +49,9 @@ def convert2h(filename):
 	dst = open(filename[:-fileExtLen] + ".h", 'w')
 	
 	if colour:
-		dst.write("static uint8_t %s_bw_bmp[] = {\n" % filename[:-fileExtLen])
+		dst.write("prog_uchar %s_c_bmp[] PROGMEM = {\n" % filename[:-fileExtLen])
 	else:
-		dst.write("static uint8_t %s_c_bmp[] = {\n" % filename[:-fileExtLen])
+		dst.write("prog_uchar %s_bw_bmp[] PROGMEM = {\n" % filename[:-fileExtLen])
 
 	img = Image.open(filename)
 	width = img.size[0]
@@ -65,7 +65,7 @@ def convert2h(filename):
 	else:
 		printBW(pixels, dst, width, height)
 	
-	dst.write("};\n\n")
+	dst.write("\n};\n\n")
 	
 	
 def printUsage():

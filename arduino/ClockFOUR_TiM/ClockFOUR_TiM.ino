@@ -46,7 +46,7 @@ typedef enum EventTypes {
 	EVENT_COUNT      // Number of event types in the queue
 };
 
-#define REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
+#define DEFAULT_REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
 
 /************* Colour modes *************/
 typedef enum ColourModes {
@@ -124,11 +124,11 @@ void setup() {
 	// display a welcome message
 	disp_setBrightness();
 	disp_ScrollWords("Clock4", -40, 1);
-	
-	buttonsTick();
+	disp_showColourBitmap(Splash_c_bmp);
 		
 	// enter self test mode if a button has been held down
-	if (popEvent() != NO_EVENT) {
+	if (waitDelayOrButton(4000) != NO_EVENT) {
+//	if (popEvent() != NO_EVENT) {
 		self_test(); 
 	}
 }
@@ -228,7 +228,7 @@ boolean displayTemp() {
 	}
 }
 
-uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void (*dispFunc)(uint8_t)) {
+uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint16_t repeatDelay, void (*dispFunc)(uint8_t)) {
 	uint8_t value = origValue;
 	static long lastRepeat = 0;
 	
@@ -244,7 +244,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 		case BR_CLICK:
 		case BR_PRESS:
 		case BR_REPEAT:
-			if(millis() - lastRepeat < REPEAT_DELAY) {
+			if(millis() - lastRepeat < repeatDelay) {
 			break;
 			}
 			
@@ -277,7 +277,7 @@ uint8_t colourConfig(uint8_t colourMode) {
 	pixBuffer_clear();
 	pixBuffer_loadBitmap(Circle_bw_bmp);
 	
-	return changeSetting(colourMode, 0, 255, colourWheelDisp);
+	return changeSetting(colourMode, 0, 255, 50, colourWheelDisp);
 }
 
 
@@ -317,7 +317,7 @@ void clockConfig() {
 				disp_ScrollWords("GPS:", -15, 3);
 				
 				PRINTLN_DEBUG("Now entering GPS value");
-				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, exampleDisplayFunction);
+				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, DEFAULT_REPEAT_DELAY, exampleDisplayFunction);
 				if(clockSettings.useGPS) {
 					mode = SKIP_TIME;
 				}
@@ -332,7 +332,7 @@ void clockConfig() {
 				waitDelayOrButton(2000);
 				
 				PRINTLN_DEBUG("Now entering hour value");
-				rtc.setHour(changeSetting(rtc.getHour(h12, PM), 0, 23, disp_displayVal));
+				rtc.setHour(changeSetting(rtc.getHour(h12, PM), 0, 23, DEFAULT_REPEAT_DELAY, disp_displayVal));
 			}
 			break;
 			
@@ -344,7 +344,7 @@ void clockConfig() {
 				waitDelayOrButton(2000);
 				
 				PRINTLN_DEBUG("Now entering minute value");
-				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, disp_displayVal));
+				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, DEFAULT_REPEAT_DELAY, disp_displayVal));
 				
 				// Set seconds to 0 for a clean start to the minute
 				rtc.setSecond(0);
@@ -359,7 +359,7 @@ void clockConfig() {
 				waitDelayOrButton(2000);
 
 				PRINTLN_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");
-				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, disp_TempCF);
+				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, DEFAULT_REPEAT_DELAY, disp_TempCF);
 			}
 			break;
 			
@@ -378,19 +378,22 @@ void clockConfig() {
 
 // Creates a delay loop that exits when either the time given
 // has passed, or one of the buttons has been pressed
-void waitDelayOrButton(uint16_t delayTime) {
+uint8_t waitDelayOrButton(uint16_t delayTime) {
 	unsigned long stopTime = millis() + delayTime;
+	uint8_t retVal = NO_EVENT;
 	
 	waitWhilePressed();
 	
 	while(millis() < stopTime) {
 		buttonsTick();
-		
-		if(popEvent() != NO_EVENT) {
+		retVal = popEvent();
+		if(retVal != NO_EVENT) {
 			// Some event has happened, quit the loop early
 			break;
 		}
 	}
+	
+	return retVal;
 }
 
 

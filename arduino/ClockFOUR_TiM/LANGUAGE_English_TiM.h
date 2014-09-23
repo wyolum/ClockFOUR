@@ -19,7 +19,7 @@
  * 
  */
 
-static uint8_t WORDS_min[] PROGMEM = {   // minute words
+prog_uchar WORDS_min[] PROGMEM = {   // minute words
      10, // # words
       0,  1,  4,   // five
       6,  0,  3,   // ten
@@ -33,7 +33,7 @@ static uint8_t WORDS_min[] PROGMEM = {   // minute words
       3,  2,  2,   // to   
 };
 
-static uint8_t DISPLAY_min[] PROGMEM = {
+prog_uchar DISPLAY_min[] PROGMEM = {
    2, 			 // number of bytes per state
 //
 //        oh-tqatf         tp       xx:MM
@@ -51,7 +51,7 @@ static uint8_t DISPLAY_min[] PROGMEM = {
 	0b00000001, 0b0000010,   // xx:55 - 11
 };
 
-static uint8_t WORDS_hour[] PROGMEM = {   // hour words
+prog_uchar WORDS_hour[] PROGMEM = {   // hour words
      12, // # words
       8,  2,  3,   // one    
       6,  2,  3,   // two      
@@ -67,7 +67,7 @@ static uint8_t WORDS_hour[] PROGMEM = {   // hour words
       0,  5,  6,   // twelve    
 };
 
-static uint8_t DISPLAY_hour[] PROGMEM = {
+prog_uchar DISPLAY_hour[] PROGMEM = {
    2, 			 // number of bytes per state
 //
 // 	  essfftto       tetn
@@ -98,7 +98,7 @@ static uint8_t DISPLAY_hour[] PROGMEM = {
 };
 
 
-static uint8_t WORDS_tod[] PROGMEM = {   // time of day
+prog_uchar WORDS_tod[] PROGMEM = {   // time of day
      10, // # words
       0,  0,  2,   // it    
       3,  0,  2,   // is    
@@ -112,7 +112,7 @@ static uint8_t WORDS_tod[] PROGMEM = {   // time of day
      12,  7,  4,   // noon
 };
 
-static uint8_t DISPLAY_tod[] PROGMEM = {
+prog_uchar DISPLAY_tod[] PROGMEM = {
    2, 			 // number of bytes per state
 //
 //	  mnmtaiii         na

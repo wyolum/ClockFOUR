@@ -1,3 +1,5 @@
+
+#include <avr/pgmspace.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_NeoPixel.h>
 #include <PixelStates.h>
@@ -58,11 +60,11 @@ inline void pixBuffer_clear() {
 	pixels.clear();
 }
 
-inline void pixBuffer_loadBitmap(uint8_t *bmp) {
+inline void pixBuffer_loadBitmap(prog_uchar *bmp) {
 	pixels.loadBitmap(0, 0, bmp);
 }
 
-void pixBuffer_loadWords(int wordIdx, uint8_t *p_display, uint8_t *p_words) {
+void pixBuffer_loadWords(int wordIdx, prog_uchar *p_display, prog_uchar *p_words) {
 	uint8_t disp_bytes = pgm_read_byte(p_display);
 	// Loop through every line
 	for(int dispIdx = 0; dispIdx < disp_bytes; dispIdx++) {
@@ -176,14 +178,30 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
 	}
 }
 
-void disp_showBWBitmap(uint8_t *bmp, uint32_t onColour, uint32_t offColour) {
+void disp_showBWBitmap(prog_uchar *bmp, uint32_t onColour, uint32_t offColour) {
 	pixBuffer_clear();
 	pixBuffer_loadBitmap(bmp);
 	disp_display(onColour, offColour);
 }
 
-void disp_showColourBitmap(uint8_t *bmp) {
-	// TODO: Implement this function
+void disp_showColourBitmap(prog_uchar *bmp) {
+	uint16_t bmp_w = pgm_read_byte(bmp);
+	uint16_t bmp_h = pgm_read_byte(bmp + 1);
+	
+	const uint8_t *byteIdx = bmp + 2;
+	uint8_t r, g, b;
+	
+	for(uint16_t y = 0; y < bmp_h; y++) {
+		for(uint16_t x = 0; x < bmp_w; x++) {
+			r = pgm_read_byte(byteIdx++);
+			g = pgm_read_byte(byteIdx++);
+			b = pgm_read_byte(byteIdx++);
+			
+			strip.setPixelColor(pixels.getPixelIdx(x, y), r, g, b);
+		}
+	}
+	
+	strip.show();
 }
 
 // Input a value 0 to 255 to get a color value.
@@ -209,7 +227,7 @@ void disp_displayVal(uint8_t value) {
 
 // mode 0 = normal display, 1 = degree symbol, 2 = minute progress bar
 void pixBuffer_loadVal(uint8_t value, uint8_t disp_mode) {
-uint8_t k, ticks = 0;
+	uint8_t k, ticks = 0;
   	if (disp_mode == 0) {
           if(value < 10) {
 	  	pixels.setCursor(8, 1);
@@ -256,11 +274,11 @@ uint8_t k, ticks = 0;
 void disp_TempCF(uint8_t value) {
 	pixels.clear();
 
-        // draw a degree symbol
-        pixels.drawPixel(3,1,0x00FFFFFF);
-        pixels.drawPixel(3,3,0x00FFFFFF);
-        pixels.drawPixel(2,2,0x00FFFFFF);
-        pixels.drawPixel(4,2,0x00FFFFFF);
+	// draw a degree symbol
+	pixels.drawPixel(3,1,0x00FFFFFF);
+	pixels.drawPixel(3,3,0x00FFFFFF);
+	pixels.drawPixel(2,2,0x00FFFFFF);
+	pixels.drawPixel(4,2,0x00FFFFFF);
 
 	pixels.setCursor(8, 1);
 	if(value == 0) {
