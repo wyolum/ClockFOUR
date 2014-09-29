@@ -30,18 +30,19 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:TinyTiM-cache
+LIBS:TiNA_sym
 LIBS:ClockFOUR-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 14
-Title ""
-Date "26 sep 2014"
+Sheet 8 14
+Title "ClockFOUR"
+Date "29 sep 2014"
 Rev ""
 Comp "WyoLum"
-Comment1 ""
-Comment2 ""
+Comment1 "www.wyolum.com"
+Comment2 "David Pincus"
 Comment3 ""
 Comment4 ""
 $EndDescr

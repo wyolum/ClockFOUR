@@ -1,4 +1,4 @@
-update=26/09/2014 11:43:20 AM
+update=29/09/2014 1:40:26 PM
 version=1
 last_client=eeschema
 [cvpcb]
@@ -47,7 +47,7 @@ LibName16=valves
 version=1
 [eeschema]
 version=1
-LibDir=
+LibDir=ClockFOUR_Libs
 NetFmtName=
 RptD_X=0
 RptD_Y=100
@@ -85,3 +85,4 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=C:/Users/David/Documents/GitHub/TinyTiM/KiCad/rev2/TinyTiM-cache
+LibName32=TiNA_sym
