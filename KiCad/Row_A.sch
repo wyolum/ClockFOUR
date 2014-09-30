@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 14
 Title "ClockFOUR"
-Date "29 sep 2014"
+Date "30 sep 2014"
 Rev ""
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
@@ -55,10 +55,10 @@ DI_A
 Text HLabel 950  2750 0    60   Input ~ 0
 5V
 $Comp
-L GND #PWR6
+L GND #PWR012
 U 1 1 5116893B
 P 1150 2400
-F 0 "#PWR6" H 1150 2400 30  0001 C CNN
+F 0 "#PWR012" H 1150 2400 30  0001 C CNN
 F 1 "GND" H 1150 2330 30  0001 C CNN
 F 2 "" H 1150 2400 60  0001 C CNN
 F 3 "" H 1150 2400 60  0001 C CNN
@@ -705,4 +705,5 @@ Connection ~ 4500 5100
 Connection ~ 3100 5100
 Connection ~ 3100 4700
 Connection ~ 1250 2350
+Connection ~ 10000 5100
 $EndSCHEMATC

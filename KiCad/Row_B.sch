@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 14
 Title "ClockFOUR"
-Date "29 sep 2014"
+Date "30 sep 2014"
 Rev ""
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
@@ -55,10 +55,10 @@ DI_B
 Text HLabel 1150 2700 0    60   Input ~ 0
 5V
 $Comp
-L GND #PWR7
+L GND #PWR013
 U 1 1 542A9B80
 P 1350 2350
-F 0 "#PWR7" H 1350 2350 30  0001 C CNN
+F 0 "#PWR013" H 1350 2350 30  0001 C CNN
 F 1 "GND" H 1350 2280 30  0001 C CNN
 F 2 "" H 1350 2350 60  0001 C CNN
 F 3 "" H 1350 2350 60  0001 C CNN
@@ -516,21 +516,13 @@ $EndComp
 Wire Wire Line
 	1450 2300 1450 4650
 Wire Wire Line
-	1450 4650 10400 4650
-Wire Wire Line
 	2000 4650 2000 4550
 Wire Wire Line
 	10400 4650 10400 4550
 Connection ~ 2000 4650
 Wire Wire Line
-	9000 4650 9000 4550
-Connection ~ 9000 4650
-Wire Wire Line
 	7600 4650 7600 4550
 Connection ~ 7600 4650
-Wire Wire Line
-	6200 4650 6200 4550
-Connection ~ 6200 4650
 Wire Wire Line
 	4800 4650 4800 4550
 Connection ~ 4800 4650
@@ -704,4 +696,15 @@ Connection ~ 4700 4650
 Connection ~ 4700 5050
 Connection ~ 3300 5050
 Connection ~ 3300 4650
+Connection ~ 10200 5050
+Connection ~ 10400 4650
+Wire Wire Line
+	9000 4550 9000 4650
+Connection ~ 9000 4650
+Wire Wire Line
+	1450 4650 10400 4650
+Wire Wire Line
+	6200 4550 6200 4650
+Connection ~ 6200 4650
+Connection ~ 1450 2300
 $EndSCHEMATC
