@@ -1,16 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 4/10/2014 7:29:11 PM
-#
-$CMP 7805
-D Linear Regulator +5V
-K POWER REGUL
-F regulator\lm78xx.pdf
-$ENDCMP
-#
-$CMP 78L05
-D Linear Regulator +5V
-K POWER REGUL
-F regulator\lm78lxx.pdf
-$ENDCMP
+EESchema-DOCLIB  Version 2.0  Date: 6/10/2014 10:36:26 PM
 #
 $CMP ATMEGA328P
 D ATMEGA168A, TQFP32, 16k Flash, 1kB SRAM, 512B EEPROM
@@ -30,18 +18,6 @@ $ENDCMP
 $CMP CONN_6
 D ymbole general de connecteur
 K CONN
-$ENDCMP
-#
-$CMP LM7805
-D Linear Regulator +5V
-K POWER REGUL
-F regulator\lm78xx.pdf
-$ENDCMP
-#
-$CMP LM7812
-D Linear Regulator +12V
-K POWER REGUL
-F regulator\lm78xx.pdf
 $ENDCMP
 #
 $CMP R

@@ -1,35 +1,5 @@
 EESchema Schematic File Version 2
 LIBS:ClockFOUR
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:special
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
 LIBS:ClockFOUR-cache
 EELAYER 27 0
 EELAYER END
@@ -543,7 +513,7 @@ AB AA AA 9E 7A EA A9 AF 7F FD EB 96 92 F3 65 EC E2 3F 1B 3E F1 7C 00 00 B3 D9 FC
 89 7F F8 87 7F 50 B7 A1 2F 08 AD 56 7B E8 D0 A1 6F 7C E3 1B 0F 3E F8 E0 96 03 00 EF E2 3F 1B 3E 
 C1 ED 35 72 E0 F7 FB FF F1 1F FF F1 9F FF F9 9F C7 C7 C7 73 1A 9F 2B 70 38 1C FB F6 ED 3B 79 F2 
 E4 23 8F 3C 52 B0 F1 D9 2E 76 F1 FF 03 17 ED 19 47 28 92 59 FB 00 00 00 00 49 45 4E 44 AE 42 60 
-82 00 $EndBitmap
+82 02 $EndBitmap
 EndData
 $EndBitmap
 NoConn ~ 5175 4325
