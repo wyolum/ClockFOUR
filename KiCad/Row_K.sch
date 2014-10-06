@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:ClockFOUR
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,7 +30,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:ClockFOUR
 LIBS:ClockFOUR-cache
 EELAYER 27 0
 EELAYER END
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 12 14
 Title "ClockFOUR"
-Date "3 oct 2014"
+Date "6 oct 2014"
 Rev ""
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
@@ -54,10 +54,10 @@ DI_K
 Text HLabel 1050 3350 0    60   Input ~ 0
 5V
 $Comp
-L GND #PWR024
+L GND #PWR21
 U 1 1 542E3E62
 P 1250 3000
-F 0 "#PWR024" H 1250 3000 30  0001 C CNN
+F 0 "#PWR21" H 1250 3000 30  0001 C CNN
 F 1 "GND" H 1250 2930 30  0001 C CNN
 F 2 "" H 1250 3000 60  0001 C CNN
 F 3 "" H 1250 3000 60  0001 C CNN

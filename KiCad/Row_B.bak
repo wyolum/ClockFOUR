@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:ClockFOUR
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,7 +30,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:ClockFOUR
 LIBS:ClockFOUR-cache
 EELAYER 27 0
 EELAYER END
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 14
 Title "ClockFOUR"
-Date "3 oct 2014"
+Date "6 oct 2014"
 Rev ""
 Comp "WyoLum"
 Comment1 "www.wyolum.com"

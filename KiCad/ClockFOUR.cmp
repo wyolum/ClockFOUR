@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/10/2014 2:26:17 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 6/10/2014 3:18:21 PM
 
 BeginCmp
 TimeStamp = /542CF9F1;
@@ -11,56 +11,56 @@ BeginCmp
 TimeStamp = /542BB65A;
 Reference = C1;
 ValeurCmp = 100n;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542A3921;
 Reference = C2;
 ValeurCmp = 100p;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542E0585;
 Reference = C3;
 ValeurCmp = 100n;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542A50B3;
 Reference = C4;
 ValeurCmp = 100p;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542BA270;
 Reference = C5;
 ValeurCmp = 22p;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542A987A;
 Reference = C6;
 ValeurCmp = 100n;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542BACCE;
 Reference = C7;
 ValeurCmp = 22p;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542AF167;
 Reference = C8;
 ValeurCmp = 100n;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
@@ -74,7 +74,7 @@ BeginCmp
 TimeStamp = /542D4A8B;
 Reference = C10;
 ValeurCmp = 47u;
-IdModule  = ;
+IdModule  = c_2917;
 EndCmp
 
 BeginCmp
@@ -2654,45 +2654,38 @@ IdModule  = WS2812B;
 EndCmp
 
 BeginCmp
-TimeStamp = /542A4121;
-Reference = P1;
-ValeurCmp = CONN_1;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /542A50B9;
-Reference = P2;
-ValeurCmp = CONN_1;
-IdModule  = ;
-EndCmp
-
-BeginCmp
 TimeStamp = /542AE017;
-Reference = P3;
+Reference = P1;
 ValeurCmp = ICSP;
-IdModule  = ;
+IdModule  = Header_ISP;
 EndCmp
 
 BeginCmp
 TimeStamp = /542A968D;
-Reference = P4;
+Reference = P2;
 ValeurCmp = FTDI;
-IdModule  = SIL-6;
+IdModule  = Header_FTDI;
 EndCmp
 
 BeginCmp
 TimeStamp = /542B8E4A;
-Reference = P5;
+Reference = P3;
 ValeurCmp = LDR_header;
 IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
+TimeStamp = /542FF0E4;
+Reference = P4;
+ValeurCmp = Button_Header;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
 TimeStamp = /542DBC93;
-Reference = P6;
+Reference = P5;
 ValeurCmp = BARREL_JACK;
-IdModule  = ;
+IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
@@ -2706,28 +2699,28 @@ BeginCmp
 TimeStamp = /5429CE15;
 Reference = R2;
 ValeurCmp = 10K;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542A41D9;
 Reference = R3;
 ValeurCmp = 1M;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542A50BF;
 Reference = R4;
 ValeurCmp = 1M;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /542A1F6A;
 Reference = R5;
 ValeurCmp = 10K;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
@@ -2790,7 +2783,7 @@ BeginCmp
 TimeStamp = /5429C7D9;
 Reference = SW1;
 ValeurCmp = SW_RST;
-IdModule  = ;
+IdModule  = SW_PUSH_SMALL;
 EndCmp
 
 BeginCmp
@@ -2804,14 +2797,14 @@ BeginCmp
 TimeStamp = /542B8235;
 Reference = U2;
 ValeurCmp = DS3231N;
-IdModule  = ssop-16;
+IdModule  = DS3231;
 EndCmp
 
 BeginCmp
-TimeStamp = /5429B1B9;
+TimeStamp = /543053B7;
 Reference = X1;
-ValeurCmp = 16MHz;
-IdModule  = ;
+ValeurCmp = CRYSTAL;
+IdModule  = Xtal_SMD;
 EndCmp
 
 EndListe
