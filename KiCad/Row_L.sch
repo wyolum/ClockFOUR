@@ -7,7 +7,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 13 14
 Title "ClockFOUR"
-Date "6 oct 2014"
+Date "7 oct 2014"
 Rev ""
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
@@ -24,10 +24,10 @@ DI_L
 Text HLabel 1100 3200 0    60   Input ~ 0
 5V
 $Comp
-L GND #PWR22
+L GND #PWR025
 U 1 1 542E4011
 P 1300 2850
-F 0 "#PWR22" H 1300 2850 30  0001 C CNN
+F 0 "#PWR025" H 1300 2850 30  0001 C CNN
 F 1 "GND" H 1300 2780 30  0001 C CNN
 F 2 "" H 1300 2850 60  0001 C CNN
 F 3 "" H 1300 2850 60  0001 C CNN
