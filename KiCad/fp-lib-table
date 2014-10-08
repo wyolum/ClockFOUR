@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name C4_Modules)(type Legacy)(uri ${KIPRJMOD}/ClockFOUR_Libs/ClockFOUR.mod)(options "")(descr ""))
+)
