@@ -1,6 +1,6 @@
-update=6/10/2014 10:38:00 PM
+update=Thursday 09 October 2014 06:30:08 PM IST
 version=1
-last_client=eeschema
+last_client=kicad
 [pcbnew]
 version=1
 LastNetListRead=
@@ -44,15 +44,10 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
 [eeschema/libraries]
-LibName1=ClockFOUR
+LibName1=ClockFOUR_Libs/ClockFOUR
+[general]
+version=1
