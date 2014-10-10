@@ -1,4 +1,4 @@
-update=Friday 10 October 2014 06:15:51 PM IST
+update=Friday 10 October 2014 10:39:39 PM IST
 version=1
 last_client=kicad
 [pcbnew]
@@ -49,6 +49,5 @@ version=1
 LibDir=
 [eeschema/libraries]
 LibName1=ClockFOUR_Libs/ClockFOUR
-LibName2=/home/anool/projects-git/TiM/KiCad/RowGB_Libs/RowGB_sym
 [general]
 version=1
