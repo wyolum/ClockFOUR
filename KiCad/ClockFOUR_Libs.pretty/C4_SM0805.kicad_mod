@@ -20,4 +20,9 @@
     (scale (xyz 0.1 0.1 0.1))
     (rotate (xyz 0 0 0))
   )
+  (model /home/anool/projects-git/ClockFOUR/KiCad/3d_modules/c_0805.wrl
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 90))
+  )
 )

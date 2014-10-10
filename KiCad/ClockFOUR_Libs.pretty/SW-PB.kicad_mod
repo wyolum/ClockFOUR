@@ -20,7 +20,7 @@
   (pad 2 thru_hole circle (at 2.25 3.25) (size 1.778 1.778) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
   (pad 2 thru_hole circle (at 2.25 -3.25) (size 1.778 1.778) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
   (pad 1 thru_hole circle (at -2.25 3.25) (size 1.778 1.778) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
-  (model "TiNA-libs/3D Modules/pcb_push.wrl"
+  (model /home/anool/projects-git/ClockFOUR/KiCad/3d_modules/sw_push_h.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

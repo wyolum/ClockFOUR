@@ -48,7 +48,7 @@
   (pad 4 thru_hole circle (at 0 -1.27) (size 1.6 1.6) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
   (pad 5 thru_hole circle (at 2.54 1.27) (size 1.6 1.6) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
   (pad 6 thru_hole circle (at 2.54 -1.27) (size 1.6 1.6) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
-  (model "TiNA-libs/3D Modules/pin_strip_3x2.wrl"
+  (model /home/anool/projects-git/ClockFOUR/KiCad/3d_modules/pin_strip_3x2.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

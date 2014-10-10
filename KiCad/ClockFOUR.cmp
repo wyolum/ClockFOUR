@@ -1,10 +1,10 @@
-Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Thursday 09 October 2014 05:05:53 PM IST
+Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Friday 10 October 2014 04:09:20 PM IST
 
 BeginCmp
-TimeStamp = /542CF9F1;
+TimeStamp = /54356384;
 Reference = BT1;
-ValeurCmp = BATT_RTC;
-IdModule  = C4_Pretty:CR2032;
+ValeurCmp = Batt_RTC;
+IdModule  = C4_Pretty:CR2032_SMD;
 EndCmp
 
 BeginCmp
@@ -88,1274 +88,1274 @@ BeginCmp
 TimeStamp = /511688A7/5118AB57;
 Reference = C12;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424D6B9;
 Reference = C13;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424D6C7;
 Reference = C14;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424D6D5;
 Reference = C15;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424D6E3;
 Reference = C16;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424D6F1;
 Reference = C17;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424D6FF;
 Reference = C18;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424D75D;
 Reference = C19;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424DFA1;
 Reference = C20;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424DFAF;
 Reference = C21;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424DFBD;
 Reference = C22;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424DFCB;
 Reference = C23;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424DFD9;
 Reference = C24;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /511688A7/5424DFE7;
 Reference = C25;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEF34;
 Reference = C26;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEF8F;
 Reference = C27;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEF9D;
 Reference = C28;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEFAB;
 Reference = C29;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEFB9;
 Reference = C30;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEFC7;
 Reference = C31;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEFD5;
 Reference = C32;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DEFE4;
 Reference = C33;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DF021;
 Reference = C34;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DF02F;
 Reference = C35;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DF03D;
 Reference = C36;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DF04B;
 Reference = C37;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DF059;
 Reference = C38;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54253F7B/542DF067;
 Reference = C39;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E30F8;
 Reference = C40;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E3153;
 Reference = C41;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E3161;
 Reference = C42;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E316F;
 Reference = C43;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E317D;
 Reference = C44;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E318B;
 Reference = C45;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E3199;
 Reference = C46;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E31A8;
 Reference = C47;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E31E5;
 Reference = C48;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E31F3;
 Reference = C49;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E3201;
 Reference = C50;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E320F;
 Reference = C51;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E321D;
 Reference = C52;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F1/542E322B;
 Reference = C53;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E32A7;
 Reference = C54;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E3302;
 Reference = C55;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E3310;
 Reference = C56;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E331E;
 Reference = C57;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E332C;
 Reference = C58;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E333A;
 Reference = C59;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E3348;
 Reference = C60;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E3357;
 Reference = C61;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E3394;
 Reference = C62;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E33A2;
 Reference = C63;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E33B0;
 Reference = C64;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E33BE;
 Reference = C65;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E33CC;
 Reference = C66;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542543F9/542E33DA;
 Reference = C67;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E3456;
 Reference = C68;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E34B1;
 Reference = C69;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E34BF;
 Reference = C70;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E34CD;
 Reference = C71;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E34DB;
 Reference = C72;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E34E9;
 Reference = C73;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E34F7;
 Reference = C74;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E3506;
 Reference = C75;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E3543;
 Reference = C76;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E3551;
 Reference = C77;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E355F;
 Reference = C78;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E356D;
 Reference = C79;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E357B;
 Reference = C80;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DD3/542E3589;
 Reference = C81;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E3605;
 Reference = C82;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E3660;
 Reference = C83;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E366E;
 Reference = C84;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E367C;
 Reference = C85;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E368A;
 Reference = C86;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E3698;
 Reference = C87;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E36A6;
 Reference = C88;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E36B5;
 Reference = C89;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E36F2;
 Reference = C90;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E3700;
 Reference = C91;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E370E;
 Reference = C92;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E371C;
 Reference = C93;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E372A;
 Reference = C94;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DE3/542E3738;
 Reference = C95;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E37B4;
 Reference = C96;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E380F;
 Reference = C97;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E381D;
 Reference = C98;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E382B;
 Reference = C99;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E3839;
 Reference = C100;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E3847;
 Reference = C101;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E3855;
 Reference = C102;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E3864;
 Reference = C103;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E38A1;
 Reference = C104;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E38AF;
 Reference = C105;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E38BD;
 Reference = C106;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E38CB;
 Reference = C107;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E38D9;
 Reference = C108;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF1/542E38E7;
 Reference = C109;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3963;
 Reference = C110;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E39BE;
 Reference = C111;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E39CC;
 Reference = C112;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E39DA;
 Reference = C113;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E39E8;
 Reference = C114;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E39F6;
 Reference = C115;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A04;
 Reference = C116;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A13;
 Reference = C117;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A50;
 Reference = C118;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A5E;
 Reference = C119;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A6C;
 Reference = C120;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A7A;
 Reference = C121;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A88;
 Reference = C122;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54254DF9/542E3A96;
 Reference = C123;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3B12;
 Reference = C124;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3B6D;
 Reference = C125;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3B7B;
 Reference = C126;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3B89;
 Reference = C127;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3B97;
 Reference = C128;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3BA5;
 Reference = C129;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3BB3;
 Reference = C130;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3BC2;
 Reference = C131;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3BFF;
 Reference = C132;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3C0D;
 Reference = C133;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3C1B;
 Reference = C134;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3C29;
 Reference = C135;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3C37;
 Reference = C136;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /542561F3/542E3C45;
 Reference = C137;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3CC1;
 Reference = C138;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3D1C;
 Reference = C139;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3D2A;
 Reference = C140;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3D38;
 Reference = C141;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3D46;
 Reference = C142;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3D54;
 Reference = C143;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3D62;
 Reference = C144;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3D71;
 Reference = C145;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3DAE;
 Reference = C146;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3DBC;
 Reference = C147;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3DCA;
 Reference = C148;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3DD8;
 Reference = C149;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3DE6;
 Reference = C150;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256203/542E3DF4;
 Reference = C151;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3E70;
 Reference = C152;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3ECB;
 Reference = C153;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3ED9;
 Reference = C154;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3EE7;
 Reference = C155;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3EF5;
 Reference = C156;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F03;
 Reference = C157;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F11;
 Reference = C158;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F20;
 Reference = C159;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F5D;
 Reference = C160;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F6B;
 Reference = C161;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F79;
 Reference = C162;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F87;
 Reference = C163;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3F95;
 Reference = C164;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256211/542E3FA3;
 Reference = C165;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E401F;
 Reference = C166;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E407A;
 Reference = C167;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E4088;
 Reference = C168;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E4096;
 Reference = C169;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E40A4;
 Reference = C170;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E40B2;
 Reference = C171;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E40C0;
 Reference = C172;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E40CF;
 Reference = C173;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E410C;
 Reference = C174;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E411A;
 Reference = C175;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E4128;
 Reference = C176;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E4136;
 Reference = C177;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E4144;
 Reference = C178;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256219/542E4152;
 Reference = C179;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E41CE;
 Reference = C180;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E4229;
 Reference = C181;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E4237;
 Reference = C182;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E4245;
 Reference = C183;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E4253;
 Reference = C184;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E4261;
 Reference = C185;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E426F;
 Reference = C186;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E427E;
 Reference = C187;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E42BB;
 Reference = C188;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E42C9;
 Reference = C189;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E42D7;
 Reference = C190;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E42E5;
 Reference = C191;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E42F3;
 Reference = C192;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
 TimeStamp = /54256897/542E4301;
 Reference = C193;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
+IdModule  = C4_Pretty:c_0805_led;
 EndCmp
 
 BeginCmp
@@ -1377,6 +1377,20 @@ TimeStamp = /54323DC5;
 Reference = C196;
 ValeurCmp = 47u;
 IdModule  = C4_Pretty:c_2917;
+EndCmp
+
+BeginCmp
+TimeStamp = /543AAC37;
+Reference = C197;
+ValeurCmp = 100n;
+IdModule  = C4_Pretty:c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /543AAE8F;
+Reference = C198;
+ValeurCmp = 100n;
+IdModule  = C4_Pretty:c_0805;
 EndCmp
 
 BeginCmp
@@ -2710,6 +2724,34 @@ IdModule  = C4_Pretty:JACK_PJ-047a;
 EndCmp
 
 BeginCmp
+TimeStamp = /543ADC1C;
+Reference = P6;
+ValeurCmp = 5VEN_L;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /543A381B;
+Reference = P7;
+ValeurCmp = I2C_L;
+IdModule  = C4_Pretty:STACK-L;
+EndCmp
+
+BeginCmp
+TimeStamp = /543ADCD7;
+Reference = P8;
+ValeurCmp = 5VEN_R;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /543A343E;
+Reference = P9;
+ValeurCmp = I2C_R;
+IdModule  = C4_Pretty:STACK-R;
+EndCmp
+
+BeginCmp
 TimeStamp = /542DD0E5;
 Reference = R1;
 ValeurCmp = 500R;
@@ -2836,6 +2878,34 @@ IdModule  = C4_Pretty:BreakOutPad;
 EndCmp
 
 BeginCmp
+TimeStamp = /54385847;
+Reference = S10;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:Screw_2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /5438584D;
+Reference = S11;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:Screw_2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /54385853;
+Reference = S12;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:Screw_2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /54385859;
+Reference = S13;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:Screw_2mm;
+EndCmp
+
+BeginCmp
 TimeStamp = /5429C7D9;
 Reference = SW1;
 ValeurCmp = SW_RST;
@@ -2857,9 +2927,9 @@ IdModule  = C4_Pretty:DS3231;
 EndCmp
 
 BeginCmp
-TimeStamp = /543053B7;
+TimeStamp = /5436CC76;
 Reference = X1;
-ValeurCmp = CRYSTAL;
+ValeurCmp = 16MHz;
 IdModule  = C4_Pretty:Xtal_SMD3;
 EndCmp
 

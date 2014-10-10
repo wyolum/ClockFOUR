@@ -1,4 +1,4 @@
-update=Thursday 09 October 2014 06:30:08 PM IST
+update=Friday 10 October 2014 03:59:55 PM IST
 version=1
 last_client=kicad
 [pcbnew]
@@ -44,10 +44,11 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
 [eeschema/libraries]
 LibName1=ClockFOUR_Libs/ClockFOUR
-[general]
-version=1
+LibName2=/home/anool/projects-git/TiM/KiCad/RowGB_Libs/RowGB_sym
