@@ -1,10 +1,10 @@
-Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Friday 10 October 2014 04:09:20 PM IST
+Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Friday 10 October 2014 05:49:03 PM IST
 
 BeginCmp
 TimeStamp = /54356384;
 Reference = BT1;
 ValeurCmp = Batt_RTC;
-IdModule  = C4_Pretty:CR2032_SMD;
+IdModule  = C4_Pretty:CR2032_SMD2;
 EndCmp
 
 BeginCmp
