@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Friday 10 October 2014 05:49:03 PM IST
+Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Saturday 11 October 2014 12:26:54 PM IST
 
 BeginCmp
 TimeStamp = /54356384;
@@ -1408,6 +1408,13 @@ IdModule  = C4_Pretty:Logo-WL3;
 EndCmp
 
 BeginCmp
+TimeStamp = /5439906B;
+Reference = L3;
+ValeurCmp = Wyolum;
+IdModule  = C4_Pretty:Logo-WL3;
+EndCmp
+
+BeginCmp
 TimeStamp = /542A19C4;
 Reference = LDR1;
 ValeurCmp = LDR;
@@ -2754,7 +2761,7 @@ EndCmp
 BeginCmp
 TimeStamp = /542DD0E5;
 Reference = R1;
-ValeurCmp = 500R;
+ValeurCmp = 470R;
 IdModule  = C4_Pretty:r_0805;
 EndCmp
 
@@ -2811,6 +2818,34 @@ BeginCmp
 TimeStamp = /542C0EC2;
 Reference = R9;
 ValeurCmp = 4K7;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5438FC61;
+Reference = R10;
+ValeurCmp = 10K;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /543901BD;
+Reference = R11;
+ValeurCmp = 10K;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5439C92D;
+Reference = R12;
+ValeurCmp = 0R;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5439CAF9;
+Reference = R13;
+ValeurCmp = 0R;
 IdModule  = C4_Pretty:r_0805;
 EndCmp
 
@@ -2909,7 +2944,21 @@ BeginCmp
 TimeStamp = /5429C7D9;
 Reference = SW1;
 ValeurCmp = SW_RST;
-IdModule  = C4_Pretty:SW_PB_V_H;
+IdModule  = C4_Pretty:SW_SMD;
+EndCmp
+
+BeginCmp
+TimeStamp = /5438F2D3;
+Reference = SW2;
+ValeurCmp = SW_L;
+IdModule  = C4_Pretty:SW_SMD;
+EndCmp
+
+BeginCmp
+TimeStamp = /5438F629;
+Reference = SW3;
+ValeurCmp = SW_R;
+IdModule  = C4_Pretty:SW_SMD;
 EndCmp
 
 BeginCmp
