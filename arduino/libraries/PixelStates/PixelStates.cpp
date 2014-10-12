@@ -7,26 +7,40 @@ Author: Josef Schneider
 
 #include <PixelStates.h>
 
-PixelStates::PixelStates(uint8_t *array, int16_t w, int16_t h, uint8_t matrixType) : 
-	Adafruit_GFX(w, h), 
-	type(matrixType), 
-	pixelStates(array) ,
-	matrixWidth(w), 
-	matrixHeight(h), 
+PixelStates::PixelStates(uint16_t w, uint16_t h, uint8_t matrixType) : 
+	Adafruit_GFX(w, h),
+	type(matrixType),
+	selectBuffer(0),
+	otherBuffer(1),
+	matrixWidth(w),
+	matrixHeight(h),
 	tilesX(0),
 	tilesY(0),
-	arrSize(ARRAY_SIZE(w, h)) { }
+	arrSize(ARRAY_SIZE(w, h)) { 
+
+	allocateBuffers();
+}
 
 	
-PixelStates::PixelStates(uint8_t *array, uint8_t mW, uint8_t mH, uint8_t tX, uint8_t tY, uint8_t matrixType) : 
+PixelStates::PixelStates(uint8_t mW, uint8_t mH, uint8_t tX, uint8_t tY, uint8_t matrixType) : 
 	Adafruit_GFX(mW * tX, mH * tY), 
-	type(matrixType), 
-	pixelStates(array),
-	matrixWidth(mW), 
-	matrixHeight(mH), 
+	type(matrixType),
+	selectBuffer(0),
+	otherBuffer(1),
+	matrixWidth(mW),
+	matrixHeight(mH),
 	tilesX(tX),
 	tilesY(tY),
-	arrSize(ARRAY_SIZE(mW * tX, mH * tY)) { }
+	arrSize(ARRAY_SIZE(mW * tX, mH * tY)) { 
+
+	allocateBuffers();
+}
+
+
+void PixelStates::allocateBuffers() {
+	pixelStates[0] = (uint8_t *)calloc(arrSize, sizeof(uint8_t));
+	pixelStates[1] = (uint8_t *)calloc(arrSize, sizeof(uint8_t));
+}
 
 	
 int16_t PixelStates::getPixelIdx(int16_t x, int16_t y) {
@@ -163,6 +177,43 @@ int16_t PixelStates::getPixelIdx(int16_t x, int16_t y) {
 
 	return tileOffset + pixelOffset;
 }
+
+
+// Swap which buffer we are working with
+void PixelStates::switchBuffers() {
+	otherBuffer = selectBuffer;
+	selectBuffer ^= 0x01;
+}
+
+
+// Copies all the data from the current buffer to the other buffer
+void PixelStates::updateOtherBuffer() {	
+	for(int16_t byteIdx = 0; byteIdx < arrSize; byteIdx++) {
+		pixelStates[otherBuffer][byteIdx] = pixelStates[selectBuffer][byteIdx];
+	}
+}
+
+
+// Returns true if both buffers match
+bool PixelStates::buffersMatch() {
+	bool match;
+	
+	for(int16_t byteIdx = 0; byteIdx < arrSize; byteIdx++) {
+		if(pixelStates[otherBuffer][byteIdx] != pixelStates[selectBuffer][byteIdx]) {
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+
+void PixelStates::clearBufferHistory() {
+	for(int16_t byteIdx = 0; byteIdx < arrSize; byteIdx++) {
+		pixelStates[otherBuffer][byteIdx] = 0x00;
+	}
+}
+
 	
 void PixelStates::drawPixel(int16_t x, int16_t y, uint16_t color) {
 	uint16_t pixelIdx = getPixelIdx(x, y);
@@ -183,7 +234,7 @@ void PixelStates::setPixel(uint16_t ledIdx) {
 	uint16_t byteIdx = ledIdx >> 3;
 	uint8_t bitIdx = ledIdx & 0x0007;
 	
-	pixelStates[byteIdx] |= 1 << bitIdx;
+	pixelStates[selectBuffer][byteIdx] |= 1 << bitIdx;
 }
 
 
@@ -191,15 +242,26 @@ void PixelStates::clearPixel(uint16_t ledIdx) {
 	uint16_t byteIdx = ledIdx >> 3;
 	uint8_t bitIdx = ledIdx & 0x0007;
 	
-	pixelStates[byteIdx] &= ~(1 << bitIdx);
+	pixelStates[selectBuffer][byteIdx] &= ~(1 << bitIdx);
 }
 
 
-bool PixelStates::getPixel(uint16_t ledIdx) {
+PixelTransition PixelStates::getPixel(uint16_t ledIdx) {
 	uint16_t byteIdx = ledIdx >> 3;
 	uint8_t bitIdx = ledIdx & 0x0007;
 	
-	return (pixelStates[byteIdx] & (1 << bitIdx)) > 0;
+	bool currentPix = (pixelStates[selectBuffer][byteIdx] & (1 << bitIdx)) > 0;
+	bool prevPix = (pixelStates[otherBuffer][byteIdx] & (1 << bitIdx)) > 0;
+	
+	if(currentPix && prevPix) {
+		return PIX_ON;
+	} else if(currentPix && !prevPix) {
+		return PIX_OFF_TO_ON;
+	} else if(!currentPix && prevPix) {
+		return PIX_ON_TO_OFF;
+	}
+	
+	return PIX_OFF;
 }
 
 
@@ -218,7 +280,7 @@ void PixelStates::fillBuffer(uint8_t pixValue) {
 	}
 	
 	for(int16_t byteIdx = 0; byteIdx < arrSize; byteIdx++) {
-		pixelStates[byteIdx] = fillValue;
+		pixelStates[selectBuffer][byteIdx] = fillValue;
 	}
 }
 

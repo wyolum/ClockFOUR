@@ -59,8 +59,8 @@ typedef enum ColourModes {
 };
 
 uint16_t cm_fadeSpeed[COLOUR_MODE_COUNT] = {
-	0,		// 0: All white
-	0,		// 1: Colour selected from the colour wheel
+	100,	// 0: All white
+	100,	// 1: Colour selected from the colour wheel
 	100,	// 2: Slow colour fade
 	100,	// 3: Rainbow fade
 	100,	// 4: Random coloured letters, twinkle
@@ -73,6 +73,12 @@ typedef enum DisplayModeIdx {
 	DISP_SECONDS,
 	DISP_TEMP,
 	MODE_COUNT
+};
+
+uint8_t fade[MODE_COUNT] = {
+	5,		// Time mode = slow fade
+	70,		// Seconds mode = fast fade
+	0		// Temperature mode = no fade
 };
 
 typedef boolean (*DisplayModeFunc)(void);
@@ -124,11 +130,9 @@ void setup() {
 	// display a welcome message
 	disp_setBrightness();
 	disp_ScrollWords("Clock4", -40, 1);
-	disp_showColourBitmap(Splash_c_bmp);
 		
 	// enter self test mode if a button has been held down
-	if (waitDelayOrButton(4000) != NO_EVENT) {
-//	if (popEvent() != NO_EVENT) {
+	if (popEvent() != NO_EVENT) {
 		self_test(); 
 	}
 }
@@ -148,6 +152,8 @@ void loop() {
 		if(clockSettings.displayMode >= MODE_COUNT) {
 			clockSettings.displayMode = 0;
 		}
+		
+		clearBufferHistory();
 		
 		// Update p_colourMode to the new display mode
 		p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
@@ -179,6 +185,7 @@ void loop() {
 		// Pick the colour
 		*p_colourValue = colourConfig(*p_colourValue);
 		*p_colourMode = CM_SOLID_COLOUR;
+		clearBufferHistory();
 		saveSettings();
 		break;
 		
@@ -199,7 +206,7 @@ void loop() {
 	displayModes[clockSettings.displayMode]();
 	
 	// Figure out which colour mode we are using and then display the pixels
-	disp_refresh(*p_colourMode, *p_colourValue, cm_fadeSpeed[*p_colourMode]);
+	disp_refresh(*p_colourMode, *p_colourValue, cm_fadeSpeed[*p_colourMode], fade[clockSettings.displayMode]);
 }
 
 
@@ -268,7 +275,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint1
 
 void colourWheelDisp(uint8_t colourMode) {
 	// Configuration display function for the colour picker
-	disp_refresh(CM_SOLID_COLOUR, colourMode, cm_fadeSpeed[CM_SOLID_COLOUR]);
+	disp_refresh(CM_SOLID_COLOUR, colourMode, cm_fadeSpeed[CM_SOLID_COLOUR], 0);
 }
 
 

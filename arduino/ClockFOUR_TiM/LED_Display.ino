@@ -13,8 +13,7 @@
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip(MATRIX_WIDTH * MATRIX_HEIGHT, MATRIX_PIN, NEO_GRB + NEO_KHZ800);
 
-uint8_t ledBuffer[ARRAY_SIZE(MATRIX_WIDTH, MATRIX_HEIGHT)];
-PixelStates pixels(ledBuffer, MATRIX_WIDTH, MATRIX_HEIGHT, NEO_MATRIX_BOTTOM + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE);
+PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT, NEO_MATRIX_BOTTOM + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE);
 
 void disp_init() {
 	
@@ -103,7 +102,8 @@ void disp_display(uint32_t onColour) {
 
 void disp_display(uint32_t onColour, uint32_t offColour) {
 	for(int pixIdx = 0; pixIdx < MATRIX_HEIGHT * MATRIX_WIDTH; pixIdx++) {
-		if(pixels.getPixel(pixIdx)) {
+		PixelTransition pixTran = pixels.getPixel(pixIdx);
+		if(pixTran == PIX_ON || pixTran == PIX_OFF_TO_ON) {
 			strip.setPixelColor(pixIdx, onColour);
 		} else {
 			strip.setPixelColor(pixIdx, offColour);
@@ -113,68 +113,113 @@ void disp_display(uint32_t onColour, uint32_t offColour) {
 	strip.show();
 }
 
-void disp_refresh(uint8_t mode, uint8_t colour, uint16_t fadeDelay) {
-	static uint32_t lastRefresh;
-	static uint8_t j = 0;
+inline void clearBufferHistory() {
+	pixels.clearBufferHistory();
+}
+
+void disp_refresh(uint8_t mode, uint8_t colour, uint16_t colourDelay, uint8_t letterFade) {
+	static uint32_t lastRefresh = 0;
 	
-	unsigned long currentMillis = millis();
+	static uint8_t colourIteration = 0;
+	static int16_t fadeBrightness = 0;
 	
-	if((unsigned long) (currentMillis - lastRefresh) >= fadeDelay) {  // Do nothing if we are within fadeDelay
+	uint32_t currentMillis = millis();
+	
+	// First check if we are past the colour delay
+	if((uint32_t) (currentMillis - lastRefresh) < colourDelay) {
+		return;
+	}
 		
-		uint8_t random_colour = random(0,255);
+	colourIteration++;
+	if (colourIteration > 255) {
+		colourIteration = 0;
+	}
 		
-		j++;
-		if (j > 255) {
-			j=0;
+	lastRefresh = currentMillis;
+	
+	if(!pixels.buffersMatch() && fadeBrightness == 255) {
+		if(letterFade == 0) {
+			pixels.updateOtherBuffer();
+		} else {
+			fadeBrightness = 0;
 		}
+	}
 		
-		for(int pixIdx = 0; pixIdx < MATRIX_HEIGHT * MATRIX_WIDTH; pixIdx++) {
-			if(pixels.getPixel(pixIdx)) {
-				switch (mode) {
-				case 0: // All white
-					{
-						strip.setPixelColor(pixIdx, strip.Color(235,   255,   255));
-					}
-					break;
-						
-				case 1: // Solid colour
-					{
-						strip.setPixelColor(pixIdx,  wheel(colour));
-							
-					}
-					break;
-						
-				case 2: // Fade through solid colours
-					{
-						strip.setPixelColor(pixIdx, wheel(j));
-					}
-					break;
-						
-				case 3: // Rainbow fade
-					{
-						strip.setPixelColor(pixIdx, wheel((pixIdx)* (256 / strip.numPixels()) - j & 255));
-					}
-					break;
-				case 4: // Random colour letters
-					{
-						strip.setPixelColor(pixIdx, wheel(random(0,255)));
-					}
-					break;
-				case 5: // Random solid colours
-					{
-						strip.setPixelColor(pixIdx, wheel(random_colour));
-					}
-					break;
-				default:
-					break;
-				}
-			}
-			else {  // turn off any letters not in a current word
-				strip.setPixelColor(pixIdx, strip.Color(0,   0,   0));
-			}
+	if(letterFade > 0 && fadeBrightness < 255) {
+		fadeBrightness += letterFade;
+		if (fadeBrightness >= 255) {
+			fadeBrightness = 255;
+			pixels.updateOtherBuffer();
 		}
-		strip.show();
-		lastRefresh = currentMillis;
+	} else {
+		fadeBrightness = 255;
+	}
+	
+	// Loop through every LED
+	for(uint16_t pixIdx = 0; pixIdx < MATRIX_HEIGHT * MATRIX_WIDTH; pixIdx++) {
+			
+		uint32_t pixColour = 0;
+			
+		// Get the current pixel transition
+		PixelTransition pixTran = pixels.getPixel(pixIdx);
+			
+		// Get the colour for the given pixel
+		if(pixTran != PIX_OFF) {
+			pixColour = getPixColour(pixIdx, mode, colour, colourIteration);
+		}
+			
+		// Determine the pixel brightness
+		if(pixTran == PIX_ON_TO_OFF || pixTran == PIX_OFF_TO_ON) {
+			
+			uint8_t brightnessMul = fadeBrightness;
+			
+			if(pixTran == PIX_ON_TO_OFF) {
+				brightnessMul = 255 - fadeBrightness;
+			}
+			
+			// Apply the pixel brightness
+			uint8_t r = (uint8_t)(pixColour >> 16);
+			uint8_t g = (uint8_t)(pixColour >>  8);
+			uint8_t b = (uint8_t)pixColour;
+				
+			r = (uint8_t)((r * brightnessMul) >> 8);
+			g = (uint8_t)((g * brightnessMul) >> 8);
+			b = (uint8_t)((b * brightnessMul) >> 8);
+				
+			pixColour = strip.Color(r, g, b);
+		}
+			
+		strip.setPixelColor(pixIdx, pixColour);
+	}
+	strip.show();
+}
+
+inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uint8_t colourIteration)  {
+	switch(mode) {
+	case CM_ALL_WHITE:
+		return strip.Color(235,   255,   255);
+		break;
+		
+	case CM_SOLID_COLOUR:
+		return wheel(colour);
+		break;
+		
+	case CM_FADE:
+		return wheel(colourIteration);
+		break;
+		
+	case CM_RAINBOW:
+		return wheel((pixIdx)* (256 / strip.numPixels()) - colourIteration & 255);
+		break;
+		
+	case CM_PARTY:
+		return wheel(random(0, 255));
+		break;
+		
+	default:
+		// Should never get here, but in case it does make all LEDs red
+		return strip.Color(255,   0,   0);
+		break;
 	}
 }
 
@@ -275,10 +320,10 @@ void disp_TempCF(uint8_t value) {
 	pixels.clear();
 
 	// draw a degree symbol
-	pixels.drawPixel(3,1,0x00FFFFFF);
-	pixels.drawPixel(3,3,0x00FFFFFF);
-	pixels.drawPixel(2,2,0x00FFFFFF);
-	pixels.drawPixel(4,2,0x00FFFFFF);
+	pixels.drawPixel(3, 1, 0x00FFFFFF);
+	pixels.drawPixel(3, 3, 0x00FFFFFF);
+	pixels.drawPixel(2, 2, 0x00FFFFFF);
+	pixels.drawPixel(4, 2, 0x00FFFFFF);
 
 	pixels.setCursor(8, 1);
 	if(value == 0) {
@@ -295,7 +340,8 @@ void disp_ScrollWords(char *p_words, int scrollbuffer, uint8_t colour) {
 		pixels.clear();
 		pixels.setCursor(x-6,1);
 		pixels.print(p_words);
-		disp_refresh (1, colour, 0);
+		disp_refresh (1, colour, 0, 0);
+		colour += 5;
 		buttonsTick();
 		delay(100);
 	}

@@ -55,23 +55,37 @@
 #define NEO_TILE_ZIGZAG        0x80 // Tile order reverses between lines
 #define NEO_TILE_SEQUENCE      0x80 // Bitmask for tile line order
 
+typedef enum PixelTransition {
+	PIX_OFF = 0,
+	PIX_OFF_TO_ON,
+	PIX_ON_TO_OFF,
+	PIX_ON
+};
+
 // Pixel states stores whether specific LEDs are on or off and also
 // provides functions to draw things by using the GFX library
 class PixelStates : public Adafruit_GFX {
 	public:
-		PixelStates(uint8_t *array, int16_t w, int16_t h, uint8_t matrixType);
-		PixelStates(uint8_t *array, uint8_t matrixW, uint8_t matrixH, uint8_t tX, uint8_t tY, uint8_t matrixType);
+		PixelStates(uint16_t w, uint16_t h, uint8_t matrixType);
+		PixelStates(uint8_t matrixW, uint8_t matrixH, uint8_t tX, uint8_t tY, uint8_t matrixType);
 		
 		int16_t getPixelIdx(int16_t x, int16_t y);
 		void drawPixel(int16_t x, int16_t y, uint16_t color);
 		void setPixel(uint16_t ledIdx);
 		void clearPixel(uint16_t ledIdx);
-		bool getPixel(uint16_t ledIdx);
+		PixelTransition getPixel(uint16_t ledIdx);
 		void clear();
 		void fillBuffer(uint8_t pixValue);
 		void loadBitmap(uint16_t x, uint16_t y, prog_uchar *arr);
 		
+		void switchBuffers();
+		void updateOtherBuffer();
+		bool buffersMatch();
+		void clearBufferHistory();
+		
 	private:
+		void allocateBuffers();
+	
 		const uint8_t type;
 		const uint8_t matrixWidth;
 		const uint8_t matrixHeight;
@@ -80,7 +94,9 @@ class PixelStates : public Adafruit_GFX {
 		const uint16_t arrSize;
 		
 		// The array could be any size, so we just store the pointer
-		uint8_t *pixelStates;
+		uint8_t *pixelStates[2];
+		uint8_t selectBuffer;
+		uint8_t otherBuffer;
 };
 
 #endif // _PIXEL_STATES_H_
