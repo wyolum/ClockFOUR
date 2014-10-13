@@ -1,15 +1,14 @@
-Drill report for /home/samata/projects-git/ClockFOUR/KiCad/ClockFOUR.kicad_pcb
-Created on Friday 10 October 2014 10:08:38 PM IST
+Drill report for /home/anool/projects-git/ClockFOUR/KiCad/ClockFOUR.kicad_pcb
+Created on Monday 13 October 2014 06:08:52 PM IST
 Drill report for plated through holes :
-T1  0.64mm  0.025"  (18 holes)
+T1  0.64mm  0.025"  (34 holes)
 T2  1.00mm  0.039"  (5 holes)  (with 5 slots)
-T3  1.02mm  0.040"  (35 holes)
-T4  1.27mm  0.050"  (2 holes)
-T5  2.00mm  0.079"  (4 holes)
-T6  2.40mm  0.094"  (1 hole)
-T7  3.25mm  0.128"  (4 holes)
+T3  1.02mm  0.040"  (33 holes)
+T4  2.00mm  0.079"  (4 holes)
+T5  2.40mm  0.094"  (1 hole)
+T6  3.25mm  0.128"  (4 holes)
 
-Total plated holes count 69
+Total plated holes count 81
 
 
 Drill report for unplated through holes :

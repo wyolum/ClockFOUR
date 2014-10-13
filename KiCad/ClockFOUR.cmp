@@ -1,4 +1,25 @@
-Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Saturday 11 October 2014 12:26:54 PM IST
+Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Monday 13 October 2014 05:58:32 PM IST
+
+BeginCmp
+TimeStamp = /5433999D;
+Reference = A6;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
+
+BeginCmp
+TimeStamp = /543399A3;
+Reference = A7;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
+
+BeginCmp
+TimeStamp = /54397734;
+Reference = B2;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
 
 BeginCmp
 TimeStamp = /54356384;
@@ -1394,6 +1415,34 @@ IdModule  = C4_Pretty:c_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /543F4031;
+Reference = C199;
+ValeurCmp = 100n;
+IdModule  = C4_Pretty:c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /543399A9;
+Reference = D5;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
+
+BeginCmp
+TimeStamp = /543399AF;
+Reference = D6;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
+
+BeginCmp
+TimeStamp = /5433A96F;
+Reference = D7;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
+
+BeginCmp
 TimeStamp = /511CD9F8;
 Reference = L1;
 ValeurCmp = OSHW;
@@ -2759,6 +2808,13 @@ IdModule  = C4_Pretty:STACK-R;
 EndCmp
 
 BeginCmp
+TimeStamp = /543F01ED;
+Reference = P10;
+ValeurCmp = NiL;
+IdModule  = C4_Pretty:Header_3x1;
+EndCmp
+
+BeginCmp
 TimeStamp = /542DD0E5;
 Reference = R1;
 ValeurCmp = 470R;
@@ -2875,41 +2931,6 @@ TimeStamp = /542BA66B;
 Reference = S4;
 ValeurCmp = CONN_1;
 IdModule  = C4_Pretty:Screw_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /5433999D;
-Reference = S5;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
-EndCmp
-
-BeginCmp
-TimeStamp = /543399A3;
-Reference = S6;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
-EndCmp
-
-BeginCmp
-TimeStamp = /543399A9;
-Reference = S7;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
-EndCmp
-
-BeginCmp
-TimeStamp = /543399AF;
-Reference = S8;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
-EndCmp
-
-BeginCmp
-TimeStamp = /5433A96F;
-Reference = S9;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
 EndCmp
 
 BeginCmp
