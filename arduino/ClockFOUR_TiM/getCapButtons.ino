@@ -37,15 +37,11 @@ void buttonLClick() {
 }
 
 void buttonLLongPress() {
-	if(oneButton_R.isPressed() == false) {
-		addToQeue(BL_PRESS);
-	}
+	addToQeue(BL_PRESS);
 }
 
 void buttonLRepeat() {
-	if(oneButton_R.isPressed() == false) {
-		addToQeue(BL_REPEAT);
-	}
+	addToQeue(BL_REPEAT);
 }
 
 void buttonRClick() {
@@ -53,15 +49,11 @@ void buttonRClick() {
 }
 
 void buttonRLongPress() {
-	if(oneButton_L.isPressed() == false) {
-		addToQeue(BR_PRESS);
-	}
+	addToQeue(BR_PRESS);
 }
 
 void buttonRRepeat() {
-	if(oneButton_L.isPressed() == false) {
-		addToQeue(BR_REPEAT);
-	}
+	addToQeue(BR_REPEAT);
 }
 
 // Returns true if both buttons have been pressed for a long time

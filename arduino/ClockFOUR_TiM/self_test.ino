@@ -48,7 +48,7 @@ void self_test() {
 		}
 		pixels.fillScreen(0);
 		loadTime(totalMinutes);
-		disp_refresh(0, 0, 0, 0);
+		disp_refresh(0, 0, 0);
 	}
 	
 }

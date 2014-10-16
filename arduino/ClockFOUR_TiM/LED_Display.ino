@@ -117,34 +117,37 @@ inline void clearBufferHistory() {
 	pixels.clearBufferHistory();
 }
 
-void disp_refresh(uint8_t mode, uint8_t colour, uint16_t colourDelay, uint8_t letterFade) {
+void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
+	#define REFRESH_PERIOD	20		// Determines the refresh period of the display, in this case 20ms
+	#define COLOUR_UPDATE	5		// Defines the rate at which the colour mode gets updated, in multiples of LETTER_FADE
+	
 	static uint32_t lastRefresh = 0;
 	
 	static uint8_t colourIteration = 0;
-	static int16_t fadeBrightness = 0;
+	static int16_t fadeBrightness = 255;
+	static uint8_t colourUpdate = 0;
+	static uint8_t ledColours[MATRIX_WIDTH * MATRIX_HEIGHT * 3];
 	
 	uint32_t currentMillis = millis();
 	
 	// First check if we are past the colour delay
-	if((uint32_t) (currentMillis - lastRefresh) < colourDelay) {
+	if((uint32_t) (currentMillis - lastRefresh) < REFRESH_PERIOD) {
 		return;
-	}
-		
-	colourIteration++;
-	if (colourIteration > 255) {
-		colourIteration = 0;
 	}
 		
 	lastRefresh = currentMillis;
 	
-	if(!pixels.buffersMatch() && fadeBrightness == 255) {
+	// Logic that takes care of when the buffer contents changes
+	if(!pixels.buffersMatch() && (fadeBrightness == 255 || letterFade == 0)) {
 		if(letterFade == 0) {
 			pixels.updateOtherBuffer();
 		} else {
 			fadeBrightness = 0;
 		}
+		colourUpdate = 0;
 	}
-		
+	
+	// Autoincrement the fadeBrightness
 	if(letterFade > 0 && fadeBrightness < 255) {
 		fadeBrightness += letterFade;
 		if (fadeBrightness >= 255) {
@@ -154,6 +157,8 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint16_t colourDelay, uint8_t le
 	} else {
 		fadeBrightness = 255;
 	}
+	
+	int pixArrIdx = 0;
 	
 	// Loop through every LED
 	for(uint16_t pixIdx = 0; pixIdx < MATRIX_HEIGHT * MATRIX_WIDTH; pixIdx++) {
@@ -165,10 +170,20 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint16_t colourDelay, uint8_t le
 			
 		// Get the colour for the given pixel
 		if(pixTran != PIX_OFF) {
-			pixColour = getPixColour(pixIdx, mode, colour, colourIteration);
+			if(colourUpdate == 0) {
+				// Get new colour if we need to
+				pixColour = getPixColour(pixIdx, mode, colour, colourIteration);
+				
+				ledColours[pixArrIdx] = (uint8_t)(pixColour >> 16);
+				ledColours[pixArrIdx + 1] = (uint8_t)(pixColour >>  8);
+				ledColours[pixArrIdx + 2] = (uint8_t)pixColour;
+			} else {
+				// Get the old colour
+				pixColour = strip.Color(ledColours[pixArrIdx], ledColours[pixArrIdx + 1], ledColours[pixArrIdx + 2]);
+			}
 		}
 			
-		// Determine the pixel brightness
+		// Determine the pixel transitions
 		if(pixTran == PIX_ON_TO_OFF || pixTran == PIX_OFF_TO_ON) {
 			
 			uint8_t brightnessMul = fadeBrightness;
@@ -176,6 +191,9 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint16_t colourDelay, uint8_t le
 			if(pixTran == PIX_ON_TO_OFF) {
 				brightnessMul = 255 - fadeBrightness;
 			}
+			
+			// Correct for the non-linearity of the LEDs
+			brightnessMul = getLinearBrightness(brightnessMul);
 			
 			// Apply the pixel brightness
 			uint8_t r = (uint8_t)(pixColour >> 16);
@@ -190,10 +208,25 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint16_t colourDelay, uint8_t le
 		}
 			
 		strip.setPixelColor(pixIdx, pixColour);
+		
+		pixArrIdx += 3;
 	}
+	
+	// Colour refresh is slower than screen refresh by a factor of COLOUR_UPDATE
+	colourUpdate++;
+	if(colourUpdate >= COLOUR_UPDATE) {
+		colourUpdate = 0;
+		
+		colourIteration++;
+		if (colourIteration > 255) {
+			colourIteration = 0;
+		}
+	}
+	
 	strip.show();
 }
 
+// This function returns the colours of the different pixels given pixel index, colour mode, input colour and colour iteration
 inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uint8_t colourIteration)  {
 	switch(mode) {
 	case CM_ALL_WHITE:
@@ -249,20 +282,6 @@ void disp_showColourBitmap(prog_uchar *bmp) {
 	strip.show();
 }
 
-// Input a value 0 to 255 to get a color value.
-// The colours are a transition r - g - b - back to r.
-uint32_t wheel(byte WheelPos) {
-	if(WheelPos < 85) {
-		return strip.Color(255 - WheelPos * 3, WheelPos * 3, 0);
-	} else if(WheelPos < 170) {
-		WheelPos -= 85;
-		return strip.Color(0, 255 - WheelPos * 3, WheelPos * 3);
-	} else {
-		WheelPos -= 170;
-		return strip.Color(WheelPos * 3, 0, 255 - WheelPos * 3);
-	}
-}
-
 
 void disp_displayVal(uint8_t value) {
 	pixels.clear();
@@ -270,49 +289,52 @@ void disp_displayVal(uint8_t value) {
 	disp_display();
 }
 
+
 // mode 0 = normal display, 1 = degree symbol, 2 = minute progress bar
 void pixBuffer_loadVal(uint8_t value, uint8_t disp_mode) {
 	uint8_t k, ticks = 0;
-  	if (disp_mode == 0) {
-          if(value < 10) {
-	  	pixels.setCursor(8, 1);
-	  } else {
-	  	pixels.setCursor(2, 1);
-	  }
-        } else if (disp_mode == 1) { // print a degree symbol
-               pixels.drawPixel(14,1,0x00FFFFFF);
-               pixels.drawPixel(14,3,0x00FFFFFF);
-               pixels.drawPixel(13,2,0x00FFFFFF);
-               pixels.drawPixel(15,2,0x00FFFFFF);
-               if(value < 10) {
-	  	  pixels.setCursor(7, 1);
-	       } else {
-	     	  pixels.setCursor(1, 1);
-	       }
-        }  else {  // (disp_mode == 2)
-             if(value < 10) {
-	  	pixels.setCursor(8, 0);
-	     } else {
-	   	pixels.setCursor(2, 0);
-	     }
-           ticks = rtc.getSecond()/15 + rtc.getMinute()%5 * 4;
-/*           
-           PRINT_DEBUG("ticks ");  
-           PRINT_DEBUG(ticks);
-           PRINT_DEBUG(" second/15 ");
-           PRINT_DEBUG(rtc.getSecond()/15);
-           PRINT_DEBUG(" Min %5 ");
-           PRINTLN_DEBUG(rtc.getMinute()%5);
-*/           
-           for (k = 0; k < (20); k++) {
-             if ((k < ticks) && (k > ticks - 5)) {
-               pixels.drawPixel(k, 7, 0x00FFFFFF);
-             } else pixels.drawPixel(k, 7, 0x00000000);
-           }
-        }
-          
-        
-      pixels.print(value);
+	if (disp_mode == 0) {
+		if(value < 10) {
+			pixels.setCursor(8, 1);
+			} else {
+			pixels.setCursor(2, 1);
+		}
+	} else if (disp_mode == 1) { // print a degree symbol
+		pixels.drawPixel(14,1,0x00FFFFFF);
+		pixels.drawPixel(14,3,0x00FFFFFF);
+		pixels.drawPixel(13,2,0x00FFFFFF);
+		pixels.drawPixel(15,2,0x00FFFFFF);
+		if(value < 10) {
+			pixels.setCursor(7, 1);
+		} else {
+			pixels.setCursor(1, 1);
+		}
+	}  else {  // (disp_mode == 2)
+		if(value < 10) {
+			pixels.setCursor(8, 0);
+		} else {
+			pixels.setCursor(2, 0);
+		}
+		ticks = rtc.getSecond()/15 + rtc.getMinute()%5 * 4;
+		/*
+		PRINT_DEBUG("ticks ");
+		PRINT_DEBUG(ticks);
+		PRINT_DEBUG(" second/15 ");
+		PRINT_DEBUG(rtc.getSecond()/15);
+		PRINT_DEBUG(" Min %5 ");
+		PRINTLN_DEBUG(rtc.getMinute()%5);
+		*/
+		for (k = 0; k < (20); k++) {
+			if ((k < ticks) && (k > ticks - 5)) {
+				pixels.drawPixel(k, 7, 0x00FFFFFF);
+			} else {
+				pixels.drawPixel(k, 7, 0x00000000);
+			}
+		}
+	}
+	
+	
+	pixels.print(value);
 }
 
 
@@ -328,7 +350,7 @@ void disp_TempCF(uint8_t value) {
 	pixels.setCursor(8, 1);
 	if(value == 0) {
 		pixels.print("C");
-		} else {
+	} else {
 		pixels.print("F");
 	}
 	disp_display();
@@ -340,7 +362,7 @@ void disp_ScrollWords(char *p_words, int scrollbuffer, uint8_t colour) {
 		pixels.clear();
 		pixels.setCursor(x-6,1);
 		pixels.print(p_words);
-		disp_refresh (1, colour, 0, 0);
+		disp_display(wheel(colour));
 		colour += 5;
 		buttonsTick();
 		delay(100);

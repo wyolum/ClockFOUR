@@ -58,14 +58,6 @@ typedef enum ColourModes {
 	COLOUR_MODE_COUNT
 };
 
-uint16_t cm_fadeSpeed[COLOUR_MODE_COUNT] = {
-	100,	// 0: All white
-	100,	// 1: Colour selected from the colour wheel
-	100,	// 2: Slow colour fade
-	100,	// 3: Rainbow fade
-	100,	// 4: Random coloured letters, twinkle
-};
-
 
 /************* Display mode definitions *************/
 typedef enum DisplayModeIdx {
@@ -76,8 +68,8 @@ typedef enum DisplayModeIdx {
 };
 
 uint8_t fade[MODE_COUNT] = {
-	5,		// Time mode = slow fade
-	70,		// Seconds mode = fast fade
+	20,		// Time mode = fast fade
+	40,		// Seconds mode = very fast fade
 	0		// Temperature mode = no fade
 };
 
@@ -157,6 +149,7 @@ void loop() {
 		
 		// Update p_colourMode to the new display mode
 		p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
+		p_colourValue = &clockSettings.colourVal[clockSettings.displayMode];
 		
 		PRINT_DEBUG("Switched to display mode: ");
 		PRINTLN_DEBUG(clockSettings.displayMode);
@@ -206,7 +199,7 @@ void loop() {
 	displayModes[clockSettings.displayMode]();
 	
 	// Figure out which colour mode we are using and then display the pixels
-	disp_refresh(*p_colourMode, *p_colourValue, cm_fadeSpeed[*p_colourMode], fade[clockSettings.displayMode]);
+	disp_refresh(*p_colourMode, *p_colourValue, fade[clockSettings.displayMode]);
 }
 
 
@@ -235,9 +228,9 @@ boolean displayTemp() {
 	}
 }
 
-uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint16_t repeatDelay, void (*dispFunc)(uint8_t)) {
+uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint16_t repeatDelay, void (*dispFunc)(uint8_t), uint16_t timeout = 0) {
 	uint8_t value = origValue;
-	static long lastRepeat = 0;
+	long lastRepeat = millis();
 	
 	while(true) {
 		buttonsTick();
@@ -252,7 +245,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint1
 		case BR_PRESS:
 		case BR_REPEAT:
 			if(millis() - lastRepeat < repeatDelay) {
-			break;
+				break;
 			}
 			
 			lastRepeat = millis();
@@ -266,6 +259,10 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint1
 		default:
 			break;
 		}
+		
+		if(timeout != 0 && lastRepeat + timeout < millis()) {
+			return value;
+		}
 	
 		dispFunc(value);
 	}
@@ -275,7 +272,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint1
 
 void colourWheelDisp(uint8_t colourMode) {
 	// Configuration display function for the colour picker
-	disp_refresh(CM_SOLID_COLOUR, colourMode, cm_fadeSpeed[CM_SOLID_COLOUR], 0);
+	disp_refresh(CM_SOLID_COLOUR, colourMode, 0);
 }
 
 
@@ -284,7 +281,7 @@ uint8_t colourConfig(uint8_t colourMode) {
 	pixBuffer_clear();
 	pixBuffer_loadBitmap(Circle_bw_bmp);
 	
-	return changeSetting(colourMode, 0, 255, 50, colourWheelDisp);
+	return changeSetting(colourMode, 0, 255, 50, colourWheelDisp, 2000);
 }
 
 
@@ -319,8 +316,6 @@ void clockConfig() {
 		switch(mode) {
 		case GPS:
 			{
-				waitWhilePressed();
-				
 				disp_ScrollWords("GPS:", -15, 3);
 				
 				PRINTLN_DEBUG("Now entering GPS value");
@@ -333,8 +328,8 @@ void clockConfig() {
 			
 		case HOUR:
 			{
-				waitWhilePressed();
-				
+				disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
+				waitDelayOrButton(1000);
 				disp_showBWBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 				
@@ -345,8 +340,8 @@ void clockConfig() {
 			
 		case MINUTE:
 			{
-				waitWhilePressed();
-				
+				disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
+				waitDelayOrButton(1000);
 				disp_showBWBitmap(Min_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 				
@@ -360,8 +355,8 @@ void clockConfig() {
 			
 		case TEMP_CF:
 			{
-				waitWhilePressed();
-			
+				disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
+				waitDelayOrButton(1000);
 				disp_showBWBitmap(Temp_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 
@@ -389,13 +384,11 @@ uint8_t waitDelayOrButton(uint16_t delayTime) {
 	unsigned long stopTime = millis() + delayTime;
 	uint8_t retVal = NO_EVENT;
 	
-	waitWhilePressed();
-	
 	while(millis() < stopTime) {
 		buttonsTick();
 		retVal = popEvent();
-		if(retVal != NO_EVENT) {
-			// Some event has happened, quit the loop early
+		if(retVal == BL_CLICK || retVal == BR_CLICK) {
+			// A click event has happened, quit the loop early
 			break;
 		}
 	}
