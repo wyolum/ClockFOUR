@@ -227,9 +227,9 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
 // This function returns the colours of the different pixels given pixel index, colour mode, input colour and colour iteration
 inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uint8_t colourIteration)  {
 	static uint8_t prevIteration = 0;
-	static uint32_t randomSeed = 0;
+	static uint16_t randomSeed = 0;
 	
-	uint32_t randomVal;
+	uint16_t randomVal;
 	
 	// Get a new random value whenever we enter a new iteration
 	if(prevIteration != colourIteration) {
@@ -243,7 +243,6 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 	randomVal ^= randomVal >> 6;
 	randomVal += randomVal << 3;
 	randomVal ^= randomVal >> 11;
-	randomVal += randomVal << 15;
 	
 	
 	switch(mode) {
