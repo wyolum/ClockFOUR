@@ -131,11 +131,9 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
 	#define COLOUR_UPDATE	5		// Defines the rate at which the colour mode gets updated, in multiples of LETTER_FADE
 	
 	static uint32_t lastRefresh = 0;
-	
 	static uint8_t colourIteration = 0;
 	static int16_t fadeBrightness = 255;
 	static uint8_t colourUpdate = 0;
-	static uint8_t ledColours[MATRIX_WIDTH * MATRIX_HEIGHT * 3];
 	
 	uint32_t currentMillis = millis();
 	
@@ -172,24 +170,14 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
 	// Loop through every LED
 	for(uint16_t pixIdx = 0; pixIdx < MATRIX_HEIGHT * MATRIX_WIDTH; pixIdx++) {
 			
-		uint32_t pixColour = 0;
-			
 		// Get the current pixel transition
 		PixelTransition pixTran = pixels.getPixel(pixIdx);
-			
+		
 		// Get the colour for the given pixel
+		uint32_t pixColour = 0;
+		
 		if(pixTran != PIX_OFF) {
-			if(colourUpdate == 0) {
-				// Get new colour if we need to
-				pixColour = getPixColour(pixIdx, mode, colour, colourIteration);
-				
-				ledColours[pixArrIdx] = (uint8_t)(pixColour >> 16);
-				ledColours[pixArrIdx + 1] = (uint8_t)(pixColour >>  8);
-				ledColours[pixArrIdx + 2] = (uint8_t)pixColour;
-			} else {
-				// Get the old colour
-				pixColour = strip.Color(ledColours[pixArrIdx], ledColours[pixArrIdx + 1], ledColours[pixArrIdx + 2]);
-			}
+			pixColour = getPixColour(pixIdx, mode, colour, colourIteration);
 		}
 			
 		// Determine the pixel transitions
@@ -238,6 +226,26 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
 
 // This function returns the colours of the different pixels given pixel index, colour mode, input colour and colour iteration
 inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uint8_t colourIteration)  {
+	static uint8_t prevIteration = 0;
+	static uint32_t randomSeed = 0;
+	
+	uint32_t randomVal;
+	
+	// Get a new random value whenever we enter a new iteration
+	if(prevIteration != colourIteration) {
+		randomSeed = random();
+		prevIteration = colourIteration;
+	}
+
+	// Perform a hashing operation based on the random seed and the pixIdx
+	randomVal = randomSeed + pixIdx;
+	randomVal += randomVal << 10;
+	randomVal ^= randomVal >> 6;
+	randomVal += randomVal << 3;
+	randomVal ^= randomVal >> 11;
+	randomVal += randomVal << 15;
+	
+	
 	switch(mode) {
 	case CM_ALL_WHITE:
 		return strip.Color(235,   255,   255);
@@ -256,7 +264,7 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 		break;
 		
 	case CM_PARTY:
-		return wheel(random(0, 255));
+		return wheel(randomVal & 0xFF);
 		break;
 		
 	default:
