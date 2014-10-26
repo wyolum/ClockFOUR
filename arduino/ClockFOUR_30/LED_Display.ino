@@ -312,9 +312,9 @@ void pixBuffer_loadVal(uint8_t value, uint8_t disp_mode) {
 	uint8_t k, ticks = 0;
 	if (disp_mode == 0) {
 		if(value < 10) {
-			pixels.setCursor(8, 1);
+			pixels.setCursor(8, 3);
 			} else {
-			pixels.setCursor(2, 1);
+			pixels.setCursor(2, 3);
 		}
 	} else if (disp_mode == 1) { // print a degree symbol
 		pixels.drawPixel(14,1,0x00FFFFFF);
@@ -322,15 +322,15 @@ void pixBuffer_loadVal(uint8_t value, uint8_t disp_mode) {
 		pixels.drawPixel(13,2,0x00FFFFFF);
 		pixels.drawPixel(15,2,0x00FFFFFF);
 		if(value < 10) {
-			pixels.setCursor(7, 1);
+			pixels.setCursor(7, 3);
 		} else {
-			pixels.setCursor(1, 1);
+			pixels.setCursor(1, 3);
 		}
 	}  else {  // (disp_mode == 2)
 		if(value < 10) {
-			pixels.setCursor(8, 0);
+			pixels.setCursor(8, 3);
 		} else {
-			pixels.setCursor(2, 0);
+			pixels.setCursor(2, 3);
 		}
 		ticks = rtc.getSecond()/15 + rtc.getMinute()%5 * 4;
 		/*
@@ -364,7 +364,7 @@ void disp_TempCF(uint8_t value) {
 	pixels.drawPixel(2, 2, 0x00FFFFFF);
 	pixels.drawPixel(4, 2, 0x00FFFFFF);
 
-	pixels.setCursor(8, 1);
+	pixels.setCursor(8, 3);
 	if(value == 0) {
 		pixels.print("C");
 	} else {
@@ -375,9 +375,11 @@ void disp_TempCF(uint8_t value) {
 
 
 void disp_ScrollWords(char *p_words, int scrollbuffer, uint8_t colour) {
-	for (int x = MATRIX_WIDTH; x > scrollbuffer; x--) {
+	
+        pixels.setTextWrap(false);
+        for (int x = MATRIX_WIDTH; x > scrollbuffer; x--) {
 		pixels.clear();
-		pixels.setCursor(x-6,1);
+		pixels.setCursor(x-6,3);
 		pixels.print(p_words);
 		disp_display(wheel(colour));
 		colour += 5;

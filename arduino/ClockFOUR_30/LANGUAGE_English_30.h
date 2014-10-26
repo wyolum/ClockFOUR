@@ -132,7 +132,7 @@ static uint8_t WORDS_hour[] PROGMEM = {   // hour words
 	4, 11, 4,   //five
 	11, 9, 5,   //six
 	0, 12, 5,   //seven
-	4,  9, 3,   //eight
+	4,  9, 5,   //eight
 	5, 10, 4,   //nine
 	8,  9, 3,   //ten
 	8, 10, 6,   //eleven

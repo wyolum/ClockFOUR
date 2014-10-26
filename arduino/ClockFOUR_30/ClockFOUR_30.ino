@@ -6,7 +6,7 @@
 #include "bitmaps.h"
 
 /************* Enable/disable debug mode *************/
-#define DEBUG
+//#define DEBUG
 
 #ifdef DEBUG
 #define PRINT_DEBUG(x)		Serial.print(x)
@@ -18,8 +18,8 @@
 
 /************* Pin settings *************/
 #define MATRIX_PIN			10
-#define BUTTON_L			11
-#define BUTTON_R			A1
+#define BUTTON_L			A1
+#define BUTTON_R			11
 #define CAP_SENSE			12
 #define LDR_PIN				A0
 
