@@ -19,3 +19,19 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio files
+Release/
+Debug/
+Visual Micro/
+*.a
+*.atsln
+*.atsuo
+*.cppproj
+*.sdf
+*.sln
+*.suo
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.opensdf

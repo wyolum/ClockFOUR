@@ -311,6 +311,9 @@ void clockConfig() {
 		clockSettings.useGPS = 0;
 	}
 	
+	disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
+	waitDelayOrButton(1000);
+	
 	// Loop through all the configuration modes
 	while(mode != LAST_MODE) {
 		switch(mode) {
@@ -328,8 +331,6 @@ void clockConfig() {
 			
 		case HOUR:
 			{
-				disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
-				waitDelayOrButton(1000);
 				disp_showBWBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 				
@@ -340,8 +341,6 @@ void clockConfig() {
 			
 		case MINUTE:
 			{
-				disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
-				waitDelayOrButton(1000);
 				disp_showBWBitmap(Min_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 				
@@ -355,8 +354,6 @@ void clockConfig() {
 			
 		case TEMP_CF:
 			{
-				disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
-				waitDelayOrButton(1000);
 				disp_showBWBitmap(Temp_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
 

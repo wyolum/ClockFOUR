@@ -2,7 +2,6 @@
 #include <avr/pgmspace.h>
 #include <Wire.h>      
 #include <DS3231.h>
-//#include <Time.h>
 
 #include "bitmaps.h"
 
@@ -47,36 +46,16 @@ typedef enum EventTypes {
 	EVENT_COUNT      // Number of event types in the queue
 };
 
-#define REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
+#define DEFAULT_REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
 
 /************* Colour modes *************/
-typedef void (*ColourModeFunc)(uint8_t, uint8_t, uint16_t);
-typedef struct ColourMode {
-	ColourModeFunc function;
-	uint8_t mode;
-	uint8_t colour;
-	uint16_t fade_delay;
-};
-
-#define COLOUR_MODE_COUNT	16
-
-ColourMode colourModes[COLOUR_MODE_COUNT] = {
-	{ disp_refresh,   0,   0,   0 },		// 0: All white
-	{ disp_refresh,   1,   0,   0 },		// 1: Red
-	{ disp_refresh,   1,   20,  0 },		// 1: Orange
-	{ disp_refresh,   1,   45,  0 },		// 1: Yellow
-	{ disp_refresh,   1,   60,  0 },		// 1: Lemon lime
-	{ disp_refresh,   1,   87,  0 },		// 1: Green
-	{ disp_refresh,   1,   105, 0 },		// 1: Mint
-	{ disp_refresh,   1,   120, 0 },		// 1: Light Blue
-	{ disp_refresh,   1,   140, 0 },		// 1: Blue
-	{ disp_refresh,   1,   170, 0 },		// 1: Dark Blue
-	{ disp_refresh,   1,   183, 0 },		// 1: Purple
-	{ disp_refresh,   1,   210, 0 },		// 1: Violet
-	{ disp_refresh,   1,   248, 0 },		// 1: Red
-	{ disp_refresh,   2,   0,   100 },		// 5: Slow colour fade
-	{ disp_refresh,   3,   0,   100 },		// 6: Rainbow fade
-	{ disp_refresh,   4,   0,   100 },		// 7: Random coloured letters, twinkle
+typedef enum ColourModes {
+	CM_ALL_WHITE = 0,
+	CM_SOLID_COLOUR,
+	CM_FADE,
+	CM_RAINBOW,
+	CM_PARTY,
+	COLOUR_MODE_COUNT
 };
 
 
@@ -86,6 +65,12 @@ typedef enum DisplayModeIdx {
 	DISP_SECONDS,
 	DISP_TEMP,
 	MODE_COUNT
+};
+
+uint8_t fade[MODE_COUNT] = {
+	20,		// Time mode = fast fade
+	40,		// Seconds mode = very fast fade
+	0		// Temperature mode = no fade
 };
 
 typedef boolean (*DisplayModeFunc)(void);
@@ -100,12 +85,13 @@ DisplayModeFunc displayModes[MODE_COUNT] = {
 /************* Settings struct definition *************/
 typedef union Settings {
 	// WARNING: array has to be at least as large as the number of elements in the struct
-	uint8_t array[6];
+	uint8_t array[9];
 	struct {
 		uint8_t useGPS;
 		uint8_t useDegF;					// 0 if degrees C, 1 if degrees F
 		uint8_t displayMode;				// Stores the display mode we are currently in
 		uint8_t colourModes[MODE_COUNT];	// Each display mode has its own colour mode
+		uint8_t colourVal[MODE_COUNT];		// Each display also has its own colour value
 	};
 };
 extern Settings clockSettings;
@@ -136,9 +122,7 @@ void setup() {
 	// display a welcome message
 	disp_setBrightness();
 	disp_ScrollWords("Clock4", -40, 1);
-	
-	buttonsTick();
-        
+		
 	// enter self test mode if a button has been held down
 	if (popEvent() != NO_EVENT) {
 		self_test(); 
@@ -149,9 +133,10 @@ void setup() {
 void loop() {	
 	// p_colourMode stores a pointer to the current colour mode
 	uint8_t *p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
-  
+	uint8_t *p_colourValue = &clockSettings.colourVal[clockSettings.displayMode];
+	
 	buttonsTick();
-
+	
 	// Depending on the buttons pressed, take the necessary action
 	switch(popEvent()) {
 	case BL_CLICK:
@@ -160,10 +145,13 @@ void loop() {
 			clockSettings.displayMode = 0;
 		}
 		
+		clearBufferHistory();
+		
 		// Update p_colourMode to the new display mode
 		p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
+		p_colourValue = &clockSettings.colourVal[clockSettings.displayMode];
 		
-		PRINT_DEBUG("Switched to mode");
+		PRINT_DEBUG("Switched to display mode: ");
 		PRINTLN_DEBUG(clockSettings.displayMode);
 		
 		saveSettings();
@@ -172,7 +160,7 @@ void loop() {
 	case BR_CLICK:
 		// Perhaps enter colour settings mode?
 		
-		PRINT_DEBUG("Current colour");
+		PRINT_DEBUG("Current colour mode: ");
 		PRINTLN_DEBUG(*p_colourMode);
 
 		(*p_colourMode)++;
@@ -180,19 +168,21 @@ void loop() {
 			*p_colourMode = 0;
 		}
 		
-		PRINT_DEBUG("Switched to colour");
+		PRINT_DEBUG("Switched to colour mode:");
 		PRINTLN_DEBUG(*p_colourMode);
 		
 		saveSettings();
 		break;
 		
-	case BL_PRESS:
+	case BR_PRESS:
 		// Pick the colour
-		*p_colourMode = colourConfig(*p_colourMode);
+		*p_colourValue = colourConfig(*p_colourValue);
+		*p_colourMode = CM_SOLID_COLOUR;
+		clearBufferHistory();
 		saveSettings();
 		break;
 		
-	case BR_PRESS:
+	case BL_PRESS:
 		// Configure the clock
 		clockConfig();
 		break;
@@ -200,43 +190,34 @@ void loop() {
 	default:
 		break;
 	}
-
+	
 	// Set the display brightness from the LDR
 	disp_setBrightness();
 
 	// First clear all the LEDs, and then depending on the mode call its display function
 	pixBuffer_clear();
 	displayModes[clockSettings.displayMode]();
-
+	
 	// Figure out which colour mode we are using and then display the pixels
-	ColourMode cm = colourModes[*p_colourMode];
-	cm.function(cm.mode, cm.colour, cm.fade_delay);
-
+	disp_refresh(*p_colourMode, *p_colourValue, fade[clockSettings.displayMode]);
 }
 
 
 boolean displayTime() {
-	// Show the time!
+	// Sets and clears all pixels to show the current time in letters
 	uint16_t totalMinutes = rtc.getHour(h12, PM) * 60 + rtc.getMinute();
-        loadTime(totalMinutes);
-        
-        /*
-        PRINT_DEBUG("Time: ");
-        PRINT_DEBUG(rtc.getHour(h12,PM));
-        PRINT_DEBUG(":");
-        PRINT_DEBUG(rtc.getMinute());
-        PRINT_DEBUG(":");
-        PRINTLN_DEBUG(rtc.getSecond());
-        */
+	loadTime(totalMinutes);
 }
 
 
 boolean displaySeconds() {
+	// Sets and clear all pixels to show the current seconds count
 	pixBuffer_loadVal(rtc.getSecond(), 0);  // put a "2" in the last place to activate the minute slider
 }
 
 
 boolean displayTemp() {
+	// Gets the temperature from the RTC and loads it into pixel buffer it in degrees C or F depending on settings
 	float celsius = rtc.getTemperature();
 
 	if (clockSettings.useDegF) {
@@ -247,12 +228,9 @@ boolean displayTemp() {
 	}
 }
 
-uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void (*dispFunc)(uint8_t)) {
+uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint16_t repeatDelay, void (*dispFunc)(uint8_t), uint16_t timeout = 0) {
 	uint8_t value = origValue;
-	static long lastRepeat = 0;
-	
-	// Wait for the user to remove their fingers before continuing.
-	waitWhilePressed();
+	long lastRepeat = millis();
 	
 	while(true) {
 		buttonsTick();
@@ -266,8 +244,8 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 		case BR_CLICK:
 		case BR_PRESS:
 		case BR_REPEAT:
-			if(millis() - lastRepeat < REPEAT_DELAY) {
-			break;
+			if(millis() - lastRepeat < repeatDelay) {
+				break;
 			}
 			
 			lastRepeat = millis();
@@ -282,6 +260,10 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 			break;
 		}
 		
+		if(timeout != 0 && lastRepeat + timeout < millis()) {
+			return value;
+		}
+	
 		dispFunc(value);
 	}
 	return value;
@@ -289,9 +271,8 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, void 
 
 
 void colourWheelDisp(uint8_t colourMode) {
-	// Display function for the colour picker
-	ColourMode cm = colourModes[colourMode];
-	cm.function(cm.mode, cm.colour, cm.fade_delay);
+	// Configuration display function for the colour picker
+	disp_refresh(CM_SOLID_COLOUR, colourMode, 0);
 }
 
 
@@ -300,7 +281,7 @@ uint8_t colourConfig(uint8_t colourMode) {
 	pixBuffer_clear();
 	pixBuffer_loadBitmap(Circle_bw_bmp);
 	
-	return changeSetting(colourMode, 0, COLOUR_MODE_COUNT - 1, colourWheelDisp);
+	return changeSetting(colourMode, 0, 255, 50, colourWheelDisp, 2000);
 }
 
 
@@ -330,16 +311,18 @@ void clockConfig() {
 		clockSettings.useGPS = 0;
 	}
 	
+	disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
+	waitDelayOrButton(1000);
+	
 	// Loop through all the configuration modes
 	while(mode != LAST_MODE) {
 		switch(mode) {
 		case GPS:
 			{
-				PRINTLN_DEBUG("Now entering GPS value");
-				
 				disp_ScrollWords("GPS:", -15, 3);
 				
-				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, exampleDisplayFunction);
+				PRINTLN_DEBUG("Now entering GPS value");
+				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, DEFAULT_REPEAT_DELAY, exampleDisplayFunction);
 				if(clockSettings.useGPS) {
 					mode = SKIP_TIME;
 				}
@@ -352,7 +335,7 @@ void clockConfig() {
 				waitDelayOrButton(2000);
 				
 				PRINTLN_DEBUG("Now entering hour value");
-				rtc.setHour(changeSetting(rtc.getHour(h12, PM), 0, 23, disp_displayVal));
+				rtc.setHour(changeSetting(rtc.getHour(h12, PM), 0, 23, DEFAULT_REPEAT_DELAY, disp_displayVal));
 			}
 			break;
 			
@@ -360,8 +343,9 @@ void clockConfig() {
 			{
 				disp_showBWBitmap(Min_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
 				waitDelayOrButton(2000);
+				
 				PRINTLN_DEBUG("Now entering minute value");
-				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, disp_displayVal));
+				rtc.setMinute(changeSetting(rtc.getMinute(), 0, 59, DEFAULT_REPEAT_DELAY, disp_displayVal));
 				
 				// Set seconds to 0 for a clean start to the minute
 				rtc.setSecond(0);
@@ -374,7 +358,7 @@ void clockConfig() {
 				waitDelayOrButton(2000);
 
 				PRINTLN_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");
-				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, disp_TempCF);
+				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, DEFAULT_REPEAT_DELAY, disp_TempCF);
 			}
 			break;
 			
@@ -393,19 +377,20 @@ void clockConfig() {
 
 // Creates a delay loop that exits when either the time given
 // has passed, or one of the buttons has been pressed
-void waitDelayOrButton(uint16_t delayTime) {
+uint8_t waitDelayOrButton(uint16_t delayTime) {
 	unsigned long stopTime = millis() + delayTime;
-	
-	waitWhilePressed();
+	uint8_t retVal = NO_EVENT;
 	
 	while(millis() < stopTime) {
 		buttonsTick();
-		
-		if(popEvent() != NO_EVENT) {
-			// Some event has happened, quit the loop early
+		retVal = popEvent();
+		if(retVal == BL_CLICK || retVal == BR_CLICK) {
+			// A click event has happened, quit the loop early
 			break;
 		}
 	}
+	
+	return retVal;
 }
 
 

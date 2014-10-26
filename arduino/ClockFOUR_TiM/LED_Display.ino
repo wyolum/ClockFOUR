@@ -29,6 +29,7 @@ void disp_init() {
 	pixels.clear();
 }
 
+
 uint16_t LDR_Value = 0;
 uint8_t brightness = MIN_BRIGHTNESS;
 
@@ -51,17 +52,20 @@ inline void disp_setBrightness() {
 	PRINT_DEBUG(LDR_Value);
 	PRINT_DEBUG(" Brightness: ");
 	PRINT_DEBUG(brightness);
-	PRINT_DEBUG(" | ");
+	PRINTLN_DEBUG(" | ");
 	*/
 }
+
 
 inline void pixBuffer_clear() {
 	pixels.clear();
 }
 
+
 inline void pixBuffer_loadBitmap(prog_uchar *bmp) {
 	pixels.loadBitmap(0, 0, bmp);
 }
+
 
 void pixBuffer_loadWords(int wordIdx, prog_uchar *p_display, prog_uchar *p_words) {
 	uint8_t disp_bytes = pgm_read_byte(p_display);
@@ -92,13 +96,16 @@ void pixBuffer_loadWords(int wordIdx, prog_uchar *p_display, prog_uchar *p_words
 	}
 }
 
+
 void disp_display() {
 	disp_display(strip.Color(235, 255, 255), strip.Color(0,   0,   0));
 }
 
+
 void disp_display(uint32_t onColour) {
 	disp_display(onColour, strip.Color(0,   0,   0));
 }
+
 
 void disp_display(uint32_t onColour, uint32_t offColour) {
 	for(int pixIdx = 0; pixIdx < MATRIX_HEIGHT * MATRIX_WIDTH; pixIdx++) {
@@ -113,9 +120,11 @@ void disp_display(uint32_t onColour, uint32_t offColour) {
 	strip.show();
 }
 
+
 inline void clearBufferHistory() {
 	pixels.clearBufferHistory();
 }
+
 
 void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
 	#define REFRESH_PERIOD	20		// Determines the refresh period of the display, in this case 20ms
@@ -226,6 +235,7 @@ void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
 	strip.show();
 }
 
+
 // This function returns the colours of the different pixels given pixel index, colour mode, input colour and colour iteration
 inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uint8_t colourIteration)  {
 	switch(mode) {
@@ -256,11 +266,13 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 	}
 }
 
+
 void disp_showBWBitmap(prog_uchar *bmp, uint32_t onColour, uint32_t offColour) {
 	pixBuffer_clear();
 	pixBuffer_loadBitmap(bmp);
 	disp_display(onColour, offColour);
 }
+
 
 void disp_showColourBitmap(prog_uchar *bmp) {
 	uint16_t bmp_w = pgm_read_byte(bmp);
