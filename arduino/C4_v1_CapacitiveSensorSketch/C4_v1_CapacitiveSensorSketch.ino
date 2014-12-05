@@ -9,8 +9,8 @@
  */
 
 
-CapacitiveSensor   cs_ButtonR = CapacitiveSensor(A1,A0);        // 10M resistor between pins 4 & 2, pin 2 is sensor pin, add a wire and or foil if desired
-CapacitiveSensor   cs_ButtonL = CapacitiveSensor(A1,6);        // 10M resistor between pins 4 & 6, pin 6 is sensor pin, add a wire and or foil
+CapacitiveSensor   cs_ButtonR = CapacitiveSensor(A2,A1);        // 10M resistor between pins 4 & 2, pin 2 is sensor pin, add a wire and or foil if desired
+CapacitiveSensor   cs_ButtonL = CapacitiveSensor(A2,A3M);        // 10M resistor between pins 4 & 6, pin 6 is sensor pin, add a wire and or foil
 //CapacitiveSensor   cs_4_8 = CapacitiveSensor(4,8);        // 10M resistor between pins 4 & 8, pin 8 is sensor pin, add a wire and or foil
 
 void setup()                    

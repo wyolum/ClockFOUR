@@ -27,7 +27,7 @@
 /************* Some display settings *************/
 #define MATRIX_WIDTH			14
 #define MATRIX_HEIGHT			13
-#define MIN_BRIGHTNESS			50
+#define MIN_BRIGHTNESS			20
 #define MAX_BRIGHTNESS			255
 
 /************* Global time variablesrtc *************/

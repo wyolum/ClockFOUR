@@ -40,18 +40,17 @@ inline void disp_setBrightness() {
 	} else if (LDR_Value > 1000) {
 		brightness = MAX_BRIGHTNESS;
 	} else {
-		brightness = map(LDR_Value, 350, 1000, 50, 255);
+		brightness = map(LDR_Value, 350, 1000, MIN_BRIGHTNESS, MAX_BRIGHTNESS);
 	}
 	
 	strip.setBrightness(brightness);
 	
-	/*
 	PRINT_DEBUG("LDR: ");
 	PRINT_DEBUG(LDR_Value);
 	PRINT_DEBUG(" Brightness: ");
 	PRINT_DEBUG(brightness);
 	PRINTLN_DEBUG(" | ");
-	*/
+	
 }
 
 
@@ -317,14 +316,14 @@ void pixBuffer_loadVal(uint8_t value, uint8_t disp_mode) {
 			pixels.setCursor(2, 3);
 		}
 	} else if (disp_mode == 1) { // print a degree symbol
-		pixels.drawPixel(14,1,0x00FFFFFF);
-		pixels.drawPixel(14,3,0x00FFFFFF);
-		pixels.drawPixel(13,2,0x00FFFFFF);
-		pixels.drawPixel(15,2,0x00FFFFFF);
+		pixels.drawPixel(12,0,0x00FFFFFF);
+		pixels.drawPixel(12,2,0x00FFFFFF);
+		pixels.drawPixel(11,1,0x00FFFFFF);
+		pixels.drawPixel(13,1,0x00FFFFFF);
 		if(value < 10) {
-			pixels.setCursor(7, 3);
+			pixels.setCursor(7, 4);
 		} else {
-			pixels.setCursor(1, 3);
+			pixels.setCursor(1, 4);
 		}
 	}  else {  // (disp_mode == 2)
 		if(value < 10) {
