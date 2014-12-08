@@ -5,7 +5,7 @@ void self_test() {
 	uint16_t totalMinutes = 0;
 	
 	waitWhilePressed();
-	
+	strip.setBrightness(70);
 	while (popEvent() == NO_EVENT) {
 		PRINT_DEBUG("I = ");
 		PRINT_DEBUG (i);
@@ -35,7 +35,7 @@ void self_test() {
 		i++;
 		delay(10);
 	}
-	
+	strip.setBrightness(150);
 	while (popEvent() == NO_EVENT) {
 		buttonsTick();
 		seconds_count+=10;

@@ -27,7 +27,7 @@ from baffles import *
 from numpy import arange
 from copy import deepcopy
 
-english_14x13 = '''
+english_C4_v1 = '''
 TWENTYDPTHIRTY
 FORTYFIFTYBTEN
 THIRTEENONETWO
@@ -64,7 +64,7 @@ WIDTH = 275 * mm + 2 * PCB_OFF
 
 MARGIN = 20 * mm
 
-__version__ = '14x13_1.0' # refers to mechichanical version.
+__version__ = 'C4_v1' # refers to mechichanical version.
 
 def setDir(_directory='output'):
     '''
@@ -337,7 +337,7 @@ def led_strip(x, y, p):
 pcb_w = 210 * mm
 pcb_h = 208 * mm
 def create_backplate():
-    can = canvas.Canvas('%s/backplate_28_%s.pdf' % (directory, __version__),
+    can = canvas.Canvas('%s/backplate_v1_%s.pdf' % (directory, __version__),
                         pagesize=(WIDTH + 2 * MARGIN, HEIGHT + 2 * MARGIN))
     can.drawCentredString(WIDTH / 2, -MARGIN / 2, "ClockFOUR_v1 Backplate %s" % __version__)
     if False:
@@ -466,16 +466,16 @@ def create_baffles():
     localizer.drill(lw/2, lw/2, 1.5 * mm)
     localizer.drill(lw/2, lw/2, 4.5 * mm)
 
-    can = canvas.Canvas('%s/baffles_28_%s.pdf' % (directory, __version__),
+    can = canvas.Canvas('%s/baffles_v1_%s.pdf' % (directory, __version__),
                         pagesize=(W, H))
     can.translate(PAGE_MARGIN, PAGE_MARGIN)
     can.setFont('Courier', 15)
 
     h_baffle.translate(0, .5*inch)
-    can.drawCentredString(2 * inch, .25 * inch, 'H baffle: 15 per clock')
+    can.drawCentredString(2 * inch, .25 * inch, 'H baffle: 14 per clock')
 
     v_baffle.translate(0, 2*inch)
-    can.drawCentredString(2 * inch, 1.75 * inch, 'V baffle: 14 per clock')
+    can.drawCentredString(2 * inch, 1.75 * inch, 'V baffle: 15 per clock')
 
     localizer.translate(0, 4 * inch)
     can.drawCentredString(1.75 * inch, 3.2 * inch, 'localizer: 4 per clock')
@@ -483,7 +483,7 @@ def create_baffles():
     h_baffle.drawOn(can, linewidth)
     v_baffle.drawOn(can, linewidth)
     localizer.drawOn(can, linewidth)
-    can.drawCentredString(2.5 * inch, -.75* inch, 'Clock28_v1 Baffles 2mm BLACK Acrylic')
+    can.drawCentredString(2.5 * inch, -.75* inch, 'ClockFOUR_v1 Baffles 2mm BLACK Acrylic')
 
     can.showPage()
     can.save()
@@ -512,18 +512,18 @@ def makeGlam():
     print 'wrote', can._filename
 
 if __name__ == '__main__':
-#    create_backplate()
+    create_backplate()
     create_baffles()
 
     font = 'Helvetica'
     add_font(font, 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts')    
-    create_faceplate('english_14x13_lower %s' % (font), english_14x13, lower, font, 32,
+    create_faceplate('english_C4_v1_lower %s' % (font), english_C4_v1, lower, font, 32,
                      baffles=False,
                      do_corner_holes=True,
                      reverse=False,
                      showtime=False,
                      color=None)
-    create_faceplate('english_14x13_UPPER %s' % (font), english_14x13, upper, font, 32,
+    create_faceplate('english_C4_v1_UPPER %s' % (font), english_C4_v1, upper, font, 32,
                      baffles=False,
                      do_corner_holes=True,
                      reverse=False,

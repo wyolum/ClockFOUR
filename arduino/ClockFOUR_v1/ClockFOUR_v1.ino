@@ -121,7 +121,7 @@ void setup() {
 
 	// display a welcome message
 	disp_setBrightness();
-	disp_ScrollWords("Clock4", -40, 1);
+	disp_ScrollWords("Clock4", -30, 1);
 		
 	// enter self test mode if a button has been held down
 	if (popEvent() != NO_EVENT) {

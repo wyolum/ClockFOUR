@@ -248,19 +248,19 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 		break;
 		
 	case CM_SOLID_COLOUR:
-		return wheel(colour);
+		return wheel_rainbow(colour);
 		break;
 		
 	case CM_FADE:
-		return wheel(colourIteration);
+		return wheel_rainbow(colourIteration);
 		break;
 		
 	case CM_RAINBOW:
-		return wheel((pixIdx)* (256 / strip.numPixels()) - colourIteration & 255);
+		return wheel_rainbow((pixIdx)* (256 / strip.numPixels()) - colourIteration & 255);
 		break;
 		
 	case CM_PARTY:
-		return wheel(randomVal & 0xFF);
+		return wheel_rainbow(randomVal & 0xFF);
 		break;
 		
 	default:
@@ -380,7 +380,7 @@ void disp_ScrollWords(char *p_words, int scrollbuffer, uint8_t colour) {
 		pixels.clear();
 		pixels.setCursor(x-6,3);
 		pixels.print(p_words);
-		disp_display(wheel(colour));
+		disp_display(wheel_rainbow(colour));
 		colour += 5;
 		buttonsTick();
 		delay(100);
