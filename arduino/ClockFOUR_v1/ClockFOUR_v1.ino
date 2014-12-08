@@ -70,7 +70,7 @@ typedef enum DisplayModeIdx {
 uint8_t fade[MODE_COUNT] = {
 	20,		// Time mode = fast fade
 	40,		// Seconds mode = very fast fade
-	0		// Temperature mode = no fade
+	10		// Temperature mode = slow fade
 };
 
 typedef boolean (*DisplayModeFunc)(void);
@@ -118,7 +118,7 @@ void setup() {
 	
 	// Initialise the buttons
 	buttonsInit();
-
+        
 	// display a welcome message
 	disp_setBrightness();
 	disp_ScrollWords("Clock4", -30, 1);

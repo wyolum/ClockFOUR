@@ -15,8 +15,8 @@ CapacitiveSensor   cs_ButtonL = CapacitiveSensor(A2,A3M);        // 10M resistor
 
 void setup()                    
 {
-   cs_ButtonR.set_CS_AutocaL_Millis(5000);     // turn off autocalibrate on channel 1 - just as an example
-   cs_ButtonL.set_CS_AutocaL_Millis(5000); 
+   cs_ButtonR.set_CS_AutocaL_Millis(0xFFFFFFFF);     
+   cs_ButtonL.set_CS_AutocaL_Millis(0xFFFFFFFF); 
    Serial.begin(9600);
 }
 

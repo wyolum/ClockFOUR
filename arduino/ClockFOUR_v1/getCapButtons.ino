@@ -14,6 +14,7 @@ CapacitiveSensor cs_BUTTON_R = CapacitiveSensor(CAP_SENSE, BUTTON_R);
 OneCapSensor oneButton_L = OneCapSensor(&cs_BUTTON_L);
 OneCapSensor oneButton_R = OneCapSensor(&cs_BUTTON_R);
 
+
 // Sets up all the callback function
 void buttonsInit() {
 	oneButton_L.attachClick(buttonLClick);
