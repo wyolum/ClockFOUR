@@ -26,7 +26,7 @@
 /************* Some display settings *************/
 #define MATRIX_WIDTH			14
 #define MATRIX_HEIGHT			13
-#define MIN_BRIGHTNESS			20
+#define MIN_BRIGHTNESS			25
 #define MAX_BRIGHTNESS			255
 
 /************* Global time variablesrtc *************/
@@ -62,14 +62,12 @@ typedef enum ColourModes {
 typedef enum DisplayModeIdx {
 	DISP_TIME = 0,
 	DISP_SECONDS,
-	DISP_TEMP,
 	MODE_COUNT
 };
 
 uint8_t fade[MODE_COUNT] = {
 	20,		// Time mode = fast fade
 	40,		// Seconds mode = very fast fade
-	10		// Temperature mode = slow fade
 };
 
 typedef boolean (*DisplayModeFunc)(void);
@@ -77,7 +75,6 @@ typedef boolean (*DisplayModeFunc)(void);
 DisplayModeFunc displayModes[MODE_COUNT] = {
 	displayTime,
 	displaySeconds,
-	displayTemp
 };
 
 
@@ -86,7 +83,6 @@ typedef union Settings {
 	// WARNING: array has to be at least as large as the number of elements in the struct
 	uint8_t array[9];
 	struct {
-		uint8_t useGPS;
 		uint8_t useDegF;					// 0 if degrees C, 1 if degrees F
 		uint8_t displayMode;				// Stores the display mode we are currently in
 		uint8_t colourModes[MODE_COUNT];	// Each display mode has its own colour mode
@@ -215,19 +211,6 @@ boolean displaySeconds() {
 	pixBuffer_loadVal(rtc.getSecond(), 0);  // put a "2" in the last place to activate the minute slider
 }
 
-
-boolean displayTemp() {
-	// Gets the temperature from the RTC and loads it into pixel buffer it in degrees C or F depending on settings
-	float celsius = rtc.getTemperature();
-
-	if (clockSettings.useDegF) {
-		float fahrenheit = celsius * 9.0 / 5.0 + 32.0;
-		pixBuffer_loadVal(fahrenheit, 1);
-	} else {
-		pixBuffer_loadVal(celsius, 1);
-	}
-}
-
 uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint16_t repeatDelay, void (*dispFunc)(uint8_t), uint16_t timeout = 0) {
 	uint8_t value = origValue;
 	long lastRepeat = millis();
@@ -287,48 +270,24 @@ uint8_t colourConfig(uint8_t colourMode) {
 
 /************* Defines the different configuration modes *************/
 typedef enum ConfigMode {
-	GPS = 0,
 	HOUR,
 	MINUTE,
-	TEMP_CF,
 	LAST_MODE
 };
-
-
-// A bit of a hack - if we skip setting the time (because it is set through GPS)
-// we jump to skip time. Not very elegant but will do for now
-#define SKIP_TIME	MINUTE
 
 void clockConfig() {
 	
 	uint8_t mode;
-
-	// Don't give the GPS option if none is attached
-	if(gpsPresent()) {
-		mode = GPS;
-	} else {
-		mode = HOUR;
-		clockSettings.useGPS = 0;
-	}
 	
+	mode = HOUR;
+
 	disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
 	waitDelayOrButton(1000);
 	
 	// Loop through all the configuration modes
 	while(mode != LAST_MODE) {
 		switch(mode) {
-		case GPS:
-			{
-				disp_ScrollWords("GPS:", -15, 3);
-				
-				PRINTLN_DEBUG("Now entering GPS value");
-				clockSettings.useGPS = changeSetting(clockSettings.useGPS, 0, 1, DEFAULT_REPEAT_DELAY, exampleDisplayFunction);
-				if(clockSettings.useGPS) {
-					mode = SKIP_TIME;
-				}
-			}
-			break;
-			
+
 		case HOUR:
 			{
 				disp_showBWBitmap(Hour_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
@@ -349,16 +308,6 @@ void clockConfig() {
 				
 				// Set seconds to 0 for a clean start to the minute
 				rtc.setSecond(0);
-			}
-			break;
-			
-		case TEMP_CF:
-			{
-				disp_showBWBitmap(Temp_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
-				waitDelayOrButton(2000);
-
-				PRINTLN_DEBUG("Now entering whether temp should be represented in C (0) or F (1)");
-				clockSettings.useDegF = changeSetting(clockSettings.useDegF, 0, 1, DEFAULT_REPEAT_DELAY, disp_TempCF);
 			}
 			break;
 			
