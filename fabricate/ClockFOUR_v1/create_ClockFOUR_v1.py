@@ -59,8 +59,8 @@ class Image:
 
 
 PCB_OFF = 1.27 * mm  # 0.05 * inch
-HEIGHT = 275 * mm + 2 * PCB_OFF
-WIDTH = 275 * mm + 2 * PCB_OFF
+HEIGHT = 280 * mm 
+WIDTH = 280 * mm
 
 MARGIN = 20 * mm
 
@@ -274,7 +274,7 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
                 # can.drawCentredString(x - h_off, y  - v_off, (lines[i][j]).upper())
 #########################################################
 # draw an apostrophe
-    can.drawCentredString(166* mm, 41 * mm, "'")            
+    can.drawCentredString(168* mm, 42 * mm, "'")            
 #########################################################
     if showtime:
         can.setFillColor((1, 1, 1))
@@ -409,7 +409,7 @@ def create_backplate():
 
 
 
-BAFFLE_H = 26.50 * mm
+BAFFLE_H = 14 * mm
 BAFFLE_T = 2 * mm
 W = 11 * inch
 H = 8 * inch
@@ -512,7 +512,7 @@ def makeGlam():
     print 'wrote', can._filename
 
 if __name__ == '__main__':
-    create_backplate()
+    #create_backplate()
     create_baffles()
 
     font = 'Helvetica'

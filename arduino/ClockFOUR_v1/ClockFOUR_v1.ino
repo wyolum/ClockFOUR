@@ -18,9 +18,8 @@
 
 /************* Pin settings *************/
 #define MATRIX_PIN			2
-#define BUTTON_L			A1
-#define BUTTON_R			A3
-#define CAP_SENSE			A2
+#define BUTTON_L			3
+#define BUTTON_R			4
 #define LDR_PIN				A0
 
 
@@ -125,6 +124,7 @@ void setup() {
 		
 	// enter self test mode if a button has been held down
 	if (popEvent() != NO_EVENT) {
+                clearQueue();
 		self_test(); 
 	}
 }

@@ -4,7 +4,7 @@ void self_test() {
 	uint8_t seconds_count = 0;
 	uint16_t totalMinutes = 0;
 	
-	waitWhilePressed();
+
 	strip.setBrightness(70);
 	while (popEvent() == NO_EVENT) {
 		PRINT_DEBUG("I = ");

@@ -1,6 +1,5 @@
 
-#include <CapacitiveSensor.h>
-#include <OneCapSensor.h>
+#include <OneButton.h>
 
 // Queue definitions
 #define QUEUE_SIZE		8
@@ -9,11 +8,8 @@ int8_t front = -1;
 int8_t rear = -1;
 
 // Initialse all the button related stuff
-CapacitiveSensor cs_BUTTON_L = CapacitiveSensor(CAP_SENSE, BUTTON_L);
-CapacitiveSensor cs_BUTTON_R = CapacitiveSensor(CAP_SENSE, BUTTON_R);
-OneCapSensor oneButton_L = OneCapSensor(&cs_BUTTON_L);
-OneCapSensor oneButton_R = OneCapSensor(&cs_BUTTON_R);
-
+OneButton oneButton_L(BUTTON_L, false);  // Button_L active low
+OneButton oneButton_R(BUTTON_R, false);  // Button_R active low
 
 // Sets up all the callback function
 void buttonsInit() {
@@ -62,15 +58,7 @@ boolean bothLongPressed() {
 	return oneButton_L.isLongPressed() && oneButton_R.isLongPressed();
 }
 
-// Blocks until both buttons have been released from a long press
-void waitWhilePressed() {
-	while(oneButton_L.isPressed() || oneButton_R.isPressed()) {
-		// Loop until both buttons are released
-		buttonsTick();
-	}
-	
-	clearQueue();
-}
+
 
 // Pushes a byte onto the queue
 void addToQeue(uint8_t value) {
