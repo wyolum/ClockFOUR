@@ -464,7 +464,7 @@ def create_baffles():
     localizer = MyPath()
     lw = .34 * inch
     localizer.drill(lw/2, lw/2, 1.5 * mm)
-    localizer.drill(lw/2, lw/2, 4.5 * mm)
+    localizer.drill(lw/2, lw/2, 4.0 * mm)
 
     can = canvas.Canvas('%s/baffles_v1_%s.pdf' % (directory, __version__),
                         pagesize=(W, H))
