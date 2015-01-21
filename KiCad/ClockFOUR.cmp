@@ -1,4 +1,18 @@
-Cmp-Mod V01 Created by Cvpcb (2014-09-25 BZR 5147)-product   date = Monday 13 October 2014 05:58:32 PM IST
+Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 21/01/2015 11:17:47 AM
+
+BeginCmp
+TimeStamp = /54C0C60D;
+Reference = A2;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
+
+BeginCmp
+TimeStamp = /54C0C616;
+Reference = A3;
+ValeurCmp = CONN_1;
+IdModule  = C4_Pretty:BreakOutPad;
+EndCmp
 
 BeginCmp
 TimeStamp = /5433999D;
@@ -36,23 +50,9 @@ IdModule  = C4_Pretty:c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /542A3921;
-Reference = C2;
-ValeurCmp = 100p;
-IdModule  = C4_Pretty:c_0805;
-EndCmp
-
-BeginCmp
 TimeStamp = /542E0585;
 Reference = C3;
 ValeurCmp = 100n;
-IdModule  = C4_Pretty:c_0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /542A50B3;
-Reference = C4;
-ValeurCmp = 100p;
 IdModule  = C4_Pretty:c_0805;
 EndCmp
 
@@ -1422,20 +1422,6 @@ IdModule  = C4_Pretty:c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /543399A9;
-Reference = D5;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
-EndCmp
-
-BeginCmp
-TimeStamp = /543399AF;
-Reference = D6;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
-EndCmp
-
-BeginCmp
 TimeStamp = /5433A96F;
 Reference = D7;
 ValeurCmp = CONN_1;
@@ -1464,8 +1450,15 @@ IdModule  = C4_Pretty:Logo-WL3;
 EndCmp
 
 BeginCmp
-TimeStamp = /542A19C4;
+TimeStamp = /54C265D2;
 Reference = LDR1;
+ValeurCmp = LDR;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /54C28552;
+Reference = LDR2;
 ValeurCmp = LDR;
 IdModule  = C4_Pretty:r_0805;
 EndCmp
@@ -2766,13 +2759,6 @@ IdModule  = C4_Pretty:SIL-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /542FF0E4;
-Reference = P4;
-ValeurCmp = Button_Header;
-IdModule  = C4_Pretty:SIL-2;
-EndCmp
-
-BeginCmp
 TimeStamp = /542DBC93;
 Reference = P5;
 ValeurCmp = BARREL_JACK;
@@ -2810,8 +2796,8 @@ EndCmp
 BeginCmp
 TimeStamp = /543F01ED;
 Reference = P10;
-ValeurCmp = NiL;
-IdModule  = C4_Pretty:Header_3x1;
+ValeurCmp = Marquee;
+IdModule  = C4_Pretty:Header_4x1;
 EndCmp
 
 BeginCmp
@@ -2829,21 +2815,21 @@ IdModule  = C4_Pretty:r_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /542A41D9;
+TimeStamp = /54C1E3AE;
 Reference = R3;
-ValeurCmp = 1M;
+ValeurCmp = 10K;
 IdModule  = C4_Pretty:r_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /542A50BF;
+TimeStamp = /54C1E727;
 Reference = R4;
-ValeurCmp = 1M;
+ValeurCmp = 470R;
 IdModule  = C4_Pretty:r_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /542A1F6A;
+TimeStamp = /54C265D8;
 Reference = R5;
 ValeurCmp = 10K;
 IdModule  = C4_Pretty:r_0805;
@@ -2902,6 +2888,13 @@ BeginCmp
 TimeStamp = /5439CAF9;
 Reference = R13;
 ValeurCmp = 0R;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /54C28558;
+Reference = R14;
+ValeurCmp = 10K;
 IdModule  = C4_Pretty:r_0805;
 EndCmp
 
