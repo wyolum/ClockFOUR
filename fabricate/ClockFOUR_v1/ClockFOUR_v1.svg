@@ -22,16 +22,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="891.21594"
-     inkscape:cy="776.22745"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="2296.1504"
+     inkscape:cy="470.66108"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1292"
-     inkscape:window-height="741"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-width="1858"
+     inkscape:window-height="1177"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      units="mm"
      fit-margin-top="0"
@@ -159,98 +159,100 @@
     </g>
     <g
        transform="matrix(0,1.66755,1.66755,0,983.1864,99.47258)"
-       id="g9930">
+       id="g9930"
+       style="fill:#0000ff">
       <text
          id="text9932"
-         transform="matrix(0,1,1,0,509.28,208.671)">
+         transform="matrix(0,1,1,0,509.28,208.671)"
+         style="fill:#0000ff">
         <tspan
            id="tspan9934"
            y="0"
            x="0"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">k</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">k</tspan>
         <tspan
            id="tspan9936"
            sodipodi:role="line"
            y="-408.12"
            x="415.67999 379.44 350.16 317.88 288.23999 255 222.24001 190.44 160.67999 126.72 98.160004 64.919998 33.240002 -0"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">twentydpthirty</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">twentydpthirty</tspan>
         <tspan
            id="tspan9938"
            sodipodi:role="line"
            y="-374.16"
            x="416.04001 381.60001 351.84 320.04001 286.56 256.67999 225.60001 192.96001 160.67999 127.56 94.800003 65.040001 31.200001 -0.83999997"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fortyfiftybten</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fortyfiftybten</tspan>
         <tspan
            id="tspan9940"
            sodipodi:role="line"
            y="-340.32001"
            x="415.67999 381.60001 353.16 319.92001 287.88 254.52 222.60001 190.44 158.52 126.72 95.160004 65.040001 28.68 -0.83999997"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">thirteenonetwo</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">thirteenonetwo</tspan>
         <tspan
            id="tspan9942"
            sodipodi:role="line"
            y="-306.60001"
            x="416.04001 381.60001 349.79999 319.92001 287.88 254.52 222.60001 190.44 159 129.24001 98.160004 63.720001 31.200001 0"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fourteenafivek</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fourteenafivek</tspan>
         <tspan
            id="tspan9944"
            sodipodi:role="line"
            y="-272.76001"
            x="416.04001 384.95999 352.32001 320.04001 286.07999 254.52 222.24001 192 161.88 127.8 96.959999 63.240002 31.200001 -0.83999997"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fifteensixteen</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fifteensixteen</tspan>
         <tspan
            id="tspan9946"
            sodipodi:role="line"
            y="-239.28"
            x="415.07999 381.95999 350.64001 318.23999 285.72 256.32001 222.60001 190.8 158.52 128.88 94.800003 64.919998 31.200001 -0.47999999"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">seventeenthree</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">seventeenthree</tspan>
         <tspan
            id="tspan9948"
            sodipodi:role="line"
            y="-205.08"
            x="413.88 384.95999 350.39999 317.88 287.88 254.52 222.60001 190.44 158.88 130.08 95.160004 63.720001 31.200001 -0.83999997"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">eighteeneleven</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">eighteeneleven</tspan>
         <tspan
            id="tspan9950"
            sodipodi:role="line"
            y="-171"
            x="413.51999 384.95999 349.79999 318.23999 287.88 254.52 222.60001 190.44 160.67999 124.56 95.160004 66.239998 31.68 -0.47999999"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">nineteentwelve</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">nineteentwelve</tspan>
         <tspan
            id="tspan9952"
            sodipodi:role="line"
            y="-136.8"
            x="414.35999 378.60001 353.16 317.88 285.72 256.32001 222.60001 192 160.67999 126.72 95.279999 64.440002 33 -0.83999997"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">vminutestpasto</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">vminutestpasto</tspan>
         <tspan
            id="tspan9954"
            sodipodi:role="line"
            y="-102.6"
            x="415.67999 379.44 349.79999 317.88 286.07999 257.51999 222.84 190.44 160.67999 127.08 94.800003 64.440002 34.200001 0.23999999"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">twoneightensix</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">twoneightensix</tspan>
         <tspan
            id="tspan9956"
            sodipodi:role="line"
            y="-68.400002"
            x="415.67999 381.60001 351.84 318.23999 286.07999 254.16 225.60001 190.44 158.88 130.08 95.160004 63.720001 31.200001 -0.83999997"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">threenineleven</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">threenineleven</tspan>
         <tspan
            id="tspan9958"
            sodipodi:role="line"
            y="-34.200001"
            x="416.04001 381.60001 349.79999 319.92001 288.23999 257.51999 223.08 190.8 160.67999 124.56 95.160004 66.239998 31.68 -0.47999999"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fourfivetwelve</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">fourfivetwelve</tspan>
         <tspan
            id="tspan9960"
            sodipodi:role="line"
            y="-5.6843419e-014"
            x="415.07999 381.95999 350.64001 318.23999 285.72 254.16 225.60001 190.44 158.52 127.92 98.160004 62.880001 32.040001"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">sevendlpocloc</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">sevendlpocloc</tspan>
         <tspan
            id="tspan9962"
            y="-3.48"
            x="150.48"
-           style="font-size:22.44000053px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">‘</tspan>
+           style="font-size:22.44000052999999900px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri">‘</tspan>
       </text>
     </g>
     <g
@@ -402,6 +404,130 @@
        x="861.74591"
        y="194.82233"
        ry="4.9183192" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="449.73624"
+       y="57.077507"
+       id="text3047"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3049"
+         x="449.73624"
+         y="57.077507">280 x 23 x 3mm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="458.05209"
+       y="1156.9958"
+       id="text3047-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3049-2"
+         x="458.05209"
+         y="1156.9958">280 x 23 x 3mm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-784.49585"
+       y="61.794281"
+       id="text3047-4"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3049-5"
+         x="-784.49585"
+         y="61.794281">280 x 23 x 3mm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-774.49585"
+       y="1149.7943"
+       id="text3047-4-5"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3049-5-1"
+         x="-774.49585"
+         y="1149.7943">280 x 23 x 3mm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="482.05209"
+       y="670.99585"
+       id="text3047-8-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3049-2-1"
+         x="482.05209"
+         y="670.99585">280 x 280 x 3mm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1548.9193"
+       y="1050.9958"
+       id="text3047-8-7-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3049-2-1-5"
+         x="1548.9193"
+         y="1050.9958">280 x 280 x 3mm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1239.6732"
+       y="-149.12523"
+       id="text3146"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3148"
+         x="1239.6732"
+         y="-149.12523">Spray paint clear acrylic FLAT BLACK.</tspan><tspan
+         sodipodi:role="line"
+         x="1239.6732"
+         y="-99.125229"
+         id="tspan3154">Three coats of paint - allow to dry at least 3 hours </tspan><tspan
+         sodipodi:role="line"
+         x="1239.6732"
+         y="-49.125229"
+         id="tspan3162">between each coat of paint. Check for pin-hole light </tspan><tspan
+         sodipodi:role="line"
+         x="1239.6732"
+         y="0.87477118"
+         id="tspan3174">leaks with a bright light.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1351.5192"
+       y="1253.2423"
+       id="text3176"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3178"
+         x="1351.5192"
+         y="1253.2423">BLACK and <tspan
+   style="fill:#ff0000"
+   id="tspan3184">RED</tspan> laser cut</tspan><tspan
+         sodipodi:role="line"
+         x="1351.5192"
+         y="1303.2423"
+         id="tspan3180" /><tspan
+         sodipodi:role="line"
+         x="1351.5192"
+         y="1353.2423"
+         id="tspan3182"><tspan
+   style="fill:#0000ff"
+   id="tspan3186">BLUE</tspan> laser etch (minimum 0.1mm pitch)</tspan><tspan
+         sodipodi:role="line"
+         x="1351.5192"
+         y="1403.2423"
+         id="tspan3188" /><tspan
+         sodipodi:role="line"
+         x="1351.5192"
+         y="1453.2423"
+         id="tspan3190"><tspan
+   style="fill:#00ff00"
+   id="tspan3192">GREEN</tspan> information text only</tspan></text>
   </g>
   <g
      id="g8925"
