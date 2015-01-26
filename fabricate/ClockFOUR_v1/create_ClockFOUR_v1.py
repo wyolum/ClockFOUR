@@ -462,7 +462,7 @@ v_baffle = asym_baffle(BAFFLE_H,
 
 def create_baffles():
     localizer = MyPath()
-    lw = .34 * inch
+    lw = 10 * mm
     localizer.drill(lw/2, lw/2, 1.5 * mm)
     localizer.drill(lw/2, lw/2, 4.0 * mm)
 
@@ -471,19 +471,19 @@ def create_baffles():
     can.translate(PAGE_MARGIN, PAGE_MARGIN)
     can.setFont('Courier', 15)
 
-    h_baffle.translate(0, .5*inch)
-    can.drawCentredString(2 * inch, .25 * inch, 'H baffle: 14 per clock')
+    h_baffle.translate(0, 10 * mm)
+    can.drawCentredString(50 * mm, 0 * mm, 'H baffle: 218x16x2mm; 14 per clock')
 
-    v_baffle.translate(0, 2*inch)
-    can.drawCentredString(2 * inch, 1.75 * inch, 'V baffle: 15 per clock')
+    v_baffle.translate(0, 50 * mm)
+    can.drawCentredString(50 * mm, 40 * mm, 'V baffle: 216x14x2mm; 15 per clock')
 
-    localizer.translate(0, 4 * inch)
-    can.drawCentredString(1.75 * inch, 3.2 * inch, 'localizer: 4 per clock')
+    localizer.translate(0, 100 * mm)
+    can.drawCentredString(50 * mm, 90 * mm, 'Localizer: Rout=4mm, Rin=1.5mm; 12 per clock')
 
     h_baffle.drawOn(can, linewidth)
     v_baffle.drawOn(can, linewidth)
     localizer.drawOn(can, linewidth)
-    can.drawCentredString(2.5 * inch, -.75* inch, 'ClockFOUR_v1 Baffles 2mm BLACK Acrylic')
+    can.drawCentredString(50 * mm, -10 * mm, 'ClockFOUR_v1 Baffles 2mm BLACK Acrylic')
 
     can.showPage()
     can.save()
@@ -529,4 +529,27 @@ if __name__ == '__main__':
                      reverse=False,
                      showtime=False,
                      color=None)
-
+    create_faceplate('english_C4_v1_lower_Baffle %s' % (font), english_C4_v1, lower, font, 32,
+                     baffles=True,
+                     do_corner_holes=True,
+                     reverse=False,
+                     showtime=False,
+                     color=None)
+    create_faceplate('english_C4_v1_UPPER_Baffle %s' % (font), english_C4_v1, upper, font, 32,
+                     baffles=True,
+                     do_corner_holes=True,
+                     reverse=False,
+                     showtime=False,
+                     color=None)
+    create_faceplate('english_C4_v1_lower_FINAL %s' % (font), english_C4_v1, lower, font, 32,
+                     baffles=False,
+                     do_corner_holes=True,
+                     reverse=True,
+                     showtime=False,
+                     color=None)
+    create_faceplate('english_C4_v1_UPPER_FINAL %s' % (font), english_C4_v1, upper, font, 32,
+                     baffles=False,
+                     do_corner_holes=True,
+                     reverse=True,
+                     showtime=False,
+                     color=None)
