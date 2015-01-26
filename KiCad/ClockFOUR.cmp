@@ -1,11 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 21/01/2015 11:17:47 AM
-
-BeginCmp
-TimeStamp = /54C0C60D;
-Reference = A2;
-ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:BreakOutPad;
-EndCmp
+Cmp-Mod V01 Created by Cvpcb 0.201501202016+5383~20~ubuntu14.10.1-product   date = Sunday 25 January 2015 06:12:18 PM IST
 
 BeginCmp
 TimeStamp = /54C0C616;
@@ -1464,6 +1457,13 @@ IdModule  = C4_Pretty:r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /54C1D9C9;
+Reference = LDR3;
+ValeurCmp = LDR;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /511688A7/542DED2D;
 Reference = LED1;
 ValeurCmp = WS2812B;
@@ -2752,17 +2752,17 @@ IdModule  = C4_Pretty:Header_FTDI;
 EndCmp
 
 BeginCmp
-TimeStamp = /542B8E4A;
+TimeStamp = /54C53C4F;
 Reference = P3;
-ValeurCmp = LDR_header;
-IdModule  = C4_Pretty:SIL-2;
+ValeurCmp = PWR_IN;
+IdModule  = C4_Pretty:Header_3x1_PWR;
 EndCmp
 
 BeginCmp
-TimeStamp = /542DBC93;
+TimeStamp = /54C50337;
 Reference = P5;
-ValeurCmp = BARREL_JACK;
-IdModule  = C4_Pretty:JACK_PJ-047a;
+ValeurCmp = PWR_IN;
+IdModule  = C4_Pretty:Header_3x1_PWR;
 EndCmp
 
 BeginCmp
@@ -2899,6 +2899,13 @@ IdModule  = C4_Pretty:r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /54C1D9CF;
+Reference = R15;
+ValeurCmp = 10K;
+IdModule  = C4_Pretty:r_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /542BACB8;
 Reference = S1;
 ValeurCmp = CONN_1;
@@ -2930,28 +2937,28 @@ BeginCmp
 TimeStamp = /54385847;
 Reference = S10;
 ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:Screw_2mm;
+IdModule  = C4_Pretty:Slot_tiewrap;
 EndCmp
 
 BeginCmp
 TimeStamp = /5438584D;
 Reference = S11;
 ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:Screw_2mm;
+IdModule  = C4_Pretty:Slot_tiewrap;
 EndCmp
 
 BeginCmp
 TimeStamp = /54385853;
 Reference = S12;
 ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:Screw_2mm;
+IdModule  = C4_Pretty:Slot_tiewrap;
 EndCmp
 
 BeginCmp
 TimeStamp = /54385859;
 Reference = S13;
 ValeurCmp = CONN_1;
-IdModule  = C4_Pretty:Screw_2mm;
+IdModule  = C4_Pretty:Slot_tiewrap;
 EndCmp
 
 BeginCmp

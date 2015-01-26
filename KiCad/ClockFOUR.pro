@@ -1,4 +1,4 @@
-update=Sunday 18 January 2015 06:45:03 PM IST
+update=Monday 26 January 2015 06:08:35 PM IST
 version=1
 last_client=kicad
 [cvpcb]
@@ -11,8 +11,6 @@ version=1
 LibDir=
 [eeschema/libraries]
 LibName1=ClockFOUR_Libs/ClockFOUR
-[general]
-version=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -33,3 +31,18 @@ SolderMaskMinWidth=0
 DrawSegmentWidth=0.2
 BoardOutlineThickness=0.09999999999999999
 ModuleOutlineThickness=0.15
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=/home/samata/projects-git/ClockFOUR/KiCad/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
+[general]
+version=1

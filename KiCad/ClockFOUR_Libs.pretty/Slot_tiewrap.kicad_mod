@@ -1,0 +1,16 @@
+(module Slot_tiewrap (layer F.Cu) (tedit 54C4E40D)
+  (descr "1 pin")
+  (tags "CONN DEV")
+  (fp_text reference S11 (at 0 2.4) (layer F.SilkS) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value CONN_1 (at 0 1.905) (layer F.SilkS) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (pad 1 thru_hole oval (at 0 0) (size 4.2 2.1) (drill oval 3.8 1.8) (layers *.Cu *.Mask F.SilkS))
+  (model pin_array\pin_1.wrl
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+)
