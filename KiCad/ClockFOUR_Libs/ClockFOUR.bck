@@ -30,6 +30,11 @@ D ymbole general de connecteur
 K CONN
 $ENDCMP
 #
+$CMP DIODE_ZENER
+D Diode schottky
+K DEV DIODE
+$ENDCMP
+#
 $CMP R
 D Resistance
 K R DEV

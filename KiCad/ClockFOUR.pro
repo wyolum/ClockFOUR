@@ -1,4 +1,4 @@
-update=Monday 26 January 2015 06:08:35 PM IST
+update=Tuesday 27 January 2015 11:11:14 PM IST
 version=1
 last_client=kicad
 [cvpcb]
@@ -6,11 +6,6 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[eeschema]
-version=1
-LibDir=
-[eeschema/libraries]
-LibName1=ClockFOUR_Libs/ClockFOUR
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -44,5 +39,11 @@ RptD_X=0
 RptD_Y=100
 RptLab=1
 LabSize=60
+[eeschema]
+version=1
+LibDir=
+[eeschema/libraries]
+LibName1=ClockFOUR_Libs/ClockFOUR
+LibName2=device
 [general]
 version=1
