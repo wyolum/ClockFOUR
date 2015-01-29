@@ -1,5 +1,5 @@
-### Module positions - created on Monday 26 January 2015 05:01:02 PM IST ###
-### Printed by Pcbnew version kicad 0.201501251816+5388~20~ubuntu14.10.1-product
+### Module positions - created on Thu Jan 29 13:34:48 2015 ###
+### Printed by Pcbnew version kicad (2014-12-11 BZR 5320)-product
 ## Unit = inches, Angle = deg.
 ## Side : F.Cu
 # Ref    Val                  Package         PosX       PosY        Rot     Side
@@ -187,9 +187,9 @@ C192     100n             c_0805_led          7.2146    -8.7402       0.0    F.C
 C193     100n             c_0805_led          7.8051    -8.7402       0.0    F.Cu
 L1       OSHW             Logo_silk_OSHW_6    7.2047    -9.1732       0.0    F.Cu
 L2       Wyolum           Logo-WL3            7.4016    -9.0157       0.0    F.Cu
-LDR1     LDR              r_0805              0.4724    -1.1811     270.0    F.Cu
-LDR2     LDR              r_0805              8.1398    -1.1811      90.0    F.Cu
-LDR3     LDR              r_0805              5.1969    -6.2205     270.0    F.Cu
+LDR1     LDR              r_0805_ldr          0.4724    -1.1811     270.0    F.Cu
+LDR2     LDR              r_0805_ldr          8.1398    -1.1811      90.0    F.Cu
+LDR3     LDR              r_0805_ldr          5.1969    -6.2205     270.0    F.Cu
 LED1     WS2812B          RGB_WS2811B         0.2953    -1.1811       0.0    F.Cu
 LED2     WS2812B          RGB_WS2811B         0.8858    -1.1811       0.0    F.Cu
 LED3     WS2812B          RGB_WS2811B         1.4764    -1.1811       0.0    F.Cu
