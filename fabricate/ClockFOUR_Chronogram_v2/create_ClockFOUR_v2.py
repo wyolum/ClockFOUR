@@ -59,10 +59,16 @@ class Image:
 
 
 PCB_OFF = 1.27 * mm  # 0.05 * inch
-HEIGHT = 280 * mm 
-WIDTH = 280 * mm
+HEIGHT = 276 * mm 
+WIDTH = 276 * mm
 
 MARGIN = 20 * mm
+
+led_w = 210 * mm
+led_h = 208 * mm
+
+pcb_w = 210 * mm
+pcb_h = 228 * mm
 
 __version__ = 'C4_v2' # refers to mechichanical version.
 
@@ -76,11 +82,11 @@ def setDir(_directory='output'):
 setDir()
     
 mount_r =  1.5 * mm
-corner_holes = array([ ## mount posts
-        (        5 * mm,          5 * mm,       mount_r),
-        (        5 * mm, HEIGHT - 5 * mm,       mount_r),
-        (WIDTH - 5 * mm,          5 * mm,       mount_r),
-        (WIDTH - 5 * mm, HEIGHT - 5 * mm,       mount_r)])
+corner_holes = array([ ## corner mounting posts
+        (        10 * mm,          10 * mm,       mount_r),
+        (        10 * mm, HEIGHT - 10 * mm,       mount_r),
+        (WIDTH - 10 * mm,          10 * mm,       mount_r),
+        (WIDTH - 10 * mm, HEIGHT - 10 * mm,       mount_r)])
 
 
 fontdir = 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts'
@@ -156,27 +162,26 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
 
     if save_can:
         can.setFont('Courier', 18)
-        can.drawCentredString(W / 2 + MARGIN, HEIGHT+1.5*MARGIN, "%s %s" % (basename, __version__))
+        can.drawCentredString((MARGIN + WIDTH + MARGIN)/2, HEIGHT + 1.5 * MARGIN, "%s %s" % (basename, __version__))
     if who:
-        can.drawCentredString(W / 2 + MARGIN, .5*MARGIN, who)
+        can.drawCentredString(WIDTH / 2 + MARGIN, .5*MARGIN, who)
     can.setFont(font, fontsize)
 
     if reverse:
-        can.translate(W + 2 * MARGIN, 0)
+        can.translate(WIDTH + 2 * MARGIN, 0)
         can.scale(-1, 1)
     else:
-        can.drawCentredString(W / 2 + MARGIN, H - 200 * mm, "BACKWARDS!! DO NOT PRINT!!")
-    #     can.drawCentredString(W / 2 + MARGIN, HEIGHT + 1.5 * MARGIN, "If you can read this, do not print!")
+        can.drawCentredString((MARGIN + WIDTH + MARGIN)/2, 0.5 * MARGIN, "BACKWARDS!! DO NOT PRINT!!")
 
-    if top:
-        print H  / inch
-        can.drawCentredString(WIDTH / 2 + MARGIN, HEIGHT - 1.3 * inch + MARGIN, top)
-    if bottom:
-        lines = bottom.splitlines()
-        line_h = .4 * inch
-        start_y = .5 * inch + MARGIN + len(lines) * line_h
-        for i, l in enumerate(lines):
-            can.drawCentredString(WIDTH / 2 + MARGIN, start_y - i * line_h, l)
+#    if top:
+#        print H  / inch
+#        can.drawCentredString(WIDTH / 2 + MARGIN, HEIGHT - 1.3 * inch + MARGIN, top)
+#    if bottom:
+#        lines = bottom.splitlines()
+#        line_h = .4 * inch
+#        start_y = .5 * inch + MARGIN + len(lines) * line_h
+#        for i, l in enumerate(lines):
+#            can.drawCentredString(WIDTH / 2 + MARGIN, start_y - i * line_h, l)
     if color:
         can.setFillColor(color)
         can.rect(MARGIN, MARGIN, WIDTH, HEIGHT, fill=True)
@@ -197,17 +202,18 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
 
     print edgecolor == black
     p = outline(color=edgecolor)
+    
     if do_corner_holes:
         for hole in corner_holes:
             p.drill(*hole)
     p.drawOn(can, linewidth)
     
-    x0 = (WIDTH - pcb_w)/2 + 15 * mm / 2
     dx = 15 * mm
+    x0 = (WIDTH - pcb_w)/2 + dx / 2
     nx = 14
 
-    y0 = (HEIGHT - pcb_h)/2 + 16 * mm / 2
     dy = 16 * mm
+    y0 = (HEIGHT - pcb_h)/2 + dy / 2
     ny = 13
 
     baffle_xs = arange(nx + 1) * dx + x0 - dx/2
@@ -258,13 +264,14 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
     xmax = max(baffle_xs)
     ymin = min(baffle_ys)
     ymax = max(baffle_ys)
+
     if baffles: ## DRAW_GRID???
         p = MyPath()
         for x in baffle_xs:
             drawline(p, x, ymin, x, ymax)
         for y in baffle_ys:
             drawline(p, xmin, y, xmax, y)
-        p.drawOn(can, linewidth=1 * mm)
+        p.drawOn(can, linewidth=2 * mm)
 
     for i, y in enumerate(led_ys):
         for j, x in enumerate(led_xs):
@@ -274,7 +281,7 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
                 # can.drawCentredString(x - h_off, y  - v_off, (lines[i][j]).upper())
 #########################################################
 # draw an apostrophe
-    can.drawCentredString(168* mm, 42 * mm, "'")            
+    can.drawCentredString(165* mm, 41 * mm, "'")            
 #########################################################
     if showtime:
         can.setFillColor((1, 1, 1))
@@ -292,8 +299,11 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
         
     if save_can:
         can.showPage()
-        can.save()
-        print 'wrote', can._filename
+    try:
+      can.save()
+    except IOError:
+      can.save()
+    print 'wrote', can._filename
     try:
         can.restoreState()
     except:
@@ -334,86 +344,77 @@ def led_strip(x, y, p):
     return p
 
 
-pcb_w = 210 * mm
-pcb_h = 208 * mm
+#####################################################
 def create_backplate():
     can = canvas.Canvas('%s/backplate_%s.pdf' % (directory, __version__),
                         pagesize=(WIDTH + 2 * MARGIN, HEIGHT + 2 * MARGIN))
-    can.drawCentredString(WIDTH / 2, -MARGIN / 2, "ClockFOUR_v1 Backplate %s" % __version__)
-    if False:
-        can.translate(W + 2 * MARGIN, 0)
-        can.scale(-1, 1)
+    can.drawCentredString((MARGIN + WIDTH + MARGIN)/ 2, HEIGHT + 1.5 * MARGIN, "ClockFOUR Backplate %s" % __version__)
+
     can.translate(MARGIN, MARGIN)
-
-    p = outline()
-
+    p = outline(color=black)
 
     for hole in corner_holes:
         p.drill(*hole)
 
-    cord_r = 2.5 * mm
-    p.moveTo(0, 10 * mm + cord_r)
-    p.lineTo(cord_r, 10 * mm + cord_r)
-    center = array((cord_r, 10 * mm))
-    for theta in arange(90, -90, -1) * DEG:
-        p.lineTo(center + [cord_r * cos(theta), cord_r * sin(theta)])
-    p.lineTo(0, 10 * mm - cord_r)
-    p.drawOn(can, linewidth)
-    if True:
-        keyhole = Keyhole([25 * mm, 180 * mm]) # 8 * inch?
-        keyhole.drawOn(can, linewidth)
-        keyhole = Keyhole([WIDTH - 25 * mm, 180 * mm])
-        keyhole.drawOn(can, linewidth)
+## outline of the PCB
+#    p.rect([(WIDTH-pcb_w)/2, (HEIGHT-pcb_h)/2, pcb_w, pcb_h,])
 
-    pcb = MyPath()
-    if False:
-        pcb.rect([0, 0,
-                  pcb_w, pcb_h,])
+## PCB mounting holes
+    pcb_mounts = array([ 
+        (        (WIDTH - pcb_w)/2 + 5 * mm,          (HEIGHT-pcb_h)/2 + 5 * mm,       mount_r),
+        (        (WIDTH - pcb_w)/2 + 5 * mm, HEIGHT - (HEIGHT-pcb_h)/2 - 5 * mm,       mount_r),
+        (WIDTH - (WIDTH - pcb_w)/2 - 5 * mm,          (HEIGHT-pcb_h)/2 + 5 * mm,       mount_r),
+        (WIDTH - (WIDTH - pcb_w)/2 - 5 * mm, HEIGHT - (HEIGHT-pcb_h)/2 - 5 * mm,       mount_r)])
 
-    
-    pcb_mounts = [[.2 * inch, 1.5*inch, mount_r],
-                  [.2 * inch, pcb_h - 1.5 * inch, mount_r],
-                  [pcb_w - .2 * inch, 1.5*inch, mount_r],
-                  [pcb_w - .2 * inch, pcb_h - 1.5 * inch, mount_r],
-                    ]
     for hole in pcb_mounts:
-        pcb.drill(*hole)
-    labels = 'RST MODE DEC INC ENT'.split()
-    for i in range(5):
-        x = pcb_w - .5*inch - i * .6 * inch
-        y = pcb_h - .4 * inch
-        button_hole(x, y, pcb)
+        p.drill(*hole)
 
-        can.drawCentredString(x + (WIDTH - pcb_w)/2, y + .25 * inch + PCB_OFF, labels[i])
-    ## thumbwheel
-    x = pcb_w - .5 * inch - 5 * .6 * inch
-    y = pcb_h - .5 * inch
-    pcb.drill(x, y, .25 * inch)
-    can.drawCentredString(x + (WIDTH - pcb_w)/2, pcb_h - .4 * inch + .25 * inch + PCB_OFF, 'DIM')
-    pcb.rect([pcb_w - .44 * inch - .62 * inch, .44 * inch,
-              .62 * inch, .12 * inch])
-    can.rotate(90)
-    x = pcb_w - .44 * inch - .62 * inch + (WIDTH - pcb_w)/2
-    y = .32 * inch
-    can.drawCentredString(y - .04 * inch, -x,'GRN')
-    can.drawCentredString(y, -x - .75 * inch,'BLK')
-    can.rotate(-90)
-    
+## circular reset switch
+    p.drill((WIDTH-pcb_w)/2 + 22 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 4 * mm, 4 * mm)
+    can.drawCentredString((WIDTH-pcb_w)/2 + 22 * mm, HEIGHT-((HEIGHT-pcb_h)/2) + 2 * mm, "Reset")
 
-    pcb.translate((WIDTH - pcb_w)/2, PCB_OFF)
-    pcb.drawOn(can, linewidth)
+## FTDI connector
+    p.rect([(WIDTH-pcb_w)/2 + 35 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 6 * mm, 18 * mm, 4 * mm,])
+    can.drawCentredString((WIDTH-pcb_w)/2 + 44 * mm, HEIGHT-((HEIGHT-pcb_h)/2) + 2 * mm, "FTDI 5V")
+    can.drawCentredString((WIDTH-pcb_w)/2 + 44 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 12 * mm, "GRN      BLK")
 
+## Button_R - Color
+    p.drill((WIDTH-pcb_w)/2 + 10 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 24.5 * mm, 6 * mm)
+#    p.rect([(WIDTH-pcb_w)/2 + 5 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 29.5 * mm, 10 * mm, 10 * mm,])
+    can.drawCentredString((WIDTH-pcb_w)/2 + 10 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 35 * mm, "COLOR")
+    can.drawCentredString((WIDTH-pcb_w)/2 + 10 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 40 * mm, "(picker)")
 
-    can.save()
+## Button_L - Mode
+    p.drill((WIDTH-pcb_w)/2 + 34 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 24.5 * mm, 6 * mm)
+#    p.rect([(WIDTH-pcb_w)/2 + 29 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 29.5 * mm, 10 * mm, 10 * mm,])
+    can.drawCentredString((WIDTH-pcb_w)/2 + 34 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 35 * mm, "MODE")
+    can.drawCentredString((WIDTH-pcb_w)/2 + 34 * mm, HEIGHT-((HEIGHT-pcb_h)/2) - 40 * mm, "(set)")
+
+## Power socket
+    p.drill(WIDTH/2, (HEIGHT-pcb_h)/2 - 12 * mm, 4.05 * mm)
+    can.drawCentredString(WIDTH/2, (HEIGHT-pcb_h)/2 - 5 * mm, "INPUT: 5V 3A   tip(+)")
+
+## Keyholes
+    p.drill((WIDTH-pcb_w)/4, HEIGHT - 30 * mm, 6 * mm)
+    p.drill((WIDTH-pcb_w)/4, HEIGHT - 23 * mm, 2.5 * mm)
+    p.drill(WIDTH-(WIDTH-pcb_w)/4, HEIGHT - 30 * mm, 6 * mm)
+    p.drill(WIDTH-(WIDTH-pcb_w)/4, HEIGHT - 23 * mm, 2.5 * mm)
+
+    p.drawOn(can, linewidth)
+    can.showPage()
+    try:
+      can.save()
+    except IOError:
+      can.save()
     print 'wrote', can._filename
-
+#####################################################
 
 
 BAFFLE_H = 14 * mm
 BAFFLE_T = 2 * mm
-W = 11 * inch
-H = 8 * inch
-PAGE_MARGIN = 2 * cm
+W = WIDTH 
+H = HEIGHT
+PAGE_MARGIN = 20 * mm
 DX = 15 * mm
 DY = 16 * mm
 
@@ -425,7 +426,7 @@ h_baffle = asym_baffle(BAFFLE_H,
                          overhang_heights=(BAFFLE_H + 2 * mm, BAFFLE_H + 2 * mm),
                          overhang_tapers=(False, False),
                          jump_strips=False,
-                         margin=0.016
+                         margin=0.2 * mm
                          )
 v_baffle = asym_baffle(BAFFLE_H,
                          BAFFLE_T,
@@ -435,7 +436,7 @@ v_baffle = asym_baffle(BAFFLE_H,
                          overhang_heights=(None, None),
                          overhang_tapers=(False, False),
                          jump_strips=False,
-                         margin=0.016
+                         margin=0.2 * mm
                          )
 ##h_baffle = x30_h_baffle(BAFFLE_H,
 ##                         BAFFLE_T,
@@ -486,7 +487,10 @@ def create_baffles():
     can.drawCentredString(50 * mm, -10 * mm, 'ClockFOUR_v2 Baffles 2mm BLACK Acrylic')
 
     can.showPage()
-    can.save()
+    try:
+      can.save()
+    except IOError:
+      can.save()
     print 'wrote', can._filename
 
 def makeGlam():
@@ -508,46 +512,50 @@ def makeGlam():
                 can.showPage()
             except Exception, e:
                 pass
-    can.save()
+    try:
+      can.save()
+    except IOError:
+      can.save()
     print 'wrote', can._filename
 
 if __name__ == '__main__':
-    #create_backplate()
+    create_backplate()
+    
     create_baffles()
 
     font = 'Helvetica'
     add_font(font, 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts')    
-    create_faceplate('english_lower %s' % (font), english_C4_v1, lower, font, 32,
+    create_faceplate('english_lower %s' % (font), english_C4_v1, lower, font, 30,
                      baffles=False,
                      do_corner_holes=True,
                      reverse=False,
                      showtime=False,
                      color=None)
-    create_faceplate('english_upper %s' % (font), english_C4_v1, upper, font, 32,
+    create_faceplate('english_upper %s' % (font), english_C4_v1, upper, font, 30,
                      baffles=False,
                      do_corner_holes=True,
                      reverse=False,
                      showtime=False,
                      color=None)
-    create_faceplate('english_lower_Baffle %s' % (font), english_C4_v1, lower, font, 32,
+    create_faceplate('english_lower_Baffle %s' % (font), english_C4_v1, lower, font, 30,
                      baffles=True,
                      do_corner_holes=True,
                      reverse=False,
                      showtime=False,
                      color=None)
-    create_faceplate('english_upper_Baffle %s' % (font), english_C4_v1, upper, font, 32,
+    create_faceplate('english_upper_Baffle %s' % (font), english_C4_v1, upper, font, 30,
                      baffles=True,
                      do_corner_holes=True,
                      reverse=False,
                      showtime=False,
                      color=None)
-    create_faceplate('english_lower_FINAL %s' % (font), english_C4_v1, lower, font, 32,
+    create_faceplate('english_lower_FINAL %s' % (font), english_C4_v1, lower, font, 30,
                      baffles=False,
                      do_corner_holes=True,
                      reverse=True,
                      showtime=False,
                      color=None)
-    create_faceplate('english_upper_FINAL %s' % (font), english_C4_v1, upper, font, 32,
+    create_faceplate('english_upper_FINAL %s' % (font), english_C4_v1, upper, font, 30,
                      baffles=False,
                      do_corner_holes=True,
                      reverse=True,
