@@ -140,6 +140,7 @@ def new_canvas(basename):
     can = canvas.Canvas('%s/%s_%s.pdf' % (directory, basename, __version__),
                         pagesize=(WIDTH + 2 * MARGIN, HEIGHT + 2 * MARGIN))
     return can
+
 def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=None,
                      can=None, showtime=False, who=None, baffles=False, do_corner_holes=True,
                      top=None,
@@ -161,8 +162,8 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
     can.saveState()
 
     if save_can:
-        can.setFont('Courier', 18)
-        can.drawCentredString((MARGIN + WIDTH + MARGIN)/2, HEIGHT + 1.5 * MARGIN, "%s %s" % (basename, __version__))
+        can.setFont('Helvetica', 18)
+        can.drawCentredString((MARGIN + WIDTH + MARGIN)/2, HEIGHT + 1.5 * MARGIN, "%s %s 276x276x3mm" % (basename, __version__))
     if who:
         can.drawCentredString(WIDTH / 2 + MARGIN, .5*MARGIN, who)
     can.setFont(font, fontsize)
@@ -189,16 +190,16 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
 
     can.translate(MARGIN, MARGIN)
 
-    if NIL:
-        NIL_LED_X = (WIDTH - 3 * inch) / 2
-        NIL_LED_Y = HEIGHT - .75 * inch
-        NIL_DX = 16.67 * mm
-        NIL_DY = 17.946 * mm
-        for i in range(10):
-            x = NIL_LED_X + i * NIL_DX
-            for j in range(2):
-                y = NIL_LED_Y + j * NIL_DY
-                can.rect(x, y, .1*inch, .2 * inch, fill=False)
+#    if NIL:
+#        NIL_LED_X = (WIDTH - 3 * inch) / 2
+#        NIL_LED_Y = HEIGHT - .75 * inch
+#        NIL_DX = 16.67 * mm
+#        NIL_DY = 17.946 * mm
+#        for i in range(10):
+#            x = NIL_LED_X + i * NIL_DX
+#            for j in range(2):
+#                y = NIL_LED_Y + j * NIL_DY
+#                can.rect(x, y, .1*inch, .2 * inch, fill=False)
 
     print edgecolor == black
     p = outline(color=edgecolor)
@@ -209,11 +210,11 @@ def create_faceplate(basename, style, case, font, fontsize, reverse=True, color=
     p.drawOn(can, linewidth)
     
     dx = 15 * mm
-    x0 = (WIDTH - pcb_w)/2 + dx / 2
+    x0 = (WIDTH - led_w)/2 + dx / 2
     nx = 14
 
     dy = 16 * mm
-    y0 = (HEIGHT - pcb_h)/2 + dy / 2
+    y0 = (HEIGHT - led_h)/2 + dy / 2
     ny = 13
 
     baffle_xs = arange(nx + 1) * dx + x0 - dx/2
@@ -348,7 +349,7 @@ def led_strip(x, y, p):
 def create_backplate():
     can = canvas.Canvas('%s/backplate_%s.pdf' % (directory, __version__),
                         pagesize=(WIDTH + 2 * MARGIN, HEIGHT + 2 * MARGIN))
-    can.drawCentredString((MARGIN + WIDTH + MARGIN)/ 2, HEIGHT + 1.5 * MARGIN, "ClockFOUR Backplate %s" % __version__)
+    can.drawCentredString((MARGIN + WIDTH + MARGIN)/ 2, HEIGHT + 1.5 * MARGIN, "ClockFOUR Backplate %s 276x276x3mm" % __version__)
 
     can.translate(MARGIN, MARGIN)
     p = outline(color=black)
@@ -410,6 +411,42 @@ def create_backplate():
 #####################################################
 
 
+def create_sides():
+    can = canvas.Canvas('%s/sides_%s.pdf' % (directory, __version__),
+                        pagesize=(WIDTH + 2 * MARGIN, HEIGHT + 2 * MARGIN))
+    can.drawCentredString((MARGIN + WIDTH + MARGIN)/ 2, HEIGHT + 1.5 * MARGIN, "ClockFOUR sides %s" % __version__)
+
+    can.translate(MARGIN, MARGIN)
+    p = MyPath(color=black)
+
+## TOP
+    p.rect([0, 0, WIDTH, 20 * mm,])
+    can.drawCentredString(WIDTH/2, -5 * mm, "TOP = 276 x 20 x 3 mm")
+
+## BOTTOM    
+    p.rect([0, 40 * mm, WIDTH, 20 * mm,])
+    can.drawCentredString(WIDTH/2, 35 * mm, "BOTTOM = 276 x 20 x 3 mm")
+
+## LEFT
+    p.rect([3 * mm, 80 * mm, WIDTH - 6 * mm, 20 * mm,])
+    can.drawCentredString(WIDTH/2, 75 * mm, "LEFT = 270 x 20 x 3 mm")
+
+## RIGHT    
+    p.rect([3 * mm, 120 * mm, WIDTH - 6 * mm, 20 * mm,])
+    can.drawCentredString(WIDTH/2, 115 * mm, "RIGHT = 270 x 20 x 3 mm")
+
+    p.drawOn(can, linewidth)
+    can.showPage()
+    try:
+      can.save()
+    except IOError:
+      can.save()
+    print 'wrote', can._filename
+    
+################################################
+
+
+
 BAFFLE_H = 14 * mm
 BAFFLE_T = 2 * mm
 W = WIDTH 
@@ -462,29 +499,31 @@ v_baffle = asym_baffle(BAFFLE_H,
 
 
 def create_baffles():
-    localizer = MyPath()
-    lw = 10 * mm
-    localizer.drill(lw/2, lw/2, 1.5 * mm)
-    localizer.drill(lw/2, lw/2, 4.0 * mm)
-
     can = canvas.Canvas('%s/baffles_%s.pdf' % (directory, __version__),
-                        pagesize=(W, H))
-    can.translate(PAGE_MARGIN, PAGE_MARGIN)
-    can.setFont('Courier', 15)
+                        pagesize=(WIDTH + 2 * MARGIN, HEIGHT + 2 * MARGIN))
+    can.drawCentredString((MARGIN + WIDTH + MARGIN)/ 2, HEIGHT + 1.5 * MARGIN, "ClockFOUR baffles and sides %s" % __version__)
+    can.translate(MARGIN, MARGIN)
 
+    p = MyPath(color=black)
+
+## localizer
+    p.drill(30 * mm, 100 * mm, 1.5 * mm)
+    p.drill(30 * mm, 100 * mm, 4.0 * mm)
+    can.drawCentredString(100 * mm, 90 * mm, 'Localizer: Rout=4mm, Rin=1.5mm; 12 per clock')
+    p.drawOn(can, linewidth)
+
+## h_baffle
     h_baffle.translate(0, 10 * mm)
     can.drawCentredString(50 * mm, 0 * mm, 'H baffle: 218x16x2mm; 14 per clock')
+    h_baffle.drawOn(can, linewidth)
 
+## v_baffle
     v_baffle.translate(0, 50 * mm)
     can.drawCentredString(50 * mm, 40 * mm, 'V baffle: 216x14x2mm; 15 per clock')
-
-    localizer.translate(0, 100 * mm)
-    can.drawCentredString(50 * mm, 90 * mm, 'Localizer: Rout=4mm, Rin=1.5mm; 12 per clock')
-
-    h_baffle.drawOn(can, linewidth)
     v_baffle.drawOn(can, linewidth)
-    localizer.drawOn(can, linewidth)
+
     can.drawCentredString(50 * mm, -10 * mm, 'ClockFOUR_v2 Baffles 2mm BLACK Acrylic')
+
 
     can.showPage()
     try:
@@ -522,6 +561,8 @@ if __name__ == '__main__':
     create_backplate()
     
     create_baffles()
+
+    create_sides()
 
     font = 'Helvetica'
     add_font(font, 'C:/Users/David/Documents/GitHub/ClockFOUR/fabricate/fonts')    
