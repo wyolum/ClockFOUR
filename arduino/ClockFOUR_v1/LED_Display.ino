@@ -32,8 +32,8 @@ void disp_setBrightness() {
 	
 	uint8_t brightness = getBrightness();
 	
-	strip.setBrightness(getLinearBrightness(brightness));
-	logoStrip.setBrightness(getLinearBrightness(brightness));
+	strip.setBrightness(brightness);
+	logoStrip.setBrightness(brightness);
 	
 	PRINT_DEBUG(" Brightness: ");
 	PRINT_DEBUG(brightness);
