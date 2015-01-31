@@ -76,7 +76,7 @@ class PixelStates : public Adafruit_GFX {
 		PixelTransition getPixel(uint16_t ledIdx);
 		void clear();
 		void fillBuffer(uint8_t pixValue);
-		void loadBitmap(uint16_t x, uint16_t y, prog_uchar *arr);
+		void loadBitmap(int16_t x, int16_t y, prog_uchar *arr);
 		
 		void switchBuffers();
 		void updateOtherBuffer();

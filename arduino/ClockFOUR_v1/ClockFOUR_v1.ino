@@ -9,8 +9,8 @@
 //#define DEBUG
 
 #ifdef DEBUG
-#define PRINT_DEBUG(x)		Serial.print(x)
-#define PRINTLN_DEBUG(x)	Serial.println(x)
+#define PRINT_DEBUG(x)			Serial.print(x)
+#define PRINTLN_DEBUG(x)		Serial.println(x)
 #else
 #define PRINT_DEBUG(x)
 #define PRINTLN_DEBUG(x)
@@ -20,14 +20,22 @@
 #define MATRIX_PIN			2
 #define BUTTON_L			3
 #define BUTTON_R			4
+#define	LOGO_PIN			5
 #define LDR_PIN				A0
 
+#define REFRESH_PERIOD		20		// Determines the refresh period of the displays, in this case 20ms
+									// WARNING! The fade speeds depend on this frequency. Increasing this
+									// number will slow down fade speeds.
 
 /************* Some display settings *************/
 #define MATRIX_WIDTH			14
 #define MATRIX_HEIGHT			13
 #define MIN_BRIGHTNESS			25
 #define MAX_BRIGHTNESS			255
+
+/************* Company logo settings *************/
+#define ENABLE_COMPANY_LOGO		true		// Temporary, to be replaced with LED detection code
+#define LOGO_LED_COUNT			10
 
 /************* Global time variablesrtc *************/
 bool h12, PM;
@@ -81,16 +89,18 @@ DisplayModeFunc displayModes[MODE_COUNT] = {
 /************* Settings struct definition *************/
 typedef union Settings {
 	// WARNING: array has to be at least as large as the number of elements in the struct
-	uint8_t array[9];
+	uint8_t array[8];
 	struct {
 		uint8_t useDegF;					// 0 if degrees C, 1 if degrees F
 		uint8_t displayMode;				// Stores the display mode we are currently in
 		uint8_t colourModes[MODE_COUNT];	// Each display mode has its own colour mode
 		uint8_t colourVal[MODE_COUNT];		// Each display also has its own colour value
+		uint8_t logoColourMode;
+		uint8_t logoColourVal;
 	};
 };
 extern Settings clockSettings;
-
+bool companyLogoEnabled = ENABLE_COMPANY_LOGO;
 
 /**** Main Code ****/
 
@@ -120,7 +130,7 @@ void setup() {
 		
 	// enter self test mode if a button has been held down
 	if (popEvent() != NO_EVENT) {
-                clearQueue();
+		clearQueue();
 		self_test(); 
 	}
 }
@@ -196,6 +206,10 @@ void loop() {
 	
 	// Figure out which colour mode we are using and then display the pixels
 	disp_refresh(*p_colourMode, *p_colourValue, fade[clockSettings.displayMode]);
+	
+	if(companyLogoEnabled) {
+		updateLogoColour(clockSettings.logoColourMode, clockSettings.logoColourVal);
+	}
 }
 
 
@@ -252,6 +266,52 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint1
 	return value;
 }
 
+// Special colour picker to set the colour mode and value for the company logo
+void colourPickerChangeSetting() {
+	long lastRepeat = millis();
+	
+	while(true) {
+		buttonsTick();
+		
+		switch(popEvent()) {
+			
+		case BL_CLICK:
+		case BL_PRESS:
+			return;
+		
+		case BR_CLICK:
+			clockSettings.logoColourMode++;
+			if(clockSettings.logoColourMode >= CM_PARTY) {
+				clockSettings.logoColourMode = 0;
+			}
+		
+			PRINT_DEBUG("Switched to logo colour mode:");
+			PRINTLN_DEBUG(clockSettings.logoColourMode);
+			break;
+			
+		case BR_PRESS:
+		case BR_REPEAT:
+			if(millis() - lastRepeat < 50) {
+				break;
+			}
+		
+			PRINT_DEBUG("Switched to logo colour value:");
+			PRINTLN_DEBUG(clockSettings.logoColourVal);
+		
+			lastRepeat = millis();
+			
+			clockSettings.logoColourVal++;
+			clockSettings.logoColourMode = CM_SOLID_COLOUR;
+			break;
+		
+		default:
+			break;
+		}
+				
+		disp_refresh(clockSettings.logoColourMode, clockSettings.logoColourVal, 0);
+	}
+}
+
 
 void colourWheelDisp(uint8_t colourMode) {
 	// Configuration display function for the colour picker
@@ -262,7 +322,7 @@ void colourWheelDisp(uint8_t colourMode) {
 uint8_t colourConfig(uint8_t colourMode) {
 	// Config function for the colour mode
 	pixBuffer_clear();
-	pixBuffer_loadBitmap(Circle_bw_bmp);
+	pixBuffer_loadBitmap(Circle_bw_bmp, 0, 0);
 	
 	return changeSetting(colourMode, 0, 255, 50, colourWheelDisp, 2000);
 }
@@ -272,20 +332,22 @@ uint8_t colourConfig(uint8_t colourMode) {
 typedef enum ConfigMode {
 	HOUR,
 	MINUTE,
+	LOGO_COLOUR,
 	LAST_MODE
 };
 
 void clockConfig() {
 	
-	uint8_t mode;
+	uint8_t mode, lastMode;
 	
+	lastMode = companyLogoEnabled ? LAST_MODE : LOGO_COLOUR;
 	mode = HOUR;
 
 	disp_showBWBitmap(Set_bw_bmp, 0x00FFFFFF, 0x00000000);
 	waitDelayOrButton(1000);
 	
 	// Loop through all the configuration modes
-	while(mode != LAST_MODE) {
+	while(mode != lastMode) {
 		switch(mode) {
 
 		case HOUR:
@@ -308,6 +370,21 @@ void clockConfig() {
 				
 				// Set seconds to 0 for a clean start to the minute
 				rtc.setSecond(0);
+			}
+			break;
+		
+		case LOGO_COLOUR:
+			{
+				for(int8_t y = -10; y < MATRIX_HEIGHT; y++) {
+					disp_showBWBitmap(Arrow_bw_bmp, 0x00FFFFFF, 0x00000000, 0, y);
+					waitDelayOrButton(100);
+				}
+				
+				pixBuffer_clear();
+				pixBuffer_loadBitmap(Circle_bw_bmp, 0, 0);
+				colourPickerChangeSetting();
+				clearBufferHistory();
+				saveSettings();
 			}
 			break;
 			
@@ -341,9 +418,3 @@ uint8_t waitDelayOrButton(uint16_t delayTime) {
 	
 	return retVal;
 }
-
-
-void exampleDisplayFunction(uint8_t value) {
-	PRINTLN_DEBUG(value);
-}
-

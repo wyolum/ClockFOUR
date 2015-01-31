@@ -285,7 +285,7 @@ void PixelStates::fillBuffer(uint8_t pixValue) {
 }
 
 
-void PixelStates::loadBitmap(uint16_t x, uint16_t y, prog_uchar *bmp) {
+void PixelStates::loadBitmap(int16_t x, int16_t y, prog_uchar *bmp) {
 	uint16_t bmp_w = pgm_read_byte(bmp);
 	uint16_t bmp_h = pgm_read_byte(bmp + 1);
 	

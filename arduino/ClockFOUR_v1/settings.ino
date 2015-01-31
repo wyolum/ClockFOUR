@@ -1,7 +1,7 @@
 
 #include <EEPROM.h>
 
-#define EEPROM_VERSION		0x01
+#define EEPROM_VERSION		0x02
 
 Settings clockSettings = { 0 };
 

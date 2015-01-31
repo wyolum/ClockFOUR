@@ -27,6 +27,7 @@ void disp_init() {
 	strip.show();				// Initialize all pixels to 'off'
 	
 	pixels.clear();
+	pixels.setTextWrap(false);
 }
 
 
@@ -229,8 +230,6 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 	static uint8_t prevIteration = 0;
 	static uint16_t randomSeed = 0;
 	
-	uint16_t randomVal;
-	
 	// Get a new random value whenever we enter a new iteration
 	if(prevIteration != colourIteration) {
 		randomSeed = random();
@@ -238,7 +237,7 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 	}
 
 	// Perform a hashing operation based on the random seed and the pixIdx
-	randomVal = randomSeed + pixIdx;
+	uint16_t randomVal = randomSeed + pixIdx;
 	randomVal += randomVal << 10;
 	randomVal ^= randomVal >> 6;
 	randomVal += randomVal << 3;
@@ -379,7 +378,7 @@ void disp_TempCF(uint8_t value) {
 void disp_ScrollWords(char *p_words, int scrollbuffer, uint8_t colour) {
 	for (int x = MATRIX_WIDTH; x > scrollbuffer; x--) {
 		pixels.clear();
-		pixels.setCursor(x-6,1);
+		pixels.setCursor(x-6, 1);
 		pixels.print(p_words);
 		disp_display(wheel(colour));
 		colour += 5;

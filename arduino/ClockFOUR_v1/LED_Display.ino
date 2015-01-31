@@ -10,6 +10,7 @@
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip(MATRIX_WIDTH * MATRIX_HEIGHT, MATRIX_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel logoStrip(LOGO_LED_COUNT, LOGO_PIN, NEO_GRB + NEO_KHZ800);
 
 PixelStates pixels(MATRIX_WIDTH, MATRIX_HEIGHT, NEO_MATRIX_TOP + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE);
 
@@ -59,8 +60,8 @@ inline void pixBuffer_clear() {
 }
 
 
-inline void pixBuffer_loadBitmap(prog_uchar *bmp) {
-	pixels.loadBitmap(0, 0, bmp);
+inline void pixBuffer_loadBitmap(prog_uchar *bmp, int8_t x, int8_t y) {
+	pixels.loadBitmap(x, y, bmp);
 }
 
 
@@ -124,7 +125,6 @@ inline void clearBufferHistory() {
 
 
 void disp_refresh(uint8_t mode, uint8_t colour, uint8_t letterFade) {
-	#define REFRESH_PERIOD	20		// Determines the refresh period of the display, in this case 20ms
 	#define COLOUR_UPDATE	5		// Defines the rate at which the colour mode gets updated, in multiples of LETTER_FADE
 	
 	static uint32_t lastRefresh = 0;
@@ -241,7 +241,6 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 	randomVal += randomVal << 3;
 	randomVal ^= randomVal >> 11;
 	
-	
 	switch(mode) {
 	case CM_ALL_WHITE:
 		return strip.Color(235,   255,   255);
@@ -271,10 +270,58 @@ inline uint32_t getPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uin
 }
 
 
-void disp_showBWBitmap(prog_uchar *bmp, uint32_t onColour, uint32_t offColour) {
+void updateLogoColour(uint8_t mode, uint8_t colour) {
+	static uint32_t lastRefresh = 0;
+	static uint8_t colourIteration = 0;
+	
+	// The refresh rate for the logo is 5x slower than the main screen refresh rate
+	if((uint32_t) (millis() - lastRefresh) < (REFRESH_PERIOD * 5)) {
+		return;
+	}
+	
+	for(uint8_t ledIdx = 0; ledIdx < LOGO_LED_COUNT; ledIdx++) {
+		logoStrip.setPixelColor(ledIdx, getLogoPixColour(ledIdx, mode, colour, colourIteration));
+	}
+	
+	colourIteration++;
+}
+
+
+inline uint32_t getLogoPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uint8_t colourIteration)  {	
+	switch(mode) {
+	case CM_ALL_WHITE:
+		return strip.Color(235,   255,   255);
+		break;
+		
+	case CM_SOLID_COLOUR:
+		return wheel_rainbow(colour);
+		break;
+		
+	case CM_FADE:
+		return wheel_rainbow(colourIteration);
+		break;
+		
+	case CM_RAINBOW:
+		return wheel_rainbow((pixIdx)* (256 / strip.numPixels()) - colourIteration & 255);
+		break;
+		
+	default:
+		// Should never get here, but in case it does make all LEDs red
+		return strip.Color(255,   0,   0);
+		break;
+	}
+}
+
+
+void disp_showBWBitmap(prog_uchar *bmp, uint32_t onColour, uint32_t offColour, int8_t x, int8_t y) {
 	pixBuffer_clear();
-	pixBuffer_loadBitmap(bmp);
+	pixBuffer_loadBitmap(bmp, x, y);
 	disp_display(onColour, offColour);
+}
+
+
+inline void disp_showBWBitmap(prog_uchar *bmp, uint32_t onColour, uint32_t offColour) {
+	disp_showBWBitmap(bmp, onColour, offColour, 0, 0);
 }
 
 
