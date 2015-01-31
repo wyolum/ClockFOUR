@@ -30,8 +30,6 @@
 /************* Some display settings *************/
 #define MATRIX_WIDTH			14
 #define MATRIX_HEIGHT			13
-#define MIN_BRIGHTNESS			25
-#define MAX_BRIGHTNESS			255
 
 /************* Company logo settings *************/
 #define ENABLE_COMPANY_LOGO		true		// Temporary, to be replaced with LED detection code
@@ -110,6 +108,8 @@ void setup() {
 
 	// Start one wire
 	Wire.begin();
+
+	brightness_init(LDR_PIN);
 
 	// Initialise the board inputs and outputs
 	pinMode(MATRIX_PIN, OUTPUT);   // declare the ledPin as an OUTPUT:
@@ -225,6 +225,7 @@ boolean displaySeconds() {
 	pixBuffer_loadVal(rtc.getSecond(), 0);  // put a "2" in the last place to activate the minute slider
 }
 
+
 uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint16_t repeatDelay, void (*dispFunc)(uint8_t), uint16_t timeout = 0) {
 	uint8_t value = origValue;
 	long lastRepeat = millis();
@@ -265,6 +266,7 @@ uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint1
 	}
 	return value;
 }
+
 
 // Special colour picker to set the colour mode and value for the company logo
 void colourPickerChangeSetting() {

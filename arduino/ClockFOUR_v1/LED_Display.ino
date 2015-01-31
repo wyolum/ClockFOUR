@@ -22,36 +22,22 @@ void disp_init() {
 	// on a live circuit...if you must, connect GND first.
 	
 	strip.begin();				// initialize the LED strip
-	strip.setBrightness(MIN_BRIGHTNESS);
+	disp_setBrightness();
 	strip.show();				// Initialize all pixels to 'off'
 	
 	pixels.clear();
 }
 
-
-uint16_t LDR_Value = 0;
-uint8_t brightness = MIN_BRIGHTNESS;
-
-inline void disp_setBrightness() {
+void disp_setBrightness() {
 	
-	LDR_Value = analogRead(LDR_PIN);
+	uint8_t brightness = getBrightness();
 	
-	if (LDR_Value < 350) {
-		brightness = MIN_BRIGHTNESS;
-	} else if (LDR_Value > 1000) {
-		brightness = MAX_BRIGHTNESS;
-	} else {
-		brightness = map(LDR_Value, 350, 1000, MIN_BRIGHTNESS, MAX_BRIGHTNESS);
-	}
+	strip.setBrightness(getLinearBrightness(brightness));
+	logoStrip.setBrightness(getLinearBrightness(brightness));
 	
-	strip.setBrightness(brightness);
-	
-	PRINT_DEBUG("LDR: ");
-	PRINT_DEBUG(LDR_Value);
 	PRINT_DEBUG(" Brightness: ");
 	PRINT_DEBUG(brightness);
 	PRINTLN_DEBUG(" | ");
-	
 }
 
 
