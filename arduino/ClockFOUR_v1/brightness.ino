@@ -1,13 +1,15 @@
 
 #define MIN_BRIGHTNESS			25
 #define MAX_BRIGHTNESS			255
-#define BRIGHTNESS_REFRESH		100		// Refresh rate of the brightness setting
-#define BRIGHTNESS_INCR			1
+#define BRIGHTNESS_REFRESH		25		// Refresh rate of the brightness setting
+#define BRIGHTNESS_INCR			5
 
 // Settings as determined in the meeting
-/*#define LDR_DAWN				50
+/*
+#define LDR_DAWN				50
 #define LDR_DAYTIME				150
-#define LDR_LED_ON				300*/
+#define LDR_LED_ON				300
+*/
 
 // Settings for Josef's board
 #define LDR_DAWN				400
@@ -43,7 +45,8 @@ uint8_t getBrightness() {
 	
 	// First check if we are past the brightness refresh delay
 	if((uint32_t) (currentMillis - lastRefresh) < BRIGHTNESS_REFRESH) {
-		return currentBrightness;
+		PRINT_DEBUG("LDR: ---  |  ");
+  		return currentBrightness;
 	}
 	
 	lastRefresh = currentMillis;
@@ -59,7 +62,8 @@ uint8_t getBrightness() {
 		}
 		
 		PRINT_DEBUG("LDR: ");
-		PRINTLN_DEBUG(min_LDR_value);
+		PRINT_DEBUG(min_LDR_value);
+                PRINT_DEBUG("  |  ");
 	}
 	
 	if(min_LDR_value < LDR_DAWN) {

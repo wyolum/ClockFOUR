@@ -37,7 +37,7 @@ void disp_setBrightness() {
 	
 	PRINT_DEBUG(" Brightness: ");
 	PRINT_DEBUG(brightness);
-	PRINTLN_DEBUG(" | ");
+	PRINT_DEBUG(" | ");
 }
 
 

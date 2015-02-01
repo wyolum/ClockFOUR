@@ -6,7 +6,7 @@
 #include "bitmaps.h"
 
 /************* Enable/disable debug mode *************/
-//#define DEBUG
+#define DEBUG
 
 #ifdef DEBUG
 #define PRINT_DEBUG(x)			Serial.print(x)
@@ -126,7 +126,7 @@ void setup() {
         
 	// display a welcome message
 	disp_setBrightness();
-	disp_ScrollWords("Clock4", -30, 1);
+	disp_ScrollWords("Chronogram", -55, 1);
 		
 	// enter self test mode if a button has been held down
 	if (popEvent() != NO_EVENT) {
@@ -210,6 +210,7 @@ void loop() {
 	if(companyLogoEnabled) {
 		updateLogoColour(clockSettings.logoColourMode, clockSettings.logoColourVal);
 	}
+      PRINTLN_DEBUG();
 }
 
 
