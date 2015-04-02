@@ -4,17 +4,19 @@
 #define BRIGHTNESS_REFRESH		25		// Refresh rate of the brightness setting
 #define BRIGHTNESS_INCR			5
 
-// Settings as determined in the meeting
-/*
-#define LDR_DAWN				50
-#define LDR_DAYTIME				150
+// Settings for C4_v2 prototype
+
+#define LDR_DAWN				10
+#define LDR_DAYTIME				50
 #define LDR_LED_ON				300
-*/
+
 
 // Settings for Josef's board
+/*
 #define LDR_DAWN				400
 #define LDR_DAYTIME				800
 #define LDR_LED_ON				950
+*/
 
 uint8_t ldrPins[3];
 
@@ -61,11 +63,16 @@ uint8_t getBrightness() {
 			min_LDR_value = LDR_value;
 		}
 		
-		PRINT_DEBUG("LDR: ");
-		PRINT_DEBUG(min_LDR_value);
+		PRINT_DEBUG("LDR");
+                PRINT_DEBUG(i+1);
+		PRINT_DEBUG(": ");                
+		PRINT_DEBUG(LDR_value);
                 PRINT_DEBUG("  |  ");
 	}
-	
+		PRINT_DEBUG("LDR_Min: ");	
+		PRINT_DEBUG(min_LDR_value);
+                PRINT_DEBUG("  |  ");
+                
 	if(min_LDR_value < LDR_DAWN) {
 		targetBrightness = MIN_BRIGHTNESS;
 	} else if(min_LDR_value >= LDR_DAWN && min_LDR_value < LDR_DAYTIME) {
