@@ -266,8 +266,11 @@ void updateLogoColour(uint8_t mode, uint8_t colour) {
 	}
 	
 	for(uint8_t ledIdx = 0; ledIdx < LOGO_LED_COUNT; ledIdx++) {
+		PRINT_DEBUG(ledIdx);
 		logoStrip.setPixelColor(ledIdx, getLogoPixColour(ledIdx, mode, colour, colourIteration));
 	}
+	
+	logoStrip.show();
 	
 	colourIteration++;
 }
@@ -276,7 +279,7 @@ void updateLogoColour(uint8_t mode, uint8_t colour) {
 inline uint32_t getLogoPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour, uint8_t colourIteration)  {	
 	switch(mode) {
 	case CM_ALL_WHITE:
-		return strip.Color(235,   255,   255);
+		return logoStrip.Color(235,   255,   255);
 		break;
 		
 	case CM_SOLID_COLOUR:
@@ -293,7 +296,7 @@ inline uint32_t getLogoPixColour(uint16_t pixIdx, uint8_t mode, uint32_t colour,
 		
 	default:
 		// Should never get here, but in case it does make all LEDs red
-		return strip.Color(255,   0,   0);
+		return logoStrip.Color(255,   0,   0);
 		break;
 	}
 }

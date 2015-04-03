@@ -6,7 +6,7 @@
 #include "bitmaps.h"
 
 /************* Enable/disable debug mode *************/
-#define DEBUG
+//#define DEBUG
 
 #ifdef DEBUG
 #define PRINT_DEBUG(x)			Serial.print(x)
@@ -33,7 +33,7 @@
 
 /************* Company logo settings *************/
 #define ENABLE_COMPANY_LOGO		true		// Temporary, to be replaced with LED detection code
-#define LOGO_LED_COUNT			10
+#define LOGO_LED_COUNT			20
 
 /************* Global time variablesrtc *************/
 bool h12, PM;
@@ -113,6 +113,7 @@ void setup() {
 
 	// Initialise the board inputs and outputs
 	pinMode(MATRIX_PIN, OUTPUT);   // declare the ledPin as an OUTPUT:
+	pinMode(LOGO_PIN, OUTPUT);     // declare the ledPin as an OUTPUT:
 	pinMode(LDR_PIN, INPUT);       // declare the LDRPin as an INPUT:
 	
 	// Initialise the display
@@ -210,7 +211,7 @@ void loop() {
 	if(companyLogoEnabled) {
 		updateLogoColour(clockSettings.logoColourMode, clockSettings.logoColourVal);
 	}
-      PRINTLN_DEBUG();
+    PRINTLN_DEBUG();
 }
 
 
