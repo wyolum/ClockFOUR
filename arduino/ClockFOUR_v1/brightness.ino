@@ -64,14 +64,15 @@ uint8_t getBrightness() {
 		}
 		
 		PRINT_DEBUG("LDR");
-                PRINT_DEBUG(i+1);
+        PRINT_DEBUG(i+1);
 		PRINT_DEBUG(": ");                
 		PRINT_DEBUG(LDR_value);
-                PRINT_DEBUG("  |  ");
+        PRINT_DEBUG("  |  ");
 	}
-		PRINT_DEBUG("LDR_Min: ");	
-		PRINT_DEBUG(min_LDR_value);
-                PRINT_DEBUG("  |  ");
+	
+	PRINT_DEBUG("LDR_Min: ");
+	PRINT_DEBUG(min_LDR_value);
+	PRINT_DEBUG("  |  ");
                 
 	if(min_LDR_value < LDR_DAWN) {
 		targetBrightness = MIN_BRIGHTNESS;

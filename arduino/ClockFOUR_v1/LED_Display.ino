@@ -266,7 +266,6 @@ void updateLogoColour(uint8_t mode, uint8_t colour) {
 	}
 	
 	for(uint8_t ledIdx = 0; ledIdx < LOGO_LED_COUNT; ledIdx++) {
-		PRINT_DEBUG(ledIdx);
 		logoStrip.setPixelColor(ledIdx, getLogoPixColour(ledIdx, mode, colour, colourIteration));
 	}
 	

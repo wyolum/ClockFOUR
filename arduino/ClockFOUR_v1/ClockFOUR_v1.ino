@@ -21,7 +21,10 @@
 #define BUTTON_L			3
 #define BUTTON_R			4
 #define	LOGO_PIN			5
-#define LDR_PIN				A0
+
+#define LDR_PIN1			A0
+#define LDR_PIN2			A1
+#define LDR_PIN3			A2
 
 #define REFRESH_PERIOD		20		// Determines the refresh period of the displays, in this case 20ms
 									// WARNING! The fade speeds depend on this frequency. Increasing this
@@ -108,13 +111,16 @@ void setup() {
 
 	// Start one wire
 	Wire.begin();
+	
+	pinMode(LDR_PIN1, INPUT);       // declare the LDRPin as an INPUT:
+	pinMode(LDR_PIN2, INPUT);       // declare the LDRPin as an INPUT:
+	pinMode(LDR_PIN3, INPUT);       // declare the LDRPin as an INPUT:
 
-	brightness_init(LDR_PIN);
+	brightness_init(LDR_PIN1, LDR_PIN2, LDR_PIN3);
 
 	// Initialise the board inputs and outputs
 	pinMode(MATRIX_PIN, OUTPUT);   // declare the ledPin as an OUTPUT:
 	pinMode(LOGO_PIN, OUTPUT);     // declare the ledPin as an OUTPUT:
-	pinMode(LDR_PIN, INPUT);       // declare the LDRPin as an INPUT:
 	
 	// Initialise the display
 	disp_init();
