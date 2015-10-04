@@ -2,9 +2,9 @@
  * Clock_v1 faceplate file
  * 
  * 
- *      Author: David Pincus
- *     Licence: http://creativecommons.org/licenses/by/3.0/
- * Description:
+ *  Author: David Pincus
+ *  Licence: http://creativecommons.org/licenses/by/3.0/
+ *  Description:
  *    30 x 30 Word clock in English
  * 
  *    0 1 2 3 4 5 6 7 8 910111213
@@ -23,7 +23,7 @@
  *  12S E V E N D L P O C L O C K
  */
 
-static uint8_t WORDS_min[] PROGMEM = {   // minute words
+const uint8_t WORDS_min[] PROGMEM = {   // minute words
      28,          // # words
 	8,  2, 3,   //one
 	11, 2, 3,   //two
@@ -56,7 +56,7 @@ static uint8_t WORDS_min[] PROGMEM = {   // minute words
 };
 
 
-static uint8_t DISPLAY_min[] PROGMEM = {
+const uint8_t DISPLAY_min[] PROGMEM = {
    4, 			 // number of bytes per state
 //	  essfftto     sffttetn     mffttnes         otpm          xx:MM
 	0b00000000,  0b00000000,  0b00000000,  0b00001000,    //xx:00
@@ -122,7 +122,7 @@ static uint8_t DISPLAY_min[] PROGMEM = {
 };
 
 
-static uint8_t WORDS_hour[] PROGMEM = {   // hour words
+const uint8_t WORDS_hour[] PROGMEM = {   // hour words
     	15, 	      // # words
 	8, 11, 6,   //twelve
 	2,  9, 3,   //one
@@ -139,7 +139,7 @@ static uint8_t WORDS_hour[] PROGMEM = {   // hour words
 
 };
 
-static uint8_t DISPLAY_hour[] PROGMEM = {
+const uint8_t DISPLAY_hour[] PROGMEM = {
    2, 			 // number of bytes per state
 //	  ssffttot		 etne        HH:xx
 	0b00000001,  0b00000000,     //00:xx

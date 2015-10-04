@@ -1,3 +1,15 @@
+/*
+ *  Button input functionality
+ * 
+ * 
+ *  Author: Josef Schneider
+ *  Licence: http://creativecommons.org/licenses/by/3.0/
+ *
+ *  Description:
+ *    Gets button presses and loads any events into a queue.
+ *  This makes the processing of individual events very simple.
+ *
+ */
 
 #include <OneButton.h>
 
@@ -11,7 +23,7 @@ int8_t rear = -1;
 OneButton oneButton_L(BUTTON_L, false);  // Button_L active low
 OneButton oneButton_R(BUTTON_R, false);  // Button_R active low
 
-// Sets up all the callback function
+// Sets up all the callback functions
 void buttonsInit() {
 	oneButton_L.attachClick(buttonLClick);
 	oneButton_L.attachLongPressStart(buttonLLongPress);
@@ -59,12 +71,8 @@ boolean bothLongPressed() {
 }
 
 
-
 // Pushes a byte onto the queue
-void addToQeue(uint8_t value) {
-	
-//	noInterrupts();
-	
+void addToQeue(const uint8_t value) {
 	// If front is just behind rear we have a full queue
 	if((front == 0 && rear == QUEUE_SIZE - 1) || front == rear + 1) {
 		// Queue is full
@@ -86,15 +94,11 @@ void addToQeue(uint8_t value) {
 	
 	// Store the value on the queue
 	queue[rear] = value;
-	
-//	interrupts();
 }
 
 // Gets a value from the top of the queue
 uint8_t popEvent() {
 	uint8_t retVal;
-	
-//	noInterrupts();
 	
 	// Check if the queue is empty
 	if(front == -1)
@@ -118,15 +122,11 @@ uint8_t popEvent() {
 		}
 	}
 	
-//	interrupts();
-	
 	return retVal;
 }
 
 // Deletes all contents of the queue
 inline void clearQueue() {
-//	noInterrupts();
 	front = -1;
 	rear = -1;
-//	interrupts();
 }

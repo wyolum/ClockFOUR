@@ -1,9 +1,13 @@
+
+/*
+ * Performs a self-test that ensures that all the LEDs are working, and
+ * that all the letter/word combinations are correct.
+ */
 void self_test() {
 	uint8_t c = 0;
 	uint8_t i = 0;
 	uint8_t seconds_count = 0;
 	uint16_t totalMinutes = 0;
-	
 
 	strip.setBrightness(70);
 	while (popEvent() == NO_EVENT) {
@@ -20,14 +24,14 @@ void self_test() {
 		}
 		
 		switch(c) {
-			case 0:
-			strip.setPixelColor(i, strip.Color(128, 0, 0));
+		case 0:
+			strip.setPixelColor(i, Adafruit_NeoPixel::Color(128, 0, 0));
 			break;
-			case 1:
-			strip.setPixelColor(i, strip.Color(0, 128, 0));
+		case 1:
+			strip.setPixelColor(i, Adafruit_NeoPixel::Color(0, 128, 0));
 			break;
-			case 2:
-			strip.setPixelColor(i, strip.Color(0, 0, 128));
+		case 2:
+			strip.setPixelColor(i, Adafruit_NeoPixel::Color(0, 0, 128));
 			break;
 		}
 		strip.show();

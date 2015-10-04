@@ -1,9 +1,17 @@
-/*-------------------------------------------------------------------------
-  Arduino library that stores the state of the 16 * 8 pixel display used by
-  ClockTiM.
-  
-  Author: Josef Schneider
-  -------------------------------------------------------------------------*/
+/*
+ *  PixelStates functionality
+ * 
+ * 
+ *  Author: Josef Schneider, 
+ *  Licence: http://creativecommons.org/licenses/by/3.0/
+ *
+ *  Description:
+ *    PixelStates stores and reads the binary state of pixels, determining if
+ *  they are on or off. The previous state of the pixels is also stored,
+ *  allowing controlling software to determine whether the pixel has recently 
+ *  changed state.
+ *
+ */
 
 #ifndef _PIXEL_STATES_H_
 #define _PIXEL_STATES_H_
@@ -55,6 +63,10 @@
 #define NEO_TILE_ZIGZAG        0x80 // Tile order reverses between lines
 #define NEO_TILE_SEQUENCE      0x80 // Bitmask for tile line order
 
+
+#define BUFFER_0				0
+#define BUFFER_1				1
+
 typedef enum PixelTransition {
 	PIX_OFF = 0,
 	PIX_OFF_TO_ON,
@@ -76,7 +88,7 @@ class PixelStates : public Adafruit_GFX {
 		PixelTransition getPixel(uint16_t ledIdx);
 		void clear();
 		void fillBuffer(uint8_t pixValue);
-		void loadBitmap(int16_t x, int16_t y, prog_uchar *arr);
+		void loadBitmap(int16_t x, int16_t y, const uint8_t *arr);
 		
 		void switchBuffers();
 		void updateOtherBuffer();

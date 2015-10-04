@@ -1,17 +1,25 @@
-/*-------------------------------------------------------------------------
-Arduino library that stores the state of the 16 * 8 pixel display used by
-ClockTiM.
-
-Author: Josef Schneider
--------------------------------------------------------------------------*/
+/*
+ *  PixelStates functionality
+ * 
+ * 
+ *  Author: Josef Schneider, 
+ *  Licence: http://creativecommons.org/licenses/by/3.0/
+ *
+ *  Description:
+ *    PixelStates stores and reads the binary state of pixels, determining if
+ *  they are on or off. The previous state of the pixels is also stored,
+ *  allowing controlling software to determine whether the pixel has recently 
+ *  changed state.
+ *
+ */
 
 #include <PixelStates.h>
 
 PixelStates::PixelStates(uint16_t w, uint16_t h, uint8_t matrixType) : 
 	Adafruit_GFX(w, h),
 	type(matrixType),
-	selectBuffer(0),
-	otherBuffer(1),
+	selectBuffer(BUFFER_0),
+	otherBuffer(BUFFER_1),
 	matrixWidth(w),
 	matrixHeight(h),
 	tilesX(0),
@@ -25,8 +33,8 @@ PixelStates::PixelStates(uint16_t w, uint16_t h, uint8_t matrixType) :
 PixelStates::PixelStates(uint8_t mW, uint8_t mH, uint8_t tX, uint8_t tY, uint8_t matrixType) : 
 	Adafruit_GFX(mW * tX, mH * tY), 
 	type(matrixType),
-	selectBuffer(0),
-	otherBuffer(1),
+	selectBuffer(BUFFER_0),
+	otherBuffer(BUFFER_1),
 	matrixWidth(mW),
 	matrixHeight(mH),
 	tilesX(tX),
@@ -38,11 +46,11 @@ PixelStates::PixelStates(uint8_t mW, uint8_t mH, uint8_t tX, uint8_t tY, uint8_t
 
 
 void PixelStates::allocateBuffers() {
-	pixelStates[0] = (uint8_t *)calloc(arrSize, sizeof(uint8_t));
-	pixelStates[1] = (uint8_t *)calloc(arrSize, sizeof(uint8_t));
+	pixelStates[BUFFER_0] = (uint8_t *)calloc(arrSize, sizeof(uint8_t));
+	pixelStates[BUFFER_1] = (uint8_t *)calloc(arrSize, sizeof(uint8_t));
 }
 
-	
+
 int16_t PixelStates::getPixelIdx(int16_t x, int16_t y) {
 	/*
 	
@@ -195,26 +203,26 @@ void PixelStates::updateOtherBuffer() {
 
 
 // Returns true if both buffers match
-bool PixelStates::buffersMatch() {
-	bool match;
-	
+bool PixelStates::buffersMatch() {	
 	for(int16_t byteIdx = 0; byteIdx < arrSize; byteIdx++) {
 		if(pixelStates[otherBuffer][byteIdx] != pixelStates[selectBuffer][byteIdx]) {
 			return false;
 		}
 	}
-	
 	return true;
 }
 
 
+// Clear the old 'other' buffer
 void PixelStates::clearBufferHistory() {
 	for(int16_t byteIdx = 0; byteIdx < arrSize; byteIdx++) {
 		pixelStates[otherBuffer][byteIdx] = 0x00;
 	}
 }
 
-	
+
+// drawPixel sets or clears a certain pixel depending on whether the colour
+// is greater than 0 or not
 void PixelStates::drawPixel(int16_t x, int16_t y, uint16_t color) {
 	uint16_t pixelIdx = getPixelIdx(x, y);
 
@@ -246,6 +254,8 @@ void PixelStates::clearPixel(uint16_t ledIdx) {
 }
 
 
+// Gets the state of the pixel, including recent history, e.g.,
+// if there has recently been a transition.
 PixelTransition PixelStates::getPixel(uint16_t ledIdx) {
 	uint16_t byteIdx = ledIdx >> 3;
 	uint8_t bitIdx = ledIdx & 0x0007;
@@ -265,11 +275,13 @@ PixelTransition PixelStates::getPixel(uint16_t ledIdx) {
 }
 
 
+// Clears the currently selected buffer
 void PixelStates::clear() {
 	fillBuffer(0);
 }
 
 
+// Sets all pixels in the selectBuffer to the value of pixValue
 void PixelStates::fillBuffer(uint8_t pixValue) {
 	uint8_t fillValue;
 	
@@ -285,7 +297,8 @@ void PixelStates::fillBuffer(uint8_t pixValue) {
 }
 
 
-void PixelStates::loadBitmap(int16_t x, int16_t y, prog_uchar *bmp) {
+// Loads a bitmap as formatted by the bmp2h.py script
+void PixelStates::loadBitmap(int16_t x, int16_t y, const uint8_t *bmp) {
 	uint16_t bmp_w = pgm_read_byte(bmp);
 	uint16_t bmp_h = pgm_read_byte(bmp + 1);
 	
