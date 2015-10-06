@@ -2,17 +2,17 @@
 <export version="D">
   <design>
     <source>/home/anool/projects-git/ClockFOUR/KiCad/ClockFOUR.sch</source>
-    <date>Sat Oct  3 17:26:09 2015</date>
+    <date>Tue Oct  6 16:45:54 2015</date>
     <tool>Eeschema (2015-07-01 BZR 5850)-product</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>21/01/2015</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>ClockFOUR.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -21,11 +21,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_A.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -34,11 +34,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_B.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -47,11 +47,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_C.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -60,11 +60,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_D.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -73,11 +73,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_E.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -86,11 +86,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_F.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -99,11 +99,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_G.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -112,11 +112,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_H.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -125,11 +125,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_I.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -138,11 +138,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_J.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -151,11 +151,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_K.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -164,11 +164,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_L.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -177,11 +177,11 @@
       <title_block>
         <title>ClockFOUR</title>
         <company>WyoLum</company>
-        <rev/>
-        <date>7 oct 2014</date>
+        <rev>ver 3.0</rev>
+        <date>2015-10-06</date>
         <source>Row_M.sch</source>
         <comment number="1" value="www.wyolum.com"/>
-        <comment number="2" value="David Pincus"/>
+        <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
       </title_block>
@@ -726,6 +726,20 @@
       <libsource lib="ClockFOUR-cache" part="Logos"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>561067AE</tstamp>
+    </comp>
+    <comp ref="S5">
+      <value>CONN_1</value>
+      <footprint>C4_Pretty:MtgHole_3mm</footprint>
+      <libsource lib="ClockFOUR-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56143684</tstamp>
+    </comp>
+    <comp ref="S6">
+      <value>CONN_1</value>
+      <footprint>C4_Pretty:MtgHole_3mm</footprint>
+      <libsource lib="ClockFOUR-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56143690</tstamp>
     </comp>
     <comp ref="C12">
       <value>100n</value>
@@ -5097,6 +5111,83 @@
     </comp>
   </components>
   <libparts>
+    <libpart lib="ClockFOUR-cache" part="CONN_1">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ClockFOUR-cache" part="Logos">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">Logos</field>
+      </fields>
+    </libpart>
+    <libpart lib="ClockFOUR" part="WS2812B">
+      <fields>
+        <field name="Reference">LED</field>
+        <field name="Value">WS2812B</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="DO" type="output"/>
+        <pin num="3" name="VSS" type="power_in"/>
+        <pin num="4" name="DI" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ClockFOUR" part="CRYSTAL_3">
+      <fields>
+        <field name="Reference">X</field>
+        <field name="Value">CRYSTAL_3</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ClockFOUR" part="VR">
+      <description>VARISTANCE</description>
+      <fields>
+        <field name="Reference">VR</field>
+        <field name="Value">VR</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ClockFOUR" part="R">
+      <description>Resistance</description>
+      <footprints>
+        <fp>R?</fp>
+        <fp>SM0603</fp>
+        <fp>SM0805</fp>
+        <fp>R?-*</fp>
+        <fp>SM1206</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ClockFOUR" part="Batt_RTC">
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Batt_RTC</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="ClockFOUR" part="ATMEGA328P">
       <description>ATMEGA168A, TQFP32, 16k Flash, 1kB SRAM, 512B EEPROM</description>
       <docs>http://www.atmel.com/dyn/resources/prod_documents/doc8271.pdf</docs>
@@ -5140,16 +5231,6 @@
         <pin num="32" name="(PCINT18/INT0)PD2" type="BiDi"/>
       </pins>
     </libpart>
-    <libpart lib="ClockFOUR" part="Batt_RTC">
-      <fields>
-        <field name="Reference">BT</field>
-        <field name="Value">Batt_RTC</field>
-      </fields>
-      <pins>
-        <pin num="1" name="+" type="passive"/>
-        <pin num="2" name="-" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="ClockFOUR" part="CAP_NP">
       <fields>
         <field name="Reference">C?</field>
@@ -5160,85 +5241,15 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="ClockFOUR" part="CONN_3">
-      <description>ymbole general de connecteur</description>
+    <libpart lib="ClockFOUR" part="SW_PUSH">
+      <description>Push Button</description>
       <fields>
-        <field name="Reference">P</field>
-        <field name="Value">CONN_3</field>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_PUSH</field>
       </fields>
       <pins>
         <pin num="1" name="1" type="passive"/>
         <pin num="2" name="2" type="passive"/>
-        <pin num="3" name="3" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="ClockFOUR" part="CONN_4">
-      <description>ymbole general de connecteur</description>
-      <fields>
-        <field name="Reference">P</field>
-        <field name="Value">CONN_4</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="passive"/>
-        <pin num="2" name="2" type="passive"/>
-        <pin num="3" name="3" type="passive"/>
-        <pin num="4" name="4" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="ClockFOUR" part="CONN_6">
-      <description>ymbole general de connecteur</description>
-      <fields>
-        <field name="Reference">P</field>
-        <field name="Value">CONN_6</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="passive"/>
-        <pin num="2" name="2" type="passive"/>
-        <pin num="3" name="3" type="passive"/>
-        <pin num="4" name="4" type="passive"/>
-        <pin num="5" name="5" type="passive"/>
-        <pin num="6" name="6" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="ClockFOUR" part="CRYSTAL_3">
-      <fields>
-        <field name="Reference">X</field>
-        <field name="Value">CRYSTAL_3</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="passive"/>
-        <pin num="2" name="2" type="passive"/>
-        <pin num="3" name="3" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="ClockFOUR" part="C_POL_1">
-      <footprints>
-        <fp>SM*</fp>
-        <fp>C?</fp>
-        <fp>C1-1</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">C</field>
-        <field name="Value">C_POL_1</field>
-      </fields>
-      <pins>
-        <pin num="1" name="+" type="passive"/>
-        <pin num="2" name="-" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="ClockFOUR" part="DIODE_ZENER">
-      <description>Diode schottky</description>
-      <footprints>
-        <fp>D?</fp>
-        <fp>S*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">D</field>
-        <field name="Value">DIODE_ZENER</field>
-      </fields>
-      <pins>
-        <pin num="1" name="A" type="passive"/>
-        <pin num="2" name="K" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="ClockFOUR" part="DS3231N">
@@ -5275,56 +5286,74 @@
         <pin num="2" name="~" type="input"/>
       </pins>
     </libpart>
-    <libpart lib="ClockFOUR" part="R">
-      <description>Resistance</description>
+    <libpart lib="ClockFOUR" part="C_POL_1">
       <footprints>
-        <fp>R?</fp>
-        <fp>SM0603</fp>
-        <fp>SM0805</fp>
-        <fp>R?-*</fp>
-        <fp>SM1206</fp>
+        <fp>SM*</fp>
+        <fp>C?</fp>
+        <fp>C1-1</fp>
       </footprints>
       <fields>
-        <field name="Reference">R</field>
-        <field name="Value">R</field>
+        <field name="Reference">C</field>
+        <field name="Value">C_POL_1</field>
       </fields>
       <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="ClockFOUR" part="SW_PUSH">
-      <description>Push Button</description>
+    <libpart lib="ClockFOUR" part="CONN_6">
+      <description>ymbole general de connecteur</description>
       <fields>
-        <field name="Reference">SW</field>
-        <field name="Value">SW_PUSH</field>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_6</field>
       </fields>
       <pins>
         <pin num="1" name="1" type="passive"/>
         <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="ClockFOUR" part="VR">
-      <description>VARISTANCE</description>
+    <libpart lib="ClockFOUR" part="CONN_4">
+      <description>ymbole general de connecteur</description>
       <fields>
-        <field name="Reference">VR</field>
-        <field name="Value">VR</field>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_4</field>
       </fields>
       <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="ClockFOUR" part="WS2812B">
+    <libpart lib="ClockFOUR" part="CONN_3">
+      <description>ymbole general de connecteur</description>
       <fields>
-        <field name="Reference">LED</field>
-        <field name="Value">WS2812B</field>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_3</field>
       </fields>
       <pins>
-        <pin num="1" name="VDD" type="power_in"/>
-        <pin num="2" name="DO" type="output"/>
-        <pin num="3" name="VSS" type="power_in"/>
-        <pin num="4" name="DI" type="input"/>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ClockFOUR" part="DIODE_ZENER">
+      <description>Diode schottky</description>
+      <footprints>
+        <fp>D?</fp>
+        <fp>S*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">DIODE_ZENER</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="ClockFOUR-cache" part="C2">
@@ -5350,21 +5379,6 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="ClockFOUR-cache" part="CONN_1">
-      <fields>
-        <field name="Reference">P</field>
-        <field name="Value">CONN_1</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="ClockFOUR-cache" part="Logos">
-      <fields>
-        <field name="Reference">P</field>
-        <field name="Value">Logos</field>
-      </fields>
-    </libpart>
   </libparts>
   <libraries>
     <library logical="ClockFOUR">
@@ -5379,507 +5393,514 @@
       <node ref="D7" pin="1"/>
       <node ref="U1" pin="11"/>
     </net>
-    <net code="2" name="/MISO">
-      <node ref="U1" pin="16"/>
-      <node ref="P1" pin="1"/>
+    <net code="2" name="/SW_R">
+      <node ref="U1" pin="2"/>
+      <node ref="R11" pin="1"/>
+      <node ref="SW3" pin="2"/>
     </net>
     <net code="3" name="/SW_L">
+      <node ref="U1" pin="1"/>
       <node ref="SW2" pin="2"/>
       <node ref="R10" pin="1"/>
-      <node ref="U1" pin="1"/>
     </net>
     <net code="4" name="/A7">
-      <node ref="U1" pin="22"/>
       <node ref="A7" pin="1"/>
+      <node ref="U1" pin="22"/>
     </net>
     <net code="5" name="/A6">
-      <node ref="U1" pin="19"/>
       <node ref="A6" pin="1"/>
+      <node ref="U1" pin="19"/>
     </net>
-    <net code="6" name="Net-(R13-Pad2)">
+    <net code="6" name="/B2">
+      <node ref="B2" pin="1"/>
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="7" name="Net-(R13-Pad2)">
       <node ref="R13" pin="2"/>
       <node ref="U1" pin="13"/>
     </net>
-    <net code="7" name="Net-(R12-Pad2)">
+    <net code="8" name="Net-(R12-Pad2)">
       <node ref="R12" pin="2"/>
       <node ref="U1" pin="12"/>
     </net>
-    <net code="8" name="Net-(C5-Pad1)">
-      <node ref="C5" pin="1"/>
-      <node ref="X1" pin="1"/>
-      <node ref="U1" pin="7"/>
-    </net>
     <net code="9" name="Net-(C7-Pad2)">
-      <node ref="U1" pin="8"/>
-      <node ref="X1" pin="2"/>
       <node ref="C7" pin="2"/>
+      <node ref="X1" pin="2"/>
+      <node ref="U1" pin="8"/>
     </net>
-    <net code="10" name="/LDR2_PIN">
-      <node ref="LDR2" pin="2"/>
-      <node ref="R14" pin="1"/>
+    <net code="10" name="Net-(C5-Pad1)">
+      <node ref="U1" pin="7"/>
+      <node ref="X1" pin="1"/>
+      <node ref="C5" pin="1"/>
+    </net>
+    <net code="11" name="/LDR2_PIN">
       <node ref="U1" pin="24"/>
+      <node ref="R14" pin="1"/>
+      <node ref="LDR2" pin="2"/>
     </net>
-    <net code="11" name="5V">
-      <node ref="C14" pin="2"/>
-      <node ref="C18" pin="2"/>
-      <node ref="C17" pin="2"/>
+    <net code="12" name="5V">
+      <node ref="C147" pin="2"/>
+      <node ref="LED46" pin="1"/>
       <node ref="C19" pin="2"/>
-      <node ref="LED45" pin="1"/>
+      <node ref="C12" pin="2"/>
+      <node ref="C148" pin="2"/>
+      <node ref="C149" pin="2"/>
+      <node ref="C146" pin="2"/>
+      <node ref="C151" pin="2"/>
+      <node ref="C18" pin="2"/>
+      <node ref="LED48" pin="1"/>
+      <node ref="C13" pin="2"/>
+      <node ref="C14" pin="2"/>
+      <node ref="LED47" pin="1"/>
       <node ref="C15" pin="2"/>
       <node ref="C16" pin="2"/>
-      <node ref="C146" pin="2"/>
-      <node ref="C12" pin="2"/>
-      <node ref="C150" pin="2"/>
-      <node ref="C149" pin="2"/>
+      <node ref="C17" pin="2"/>
       <node ref="LED49" pin="1"/>
-      <node ref="C148" pin="2"/>
-      <node ref="C147" pin="2"/>
-      <node ref="C151" pin="2"/>
-      <node ref="C13" pin="2"/>
-      <node ref="LED46" pin="1"/>
-      <node ref="LED47" pin="1"/>
-      <node ref="LED48" pin="1"/>
-      <node ref="LED56" pin="1"/>
+      <node ref="C150" pin="2"/>
+      <node ref="LED54" pin="1"/>
+      <node ref="C124" pin="2"/>
       <node ref="LED95" pin="1"/>
       <node ref="C39" pin="2"/>
-      <node ref="LED53" pin="1"/>
-      <node ref="LED119" pin="1"/>
+      <node ref="LED92" pin="1"/>
       <node ref="LED94" pin="1"/>
       <node ref="C34" pin="2"/>
+      <node ref="LED55" pin="1"/>
       <node ref="C35" pin="2"/>
-      <node ref="C124" pin="2"/>
+      <node ref="C125" pin="2"/>
       <node ref="C36" pin="2"/>
-      <node ref="LED93" pin="1"/>
       <node ref="C37" pin="2"/>
-      <node ref="LED54" pin="1"/>
-      <node ref="LED115" pin="1"/>
-      <node ref="LED116" pin="1"/>
-      <node ref="C38" pin="2"/>
-      <node ref="LED96" pin="1"/>
       <node ref="LED117" pin="1"/>
-      <node ref="LED92" pin="1"/>
       <node ref="LED118" pin="1"/>
-      <node ref="LED52" pin="1"/>
-      <node ref="C131" pin="2"/>
-      <node ref="C128" pin="2"/>
-      <node ref="C129" pin="2"/>
+      <node ref="C126" pin="2"/>
+      <node ref="LED97" pin="1"/>
+      <node ref="LED119" pin="1"/>
+      <node ref="LED53" pin="1"/>
+      <node ref="LED96" pin="1"/>
       <node ref="C130" pin="2"/>
-      <node ref="LED5" pin="1"/>
+      <node ref="C131" pin="2"/>
       <node ref="LED43" pin="1"/>
       <node ref="LED44" pin="1"/>
-      <node ref="C125" pin="2"/>
-      <node ref="C126" pin="2"/>
-      <node ref="LED55" pin="1"/>
+      <node ref="LED45" pin="1"/>
+      <node ref="LED93" pin="1"/>
+      <node ref="C38" pin="2"/>
       <node ref="C127" pin="2"/>
-      <node ref="C138" pin="2"/>
+      <node ref="C128" pin="2"/>
+      <node ref="LED56" pin="1"/>
+      <node ref="C129" pin="2"/>
+      <node ref="C54" pin="2"/>
+      <node ref="C139" pin="2"/>
+      <node ref="C140" pin="2"/>
       <node ref="C20" pin="2"/>
       <node ref="C21" pin="2"/>
-      <node ref="LED130" pin="1"/>
-      <node ref="LED131" pin="1"/>
-      <node ref="C22" pin="2"/>
+      <node ref="C141" pin="2"/>
       <node ref="LED132" pin="1"/>
+      <node ref="C108" pin="2"/>
       <node ref="LED133" pin="1"/>
-      <node ref="C142" pin="2"/>
-      <node ref="C143" pin="2"/>
+      <node ref="C22" pin="2"/>
+      <node ref="C138" pin="2"/>
+      <node ref="C55" pin="2"/>
       <node ref="C144" pin="2"/>
       <node ref="C145" pin="2"/>
       <node ref="C61" pin="2"/>
-      <node ref="C55" pin="2"/>
+      <node ref="C143" pin="2"/>
       <node ref="C56" pin="2"/>
       <node ref="C57" pin="2"/>
       <node ref="C58" pin="2"/>
       <node ref="C59" pin="2"/>
-      <node ref="C139" pin="2"/>
+      <node ref="U1" pin="18"/>
       <node ref="C23" pin="2"/>
       <node ref="C24" pin="2"/>
-      <node ref="C54" pin="2"/>
+      <node ref="C142" pin="2"/>
       <node ref="C25" pin="2"/>
-      <node ref="C140" pin="2"/>
-      <node ref="C141" pin="2"/>
-      <node ref="LED3" pin="1"/>
-      <node ref="LED51" pin="1"/>
+      <node ref="LED5" pin="1"/>
       <node ref="LED1" pin="1"/>
       <node ref="LED4" pin="1"/>
+      <node ref="LED3" pin="1"/>
       <node ref="LED2" pin="1"/>
-      <node ref="LED7" pin="1"/>
       <node ref="C109" pin="2"/>
+      <node ref="LED135" pin="1"/>
+      <node ref="LED136" pin="1"/>
+      <node ref="LED7" pin="1"/>
       <node ref="LED6" pin="1"/>
-      <node ref="LED127" pin="1"/>
-      <node ref="LED9" pin="1"/>
-      <node ref="LED128" pin="1"/>
-      <node ref="C108" pin="2"/>
       <node ref="LED129" pin="1"/>
       <node ref="C107" pin="2"/>
-      <node ref="LED138" pin="1"/>
-      <node ref="LED135" pin="1"/>
-      <node ref="LED14" pin="1"/>
-      <node ref="LED136" pin="1"/>
+      <node ref="LED9" pin="1"/>
+      <node ref="LED130" pin="1"/>
+      <node ref="LED131" pin="1"/>
+      <node ref="LED10" pin="1"/>
       <node ref="C104" pin="2"/>
       <node ref="LED137" pin="1"/>
-      <node ref="LED13" pin="1"/>
       <node ref="LED134" pin="1"/>
+      <node ref="LED14" pin="1"/>
+      <node ref="LED138" pin="1"/>
+      <node ref="LED139" pin="1"/>
+      <node ref="LED13" pin="1"/>
+      <node ref="LED140" pin="1"/>
       <node ref="LED12" pin="1"/>
       <node ref="LED8" pin="1"/>
       <node ref="C105" pin="2"/>
-      <node ref="LED139" pin="1"/>
       <node ref="LED11" pin="1"/>
-      <node ref="LED140" pin="1"/>
+      <node ref="LED127" pin="1"/>
       <node ref="C106" pin="2"/>
-      <node ref="LED10" pin="1"/>
-      <node ref="LED99" pin="1"/>
-      <node ref="LED100" pin="1"/>
-      <node ref="LED101" pin="1"/>
-      <node ref="C96" pin="2"/>
+      <node ref="LED128" pin="1"/>
       <node ref="LED102" pin="1"/>
-      <node ref="LED37" pin="1"/>
-      <node ref="LED108" pin="1"/>
-      <node ref="C99" pin="2"/>
-      <node ref="LED109" pin="1"/>
-      <node ref="LED39" pin="1"/>
+      <node ref="LED99" pin="1"/>
       <node ref="LED106" pin="1"/>
+      <node ref="LED40" pin="1"/>
       <node ref="LED110" pin="1"/>
+      <node ref="LED111" pin="1"/>
+      <node ref="LED39" pin="1"/>
+      <node ref="C99" pin="2"/>
+      <node ref="LED112" pin="1"/>
       <node ref="LED38" pin="1"/>
       <node ref="C98" pin="2"/>
-      <node ref="LED111" pin="1"/>
       <node ref="LED103" pin="1"/>
-      <node ref="LED112" pin="1"/>
+      <node ref="LED37" pin="1"/>
       <node ref="C97" pin="2"/>
+      <node ref="LED100" pin="1"/>
       <node ref="LED36" pin="1"/>
-      <node ref="C49" pin="2"/>
-      <node ref="C50" pin="2"/>
-      <node ref="C110" pin="2"/>
+      <node ref="LED101" pin="1"/>
       <node ref="C51" pin="2"/>
-      <node ref="C52" pin="2"/>
       <node ref="C48" pin="2"/>
+      <node ref="C66" pin="2"/>
+      <node ref="C49" pin="2"/>
+      <node ref="C111" pin="2"/>
+      <node ref="C50" pin="2"/>
+      <node ref="C112" pin="2"/>
+      <node ref="C52" pin="2"/>
       <node ref="LED104" pin="1"/>
       <node ref="LED105" pin="1"/>
-      <node ref="LED40" pin="1"/>
+      <node ref="C100" pin="2"/>
+      <node ref="C110" pin="2"/>
       <node ref="C53" pin="2"/>
-      <node ref="C46" pin="2"/>
       <node ref="C122" pin="2"/>
       <node ref="C121" pin="2"/>
       <node ref="C120" pin="2"/>
       <node ref="C119" pin="2"/>
       <node ref="C118" pin="2"/>
+      <node ref="C40" pin="2"/>
       <node ref="C123" pin="2"/>
-      <node ref="C47" pin="2"/>
-      <node ref="C41" pin="2"/>
       <node ref="C42" pin="2"/>
+      <node ref="C47" pin="2"/>
       <node ref="C43" pin="2"/>
       <node ref="C44" pin="2"/>
       <node ref="C45" pin="2"/>
+      <node ref="C46" pin="2"/>
       <node ref="C103" pin="2"/>
-      <node ref="C40" pin="2"/>
-      <node ref="LED30" pin="1"/>
       <node ref="LED29" pin="1"/>
-      <node ref="LED42" pin="1"/>
-      <node ref="LED41" pin="1"/>
-      <node ref="C100" pin="2"/>
+      <node ref="LED31" pin="1"/>
+      <node ref="LED30" pin="1"/>
       <node ref="LED107" pin="1"/>
-      <node ref="C102" pin="2"/>
-      <node ref="LED35" pin="1"/>
+      <node ref="LED42" pin="1"/>
       <node ref="C101" pin="2"/>
+      <node ref="LED108" pin="1"/>
+      <node ref="LED41" pin="1"/>
+      <node ref="LED109" pin="1"/>
       <node ref="LED34" pin="1"/>
+      <node ref="LED35" pin="1"/>
+      <node ref="C102" pin="2"/>
       <node ref="LED33" pin="1"/>
       <node ref="LED32" pin="1"/>
-      <node ref="LED31" pin="1"/>
-      <node ref="LED19" pin="1"/>
       <node ref="LED18" pin="1"/>
+      <node ref="LED20" pin="1"/>
+      <node ref="LED19" pin="1"/>
       <node ref="LED17" pin="1"/>
       <node ref="LED16" pin="1"/>
-      <node ref="LED15" pin="1"/>
       <node ref="LED21" pin="1"/>
-      <node ref="LED20" pin="1"/>
-      <node ref="LED126" pin="1"/>
-      <node ref="LED23" pin="1"/>
-      <node ref="LED113" pin="1"/>
-      <node ref="LED97" pin="1"/>
+      <node ref="C41" pin="2"/>
       <node ref="LED114" pin="1"/>
-      <node ref="LED22" pin="1"/>
-      <node ref="U1" pin="18"/>
+      <node ref="LED115" pin="1"/>
+      <node ref="LED23" pin="1"/>
       <node ref="LED98" pin="1"/>
+      <node ref="LED116" pin="1"/>
+      <node ref="LED22" pin="1"/>
+      <node ref="LED52" pin="1"/>
+      <node ref="LED24" pin="1"/>
+      <node ref="LED27" pin="1"/>
+      <node ref="LED15" pin="1"/>
+      <node ref="LED120" pin="1"/>
+      <node ref="LED86" pin="1"/>
       <node ref="LED121" pin="1"/>
       <node ref="LED28" pin="1"/>
-      <node ref="LED120" pin="1"/>
-      <node ref="LED27" pin="1"/>
-      <node ref="LED26" pin="1"/>
+      <node ref="LED50" pin="1"/>
       <node ref="LED122" pin="1"/>
       <node ref="LED123" pin="1"/>
-      <node ref="LED25" pin="1"/>
       <node ref="LED124" pin="1"/>
-      <node ref="LED50" pin="1"/>
+      <node ref="LED85" pin="1"/>
+      <node ref="LED26" pin="1"/>
       <node ref="LED125" pin="1"/>
-      <node ref="LED24" pin="1"/>
+      <node ref="LED126" pin="1"/>
+      <node ref="LED25" pin="1"/>
+      <node ref="LED51" pin="1"/>
+      <node ref="LED113" pin="1"/>
       <node ref="C67" pin="2"/>
       <node ref="C33" pin="2"/>
-      <node ref="LED91" pin="1"/>
       <node ref="C32" pin="2"/>
       <node ref="C31" pin="2"/>
       <node ref="C30" pin="2"/>
-      <node ref="LED90" pin="1"/>
       <node ref="C29" pin="2"/>
+      <node ref="LED91" pin="1"/>
       <node ref="C28" pin="2"/>
       <node ref="C27" pin="2"/>
-      <node ref="C115" pin="2"/>
-      <node ref="C111" pin="2"/>
-      <node ref="C112" pin="2"/>
-      <node ref="C66" pin="2"/>
+      <node ref="C116" pin="2"/>
+      <node ref="C65" pin="2"/>
       <node ref="C113" pin="2"/>
       <node ref="C114" pin="2"/>
-      <node ref="C65" pin="2"/>
-      <node ref="LED89" pin="1"/>
-      <node ref="C116" pin="2"/>
       <node ref="C64" pin="2"/>
-      <node ref="C117" pin="2"/>
+      <node ref="C115" pin="2"/>
+      <node ref="LED90" pin="1"/>
       <node ref="C63" pin="2"/>
+      <node ref="C117" pin="2"/>
       <node ref="C62" pin="2"/>
-      <node ref="C134" pin="2"/>
+      <node ref="C96" pin="2"/>
+      <node ref="LED87" pin="1"/>
       <node ref="C132" pin="2"/>
       <node ref="C133" pin="2"/>
+      <node ref="C134" pin="2"/>
       <node ref="C135" pin="2"/>
-      <node ref="LED85" pin="1"/>
       <node ref="C136" pin="2"/>
       <node ref="C137" pin="2"/>
+      <node ref="LED89" pin="1"/>
       <node ref="LED88" pin="1"/>
-      <node ref="LED87" pin="1"/>
-      <node ref="LED86" pin="1"/>
       <node ref="C26" pin="2"/>
+      <node ref="LED67" pin="1"/>
+      <node ref="LED158" pin="1"/>
+      <node ref="LED82" pin="1"/>
+      <node ref="LED159" pin="1"/>
+      <node ref="LED78" pin="1"/>
+      <node ref="LED160" pin="1"/>
+      <node ref="C182" pin="2"/>
+      <node ref="LED161" pin="1"/>
+      <node ref="LED81" pin="1"/>
+      <node ref="C181" pin="2"/>
+      <node ref="LED68" pin="1"/>
+      <node ref="LED80" pin="1"/>
+      <node ref="LED83" pin="1"/>
+      <node ref="C166" pin="2"/>
+      <node ref="LED156" pin="1"/>
+      <node ref="LED66" pin="1"/>
+      <node ref="LED157" pin="1"/>
       <node ref="D1" pin="2"/>
       <node ref="C173" pin="2"/>
       <node ref="LED57" pin="1"/>
+      <node ref="C172" pin="2"/>
       <node ref="LED58" pin="1"/>
       <node ref="LED59" pin="1"/>
-      <node ref="C166" pin="2"/>
+      <node ref="C169" pin="2"/>
+      <node ref="LED79" pin="1"/>
       <node ref="LED69" pin="1"/>
       <node ref="C167" pin="2"/>
       <node ref="C168" pin="2"/>
-      <node ref="LED60" pin="1"/>
-      <node ref="C169" pin="2"/>
-      <node ref="C170" pin="2"/>
       <node ref="LED70" pin="1"/>
+      <node ref="C183" pin="2"/>
+      <node ref="C170" pin="2"/>
       <node ref="C171" pin="2"/>
-      <node ref="C172" pin="2"/>
-      <node ref="LDR2" pin="1"/>
       <node ref="F1" pin="2"/>
-      <node ref="LDR1" pin="1"/>
-      <node ref="C192" pin="2"/>
-      <node ref="LED62" pin="1"/>
-      <node ref="LED61" pin="1"/>
-      <node ref="LED68" pin="1"/>
-      <node ref="LED63" pin="1"/>
-      <node ref="LDR4" pin="1"/>
-      <node ref="LED162" pin="1"/>
-      <node ref="LED163" pin="1"/>
-      <node ref="LED64" pin="1"/>
-      <node ref="LED164" pin="1"/>
-      <node ref="LED83" pin="1"/>
-      <node ref="LED165" pin="1"/>
-      <node ref="LED166" pin="1"/>
       <node ref="R7" pin="1"/>
+      <node ref="LED71" pin="1"/>
       <node ref="R6" pin="1"/>
+      <node ref="C11" pin="1"/>
       <node ref="C8" pin="2"/>
       <node ref="P1" pin="2"/>
-      <node ref="C11" pin="1"/>
-      <node ref="LED160" pin="1"/>
-      <node ref="LED81" pin="1"/>
-      <node ref="LED158" pin="1"/>
-      <node ref="LED66" pin="1"/>
-      <node ref="LED159" pin="1"/>
-      <node ref="LED80" pin="1"/>
-      <node ref="LED161" pin="1"/>
-      <node ref="LED67" pin="1"/>
-      <node ref="LED79" pin="1"/>
-      <node ref="LED167" pin="1"/>
-      <node ref="LED168" pin="1"/>
-      <node ref="LED65" pin="1"/>
-      <node ref="LED155" pin="1"/>
-      <node ref="C191" pin="2"/>
-      <node ref="LED78" pin="1"/>
-      <node ref="LED156" pin="1"/>
-      <node ref="LED157" pin="1"/>
-      <node ref="LED175" pin="1"/>
-      <node ref="C180" pin="2"/>
-      <node ref="LED174" pin="1"/>
-      <node ref="C68" pin="2"/>
-      <node ref="C181" pin="2"/>
-      <node ref="C182" pin="2"/>
-      <node ref="C183" pin="2"/>
-      <node ref="C184" pin="2"/>
-      <node ref="C185" pin="2"/>
-      <node ref="LED170" pin="1"/>
-      <node ref="LED181" pin="1"/>
-      <node ref="LED182" pin="1"/>
-      <node ref="C94" pin="2"/>
-      <node ref="LED169" pin="1"/>
-      <node ref="C186" pin="2"/>
-      <node ref="LED171" pin="1"/>
-      <node ref="LED172" pin="1"/>
-      <node ref="LED173" pin="1"/>
-      <node ref="C73" pin="2"/>
-      <node ref="C74" pin="2"/>
-      <node ref="C75" pin="2"/>
-      <node ref="C72" pin="2"/>
+      <node ref="P2" pin="3"/>
+      <node ref="U2" pin="2"/>
       <node ref="C187" pin="2"/>
-      <node ref="C93" pin="2"/>
-      <node ref="C69" pin="2"/>
-      <node ref="C70" pin="2"/>
-      <node ref="C71" pin="2"/>
+      <node ref="C60" pin="2"/>
+      <node ref="LED65" pin="1"/>
+      <node ref="LED167" pin="1"/>
+      <node ref="LED84" pin="1"/>
+      <node ref="LED168" pin="1"/>
+      <node ref="LED166" pin="1"/>
+      <node ref="C184" pin="2"/>
+      <node ref="LED155" pin="1"/>
+      <node ref="LED162" pin="1"/>
+      <node ref="C186" pin="2"/>
+      <node ref="LED64" pin="1"/>
+      <node ref="LED60" pin="1"/>
+      <node ref="LED163" pin="1"/>
+      <node ref="C185" pin="2"/>
+      <node ref="LED164" pin="1"/>
+      <node ref="LED165" pin="1"/>
       <node ref="C95" pin="2"/>
-      <node ref="C190" pin="2"/>
-      <node ref="C189" pin="2"/>
-      <node ref="C188" pin="2"/>
-      <node ref="LDR3" pin="1"/>
-      <node ref="C193" pin="2"/>
-      <node ref="LED176" pin="1"/>
-      <node ref="C91" pin="2"/>
+      <node ref="LED169" pin="1"/>
+      <node ref="LED170" pin="1"/>
+      <node ref="C93" pin="2"/>
+      <node ref="C90" pin="2"/>
       <node ref="LED177" pin="1"/>
-      <node ref="C92" pin="2"/>
       <node ref="LED178" pin="1"/>
+      <node ref="C91" pin="2"/>
+      <node ref="LED176" pin="1"/>
       <node ref="LED179" pin="1"/>
       <node ref="LED180" pin="1"/>
-      <node ref="C90" pin="2"/>
-      <node ref="LED82" pin="1"/>
-      <node ref="R2" pin="1"/>
+      <node ref="LED182" pin="1"/>
+      <node ref="LED181" pin="1"/>
+      <node ref="C92" pin="2"/>
+      <node ref="LDR4" pin="1"/>
+      <node ref="LED63" pin="1"/>
+      <node ref="LDR2" pin="1"/>
+      <node ref="C180" pin="2"/>
+      <node ref="C68" pin="2"/>
+      <node ref="LED61" pin="1"/>
+      <node ref="LED62" pin="1"/>
+      <node ref="C189" pin="2"/>
+      <node ref="C188" pin="2"/>
+      <node ref="LED172" pin="1"/>
+      <node ref="C193" pin="2"/>
+      <node ref="C94" pin="2"/>
+      <node ref="LDR3" pin="1"/>
+      <node ref="LED171" pin="1"/>
+      <node ref="C192" pin="2"/>
+      <node ref="LED175" pin="1"/>
+      <node ref="LDR1" pin="1"/>
+      <node ref="LED174" pin="1"/>
+      <node ref="C191" pin="2"/>
+      <node ref="LED173" pin="1"/>
+      <node ref="C190" pin="2"/>
+      <node ref="SW2" pin="1"/>
+      <node ref="C72" pin="2"/>
       <node ref="LED148" pin="1"/>
-      <node ref="LED149" pin="1"/>
-      <node ref="C83" pin="2"/>
-      <node ref="LED150" pin="1"/>
-      <node ref="R8" pin="1"/>
-      <node ref="LED151" pin="1"/>
-      <node ref="LED152" pin="1"/>
-      <node ref="LED153" pin="1"/>
-      <node ref="C84" pin="2"/>
-      <node ref="LED154" pin="1"/>
-      <node ref="LED141" pin="1"/>
-      <node ref="C82" pin="2"/>
-      <node ref="LED142" pin="1"/>
-      <node ref="LED143" pin="1"/>
-      <node ref="LED144" pin="1"/>
-      <node ref="C157" pin="2"/>
-      <node ref="C78" pin="2"/>
-      <node ref="C156" pin="2"/>
-      <node ref="C155" pin="2"/>
-      <node ref="C79" pin="2"/>
-      <node ref="C154" pin="2"/>
-      <node ref="C153" pin="2"/>
-      <node ref="C80" pin="2"/>
-      <node ref="C10" pin="1"/>
-      <node ref="C152" pin="2"/>
-      <node ref="LED147" pin="1"/>
-      <node ref="LED146" pin="1"/>
-      <node ref="LED145" pin="1"/>
-      <node ref="C161" pin="2"/>
-      <node ref="C160" pin="2"/>
-      <node ref="C194" pin="1"/>
-      <node ref="C162" pin="2"/>
-      <node ref="R3" pin="1"/>
-      <node ref="C199" pin="2"/>
-      <node ref="C163" pin="2"/>
-      <node ref="C164" pin="2"/>
-      <node ref="P10" pin="4"/>
-      <node ref="C195" pin="1"/>
-      <node ref="C196" pin="1"/>
-      <node ref="C60" pin="2"/>
+      <node ref="C85" pin="2"/>
       <node ref="P6" pin="2"/>
       <node ref="P8" pin="1"/>
-      <node ref="C85" pin="2"/>
-      <node ref="SW2" pin="1"/>
+      <node ref="P10" pin="4"/>
       <node ref="SW3" pin="1"/>
       <node ref="C86" pin="2"/>
       <node ref="C87" pin="2"/>
-      <node ref="C88" pin="2"/>
+      <node ref="LED142" pin="1"/>
+      <node ref="LED143" pin="1"/>
+      <node ref="LED144" pin="1"/>
+      <node ref="LED145" pin="1"/>
+      <node ref="LED146" pin="1"/>
+      <node ref="LED147" pin="1"/>
+      <node ref="LED141" pin="1"/>
+      <node ref="C70" pin="2"/>
+      <node ref="LED154" pin="1"/>
+      <node ref="C83" pin="2"/>
+      <node ref="LED153" pin="1"/>
+      <node ref="R2" pin="1"/>
+      <node ref="C71" pin="2"/>
+      <node ref="LED152" pin="1"/>
+      <node ref="LED151" pin="1"/>
+      <node ref="C84" pin="2"/>
+      <node ref="LED150" pin="1"/>
+      <node ref="R8" pin="1"/>
+      <node ref="LED149" pin="1"/>
+      <node ref="C196" pin="1"/>
+      <node ref="C195" pin="1"/>
+      <node ref="C194" pin="1"/>
       <node ref="C89" pin="2"/>
+      <node ref="C73" pin="2"/>
+      <node ref="C88" pin="2"/>
+      <node ref="C199" pin="2"/>
+      <node ref="R3" pin="1"/>
+      <node ref="C74" pin="2"/>
       <node ref="C165" pin="2"/>
-      <node ref="P2" pin="3"/>
-      <node ref="LED71" pin="1"/>
-      <node ref="LED72" pin="1"/>
+      <node ref="C164" pin="2"/>
+      <node ref="C163" pin="2"/>
+      <node ref="C75" pin="2"/>
+      <node ref="C162" pin="2"/>
+      <node ref="C161" pin="2"/>
+      <node ref="C160" pin="2"/>
       <node ref="LED73" pin="1"/>
-      <node ref="LED74" pin="1"/>
-      <node ref="R9" pin="1"/>
-      <node ref="C179" pin="2"/>
-      <node ref="C1" pin="1"/>
-      <node ref="LED84" pin="1"/>
-      <node ref="C174" pin="2"/>
-      <node ref="C158" pin="2"/>
-      <node ref="C175" pin="2"/>
-      <node ref="C176" pin="2"/>
-      <node ref="C177" pin="2"/>
-      <node ref="U1" pin="4"/>
-      <node ref="U1" pin="6"/>
       <node ref="C178" pin="2"/>
-      <node ref="C159" pin="2"/>
+      <node ref="LED74" pin="1"/>
       <node ref="LED75" pin="1"/>
-      <node ref="LED77" pin="1"/>
-      <node ref="C76" pin="2"/>
       <node ref="LED76" pin="1"/>
-      <node ref="C81" pin="2"/>
-      <node ref="U2" pin="2"/>
+      <node ref="C179" pin="2"/>
+      <node ref="C174" pin="2"/>
+      <node ref="R9" pin="1"/>
+      <node ref="LED72" pin="1"/>
+      <node ref="C175" pin="2"/>
+      <node ref="C1" pin="1"/>
+      <node ref="C176" pin="2"/>
+      <node ref="U1" pin="4"/>
+      <node ref="C177" pin="2"/>
+      <node ref="U1" pin="6"/>
+      <node ref="C159" pin="2"/>
+      <node ref="C153" pin="2"/>
+      <node ref="C82" pin="2"/>
+      <node ref="C154" pin="2"/>
+      <node ref="C78" pin="2"/>
+      <node ref="C155" pin="2"/>
+      <node ref="C76" pin="2"/>
+      <node ref="C158" pin="2"/>
+      <node ref="C156" pin="2"/>
       <node ref="C77" pin="2"/>
+      <node ref="C157" pin="2"/>
+      <node ref="LED77" pin="1"/>
+      <node ref="C81" pin="2"/>
+      <node ref="C79" pin="2"/>
+      <node ref="C80" pin="2"/>
+      <node ref="C10" pin="1"/>
+      <node ref="C69" pin="2"/>
+      <node ref="C152" pin="2"/>
     </net>
-    <net code="12" name="GND">
-      <node ref="LED94" pin="3"/>
-      <node ref="LED96" pin="3"/>
-      <node ref="C101" pin="1"/>
-      <node ref="LED84" pin="3"/>
-      <node ref="LED93" pin="3"/>
-      <node ref="C103" pin="1"/>
-      <node ref="LED92" pin="3"/>
-      <node ref="C83" pin="1"/>
-      <node ref="LED95" pin="3"/>
-      <node ref="C102" pin="1"/>
+    <net code="13" name="GND">
       <node ref="C69" pin="1"/>
-      <node ref="LED90" pin="3"/>
-      <node ref="LED91" pin="3"/>
-      <node ref="LED75" pin="3"/>
-      <node ref="C82" pin="1"/>
-      <node ref="C104" pin="1"/>
-      <node ref="C96" pin="1"/>
-      <node ref="C105" pin="1"/>
-      <node ref="LED85" pin="3"/>
-      <node ref="LED77" pin="3"/>
-      <node ref="LED86" pin="3"/>
-      <node ref="LED87" pin="3"/>
-      <node ref="LED76" pin="3"/>
-      <node ref="LED89" pin="3"/>
-      <node ref="LED88" pin="3"/>
-      <node ref="C94" pin="1"/>
-      <node ref="LED74" pin="3"/>
-      <node ref="C92" pin="1"/>
-      <node ref="LED97" pin="3"/>
-      <node ref="C86" pin="1"/>
       <node ref="C93" pin="1"/>
-      <node ref="C87" pin="1"/>
-      <node ref="C88" pin="1"/>
-      <node ref="LED98" pin="3"/>
-      <node ref="LED82" pin="3"/>
+      <node ref="C97" pin="1"/>
+      <node ref="C102" pin="1"/>
+      <node ref="LED83" pin="3"/>
+      <node ref="C101" pin="1"/>
+      <node ref="C94" pin="1"/>
+      <node ref="C99" pin="1"/>
+      <node ref="C103" pin="1"/>
+      <node ref="C100" pin="1"/>
       <node ref="C95" pin="1"/>
       <node ref="C98" pin="1"/>
-      <node ref="C89" pin="1"/>
-      <node ref="C99" pin="1"/>
-      <node ref="LED83" pin="3"/>
-      <node ref="C100" pin="1"/>
-      <node ref="LED79" pin="3"/>
-      <node ref="LED73" pin="3"/>
-      <node ref="C106" pin="1"/>
-      <node ref="LED78" pin="3"/>
-      <node ref="C107" pin="1"/>
-      <node ref="C84" pin="1"/>
+      <node ref="C87" pin="1"/>
+      <node ref="C109" pin="1"/>
       <node ref="C108" pin="1"/>
+      <node ref="C86" pin="1"/>
+      <node ref="C107" pin="1"/>
+      <node ref="C85" pin="1"/>
+      <node ref="C106" pin="1"/>
+      <node ref="C105" pin="1"/>
+      <node ref="C84" pin="1"/>
+      <node ref="C104" pin="1"/>
+      <node ref="C88" pin="1"/>
+      <node ref="C82" pin="1"/>
+      <node ref="C83" pin="1"/>
+      <node ref="LED77" pin="3"/>
+      <node ref="C89" pin="1"/>
+      <node ref="C96" pin="1"/>
+      <node ref="LED87" pin="3"/>
+      <node ref="LED89" pin="3"/>
+      <node ref="LED90" pin="3"/>
+      <node ref="LED91" pin="3"/>
+      <node ref="C90" pin="1"/>
+      <node ref="C91" pin="1"/>
+      <node ref="LED97" pin="3"/>
+      <node ref="LED76" pin="3"/>
+      <node ref="LED75" pin="3"/>
+      <node ref="LED73" pin="3"/>
       <node ref="LED72" pin="3"/>
       <node ref="LED71" pin="3"/>
-      <node ref="C90" pin="1"/>
-      <node ref="LED80" pin="3"/>
-      <node ref="C91" pin="1"/>
-      <node ref="C109" pin="1"/>
+      <node ref="LED92" pin="3"/>
+      <node ref="LED93" pin="3"/>
+      <node ref="LED94" pin="3"/>
+      <node ref="LED95" pin="3"/>
+      <node ref="LED96" pin="3"/>
+      <node ref="C92" pin="1"/>
+      <node ref="LED74" pin="3"/>
+      <node ref="LED84" pin="3"/>
+      <node ref="LED98" pin="3"/>
+      <node ref="LED88" pin="3"/>
+      <node ref="LED85" pin="3"/>
+      <node ref="LED82" pin="3"/>
       <node ref="LED81" pin="3"/>
-      <node ref="C85" pin="1"/>
+      <node ref="LED80" pin="3"/>
+      <node ref="LED79" pin="3"/>
+      <node ref="LED78" pin="3"/>
+      <node ref="LED86" pin="3"/>
+      <node ref="C174" pin="1"/>
       <node ref="C175" pin="1"/>
       <node ref="C176" pin="1"/>
       <node ref="C177" pin="1"/>
       <node ref="C178" pin="1"/>
       <node ref="C179" pin="1"/>
-      <node ref="C174" pin="1"/>
       <node ref="C153" pin="1"/>
+      <node ref="LED165" pin="3"/>
       <node ref="LED161" pin="3"/>
       <node ref="LED160" pin="3"/>
       <node ref="LED159" pin="3"/>
@@ -5893,10 +5914,10 @@
       <node ref="LED164" pin="3"/>
       <node ref="LED163" pin="3"/>
       <node ref="LED162" pin="3"/>
-      <node ref="LED165" pin="3"/>
+      <node ref="LED149" pin="3"/>
       <node ref="LED148" pin="3"/>
       <node ref="LED151" pin="3"/>
-      <node ref="LED149" pin="3"/>
+      <node ref="LED150" pin="3"/>
       <node ref="C165" pin="1"/>
       <node ref="C164" pin="1"/>
       <node ref="C163" pin="1"/>
@@ -5920,16 +5941,16 @@
       <node ref="LED154" pin="3"/>
       <node ref="LED153" pin="3"/>
       <node ref="LED152" pin="3"/>
-      <node ref="LED150" pin="3"/>
-      <node ref="LED173" pin="3"/>
+      <node ref="LED174" pin="3"/>
+      <node ref="C186" pin="1"/>
       <node ref="C185" pin="1"/>
       <node ref="C184" pin="1"/>
       <node ref="C183" pin="1"/>
       <node ref="C182" pin="1"/>
       <node ref="C180" pin="1"/>
       <node ref="LED175" pin="3"/>
-      <node ref="LED174" pin="3"/>
-      <node ref="C186" pin="1"/>
+      <node ref="C187" pin="1"/>
+      <node ref="LED173" pin="3"/>
       <node ref="LED172" pin="3"/>
       <node ref="LED171" pin="3"/>
       <node ref="LED170" pin="3"/>
@@ -5942,7 +5963,6 @@
       <node ref="LED176" pin="3"/>
       <node ref="LED179" pin="3"/>
       <node ref="C181" pin="1"/>
-      <node ref="C187" pin="1"/>
       <node ref="C167" pin="1"/>
       <node ref="C173" pin="1"/>
       <node ref="C172" pin="1"/>
@@ -5951,15 +5971,16 @@
       <node ref="C169" pin="1"/>
       <node ref="C168" pin="1"/>
       <node ref="C166" pin="1"/>
-      <node ref="C191" pin="1"/>
+      <node ref="C190" pin="1"/>
       <node ref="C188" pin="1"/>
       <node ref="C189" pin="1"/>
-      <node ref="C190" pin="1"/>
+      <node ref="C191" pin="1"/>
       <node ref="C192" pin="1"/>
       <node ref="C193" pin="1"/>
+      <node ref="C132" pin="1"/>
       <node ref="C111" pin="1"/>
-      <node ref="C117" pin="1"/>
-      <node ref="C116" pin="1"/>
+      <node ref="C133" pin="1"/>
+      <node ref="LED114" pin="3"/>
       <node ref="LED113" pin="3"/>
       <node ref="LED126" pin="3"/>
       <node ref="LED125" pin="3"/>
@@ -5968,29 +5989,29 @@
       <node ref="LED121" pin="3"/>
       <node ref="LED120" pin="3"/>
       <node ref="LED123" pin="3"/>
-      <node ref="C115" pin="1"/>
+      <node ref="C117" pin="1"/>
       <node ref="C137" pin="1"/>
       <node ref="C136" pin="1"/>
       <node ref="C135" pin="1"/>
       <node ref="C134" pin="1"/>
-      <node ref="C133" pin="1"/>
-      <node ref="C132" pin="1"/>
-      <node ref="C121" pin="1"/>
-      <node ref="C118" pin="1"/>
       <node ref="C119" pin="1"/>
+      <node ref="C118" pin="1"/>
       <node ref="C120" pin="1"/>
+      <node ref="C121" pin="1"/>
       <node ref="C122" pin="1"/>
       <node ref="C123" pin="1"/>
-      <node ref="LED100" pin="3"/>
+      <node ref="LED103" pin="3"/>
+      <node ref="C116" pin="1"/>
+      <node ref="C115" pin="1"/>
       <node ref="C114" pin="1"/>
       <node ref="C113" pin="1"/>
       <node ref="C112" pin="1"/>
       <node ref="C110" pin="1"/>
       <node ref="LED105" pin="3"/>
       <node ref="LED104" pin="3"/>
-      <node ref="LED103" pin="3"/>
+      <node ref="LED115" pin="3"/>
       <node ref="LED101" pin="3"/>
-      <node ref="LED114" pin="3"/>
+      <node ref="LED100" pin="3"/>
       <node ref="LED99" pin="3"/>
       <node ref="LED102" pin="3"/>
       <node ref="LED112" pin="3"/>
@@ -6000,7 +6021,7 @@
       <node ref="LED108" pin="3"/>
       <node ref="LED107" pin="3"/>
       <node ref="LED106" pin="3"/>
-      <node ref="LED139" pin="3"/>
+      <node ref="LED140" pin="3"/>
       <node ref="C138" pin="1"/>
       <node ref="LED133" pin="3"/>
       <node ref="LED132" pin="3"/>
@@ -6009,7 +6030,7 @@
       <node ref="LED128" pin="3"/>
       <node ref="LED127" pin="3"/>
       <node ref="LED130" pin="3"/>
-      <node ref="LED140" pin="3"/>
+      <node ref="LED139" pin="3"/>
       <node ref="LED138" pin="3"/>
       <node ref="LED137" pin="3"/>
       <node ref="LED136" pin="3"/>
@@ -6022,31 +6043,80 @@
       <node ref="C142" pin="1"/>
       <node ref="C141" pin="1"/>
       <node ref="C140" pin="1"/>
-      <node ref="C126" pin="1"/>
+      <node ref="C127" pin="1"/>
       <node ref="C131" pin="1"/>
       <node ref="C130" pin="1"/>
       <node ref="C129" pin="1"/>
       <node ref="C128" pin="1"/>
-      <node ref="C127" pin="1"/>
+      <node ref="C126" pin="1"/>
       <node ref="C124" pin="1"/>
       <node ref="LED119" pin="3"/>
       <node ref="LED118" pin="3"/>
       <node ref="LED117" pin="3"/>
       <node ref="LED116" pin="3"/>
-      <node ref="LED115" pin="3"/>
       <node ref="C146" pin="1"/>
       <node ref="C147" pin="1"/>
       <node ref="C148" pin="1"/>
       <node ref="C149" pin="1"/>
       <node ref="C150" pin="1"/>
       <node ref="C151" pin="1"/>
-      <node ref="C97" pin="1"/>
       <node ref="C125" pin="1"/>
-      <node ref="C197" pin="2"/>
-      <node ref="C198" pin="2"/>
-      <node ref="R10" pin="2"/>
+      <node ref="C34" pin="1"/>
+      <node ref="C39" pin="1"/>
+      <node ref="C35" pin="1"/>
+      <node ref="C36" pin="1"/>
+      <node ref="C37" pin="1"/>
+      <node ref="C38" pin="1"/>
+      <node ref="LED19" pin="3"/>
+      <node ref="C29" pin="1"/>
+      <node ref="C28" pin="1"/>
+      <node ref="C26" pin="1"/>
+      <node ref="LED21" pin="3"/>
+      <node ref="LED20" pin="3"/>
+      <node ref="LED18" pin="3"/>
+      <node ref="LED17" pin="3"/>
+      <node ref="LED16" pin="3"/>
+      <node ref="LED15" pin="3"/>
+      <node ref="LED28" pin="3"/>
+      <node ref="LED27" pin="3"/>
+      <node ref="LED26" pin="3"/>
+      <node ref="LED24" pin="3"/>
+      <node ref="LED23" pin="3"/>
+      <node ref="LED22" pin="3"/>
+      <node ref="LED25" pin="3"/>
+      <node ref="C23" pin="1"/>
+      <node ref="C12" pin="1"/>
+      <node ref="LED7" pin="3"/>
+      <node ref="LED6" pin="3"/>
+      <node ref="LED5" pin="3"/>
+      <node ref="LED3" pin="3"/>
+      <node ref="LED2" pin="3"/>
+      <node ref="LED1" pin="3"/>
+      <node ref="LED4" pin="3"/>
+      <node ref="LED14" pin="3"/>
+      <node ref="LED13" pin="3"/>
+      <node ref="LED12" pin="3"/>
+      <node ref="LED11" pin="3"/>
+      <node ref="LED10" pin="3"/>
+      <node ref="LED9" pin="3"/>
+      <node ref="LED8" pin="3"/>
+      <node ref="C30" pin="1"/>
+      <node ref="C19" pin="1"/>
+      <node ref="C18" pin="1"/>
+      <node ref="C17" pin="1"/>
+      <node ref="C16" pin="1"/>
+      <node ref="C15" pin="1"/>
+      <node ref="C14" pin="1"/>
+      <node ref="C13" pin="1"/>
+      <node ref="C47" pin="1"/>
+      <node ref="C46" pin="1"/>
+      <node ref="C45" pin="1"/>
+      <node ref="C44" pin="1"/>
+      <node ref="C43" pin="1"/>
+      <node ref="C42" pin="1"/>
+      <node ref="C41" pin="1"/>
+      <node ref="C40" pin="1"/>
       <node ref="LED35" pin="3"/>
-      <node ref="R11" pin="2"/>
       <node ref="LED34" pin="3"/>
       <node ref="LED33" pin="3"/>
       <node ref="LED32" pin="3"/>
@@ -6055,1048 +6125,998 @@
       <node ref="LED29" pin="3"/>
       <node ref="LED42" pin="3"/>
       <node ref="LED41" pin="3"/>
-      <node ref="C41" pin="1"/>
-      <node ref="C10" pin="2"/>
-      <node ref="SW1" pin="2"/>
-      <node ref="C40" pin="1"/>
-      <node ref="C9" pin="2"/>
-      <node ref="R12" pin="1"/>
-      <node ref="R13" pin="1"/>
-      <node ref="U1" pin="21"/>
       <node ref="LED40" pin="3"/>
-      <node ref="P10" pin="3"/>
-      <node ref="C199" pin="1"/>
       <node ref="LED38" pin="3"/>
-      <node ref="C42" pin="1"/>
-      <node ref="LED37" pin="3"/>
-      <node ref="C3" pin="2"/>
-      <node ref="C194" pin="2"/>
-      <node ref="LED36" pin="3"/>
-      <node ref="C195" pin="2"/>
-      <node ref="C196" pin="2"/>
-      <node ref="LED39" pin="3"/>
-      <node ref="U2" pin="13"/>
-      <node ref="U1" pin="3"/>
-      <node ref="U1" pin="5"/>
-      <node ref="U2" pin="5"/>
-      <node ref="U2" pin="6"/>
-      <node ref="U2" pin="7"/>
-      <node ref="U2" pin="8"/>
-      <node ref="U2" pin="9"/>
-      <node ref="U2" pin="10"/>
-      <node ref="U2" pin="11"/>
-      <node ref="U2" pin="12"/>
-      <node ref="C67" pin="1"/>
-      <node ref="C5" pin="2"/>
-      <node ref="C7" pin="1"/>
-      <node ref="C62" pin="1"/>
-      <node ref="P2" pin="2"/>
-      <node ref="LED50" pin="3"/>
-      <node ref="LED53" pin="3"/>
-      <node ref="C63" pin="1"/>
-      <node ref="C1" pin="2"/>
-      <node ref="C47" pin="1"/>
-      <node ref="C46" pin="1"/>
-      <node ref="C45" pin="1"/>
-      <node ref="C44" pin="1"/>
-      <node ref="C43" pin="1"/>
-      <node ref="C64" pin="1"/>
-      <node ref="C65" pin="1"/>
       <node ref="C66" pin="1"/>
-      <node ref="LED21" pin="3"/>
-      <node ref="C17" pin="1"/>
-      <node ref="C18" pin="1"/>
-      <node ref="C19" pin="1"/>
-      <node ref="C16" pin="1"/>
-      <node ref="LED20" pin="3"/>
-      <node ref="LED19" pin="3"/>
-      <node ref="LED18" pin="3"/>
-      <node ref="C26" pin="1"/>
-      <node ref="LED17" pin="3"/>
-      <node ref="C12" pin="1"/>
-      <node ref="C13" pin="1"/>
-      <node ref="C14" pin="1"/>
-      <node ref="C15" pin="1"/>
-      <node ref="C35" pin="1"/>
-      <node ref="C34" pin="1"/>
-      <node ref="C39" pin="1"/>
-      <node ref="LED24" pin="3"/>
-      <node ref="C36" pin="1"/>
-      <node ref="LED23" pin="3"/>
-      <node ref="LED25" pin="3"/>
-      <node ref="LED22" pin="3"/>
-      <node ref="LED27" pin="3"/>
-      <node ref="LED16" pin="3"/>
-      <node ref="LED15" pin="3"/>
-      <node ref="LED28" pin="3"/>
-      <node ref="LED7" pin="3"/>
-      <node ref="LED26" pin="3"/>
-      <node ref="C38" pin="1"/>
-      <node ref="C37" pin="1"/>
+      <node ref="LED37" pin="3"/>
+      <node ref="C27" pin="1"/>
+      <node ref="C33" pin="1"/>
+      <node ref="C32" pin="1"/>
+      <node ref="C31" pin="1"/>
+      <node ref="LED36" pin="3"/>
+      <node ref="LED39" pin="3"/>
+      <node ref="C53" pin="1"/>
+      <node ref="C48" pin="1"/>
       <node ref="C49" pin="1"/>
       <node ref="C50" pin="1"/>
       <node ref="C51" pin="1"/>
       <node ref="C52" pin="1"/>
-      <node ref="C48" pin="1"/>
-      <node ref="LED8" pin="3"/>
-      <node ref="LED9" pin="3"/>
-      <node ref="LED10" pin="3"/>
-      <node ref="LED11" pin="3"/>
-      <node ref="LED12" pin="3"/>
-      <node ref="C23" pin="1"/>
-      <node ref="P9" pin="1"/>
-      <node ref="P7" pin="4"/>
-      <node ref="BT1" pin="2"/>
-      <node ref="X1" pin="3"/>
-      <node ref="C25" pin="1"/>
-      <node ref="LED13" pin="3"/>
-      <node ref="C22" pin="1"/>
-      <node ref="C21" pin="1"/>
-      <node ref="C20" pin="1"/>
-      <node ref="C53" pin="1"/>
-      <node ref="C28" pin="1"/>
-      <node ref="C33" pin="1"/>
-      <node ref="C32" pin="1"/>
-      <node ref="C31" pin="1"/>
-      <node ref="C30" pin="1"/>
-      <node ref="C29" pin="1"/>
-      <node ref="LED14" pin="3"/>
-      <node ref="C24" pin="1"/>
-      <node ref="LED4" pin="3"/>
-      <node ref="LED1" pin="3"/>
-      <node ref="LED2" pin="3"/>
-      <node ref="LED3" pin="3"/>
-      <node ref="LED5" pin="3"/>
-      <node ref="LED6" pin="3"/>
-      <node ref="C27" pin="1"/>
-      <node ref="C77" pin="1"/>
-      <node ref="C78" pin="1"/>
-      <node ref="R5" pin="2"/>
-      <node ref="R16" pin="2"/>
-      <node ref="R15" pin="2"/>
-      <node ref="C79" pin="1"/>
-      <node ref="C80" pin="1"/>
-      <node ref="C81" pin="1"/>
-      <node ref="R14" pin="2"/>
-      <node ref="C76" pin="1"/>
-      <node ref="C61" pin="1"/>
-      <node ref="C60" pin="1"/>
-      <node ref="C59" pin="1"/>
-      <node ref="C58" pin="1"/>
-      <node ref="C57" pin="1"/>
-      <node ref="C56" pin="1"/>
+      <node ref="D1" pin="1"/>
       <node ref="P3" pin="2"/>
-      <node ref="P2" pin="1"/>
-      <node ref="P5" pin="2"/>
       <node ref="P3" pin="1"/>
-      <node ref="C68" pin="1"/>
-      <node ref="C75" pin="1"/>
+      <node ref="R16" pin="2"/>
+      <node ref="R14" pin="2"/>
+      <node ref="R5" pin="2"/>
+      <node ref="P5" pin="2"/>
+      <node ref="P5" pin="1"/>
+      <node ref="R15" pin="2"/>
+      <node ref="C11" pin="2"/>
+      <node ref="P9" pin="1"/>
+      <node ref="U1" pin="21"/>
+      <node ref="BT1" pin="2"/>
+      <node ref="C196" pin="2"/>
+      <node ref="C195" pin="2"/>
+      <node ref="C194" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C199" pin="1"/>
+      <node ref="R11" pin="2"/>
+      <node ref="C25" pin="1"/>
+      <node ref="C20" pin="1"/>
+      <node ref="C21" pin="1"/>
+      <node ref="C22" pin="1"/>
+      <node ref="C24" pin="1"/>
+      <node ref="R10" pin="2"/>
+      <node ref="P7" pin="4"/>
+      <node ref="X1" pin="3"/>
+      <node ref="U2" pin="8"/>
+      <node ref="C7" pin="1"/>
+      <node ref="C5" pin="2"/>
+      <node ref="U2" pin="13"/>
+      <node ref="U2" pin="12"/>
+      <node ref="U2" pin="11"/>
+      <node ref="U2" pin="10"/>
+      <node ref="U2" pin="9"/>
+      <node ref="U2" pin="7"/>
+      <node ref="U2" pin="6"/>
+      <node ref="U1" pin="5"/>
+      <node ref="U1" pin="3"/>
+      <node ref="C1" pin="2"/>
+      <node ref="U2" pin="5"/>
+      <node ref="P2" pin="2"/>
+      <node ref="P2" pin="1"/>
+      <node ref="C8" pin="1"/>
+      <node ref="P1" pin="6"/>
+      <node ref="C198" pin="2"/>
+      <node ref="C197" pin="2"/>
+      <node ref="P10" pin="3"/>
+      <node ref="R13" pin="1"/>
+      <node ref="R12" pin="1"/>
+      <node ref="C9" pin="2"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="LED69" pin="3"/>
+      <node ref="LED55" pin="3"/>
       <node ref="C74" pin="1"/>
+      <node ref="LED54" pin="3"/>
+      <node ref="LED70" pin="3"/>
       <node ref="C73" pin="1"/>
+      <node ref="LED68" pin="3"/>
+      <node ref="LED52" pin="3"/>
+      <node ref="LED51" pin="3"/>
+      <node ref="LED43" pin="3"/>
+      <node ref="LED59" pin="3"/>
+      <node ref="LED58" pin="3"/>
+      <node ref="LED65" pin="3"/>
+      <node ref="LED44" pin="3"/>
+      <node ref="LED50" pin="3"/>
+      <node ref="LED57" pin="3"/>
+      <node ref="LED56" pin="3"/>
+      <node ref="C68" pin="1"/>
+      <node ref="C79" pin="1"/>
+      <node ref="C78" pin="1"/>
+      <node ref="C77" pin="1"/>
+      <node ref="C76" pin="1"/>
+      <node ref="C80" pin="1"/>
+      <node ref="LED66" pin="3"/>
+      <node ref="LED53" pin="3"/>
+      <node ref="C81" pin="1"/>
       <node ref="C72" pin="1"/>
       <node ref="C71" pin="1"/>
       <node ref="C70" pin="1"/>
-      <node ref="LED68" pin="3"/>
-      <node ref="LED66" pin="3"/>
-      <node ref="LED65" pin="3"/>
-      <node ref="LED64" pin="3"/>
-      <node ref="LED69" pin="3"/>
-      <node ref="LED67" pin="3"/>
-      <node ref="LED60" pin="3"/>
-      <node ref="LED63" pin="3"/>
-      <node ref="LED62" pin="3"/>
-      <node ref="LED61" pin="3"/>
-      <node ref="P5" pin="1"/>
-      <node ref="LED59" pin="3"/>
-      <node ref="LED58" pin="3"/>
-      <node ref="LED57" pin="3"/>
-      <node ref="LED70" pin="3"/>
-      <node ref="LED43" pin="3"/>
-      <node ref="LED54" pin="3"/>
-      <node ref="LED48" pin="3"/>
       <node ref="C54" pin="1"/>
-      <node ref="LED55" pin="3"/>
-      <node ref="P1" pin="6"/>
-      <node ref="LED56" pin="3"/>
-      <node ref="LED44" pin="3"/>
-      <node ref="LED45" pin="3"/>
-      <node ref="LED46" pin="3"/>
-      <node ref="LED51" pin="3"/>
-      <node ref="C55" pin="1"/>
-      <node ref="LED52" pin="3"/>
-      <node ref="LED49" pin="3"/>
+      <node ref="LED61" pin="3"/>
+      <node ref="LED62" pin="3"/>
+      <node ref="LED63" pin="3"/>
       <node ref="LED47" pin="3"/>
-      <node ref="D1" pin="1"/>
-      <node ref="C11" pin="2"/>
-      <node ref="C8" pin="1"/>
+      <node ref="C67" pin="1"/>
+      <node ref="C62" pin="1"/>
+      <node ref="C63" pin="1"/>
+      <node ref="C64" pin="1"/>
+      <node ref="LED48" pin="3"/>
+      <node ref="C65" pin="1"/>
+      <node ref="LED49" pin="3"/>
+      <node ref="C60" pin="1"/>
+      <node ref="LED60" pin="3"/>
+      <node ref="C75" pin="1"/>
+      <node ref="C61" pin="1"/>
+      <node ref="C57" pin="1"/>
+      <node ref="LED46" pin="3"/>
+      <node ref="C55" pin="1"/>
+      <node ref="C56" pin="1"/>
+      <node ref="C59" pin="1"/>
+      <node ref="LED67" pin="3"/>
+      <node ref="LED64" pin="3"/>
+      <node ref="C58" pin="1"/>
+      <node ref="LED45" pin="3"/>
     </net>
-    <net code="13" name="/LDR3_PIN">
-      <node ref="LDR3" pin="2"/>
-      <node ref="R15" pin="1"/>
+    <net code="14" name="/LDR3_PIN">
       <node ref="U1" pin="25"/>
+      <node ref="R15" pin="1"/>
+      <node ref="LDR3" pin="2"/>
     </net>
-    <net code="14" name="/MARQUEE_SENSE">
-      <node ref="R3" pin="2"/>
-      <node ref="P10" pin="2"/>
-      <node ref="U1" pin="10"/>
-    </net>
-    <net code="15" name="Net-(P10-Pad1)">
-      <node ref="R4" pin="2"/>
-      <node ref="P10" pin="1"/>
+    <net code="15" name="/LDR1_PIN">
+      <node ref="U1" pin="23"/>
+      <node ref="R5" pin="1"/>
+      <node ref="LDR1" pin="2"/>
     </net>
     <net code="16" name="/MARQUEE_DATA">
       <node ref="U1" pin="9"/>
       <node ref="R4" pin="1"/>
     </net>
-    <net code="17" name="/LDR1_PIN">
-      <node ref="R5" pin="1"/>
-      <node ref="LDR1" pin="2"/>
-      <node ref="U1" pin="23"/>
-    </net>
-    <net code="18" name="/LDR4_PIN">
-      <node ref="LDR4" pin="2"/>
-      <node ref="R16" pin="1"/>
+    <net code="17" name="/LDR4_PIN">
       <node ref="U1" pin="26"/>
+      <node ref="R16" pin="1"/>
+      <node ref="LDR4" pin="2"/>
     </net>
-    <net code="19" name="Net-(F1-Pad1)">
-      <node ref="P3" pin="3"/>
+    <net code="18" name="Net-(S5-Pad1)">
+      <node ref="S5" pin="1"/>
+    </net>
+    <net code="19" name="Net-(S6-Pad1)">
+      <node ref="S6" pin="1"/>
+    </net>
+    <net code="20" name="Net-(F1-Pad1)">
       <node ref="F1" pin="1"/>
+      <node ref="P3" pin="3"/>
       <node ref="P5" pin="3"/>
     </net>
-    <net code="20" name="Net-(C6-Pad2)">
+    <net code="21" name="Net-(P10-Pad1)">
+      <node ref="R4" pin="2"/>
+      <node ref="P10" pin="1"/>
+    </net>
+    <net code="22" name="Net-(C6-Pad2)">
       <node ref="C6" pin="2"/>
       <node ref="P2" pin="6"/>
     </net>
-    <net code="21" name="/SCK">
-      <node ref="U1" pin="17"/>
-      <node ref="P1" pin="3"/>
-    </net>
-    <net code="22" name="Net-(R6-Pad2)">
+    <net code="23" name="Net-(R6-Pad2)">
       <node ref="U2" pin="3"/>
       <node ref="R6" pin="2"/>
     </net>
-    <net code="23" name="Net-(R7-Pad2)">
-      <node ref="U2" pin="1"/>
-      <node ref="R7" pin="2"/>
-    </net>
-    <net code="24" name="/B2">
-      <node ref="B2" pin="1"/>
-      <node ref="U1" pin="14"/>
+    <net code="24" name="/SCK">
+      <node ref="P1" pin="3"/>
+      <node ref="U1" pin="17"/>
     </net>
     <net code="25" name="/5V_R">
+      <node ref="P9" pin="4"/>
       <node ref="C198" pin="1"/>
       <node ref="P8" pin="2"/>
-      <node ref="P9" pin="4"/>
     </net>
-    <net code="26" name="/SW_R">
-      <node ref="U1" pin="2"/>
-      <node ref="SW3" pin="2"/>
-      <node ref="R11" pin="1"/>
+    <net code="26" name="Net-(R7-Pad2)">
+      <node ref="R7" pin="2"/>
+      <node ref="U2" pin="1"/>
     </net>
-    <net code="27" name="/MOSI">
+    <net code="27" name="/MARQUEE_SENSE">
+      <node ref="R3" pin="2"/>
+      <node ref="U1" pin="10"/>
+      <node ref="P10" pin="2"/>
+    </net>
+    <net code="28" name="/MOSI">
       <node ref="U1" pin="15"/>
       <node ref="P1" pin="4"/>
     </net>
-    <net code="28" name="/RESET">
+    <net code="29" name="/RESET">
       <node ref="P1" pin="5"/>
-      <node ref="U1" pin="29"/>
-      <node ref="SW1" pin="1"/>
-      <node ref="R2" pin="2"/>
       <node ref="U2" pin="4"/>
+      <node ref="R2" pin="2"/>
       <node ref="C6" pin="1"/>
+      <node ref="SW1" pin="1"/>
+      <node ref="U1" pin="29"/>
     </net>
-    <net code="29" name="/TXD">
+    <net code="30" name="/TXD">
       <node ref="P2" pin="5"/>
       <node ref="U1" pin="31"/>
     </net>
-    <net code="30" name="/RXD">
-      <node ref="U1" pin="30"/>
+    <net code="31" name="/RXD">
       <node ref="P2" pin="4"/>
-    </net>
-    <net code="31" name="Net-(S4-Pad1)">
-      <node ref="S4" pin="1"/>
+      <node ref="U1" pin="30"/>
     </net>
     <net code="32" name="Net-(S3-Pad1)">
       <node ref="S3" pin="1"/>
     </net>
-    <net code="33" name="Net-(S1-Pad1)">
+    <net code="33" name="Net-(S4-Pad1)">
+      <node ref="S4" pin="1"/>
+    </net>
+    <net code="34" name="Net-(S1-Pad1)">
       <node ref="S1" pin="1"/>
     </net>
-    <net code="34" name="Net-(S2-Pad1)">
+    <net code="35" name="Net-(S2-Pad1)">
       <node ref="S2" pin="1"/>
     </net>
-    <net code="35" name="/MATRIX_PIN">
-      <node ref="U1" pin="32"/>
+    <net code="36" name="/MATRIX_PIN">
       <node ref="R1" pin="1"/>
+      <node ref="U1" pin="32"/>
     </net>
-    <net code="36" name="/Row_C/DI_C">
+    <net code="37" name="/MISO">
+      <node ref="P1" pin="1"/>
+      <node ref="U1" pin="16"/>
+    </net>
+    <net code="38" name="/Row_C/DI_C">
       <node ref="LED29" pin="4"/>
       <node ref="LED28" pin="2"/>
     </net>
-    <net code="37" name="/SCL">
-      <node ref="R8" pin="2"/>
+    <net code="39" name="/SCL">
       <node ref="P7" pin="2"/>
-      <node ref="P9" pin="3"/>
+      <node ref="R8" pin="2"/>
       <node ref="U1" pin="28"/>
+      <node ref="P9" pin="3"/>
       <node ref="U2" pin="16"/>
     </net>
-    <net code="38" name="/SDA">
+    <net code="40" name="/SDA">
       <node ref="R9" pin="2"/>
-      <node ref="U1" pin="27"/>
-      <node ref="P9" pin="2"/>
-      <node ref="P7" pin="3"/>
       <node ref="U2" pin="15"/>
+      <node ref="U1" pin="27"/>
+      <node ref="P7" pin="3"/>
+      <node ref="P9" pin="2"/>
     </net>
-    <net code="39" name="/Row_A/DI_A">
+    <net code="41" name="/Row_A/DI_A">
       <node ref="R1" pin="2"/>
       <node ref="LED1" pin="4"/>
     </net>
-    <net code="40" name="/Row_M/DO_M">
+    <net code="42" name="/Row_M/DO_M">
       <node ref="LED182" pin="2"/>
     </net>
-    <net code="41" name="/Row_B/DI_B">
-      <node ref="LED14" pin="2"/>
+    <net code="43" name="/Row_B/DI_B">
       <node ref="LED15" pin="4"/>
+      <node ref="LED14" pin="2"/>
     </net>
-    <net code="42" name="/Row_D/DI_D">
-      <node ref="LED43" pin="4"/>
+    <net code="44" name="/Row_D/DI_D">
       <node ref="LED42" pin="2"/>
+      <node ref="LED43" pin="4"/>
     </net>
-    <net code="43" name="/Row_E/DI_E">
-      <node ref="LED57" pin="4"/>
+    <net code="45" name="/Row_E/DI_E">
       <node ref="LED56" pin="2"/>
+      <node ref="LED57" pin="4"/>
     </net>
-    <net code="44" name="/Row_F/DI_F">
-      <node ref="LED71" pin="4"/>
+    <net code="46" name="/Row_F/DI_F">
       <node ref="LED70" pin="2"/>
+      <node ref="LED71" pin="4"/>
     </net>
-    <net code="45" name="/Row_G/DI_G">
+    <net code="47" name="/Row_G/DI_G">
       <node ref="LED85" pin="4"/>
       <node ref="LED84" pin="2"/>
     </net>
-    <net code="46" name="/Row_H/DI_H">
+    <net code="48" name="/Row_H/DI_H">
       <node ref="LED99" pin="4"/>
       <node ref="LED98" pin="2"/>
     </net>
-    <net code="47" name="/Row_I/DI_I">
-      <node ref="LED112" pin="2"/>
+    <net code="49" name="/Row_I/DI_I">
       <node ref="LED113" pin="4"/>
+      <node ref="LED112" pin="2"/>
     </net>
-    <net code="48" name="/Row_J/DI_J">
+    <net code="50" name="/Row_J/DI_J">
       <node ref="LED127" pin="4"/>
       <node ref="LED126" pin="2"/>
     </net>
-    <net code="49" name="/Row_K/DI_K">
+    <net code="51" name="/Row_K/DI_K">
       <node ref="LED140" pin="2"/>
       <node ref="LED141" pin="4"/>
     </net>
-    <net code="50" name="/Row_L/DI_L">
+    <net code="52" name="/Row_L/DI_L">
       <node ref="LED155" pin="4"/>
       <node ref="LED154" pin="2"/>
     </net>
-    <net code="51" name="/Row_M/DI_M">
+    <net code="53" name="/Row_M/DI_M">
       <node ref="LED168" pin="2"/>
       <node ref="LED169" pin="4"/>
     </net>
-    <net code="52" name="/BAT">
+    <net code="54" name="/BAT">
       <node ref="BT1" pin="1"/>
-      <node ref="C9" pin="1"/>
       <node ref="U2" pin="14"/>
+      <node ref="C9" pin="1"/>
     </net>
-    <net code="53" name="/AREF">
-      <node ref="U1" pin="20"/>
-      <node ref="C3" pin="1"/>
-    </net>
-    <net code="54" name="/5V_L">
+    <net code="55" name="/5V_L">
+      <node ref="P7" pin="1"/>
       <node ref="C197" pin="1"/>
       <node ref="P6" pin="1"/>
-      <node ref="P7" pin="1"/>
     </net>
-    <net code="55" name="Net-(S10-Pad1)">
+    <net code="56" name="/AREF">
+      <node ref="C3" pin="1"/>
+      <node ref="U1" pin="20"/>
+    </net>
+    <net code="57" name="Net-(S10-Pad1)">
       <node ref="S10" pin="1"/>
     </net>
-    <net code="56" name="Net-(S11-Pad1)">
+    <net code="58" name="Net-(S11-Pad1)">
       <node ref="S11" pin="1"/>
     </net>
-    <net code="57" name="Net-(S12-Pad1)">
+    <net code="59" name="Net-(S12-Pad1)">
       <node ref="S12" pin="1"/>
     </net>
-    <net code="58" name="Net-(S13-Pad1)">
+    <net code="60" name="Net-(S13-Pad1)">
       <node ref="S13" pin="1"/>
     </net>
-    <net code="59" name="Net-(LED8-Pad2)">
-      <node ref="LED8" pin="2"/>
+    <net code="61" name="Net-(LED8-Pad2)">
       <node ref="LED9" pin="4"/>
+      <node ref="LED8" pin="2"/>
     </net>
-    <net code="60" name="Net-(LED10-Pad4)">
+    <net code="62" name="Net-(LED10-Pad4)">
       <node ref="LED9" pin="2"/>
       <node ref="LED10" pin="4"/>
     </net>
-    <net code="61" name="Net-(LED10-Pad2)">
+    <net code="63" name="Net-(LED10-Pad2)">
       <node ref="LED11" pin="4"/>
       <node ref="LED10" pin="2"/>
     </net>
-    <net code="62" name="Net-(LED11-Pad2)">
+    <net code="64" name="Net-(LED11-Pad2)">
       <node ref="LED12" pin="4"/>
       <node ref="LED11" pin="2"/>
     </net>
-    <net code="63" name="Net-(LED12-Pad2)">
-      <node ref="LED13" pin="4"/>
+    <net code="65" name="Net-(LED12-Pad2)">
       <node ref="LED12" pin="2"/>
+      <node ref="LED13" pin="4"/>
     </net>
-    <net code="64" name="Net-(LED13-Pad2)">
+    <net code="66" name="Net-(LED13-Pad2)">
       <node ref="LED14" pin="4"/>
       <node ref="LED13" pin="2"/>
     </net>
-    <net code="65" name="Net-(LED1-Pad2)">
+    <net code="67" name="Net-(LED1-Pad2)">
       <node ref="LED1" pin="2"/>
       <node ref="LED2" pin="4"/>
     </net>
-    <net code="66" name="Net-(LED2-Pad2)">
+    <net code="68" name="Net-(LED2-Pad2)">
       <node ref="LED2" pin="2"/>
       <node ref="LED3" pin="4"/>
     </net>
-    <net code="67" name="Net-(LED3-Pad2)">
-      <node ref="LED3" pin="2"/>
+    <net code="69" name="Net-(LED3-Pad2)">
       <node ref="LED4" pin="4"/>
+      <node ref="LED3" pin="2"/>
     </net>
-    <net code="68" name="Net-(LED4-Pad2)">
-      <node ref="LED5" pin="4"/>
+    <net code="70" name="Net-(LED4-Pad2)">
       <node ref="LED4" pin="2"/>
+      <node ref="LED5" pin="4"/>
     </net>
-    <net code="69" name="Net-(LED5-Pad2)">
-      <node ref="LED6" pin="4"/>
+    <net code="71" name="Net-(LED5-Pad2)">
       <node ref="LED5" pin="2"/>
+      <node ref="LED6" pin="4"/>
     </net>
-    <net code="70" name="Net-(LED6-Pad2)">
-      <node ref="LED6" pin="2"/>
+    <net code="72" name="Net-(LED6-Pad2)">
       <node ref="LED7" pin="4"/>
+      <node ref="LED6" pin="2"/>
     </net>
-    <net code="71" name="Net-(LED7-Pad2)">
+    <net code="73" name="Net-(LED7-Pad2)">
       <node ref="LED7" pin="2"/>
       <node ref="LED8" pin="4"/>
     </net>
-    <net code="72" name="Net-(LED22-Pad2)">
+    <net code="74" name="Net-(LED22-Pad2)">
       <node ref="LED22" pin="2"/>
       <node ref="LED23" pin="4"/>
     </net>
-    <net code="73" name="Net-(LED23-Pad2)">
+    <net code="75" name="Net-(LED23-Pad2)">
       <node ref="LED24" pin="4"/>
       <node ref="LED23" pin="2"/>
     </net>
-    <net code="74" name="Net-(LED24-Pad2)">
+    <net code="76" name="Net-(LED24-Pad2)">
       <node ref="LED24" pin="2"/>
       <node ref="LED25" pin="4"/>
     </net>
-    <net code="75" name="Net-(LED25-Pad2)">
+    <net code="77" name="Net-(LED25-Pad2)">
       <node ref="LED26" pin="4"/>
       <node ref="LED25" pin="2"/>
     </net>
-    <net code="76" name="Net-(LED26-Pad2)">
-      <node ref="LED27" pin="4"/>
+    <net code="78" name="Net-(LED26-Pad2)">
       <node ref="LED26" pin="2"/>
+      <node ref="LED27" pin="4"/>
     </net>
-    <net code="77" name="Net-(LED27-Pad2)">
-      <node ref="LED28" pin="4"/>
+    <net code="79" name="Net-(LED27-Pad2)">
       <node ref="LED27" pin="2"/>
+      <node ref="LED28" pin="4"/>
     </net>
-    <net code="78" name="Net-(LED18-Pad2)">
-      <node ref="LED18" pin="2"/>
+    <net code="80" name="Net-(LED18-Pad2)">
       <node ref="LED19" pin="4"/>
+      <node ref="LED18" pin="2"/>
     </net>
-    <net code="79" name="Net-(LED16-Pad2)">
-      <node ref="LED16" pin="2"/>
+    <net code="81" name="Net-(LED16-Pad2)">
       <node ref="LED17" pin="4"/>
+      <node ref="LED16" pin="2"/>
     </net>
-    <net code="80" name="Net-(LED17-Pad2)">
+    <net code="82" name="Net-(LED17-Pad2)">
       <node ref="LED17" pin="2"/>
       <node ref="LED18" pin="4"/>
     </net>
-    <net code="81" name="Net-(LED19-Pad2)">
+    <net code="83" name="Net-(LED19-Pad2)">
       <node ref="LED19" pin="2"/>
       <node ref="LED20" pin="4"/>
     </net>
-    <net code="82" name="Net-(LED20-Pad2)">
+    <net code="84" name="Net-(LED20-Pad2)">
       <node ref="LED20" pin="2"/>
       <node ref="LED21" pin="4"/>
     </net>
-    <net code="83" name="Net-(LED21-Pad2)">
-      <node ref="LED22" pin="4"/>
+    <net code="85" name="Net-(LED21-Pad2)">
       <node ref="LED21" pin="2"/>
+      <node ref="LED22" pin="4"/>
     </net>
-    <net code="84" name="Net-(LED15-Pad2)">
+    <net code="86" name="Net-(LED15-Pad2)">
       <node ref="LED16" pin="4"/>
       <node ref="LED15" pin="2"/>
     </net>
-    <net code="85" name="Net-(LED36-Pad2)">
+    <net code="87" name="Net-(LED36-Pad2)">
       <node ref="LED37" pin="4"/>
       <node ref="LED36" pin="2"/>
     </net>
-    <net code="86" name="Net-(LED37-Pad2)">
+    <net code="88" name="Net-(LED37-Pad2)">
       <node ref="LED37" pin="2"/>
       <node ref="LED38" pin="4"/>
     </net>
-    <net code="87" name="Net-(LED38-Pad2)">
+    <net code="89" name="Net-(LED38-Pad2)">
       <node ref="LED38" pin="2"/>
       <node ref="LED39" pin="4"/>
     </net>
-    <net code="88" name="Net-(LED39-Pad2)">
-      <node ref="LED39" pin="2"/>
+    <net code="90" name="Net-(LED39-Pad2)">
       <node ref="LED40" pin="4"/>
+      <node ref="LED39" pin="2"/>
     </net>
-    <net code="89" name="Net-(LED40-Pad2)">
-      <node ref="LED40" pin="2"/>
+    <net code="91" name="Net-(LED40-Pad2)">
       <node ref="LED41" pin="4"/>
+      <node ref="LED40" pin="2"/>
     </net>
-    <net code="90" name="Net-(LED41-Pad2)">
-      <node ref="LED41" pin="2"/>
+    <net code="92" name="Net-(LED41-Pad2)">
       <node ref="LED42" pin="4"/>
+      <node ref="LED41" pin="2"/>
     </net>
-    <net code="91" name="Net-(LED32-Pad2)">
+    <net code="93" name="Net-(LED32-Pad2)">
       <node ref="LED33" pin="4"/>
       <node ref="LED32" pin="2"/>
     </net>
-    <net code="92" name="Net-(LED30-Pad2)">
+    <net code="94" name="Net-(LED30-Pad2)">
       <node ref="LED30" pin="2"/>
       <node ref="LED31" pin="4"/>
     </net>
-    <net code="93" name="Net-(LED31-Pad2)">
-      <node ref="LED31" pin="2"/>
+    <net code="95" name="Net-(LED31-Pad2)">
       <node ref="LED32" pin="4"/>
+      <node ref="LED31" pin="2"/>
     </net>
-    <net code="94" name="Net-(LED33-Pad2)">
-      <node ref="LED33" pin="2"/>
+    <net code="96" name="Net-(LED33-Pad2)">
       <node ref="LED34" pin="4"/>
+      <node ref="LED33" pin="2"/>
     </net>
-    <net code="95" name="Net-(LED34-Pad2)">
-      <node ref="LED35" pin="4"/>
+    <net code="97" name="Net-(LED34-Pad2)">
       <node ref="LED34" pin="2"/>
+      <node ref="LED35" pin="4"/>
     </net>
-    <net code="96" name="Net-(LED35-Pad2)">
+    <net code="98" name="Net-(LED35-Pad2)">
       <node ref="LED36" pin="4"/>
       <node ref="LED35" pin="2"/>
     </net>
-    <net code="97" name="Net-(LED29-Pad2)">
+    <net code="99" name="Net-(LED29-Pad2)">
       <node ref="LED30" pin="4"/>
       <node ref="LED29" pin="2"/>
     </net>
-    <net code="98" name="Net-(LED50-Pad2)">
+    <net code="100" name="Net-(LED50-Pad2)">
       <node ref="LED51" pin="4"/>
       <node ref="LED50" pin="2"/>
     </net>
-    <net code="99" name="Net-(LED51-Pad2)">
-      <node ref="LED52" pin="4"/>
+    <net code="101" name="Net-(LED51-Pad2)">
       <node ref="LED51" pin="2"/>
+      <node ref="LED52" pin="4"/>
     </net>
-    <net code="100" name="Net-(LED52-Pad2)">
+    <net code="102" name="Net-(LED52-Pad2)">
       <node ref="LED52" pin="2"/>
       <node ref="LED53" pin="4"/>
     </net>
-    <net code="101" name="Net-(LED53-Pad2)">
+    <net code="103" name="Net-(LED53-Pad2)">
       <node ref="LED53" pin="2"/>
       <node ref="LED54" pin="4"/>
     </net>
-    <net code="102" name="Net-(LED54-Pad2)">
-      <node ref="LED55" pin="4"/>
+    <net code="104" name="Net-(LED54-Pad2)">
       <node ref="LED54" pin="2"/>
+      <node ref="LED55" pin="4"/>
     </net>
-    <net code="103" name="Net-(LED55-Pad2)">
+    <net code="105" name="Net-(LED55-Pad2)">
       <node ref="LED56" pin="4"/>
       <node ref="LED55" pin="2"/>
     </net>
-    <net code="104" name="Net-(LED46-Pad2)">
+    <net code="106" name="Net-(LED46-Pad2)">
       <node ref="LED46" pin="2"/>
       <node ref="LED47" pin="4"/>
     </net>
-    <net code="105" name="Net-(LED44-Pad2)">
+    <net code="107" name="Net-(LED44-Pad2)">
       <node ref="LED44" pin="2"/>
       <node ref="LED45" pin="4"/>
     </net>
-    <net code="106" name="Net-(LED45-Pad2)">
+    <net code="108" name="Net-(LED45-Pad2)">
       <node ref="LED45" pin="2"/>
       <node ref="LED46" pin="4"/>
     </net>
-    <net code="107" name="Net-(LED47-Pad2)">
-      <node ref="LED47" pin="2"/>
+    <net code="109" name="Net-(LED47-Pad2)">
       <node ref="LED48" pin="4"/>
+      <node ref="LED47" pin="2"/>
     </net>
-    <net code="108" name="Net-(LED48-Pad2)">
+    <net code="110" name="Net-(LED48-Pad2)">
       <node ref="LED49" pin="4"/>
       <node ref="LED48" pin="2"/>
     </net>
-    <net code="109" name="Net-(LED49-Pad2)">
+    <net code="111" name="Net-(LED49-Pad2)">
       <node ref="LED49" pin="2"/>
       <node ref="LED50" pin="4"/>
     </net>
-    <net code="110" name="Net-(LED43-Pad2)">
+    <net code="112" name="Net-(LED43-Pad2)">
       <node ref="LED44" pin="4"/>
       <node ref="LED43" pin="2"/>
     </net>
-    <net code="111" name="Net-(LED64-Pad2)">
-      <node ref="LED64" pin="2"/>
+    <net code="113" name="Net-(LED64-Pad2)">
       <node ref="LED65" pin="4"/>
+      <node ref="LED64" pin="2"/>
     </net>
-    <net code="112" name="Net-(LED65-Pad2)">
+    <net code="114" name="Net-(LED65-Pad2)">
       <node ref="LED65" pin="2"/>
       <node ref="LED66" pin="4"/>
     </net>
-    <net code="113" name="Net-(LED66-Pad2)">
-      <node ref="LED66" pin="2"/>
+    <net code="115" name="Net-(LED66-Pad2)">
       <node ref="LED67" pin="4"/>
+      <node ref="LED66" pin="2"/>
     </net>
-    <net code="114" name="Net-(LED67-Pad2)">
+    <net code="116" name="Net-(LED67-Pad2)">
       <node ref="LED67" pin="2"/>
       <node ref="LED68" pin="4"/>
     </net>
-    <net code="115" name="Net-(LED68-Pad2)">
-      <node ref="LED68" pin="2"/>
+    <net code="117" name="Net-(LED68-Pad2)">
       <node ref="LED69" pin="4"/>
+      <node ref="LED68" pin="2"/>
     </net>
-    <net code="116" name="Net-(LED69-Pad2)">
+    <net code="118" name="Net-(LED69-Pad2)">
       <node ref="LED69" pin="2"/>
       <node ref="LED70" pin="4"/>
     </net>
-    <net code="117" name="Net-(LED60-Pad2)">
+    <net code="119" name="Net-(LED60-Pad2)">
       <node ref="LED60" pin="2"/>
       <node ref="LED61" pin="4"/>
     </net>
-    <net code="118" name="Net-(LED58-Pad2)">
+    <net code="120" name="Net-(LED58-Pad2)">
       <node ref="LED58" pin="2"/>
       <node ref="LED59" pin="4"/>
     </net>
-    <net code="119" name="Net-(LED59-Pad2)">
+    <net code="121" name="Net-(LED59-Pad2)">
       <node ref="LED60" pin="4"/>
       <node ref="LED59" pin="2"/>
     </net>
-    <net code="120" name="Net-(LED61-Pad2)">
+    <net code="122" name="Net-(LED61-Pad2)">
       <node ref="LED61" pin="2"/>
       <node ref="LED62" pin="4"/>
     </net>
-    <net code="121" name="Net-(LED62-Pad2)">
+    <net code="123" name="Net-(LED62-Pad2)">
       <node ref="LED62" pin="2"/>
       <node ref="LED63" pin="4"/>
     </net>
-    <net code="122" name="Net-(LED63-Pad2)">
-      <node ref="LED63" pin="2"/>
+    <net code="124" name="Net-(LED63-Pad2)">
       <node ref="LED64" pin="4"/>
+      <node ref="LED63" pin="2"/>
     </net>
-    <net code="123" name="Net-(LED57-Pad2)">
-      <node ref="LED57" pin="2"/>
+    <net code="125" name="Net-(LED57-Pad2)">
       <node ref="LED58" pin="4"/>
+      <node ref="LED57" pin="2"/>
     </net>
-    <net code="124" name="Net-(LED78-Pad2)">
+    <net code="126" name="Net-(LED78-Pad2)">
       <node ref="LED79" pin="4"/>
       <node ref="LED78" pin="2"/>
     </net>
-    <net code="125" name="Net-(LED79-Pad2)">
-      <node ref="LED79" pin="2"/>
+    <net code="127" name="Net-(LED79-Pad2)">
       <node ref="LED80" pin="4"/>
+      <node ref="LED79" pin="2"/>
     </net>
-    <net code="126" name="Net-(LED80-Pad2)">
-      <node ref="LED80" pin="2"/>
+    <net code="128" name="Net-(LED80-Pad2)">
       <node ref="LED81" pin="4"/>
+      <node ref="LED80" pin="2"/>
     </net>
-    <net code="127" name="Net-(LED81-Pad2)">
+    <net code="129" name="Net-(LED81-Pad2)">
       <node ref="LED82" pin="4"/>
       <node ref="LED81" pin="2"/>
     </net>
-    <net code="128" name="Net-(LED82-Pad2)">
-      <node ref="LED83" pin="4"/>
+    <net code="130" name="Net-(LED82-Pad2)">
       <node ref="LED82" pin="2"/>
+      <node ref="LED83" pin="4"/>
     </net>
-    <net code="129" name="Net-(LED83-Pad2)">
+    <net code="131" name="Net-(LED83-Pad2)">
       <node ref="LED83" pin="2"/>
       <node ref="LED84" pin="4"/>
     </net>
-    <net code="130" name="Net-(LED71-Pad2)">
-      <node ref="LED71" pin="2"/>
+    <net code="132" name="Net-(LED71-Pad2)">
       <node ref="LED72" pin="4"/>
+      <node ref="LED71" pin="2"/>
     </net>
-    <net code="131" name="Net-(LED72-Pad2)">
+    <net code="133" name="Net-(LED72-Pad2)">
       <node ref="LED72" pin="2"/>
       <node ref="LED73" pin="4"/>
     </net>
-    <net code="132" name="Net-(LED73-Pad2)">
-      <node ref="LED73" pin="2"/>
+    <net code="134" name="Net-(LED73-Pad2)">
       <node ref="LED74" pin="4"/>
+      <node ref="LED73" pin="2"/>
     </net>
-    <net code="133" name="Net-(LED74-Pad2)">
-      <node ref="LED75" pin="4"/>
+    <net code="135" name="Net-(LED74-Pad2)">
       <node ref="LED74" pin="2"/>
+      <node ref="LED75" pin="4"/>
     </net>
-    <net code="134" name="Net-(LED75-Pad2)">
+    <net code="136" name="Net-(LED75-Pad2)">
       <node ref="LED75" pin="2"/>
       <node ref="LED76" pin="4"/>
     </net>
-    <net code="135" name="Net-(LED76-Pad2)">
-      <node ref="LED76" pin="2"/>
+    <net code="137" name="Net-(LED76-Pad2)">
       <node ref="LED77" pin="4"/>
+      <node ref="LED76" pin="2"/>
     </net>
-    <net code="136" name="Net-(LED77-Pad2)">
-      <node ref="LED78" pin="4"/>
+    <net code="138" name="Net-(LED77-Pad2)">
       <node ref="LED77" pin="2"/>
+      <node ref="LED78" pin="4"/>
     </net>
-    <net code="137" name="Net-(LED92-Pad2)">
+    <net code="139" name="Net-(LED92-Pad2)">
       <node ref="LED92" pin="2"/>
       <node ref="LED93" pin="4"/>
     </net>
-    <net code="138" name="Net-(LED93-Pad2)">
+    <net code="140" name="Net-(LED93-Pad2)">
       <node ref="LED93" pin="2"/>
       <node ref="LED94" pin="4"/>
     </net>
-    <net code="139" name="Net-(LED94-Pad2)">
-      <node ref="LED94" pin="2"/>
+    <net code="141" name="Net-(LED94-Pad2)">
       <node ref="LED95" pin="4"/>
+      <node ref="LED94" pin="2"/>
     </net>
-    <net code="140" name="Net-(LED95-Pad2)">
+    <net code="142" name="Net-(LED95-Pad2)">
       <node ref="LED95" pin="2"/>
       <node ref="LED96" pin="4"/>
     </net>
-    <net code="141" name="Net-(LED96-Pad2)">
+    <net code="143" name="Net-(LED96-Pad2)">
       <node ref="LED96" pin="2"/>
       <node ref="LED97" pin="4"/>
     </net>
-    <net code="142" name="Net-(LED97-Pad2)">
+    <net code="144" name="Net-(LED97-Pad2)">
       <node ref="LED97" pin="2"/>
       <node ref="LED98" pin="4"/>
     </net>
-    <net code="143" name="Net-(LED85-Pad2)">
-      <node ref="LED85" pin="2"/>
+    <net code="145" name="Net-(LED85-Pad2)">
       <node ref="LED86" pin="4"/>
+      <node ref="LED85" pin="2"/>
     </net>
-    <net code="144" name="Net-(LED86-Pad2)">
+    <net code="146" name="Net-(LED86-Pad2)">
       <node ref="LED86" pin="2"/>
       <node ref="LED87" pin="4"/>
     </net>
-    <net code="145" name="Net-(LED87-Pad2)">
+    <net code="147" name="Net-(LED87-Pad2)">
       <node ref="LED88" pin="4"/>
       <node ref="LED87" pin="2"/>
     </net>
-    <net code="146" name="Net-(LED88-Pad2)">
-      <node ref="LED89" pin="4"/>
+    <net code="148" name="Net-(LED88-Pad2)">
       <node ref="LED88" pin="2"/>
+      <node ref="LED89" pin="4"/>
     </net>
-    <net code="147" name="Net-(LED89-Pad2)">
+    <net code="149" name="Net-(LED89-Pad2)">
       <node ref="LED89" pin="2"/>
       <node ref="LED90" pin="4"/>
     </net>
-    <net code="148" name="Net-(LED90-Pad2)">
+    <net code="150" name="Net-(LED90-Pad2)">
       <node ref="LED90" pin="2"/>
       <node ref="LED91" pin="4"/>
     </net>
-    <net code="149" name="Net-(LED91-Pad2)">
+    <net code="151" name="Net-(LED91-Pad2)">
       <node ref="LED91" pin="2"/>
       <node ref="LED92" pin="4"/>
     </net>
-    <net code="150" name="Net-(LED106-Pad2)">
+    <net code="152" name="Net-(LED106-Pad2)">
       <node ref="LED106" pin="2"/>
       <node ref="LED107" pin="4"/>
     </net>
-    <net code="151" name="Net-(LED107-Pad2)">
-      <node ref="LED107" pin="2"/>
+    <net code="153" name="Net-(LED107-Pad2)">
       <node ref="LED108" pin="4"/>
+      <node ref="LED107" pin="2"/>
     </net>
-    <net code="152" name="Net-(LED108-Pad2)">
-      <node ref="LED108" pin="2"/>
+    <net code="154" name="Net-(LED108-Pad2)">
       <node ref="LED109" pin="4"/>
+      <node ref="LED108" pin="2"/>
     </net>
-    <net code="153" name="Net-(LED109-Pad2)">
-      <node ref="LED109" pin="2"/>
+    <net code="155" name="Net-(LED109-Pad2)">
       <node ref="LED110" pin="4"/>
+      <node ref="LED109" pin="2"/>
     </net>
-    <net code="154" name="Net-(LED110-Pad2)">
+    <net code="156" name="Net-(LED110-Pad2)">
       <node ref="LED110" pin="2"/>
       <node ref="LED111" pin="4"/>
     </net>
-    <net code="155" name="Net-(LED111-Pad2)">
+    <net code="157" name="Net-(LED111-Pad2)">
       <node ref="LED112" pin="4"/>
       <node ref="LED111" pin="2"/>
     </net>
-    <net code="156" name="Net-(LED100-Pad2)">
+    <net code="158" name="Net-(LED100-Pad2)">
       <node ref="LED100" pin="2"/>
       <node ref="LED101" pin="4"/>
     </net>
-    <net code="157" name="Net-(LED101-Pad2)">
-      <node ref="LED102" pin="4"/>
+    <net code="159" name="Net-(LED101-Pad2)">
       <node ref="LED101" pin="2"/>
+      <node ref="LED102" pin="4"/>
     </net>
-    <net code="158" name="Net-(LED102-Pad2)">
+    <net code="160" name="Net-(LED102-Pad2)">
       <node ref="LED102" pin="2"/>
       <node ref="LED103" pin="4"/>
     </net>
-    <net code="159" name="Net-(LED103-Pad2)">
+    <net code="161" name="Net-(LED103-Pad2)">
       <node ref="LED104" pin="4"/>
       <node ref="LED103" pin="2"/>
     </net>
-    <net code="160" name="Net-(LED104-Pad2)">
+    <net code="162" name="Net-(LED104-Pad2)">
       <node ref="LED105" pin="4"/>
       <node ref="LED104" pin="2"/>
     </net>
-    <net code="161" name="Net-(LED105-Pad2)">
-      <node ref="LED105" pin="2"/>
+    <net code="163" name="Net-(LED105-Pad2)">
       <node ref="LED106" pin="4"/>
+      <node ref="LED105" pin="2"/>
     </net>
-    <net code="162" name="Net-(LED100-Pad4)">
+    <net code="164" name="Net-(LED100-Pad4)">
       <node ref="LED100" pin="4"/>
       <node ref="LED99" pin="2"/>
     </net>
-    <net code="163" name="Net-(LED120-Pad2)">
+    <net code="165" name="Net-(LED120-Pad2)">
       <node ref="LED120" pin="2"/>
       <node ref="LED121" pin="4"/>
     </net>
-    <net code="164" name="Net-(LED121-Pad2)">
+    <net code="166" name="Net-(LED121-Pad2)">
       <node ref="LED121" pin="2"/>
       <node ref="LED122" pin="4"/>
     </net>
-    <net code="165" name="Net-(LED122-Pad2)">
-      <node ref="LED122" pin="2"/>
+    <net code="167" name="Net-(LED122-Pad2)">
       <node ref="LED123" pin="4"/>
+      <node ref="LED122" pin="2"/>
     </net>
-    <net code="166" name="Net-(LED123-Pad2)">
+    <net code="168" name="Net-(LED123-Pad2)">
       <node ref="LED123" pin="2"/>
       <node ref="LED124" pin="4"/>
     </net>
-    <net code="167" name="Net-(LED124-Pad2)">
+    <net code="169" name="Net-(LED124-Pad2)">
       <node ref="LED125" pin="4"/>
       <node ref="LED124" pin="2"/>
     </net>
-    <net code="168" name="Net-(LED125-Pad2)">
+    <net code="170" name="Net-(LED125-Pad2)">
       <node ref="LED126" pin="4"/>
       <node ref="LED125" pin="2"/>
     </net>
-    <net code="169" name="Net-(LED116-Pad2)">
+    <net code="171" name="Net-(LED116-Pad2)">
       <node ref="LED116" pin="2"/>
       <node ref="LED117" pin="4"/>
     </net>
-    <net code="170" name="Net-(LED114-Pad2)">
+    <net code="172" name="Net-(LED114-Pad2)">
       <node ref="LED114" pin="2"/>
       <node ref="LED115" pin="4"/>
     </net>
-    <net code="171" name="Net-(LED115-Pad2)">
-      <node ref="LED116" pin="4"/>
+    <net code="173" name="Net-(LED115-Pad2)">
       <node ref="LED115" pin="2"/>
+      <node ref="LED116" pin="4"/>
     </net>
-    <net code="172" name="Net-(LED117-Pad2)">
+    <net code="174" name="Net-(LED117-Pad2)">
       <node ref="LED117" pin="2"/>
       <node ref="LED118" pin="4"/>
     </net>
-    <net code="173" name="Net-(LED118-Pad2)">
-      <node ref="LED119" pin="4"/>
+    <net code="175" name="Net-(LED118-Pad2)">
       <node ref="LED118" pin="2"/>
+      <node ref="LED119" pin="4"/>
     </net>
-    <net code="174" name="Net-(LED119-Pad2)">
-      <node ref="LED120" pin="4"/>
+    <net code="176" name="Net-(LED119-Pad2)">
       <node ref="LED119" pin="2"/>
+      <node ref="LED120" pin="4"/>
     </net>
-    <net code="175" name="Net-(LED113-Pad2)">
-      <node ref="LED114" pin="4"/>
+    <net code="177" name="Net-(LED113-Pad2)">
       <node ref="LED113" pin="2"/>
+      <node ref="LED114" pin="4"/>
     </net>
-    <net code="176" name="Net-(LED134-Pad2)">
-      <node ref="LED135" pin="4"/>
+    <net code="178" name="Net-(LED134-Pad2)">
       <node ref="LED134" pin="2"/>
+      <node ref="LED135" pin="4"/>
     </net>
-    <net code="177" name="Net-(LED135-Pad2)">
+    <net code="179" name="Net-(LED135-Pad2)">
       <node ref="LED135" pin="2"/>
       <node ref="LED136" pin="4"/>
     </net>
-    <net code="178" name="Net-(LED136-Pad2)">
+    <net code="180" name="Net-(LED136-Pad2)">
       <node ref="LED137" pin="4"/>
       <node ref="LED136" pin="2"/>
     </net>
-    <net code="179" name="Net-(LED137-Pad2)">
-      <node ref="LED138" pin="4"/>
+    <net code="181" name="Net-(LED137-Pad2)">
       <node ref="LED137" pin="2"/>
+      <node ref="LED138" pin="4"/>
     </net>
-    <net code="180" name="Net-(LED138-Pad2)">
-      <node ref="LED138" pin="2"/>
+    <net code="182" name="Net-(LED138-Pad2)">
       <node ref="LED139" pin="4"/>
+      <node ref="LED138" pin="2"/>
     </net>
-    <net code="181" name="Net-(LED139-Pad2)">
-      <node ref="LED140" pin="4"/>
+    <net code="183" name="Net-(LED139-Pad2)">
       <node ref="LED139" pin="2"/>
+      <node ref="LED140" pin="4"/>
     </net>
-    <net code="182" name="Net-(LED128-Pad2)">
-      <node ref="LED128" pin="2"/>
+    <net code="184" name="Net-(LED128-Pad2)">
       <node ref="LED129" pin="4"/>
+      <node ref="LED128" pin="2"/>
     </net>
-    <net code="183" name="Net-(LED129-Pad2)">
+    <net code="185" name="Net-(LED129-Pad2)">
       <node ref="LED130" pin="4"/>
       <node ref="LED129" pin="2"/>
     </net>
-    <net code="184" name="Net-(LED130-Pad2)">
+    <net code="186" name="Net-(LED130-Pad2)">
       <node ref="LED130" pin="2"/>
       <node ref="LED131" pin="4"/>
     </net>
-    <net code="185" name="Net-(LED131-Pad2)">
-      <node ref="LED131" pin="2"/>
+    <net code="187" name="Net-(LED131-Pad2)">
       <node ref="LED132" pin="4"/>
+      <node ref="LED131" pin="2"/>
     </net>
-    <net code="186" name="Net-(LED132-Pad2)">
+    <net code="188" name="Net-(LED132-Pad2)">
       <node ref="LED132" pin="2"/>
       <node ref="LED133" pin="4"/>
     </net>
-    <net code="187" name="Net-(LED133-Pad2)">
+    <net code="189" name="Net-(LED133-Pad2)">
       <node ref="LED134" pin="4"/>
       <node ref="LED133" pin="2"/>
     </net>
-    <net code="188" name="Net-(LED127-Pad2)">
+    <net code="190" name="Net-(LED127-Pad2)">
       <node ref="LED128" pin="4"/>
       <node ref="LED127" pin="2"/>
     </net>
-    <net code="189" name="Net-(LED148-Pad2)">
+    <net code="191" name="Net-(LED148-Pad2)">
       <node ref="LED148" pin="2"/>
       <node ref="LED149" pin="4"/>
     </net>
-    <net code="190" name="Net-(LED149-Pad2)">
-      <node ref="LED149" pin="2"/>
+    <net code="192" name="Net-(LED149-Pad2)">
       <node ref="LED150" pin="4"/>
+      <node ref="LED149" pin="2"/>
     </net>
-    <net code="191" name="Net-(LED150-Pad2)">
+    <net code="193" name="Net-(LED150-Pad2)">
       <node ref="LED150" pin="2"/>
       <node ref="LED151" pin="4"/>
     </net>
-    <net code="192" name="Net-(LED151-Pad2)">
+    <net code="194" name="Net-(LED151-Pad2)">
       <node ref="LED152" pin="4"/>
       <node ref="LED151" pin="2"/>
     </net>
-    <net code="193" name="Net-(LED152-Pad2)">
+    <net code="195" name="Net-(LED152-Pad2)">
       <node ref="LED153" pin="4"/>
       <node ref="LED152" pin="2"/>
     </net>
-    <net code="194" name="Net-(LED153-Pad2)">
+    <net code="196" name="Net-(LED153-Pad2)">
       <node ref="LED153" pin="2"/>
       <node ref="LED154" pin="4"/>
     </net>
-    <net code="195" name="Net-(LED144-Pad2)">
+    <net code="197" name="Net-(LED144-Pad2)">
       <node ref="LED144" pin="2"/>
       <node ref="LED145" pin="4"/>
     </net>
-    <net code="196" name="Net-(LED142-Pad2)">
+    <net code="198" name="Net-(LED142-Pad2)">
       <node ref="LED142" pin="2"/>
       <node ref="LED143" pin="4"/>
     </net>
-    <net code="197" name="Net-(LED143-Pad2)">
+    <net code="199" name="Net-(LED143-Pad2)">
       <node ref="LED144" pin="4"/>
       <node ref="LED143" pin="2"/>
     </net>
-    <net code="198" name="Net-(LED145-Pad2)">
-      <node ref="LED146" pin="4"/>
+    <net code="200" name="Net-(LED145-Pad2)">
       <node ref="LED145" pin="2"/>
+      <node ref="LED146" pin="4"/>
     </net>
-    <net code="199" name="Net-(LED146-Pad2)">
+    <net code="201" name="Net-(LED146-Pad2)">
       <node ref="LED147" pin="4"/>
       <node ref="LED146" pin="2"/>
     </net>
-    <net code="200" name="Net-(LED147-Pad2)">
+    <net code="202" name="Net-(LED147-Pad2)">
       <node ref="LED147" pin="2"/>
       <node ref="LED148" pin="4"/>
     </net>
-    <net code="201" name="Net-(LED141-Pad2)">
-      <node ref="LED142" pin="4"/>
+    <net code="203" name="Net-(LED141-Pad2)">
       <node ref="LED141" pin="2"/>
+      <node ref="LED142" pin="4"/>
     </net>
-    <net code="202" name="Net-(LED162-Pad2)">
-      <node ref="LED162" pin="2"/>
+    <net code="204" name="Net-(LED162-Pad2)">
       <node ref="LED163" pin="4"/>
+      <node ref="LED162" pin="2"/>
     </net>
-    <net code="203" name="Net-(LED163-Pad2)">
-      <node ref="LED163" pin="2"/>
+    <net code="205" name="Net-(LED163-Pad2)">
       <node ref="LED164" pin="4"/>
+      <node ref="LED163" pin="2"/>
     </net>
-    <net code="204" name="Net-(LED164-Pad2)">
+    <net code="206" name="Net-(LED164-Pad2)">
       <node ref="LED164" pin="2"/>
       <node ref="LED165" pin="4"/>
     </net>
-    <net code="205" name="Net-(LED165-Pad2)">
-      <node ref="LED166" pin="4"/>
+    <net code="207" name="Net-(LED165-Pad2)">
       <node ref="LED165" pin="2"/>
+      <node ref="LED166" pin="4"/>
     </net>
-    <net code="206" name="Net-(LED166-Pad2)">
-      <node ref="LED167" pin="4"/>
+    <net code="208" name="Net-(LED166-Pad2)">
       <node ref="LED166" pin="2"/>
+      <node ref="LED167" pin="4"/>
     </net>
-    <net code="207" name="Net-(LED167-Pad2)">
-      <node ref="LED167" pin="2"/>
+    <net code="209" name="Net-(LED167-Pad2)">
       <node ref="LED168" pin="4"/>
+      <node ref="LED167" pin="2"/>
     </net>
-    <net code="208" name="Net-(LED158-Pad2)">
+    <net code="210" name="Net-(LED158-Pad2)">
       <node ref="LED159" pin="4"/>
       <node ref="LED158" pin="2"/>
     </net>
-    <net code="209" name="Net-(LED156-Pad2)">
+    <net code="211" name="Net-(LED156-Pad2)">
       <node ref="LED157" pin="4"/>
       <node ref="LED156" pin="2"/>
     </net>
-    <net code="210" name="Net-(LED157-Pad2)">
+    <net code="212" name="Net-(LED157-Pad2)">
       <node ref="LED158" pin="4"/>
       <node ref="LED157" pin="2"/>
     </net>
-    <net code="211" name="Net-(LED159-Pad2)">
-      <node ref="LED160" pin="4"/>
+    <net code="213" name="Net-(LED159-Pad2)">
       <node ref="LED159" pin="2"/>
+      <node ref="LED160" pin="4"/>
     </net>
-    <net code="212" name="Net-(LED160-Pad2)">
+    <net code="214" name="Net-(LED160-Pad2)">
       <node ref="LED161" pin="4"/>
       <node ref="LED160" pin="2"/>
     </net>
-    <net code="213" name="Net-(LED161-Pad2)">
+    <net code="215" name="Net-(LED161-Pad2)">
       <node ref="LED162" pin="4"/>
       <node ref="LED161" pin="2"/>
     </net>
-    <net code="214" name="Net-(LED155-Pad2)">
+    <net code="216" name="Net-(LED155-Pad2)">
       <node ref="LED156" pin="4"/>
       <node ref="LED155" pin="2"/>
     </net>
-    <net code="215" name="Net-(LED176-Pad2)">
-      <node ref="LED177" pin="4"/>
+    <net code="217" name="Net-(LED176-Pad2)">
       <node ref="LED176" pin="2"/>
+      <node ref="LED177" pin="4"/>
     </net>
-    <net code="216" name="Net-(LED177-Pad2)">
-      <node ref="LED178" pin="4"/>
+    <net code="218" name="Net-(LED177-Pad2)">
       <node ref="LED177" pin="2"/>
+      <node ref="LED178" pin="4"/>
     </net>
-    <net code="217" name="Net-(LED178-Pad2)">
-      <node ref="LED178" pin="2"/>
+    <net code="219" name="Net-(LED178-Pad2)">
       <node ref="LED179" pin="4"/>
+      <node ref="LED178" pin="2"/>
     </net>
-    <net code="218" name="Net-(LED179-Pad2)">
-      <node ref="LED179" pin="2"/>
+    <net code="220" name="Net-(LED179-Pad2)">
       <node ref="LED180" pin="4"/>
+      <node ref="LED179" pin="2"/>
     </net>
-    <net code="219" name="Net-(LED174-Pad2)">
+    <net code="221" name="Net-(LED174-Pad2)">
       <node ref="LED174" pin="2"/>
       <node ref="LED175" pin="4"/>
     </net>
-    <net code="220" name="Net-(LED180-Pad2)">
-      <node ref="LED181" pin="4"/>
+    <net code="222" name="Net-(LED180-Pad2)">
       <node ref="LED180" pin="2"/>
+      <node ref="LED181" pin="4"/>
     </net>
-    <net code="221" name="Net-(LED181-Pad2)">
-      <node ref="LED181" pin="2"/>
+    <net code="223" name="Net-(LED181-Pad2)">
       <node ref="LED182" pin="4"/>
+      <node ref="LED181" pin="2"/>
     </net>
-    <net code="222" name="Net-(LED172-Pad2)">
+    <net code="224" name="Net-(LED172-Pad2)">
       <node ref="LED173" pin="4"/>
       <node ref="LED172" pin="2"/>
     </net>
-    <net code="223" name="Net-(LED169-Pad2)">
-      <node ref="LED169" pin="2"/>
+    <net code="225" name="Net-(LED169-Pad2)">
       <node ref="LED170" pin="4"/>
+      <node ref="LED169" pin="2"/>
     </net>
-    <net code="224" name="Net-(LED170-Pad2)">
+    <net code="226" name="Net-(LED170-Pad2)">
       <node ref="LED171" pin="4"/>
       <node ref="LED170" pin="2"/>
     </net>
-    <net code="225" name="Net-(LED171-Pad2)">
+    <net code="227" name="Net-(LED171-Pad2)">
       <node ref="LED172" pin="4"/>
       <node ref="LED171" pin="2"/>
     </net>
-    <net code="226" name="Net-(LED173-Pad2)">
-      <node ref="LED174" pin="4"/>
+    <net code="228" name="Net-(LED173-Pad2)">
       <node ref="LED173" pin="2"/>
+      <node ref="LED174" pin="4"/>
     </net>
-    <net code="227" name="Net-(LED175-Pad2)">
+    <net code="229" name="Net-(LED175-Pad2)">
       <node ref="LED176" pin="4"/>
       <node ref="LED175" pin="2"/>
     </net>

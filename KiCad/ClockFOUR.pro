@@ -1,4 +1,4 @@
-update=Sat Oct  3 17:22:20 2015
+update=Tue Oct  6 18:09:04 2015
 version=1
 last_client=kicad
 [cvpcb]
@@ -26,14 +26,6 @@ SolderMaskMinWidth=0
 DrawSegmentWidth=0.2
 BoardOutlineThickness=0.09999999999999999
 ModuleOutlineThickness=0.15
-[eeschema]
-version=1
-LibDir=
-[eeschema/libraries]
-LibName1=ClockFOUR_Libs/ClockFOUR
-LibName2=device
-[general]
-version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -44,3 +36,10 @@ NetFmtName=
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
+[eeschema]
+version=1
+LibDir=
+[eeschema/libraries]
+LibName1=ClockFOUR_Libs/ClockFOUR
+[general]
+version=1

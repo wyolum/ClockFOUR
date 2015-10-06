@@ -1,6 +1,5 @@
 EESchema Schematic File Version 2
 LIBS:ClockFOUR
-LIBS:device
 LIBS:ClockFOUR-cache
 EELAYER 25 0
 EELAYER END
@@ -8,11 +7,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 8 14
 Title "ClockFOUR"
-Date "7 oct 2014"
-Rev ""
+Date "2015-10-06"
+Rev "ver 3.0"
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
-Comment2 "David Pincus"
+Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr

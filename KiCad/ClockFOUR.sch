@@ -1,6 +1,5 @@
 EESchema Schematic File Version 2
 LIBS:ClockFOUR
-LIBS:device
 LIBS:ClockFOUR-cache
 EELAYER 25 0
 EELAYER END
@@ -8,11 +7,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 14
 Title "ClockFOUR"
-Date "21/01/2015"
-Rev ""
+Date "2015-10-06"
+Rev "ver 3.0"
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
-Comment2 "David Pincus"
+Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -514,7 +513,7 @@ AB AA AA 9E 7A EA A9 AF 7F FD EB 96 92 F3 65 EC E2 3F 1B 3E F1 7C 00 00 B3 D9 FC
 89 7F F8 87 7F 50 B7 A1 2F 08 AD 56 7B E8 D0 A1 6F 7C E3 1B 0F 3E F8 E0 96 03 00 EF E2 3F 1B 3E 
 C1 ED 35 72 E0 F7 FB FF F1 1F FF F1 9F FF F9 9F C7 C7 C7 73 1A 9F 2B 70 38 1C FB F6 ED 3B 79 F2 
 E4 23 8F 3C 52 B0 F1 D9 2E 76 F1 FF 03 17 ED 19 47 28 92 59 FB 00 00 00 00 49 45 4E 44 AE 42 60 
-82 D7 
+82 00 
 EndData
 $EndBitmap
 $Comp
@@ -2500,4 +2499,30 @@ F 3 "" H 5600 1725 60  0001 C CNN
 	1    5600 1725
 	0    -1   -1   0   
 $EndComp
+$Comp
+L CONN_1 S5
+U 1 1 56143684
+P 6050 4050
+F 0 "S5" H 6130 4050 40  0000 L CNN
+F 1 "CONN_1" H 6050 4105 30  0001 C CNN
+F 2 "C4_Pretty:MtgHole_3mm" H 6050 4050 60  0001 C CNN
+F 3 "" H 6050 4050 60  0000 C CNN
+	1    6050 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 S6
+U 1 1 56143690
+P 6450 4050
+F 0 "S6" H 6530 4050 40  0000 L CNN
+F 1 "CONN_1" H 6450 4105 30  0001 C CNN
+F 2 "C4_Pretty:MtgHole_3mm" H 6450 4050 60  0001 C CNN
+F 3 "" H 6450 4050 60  0000 C CNN
+	1    6450 4050
+	1    0    0    -1  
+$EndComp
+Text Notes 5725 4250 0    40   ~ 8
+Spare holes
+NoConn ~ 5900 4050
+NoConn ~ 6300 4050
 $EndSCHEMATC
