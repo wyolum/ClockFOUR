@@ -1,107 +1,48 @@
+/*
+ *  ClockFOUR_v1 main file
+ * 
+ * 
+ *  Author: Josef Schneider
+ *  Licence: http://creativecommons.org/licenses/by/3.0/
+ *
+ *  Description:
+ *    This file contains the application entry points, and also the code dealing with 
+ *  the user interface.
+ *
+ *  To allow entry-level developers to make changes without having to tackle cpp libraries,
+ *  most of the code is located in .ino files.
+ *
+ */
 
-#include <avr/pgmspace.h>
-#include <Wire.h>      
+#include <Wire.h>
 #include <DS3231.h>
 
+#include "clock_defines.h"	// <- Any setting changes need to be made here
 #include "bitmaps.h"
 
-/************* Enable/disable debug mode *************/
-//#define DEBUG
-
-#ifdef DEBUG
-#define PRINT_DEBUG(x)			Serial.print(x)
-#define PRINTLN_DEBUG(x)		Serial.println(x)
-#else
-#define PRINT_DEBUG(x)
-#define PRINTLN_DEBUG(x)
-#endif
-
-/************* Pin settings *************/
-#define MATRIX_PIN			2
-#define BUTTON_L			3
-#define BUTTON_R			4
-#define	LOGO_PIN			5
-
-#define LDR_PIN1			A0
-#define LDR_PIN2			A1
-#define LDR_PIN3			A2
-
-#define REFRESH_PERIOD		20		// Determines the refresh period of the displays, in this case 20ms
-									// WARNING! The fade speeds depend on this frequency. Increasing this
-									// number will slow down fade speeds.
-
-/************* Some display settings *************/
-#define MATRIX_WIDTH			14
-#define MATRIX_HEIGHT			13
-
-/************* Company logo settings *************/
-#define ENABLE_COMPANY_LOGO		true		// Temporary, to be replaced with LED detection code
-#define LOGO_LED_COUNT			20
-
-/************* Global time variablesrtc *************/
+/************* Global variables *************/
 bool h12, PM;
 DS3231 rtc;
 
-/************* Types of button inputs *************/
-typedef enum EventTypes {
-	NO_EVENT = 0,
-	BL_CLICK,        // Button left click
-	BL_PRESS,        // Button left press
-	BL_REPEAT,       // Button left repeat
-	BR_CLICK,        // Button right click
-	BR_PRESS,        // Button right press
-	BR_REPEAT,       // Button right repeat
-	EVENT_COUNT      // Number of event types in the queue
+// fade defines how quickly letters fade depending
+// on the display mode
+const uint8_t fade[MODE_COUNT] = {
+	TIME_MODE_FADE_SPEED,
+	SEC_MODE_FADE_SPEED
 };
 
-#define DEFAULT_REPEAT_DELAY		150      // number of milliseconds between each repeated button press (when held down)
-
-/************* Colour modes *************/
-typedef enum ColourModes {
-	CM_ALL_WHITE = 0,
-	CM_SOLID_COLOUR,
-	CM_FADE,
-	CM_RAINBOW,
-	CM_PARTY,
-	COLOUR_MODE_COUNT
-};
-
-
-/************* Display mode definitions *************/
-typedef enum DisplayModeIdx {
-	DISP_TIME = 0,
-	DISP_SECONDS,
-	MODE_COUNT
-};
-
-uint8_t fade[MODE_COUNT] = {
-	20,		// Time mode = fast fade
-	40,		// Seconds mode = very fast fade
-};
-
-typedef boolean (*DisplayModeFunc)(void);
-
-DisplayModeFunc displayModes[MODE_COUNT] = {
+// Display function pointers for the different display modes. This approach
+// is not the safest but makes adding new display modes extremely easy.
+const DisplayModeFunc displayModes[MODE_COUNT] = {
 	displayTime,
 	displaySeconds,
 };
 
+bool companyLogoEnabled = false;
 
-/************* Settings struct definition *************/
-typedef union Settings {
-	// WARNING: array has to be at least as large as the number of elements in the struct
-	uint8_t array[8];
-	struct {
-		uint8_t useDegF;					// 0 if degrees C, 1 if degrees F
-		uint8_t displayMode;				// Stores the display mode we are currently in
-		uint8_t colourModes[MODE_COUNT];	// Each display mode has its own colour mode
-		uint8_t colourVal[MODE_COUNT];		// Each display also has its own colour value
-		uint8_t logoColourMode;
-		uint8_t logoColourVal;
-	};
-};
+/******* Externs ********/
+// clockSettings is defined in settings.ino
 extern Settings clockSettings;
-bool companyLogoEnabled = ENABLE_COMPANY_LOGO;
 
 /**** Main Code ****/
 
@@ -113,27 +54,31 @@ void setup() {
 	Wire.begin();
 	
 	pinMode(LDR_PIN1, INPUT);       // declare the LDRPin as an INPUT:
-	pinMode(LDR_PIN2, INPUT);       // declare the LDRPin as an INPUT:
-	pinMode(LDR_PIN3, INPUT);       // declare the LDRPin as an INPUT:
+	pinMode(LDR_PIN2, INPUT);
+	pinMode(LDR_PIN3, INPUT);
 
-	brightness_init(LDR_PIN1, LDR_PIN2, LDR_PIN3);
+	brightness_init(LDR_PIN1);		// , LDR_PIN2, LDR_PIN3);
+
+	pinMode(LOGO_SENSE, INPUT);
+	companyLogoEnabled = (digitalRead(LOGO_SENSE) == LOW) && ENABLE_COMPANY_LOGO;
 
 	// Initialise the board inputs and outputs
-	pinMode(MATRIX_PIN, OUTPUT);   // declare the ledPin as an OUTPUT:
-	pinMode(LOGO_PIN, OUTPUT);     // declare the ledPin as an OUTPUT:
-	
-	// Initialise the display
-	disp_init();
-	
+	pinMode(MATRIX_PIN, OUTPUT);	// declare the ledPin as an OUTPUT:
+	pinMode(LOGO_PIN, OUTPUT);
+
 	// Load the settings from the EEPROM
 	loadSettings();
+	
+	// Initialise the display
+	disp_init(clockSettings.brightnessMode);
 	
 	// Initialise the buttons
 	buttonsInit();
         
 	// display a welcome message
-	disp_setBrightness();
+#ifndef DEBUG
 	disp_ScrollWords("Chronogram", -55, 1);
+#endif
 		
 	// enter self test mode if a button has been held down
 	if (popEvent() != NO_EVENT) {
@@ -144,13 +89,13 @@ void setup() {
 
 
 void loop() {	
-	// p_colourMode stores a pointer to the current colour mode
+	// p_colourMode and p_colourValue are pointers to the current colour mode and value
 	uint8_t *p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
 	uint8_t *p_colourValue = &clockSettings.colourVal[clockSettings.displayMode];
 	
 	buttonsTick();
 	
-	// Depending on the buttons pressed, take the necessary action
+	// Depending on the latest even (e.g., button press), take the necessary action
 	switch(popEvent()) {
 	case BL_CLICK:
 		clockSettings.displayMode++;
@@ -158,7 +103,7 @@ void loop() {
 			clockSettings.displayMode = 0;
 		}
 		
-		clearBufferHistory();
+		pixBuffer_clearHistory();
 		
 		// Update p_colourMode to the new display mode
 		p_colourMode = &clockSettings.colourModes[clockSettings.displayMode];
@@ -171,8 +116,7 @@ void loop() {
 		break;
 		
 	case BR_CLICK:
-		// Perhaps enter colour settings mode?
-		
+		// A right button click has been detected
 		PRINT_DEBUG("Current colour mode: ");
 		PRINTLN_DEBUG(*p_colourMode);
 
@@ -191,7 +135,7 @@ void loop() {
 		// Pick the colour
 		*p_colourValue = colourConfig(*p_colourValue);
 		*p_colourMode = CM_SOLID_COLOUR;
-		clearBufferHistory();
+		pixBuffer_clearHistory();
 		saveSettings();
 		break;
 		
@@ -205,7 +149,7 @@ void loop() {
 	}
 	
 	// Set the display brightness from the LDR
-	disp_setBrightness();
+	disp_setBrightness(clockSettings.brightnessMode);
 
 	// First clear all the LEDs, and then depending on the mode call its display function
 	pixBuffer_clear();
@@ -229,12 +173,20 @@ boolean displayTime() {
 
 
 boolean displaySeconds() {
-	// Sets and clear all pixels to show the current seconds count
-	pixBuffer_loadVal(rtc.getSecond(), 0);  // put a "2" in the last place to activate the minute slider
+	// Sets and clears all pixels to show the current seconds count
+	pixBuffer_loadVal(rtc.getSecond());
 }
 
 
-uint8_t changeSetting(uint8_t origValue, uint8_t minimum, uint8_t maximum, uint16_t repeatDelay, void (*dispFunc)(uint8_t), uint16_t timeout = 0) {
+// Generic value input function with configurable display function
+uint8_t changeSetting(
+		const uint8_t origValue,		// Starting value
+		const uint8_t minimum,			// Minimum possible value
+		const uint8_t maximum,			// Maximum possible value
+		const uint16_t repeatDelay,		// Delay between repeat presses if button is held down in ms
+		void(*dispFunc)(uint8_t),		// Pointer to the function to be used to display the value
+		const uint16_t timeout = 0) {	// Amount of time after which this function exists if no input
+
 	uint8_t value = origValue;
 	long lastRepeat = millis();
 	
@@ -323,13 +275,13 @@ void colourPickerChangeSetting() {
 }
 
 
-void colourWheelDisp(uint8_t colourMode) {
+void colourWheelDisp(const uint8_t colourMode) {
 	// Configuration display function for the colour picker
 	disp_refresh(CM_SOLID_COLOUR, colourMode, 0);
 }
 
 
-uint8_t colourConfig(uint8_t colourMode) {
+uint8_t colourConfig(const uint8_t colourMode) {
 	// Config function for the colour mode
 	pixBuffer_clear();
 	pixBuffer_loadBitmap(Circle_bw_bmp, 0, 0);
@@ -342,6 +294,7 @@ uint8_t colourConfig(uint8_t colourMode) {
 typedef enum ConfigMode {
 	HOUR,
 	MINUTE,
+	BRIGHTNESS,
 	LOGO_COLOUR,
 	LAST_MODE
 };
@@ -382,6 +335,18 @@ void clockConfig() {
 				rtc.setSecond(0);
 			}
 			break;
+
+		case BRIGHTNESS:
+			{
+				disp_showBWBitmap(Brightness_bw_bmp, 0x00FFFFFF, 0x00000000);	// White on black
+				waitDelayOrButton(2000);
+
+				PRINTLN_DEBUG("Now entering brightness value");
+				clockSettings.brightnessMode = changeSetting(clockSettings.brightnessMode, 0, 5, DEFAULT_REPEAT_DELAY, disp_displayBrightness);
+
+				saveSettings();
+			}
+			break;
 		
 		case LOGO_COLOUR:
 			{
@@ -393,7 +358,7 @@ void clockConfig() {
 				pixBuffer_clear();
 				pixBuffer_loadBitmap(Circle_bw_bmp, 0, 0);
 				colourPickerChangeSetting();
-				clearBufferHistory();
+				pixBuffer_clearHistory();
 				saveSettings();
 			}
 			break;
@@ -413,7 +378,7 @@ void clockConfig() {
 
 // Creates a delay loop that exits when either the time given
 // has passed, or one of the buttons has been pressed
-uint8_t waitDelayOrButton(uint16_t delayTime) {
+uint8_t waitDelayOrButton(const uint16_t delayTime) {
 	unsigned long stopTime = millis() + delayTime;
 	uint8_t retVal = NO_EVENT;
 	

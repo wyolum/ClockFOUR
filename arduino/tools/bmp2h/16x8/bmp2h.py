@@ -1,5 +1,5 @@
 
-import Image
+from PIL import Image
 import sys
 
 colour = True
@@ -45,19 +45,17 @@ def convert2h(filename):
 		fileExtLen = 5
 	else:
 		print("Sorry, image format not supported\n\n")
-		
-	dst = open(filename[:-fileExtLen] + ".h", 'w')
-	
-	if colour:
-		dst.write("prog_uchar %s_c_bmp[] PROGMEM = {\n" % filename[:-fileExtLen])
-	else:
-		dst.write("prog_uchar %s_bw_bmp[] PROGMEM = {\n" % filename[:-fileExtLen])
 
 	img = Image.open(filename)
 	width = img.size[0]
 	height = img.size[1]
 	pixels = img.load()
-	
+		
+	dst = open(filename[:-fileExtLen] + ".h", 'w')
+	if colour:
+		dst.write("const uint8_t %s_c_bmp[] PROGMEM = {\n" % filename[:-fileExtLen])
+	else:
+		dst.write("const uint8_t %s_bw_bmp[] PROGMEM = {\n" % filename[:-fileExtLen])
 	dst.write("\t%d,\n\t%d,\n" % (width, height))
 	
 	if colour:
