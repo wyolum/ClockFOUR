@@ -32,8 +32,8 @@
 #define	LOGO_PIN			5
 #define	LOGO_SENSE			6
 
-#define LDR_PIN1			A0
-#define LDR_PIN2			A1
+#define LDR_PIN1			A1
+#define LDR_PIN2			A0
 #define LDR_PIN3			A2
 
 /************* Some display settings *************/
