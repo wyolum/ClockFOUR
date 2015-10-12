@@ -1,4 +1,4 @@
-### Module positions - created on Tue Oct  6 18:04:49 2015 ###
+### Module positions - created on Mon Oct 12 14:43:02 2015 ###
 ### Printed by Pcbnew version kicad (2015-07-01 BZR 5850)-product
 ## Unit = inches, Angle = deg.
 ## Side : bottom
@@ -11,19 +11,19 @@ C6       100n             c_0805              6.9488    -0.1870     180.0    bot
 C7       22p              c_0805              3.0472    -1.6850      90.0    bottom
 C8       100n             c_0805              2.9823    -0.2559       0.0    bottom
 C9       100n             c_0805              1.9685    -0.1870       0.0    bottom
-C10      47u              c_2917              3.2480    -8.3858     270.0    bottom
-C11      100n             c_0805              4.4291    -8.3858       0.0    bottom
-C194     47u              c_2917              1.4764    -8.3858     270.0    bottom
-C195     47u              c_2917              2.0669    -8.3858     270.0    bottom
-C196     47u              c_2917              2.6575    -8.3858     270.0    bottom
+C10      47u              c_2917              2.5591    -8.1496     270.0    bottom
+C11      100n             c_0805              4.6260    -8.3858       0.0    bottom
+C194     47u              c_2917              1.3780    -8.1496     270.0    bottom
+C195     47u              c_2917              1.7717    -8.1496     270.0    bottom
+C196     47u              c_2917              2.1949    -8.1496     270.0    bottom
 C197     100n             c_0805              5.0000    -0.6201     180.0    bottom
 C198     100n             c_0805              4.5472    -0.6201     180.0    bottom
 C199     100n             c_0805              0.7972    -8.4665      90.0    bottom
-D1       SMBJ5339B        diode-DO214AA       3.8386    -8.3858     270.0    bottom
+D1       SMBJ5339B        diode-DO214AA       4.4488    -8.3858     270.0    bottom
 F1       miniSMDC200F/16  f_1812              5.0197    -8.3858     270.0    bottom
-G***     LOGO             wreath2             4.1339    -4.4882     180.0    bottom
 L3       Wyolum           Logo-WL3            0.9843    -7.4803     180.0    bottom
 L4       Chronogram       Logo_silk_OSHW_6    2.8051    -7.6280     180.0    bottom
+L5       Logo             wreath2             4.1339    -4.4882     180.0    bottom
 P2       FTDI             Header_FTDI         6.5354    -0.3150       0.0    bottom
 P6       5VEN_L           r_0805              4.8720    -0.6201      90.0    bottom
 P7       I2C_L            STACK-L             5.0000    -0.3150       0.0    bottom
