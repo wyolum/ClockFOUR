@@ -1,4 +1,4 @@
-### Module positions - created on Tue Oct  6 18:04:49 2015 ###
+### Module positions - created on Mon Oct 12 13:54:35 2015 ###
 ### Printed by Pcbnew version kicad (2015-07-01 BZR 5850)-product
 ## Unit = inches, Angle = deg.
 ## Side : top
@@ -373,6 +373,5 @@ LED179   WS2812B          RGB_WS2811B         6.2008    -8.2677       0.0    top
 LED180   WS2812B          RGB_WS2811B         6.7913    -8.2677       0.0    top
 LED181   WS2812B          RGB_WS2811B         7.3819    -8.2677       0.0    top
 LED182   WS2812B          RGB_WS2811B         7.9724    -8.2677       0.0    top
-P3       PWR_IN           Header_3x1_PWR      4.8425    -8.7598       0.0    top
-P5       PWR_IN           Header_3x1_PWR      5.1969    -8.7992      90.0    top
+P3       PWR_IN           Header_3x1_PWR      4.5276    -8.7894       0.0    top
 ## End

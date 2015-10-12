@@ -1,437 +1,437 @@
 Reference, Value, Footprint, Datasheet, Field4, Field5, Field6, Field7, Field8, Field9, Field10, Field11, Digikey, Label
-A6,CONN_1,C4_Pretty:BreakOutPad,,,,,,,,,,,
-A7,CONN_1,C4_Pretty:BreakOutPad,,,,,,,,,,,
-B2,CONN_1,C4_Pretty:BreakOutPad,,,,,,,,,,,
+L1,OSHW,C4_Pretty:Logo_silk_OSHW_6x6mm,
+L2,Wyolum,C4_Pretty:Logo-WL3,
+SW1,SW_RST,C4_Pretty:SW_SMD,
+R2,10K,C4_Pretty:r_0805,
+C9,100n,C4_Pretty:c_0805,
+R8,4K7,C4_Pretty:r_0805,
+C10,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,,
+R1,470R,C4_Pretty:r_0805,
+P2,FTDI,C4_Pretty:Header_FTDI,
+C6,100n,C4_Pretty:c_0805,
+P1,ICSP,C4_Pretty:ISP,
+C8,100n,C4_Pretty:c_0805,
+C11,100n,C4_Pretty:c_0805,
+R6,10K,C4_Pretty:r_0805,
+R7,10K,C4_Pretty:r_0805,
+U2,DS3231N,C4_Pretty:DS3231,
+C5,22p,C4_Pretty:c_0805,
+C7,22p,C4_Pretty:c_0805,
+C1,100n,C4_Pretty:c_0805,
+S4,CONN_1,C4_Pretty:Screw_3mm,
+S3,CONN_1,C4_Pretty:Screw_3mm,
+S1,CONN_1,C4_Pretty:Screw_3mm,
+S2,CONN_1,C4_Pretty:Screw_3mm,
+R9,4K7,C4_Pretty:r_0805,
+U1,ATMEGA328P,C4_Pretty:TQFP32,
+C3,100n,C4_Pretty:c_0805,
+C194,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,,
+C195,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,,
+C196,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,,
+A6,CONN_1,C4_Pretty:BreakOutPad,
+A7,CONN_1,C4_Pretty:BreakOutPad,
+D7,CONN_1,C4_Pretty:BreakOutPad,
 BT1,Batt_RTC,C4_Pretty:CR2032_SMD2,,,,,,,,,,BU2032SM-HD-GCT-ND ,
-C1,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C3,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C5,22p,C4_Pretty:c_0805,,,,,,,,,,,
-C6,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C7,22p,C4_Pretty:c_0805,,,,,,,,,,,
-C8,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C9,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C10,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,
-C11,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C12,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C13,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C14,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C15,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C16,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C17,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C18,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C19,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C20,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C21,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C22,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C23,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C24,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C25,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C26,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C27,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C28,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C29,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C30,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C31,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C32,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C33,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C34,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C35,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C36,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C37,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C38,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C39,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C40,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C41,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C42,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C43,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C44,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C45,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C46,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C47,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C48,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C49,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C50,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C51,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C52,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C53,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C54,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C55,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C56,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C57,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C58,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C59,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C60,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C61,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C62,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C63,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C64,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C65,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C66,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C67,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C68,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C69,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C70,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C71,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C72,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C73,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C74,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C75,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C76,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C77,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C78,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C79,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C80,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C81,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C82,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C83,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C84,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C85,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C86,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C87,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C88,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C89,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C90,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C91,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C92,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C93,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C94,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C95,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C96,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C97,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C98,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C99,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C100,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C101,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C102,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C103,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C104,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C105,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C106,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C107,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C108,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C109,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C110,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C111,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C112,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C113,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C114,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C115,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C116,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C117,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C118,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C119,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C120,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C121,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C122,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C123,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C124,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C125,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C126,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C127,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C128,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C129,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C130,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C131,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C132,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C133,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C134,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C135,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C136,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C137,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C138,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C139,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C140,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C141,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C142,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C143,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C144,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C145,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C146,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C147,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C148,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C149,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C150,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C151,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C152,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C153,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C154,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C155,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C156,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C157,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C158,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C159,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C160,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C161,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C162,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C163,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C164,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C165,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C166,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C167,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C168,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C169,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C170,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C171,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C172,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C173,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C174,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C175,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C176,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C177,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C178,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C179,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C180,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C181,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C182,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C183,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C184,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C185,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C186,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C187,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C188,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C189,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C190,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C191,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C192,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C193,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
-C194,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,
-C195,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,
-C196,47u,C4_Pretty:c_2917,,CAP ALUM 47UF 8V 20% SMD,47u,8V,2917 (7343 Metric),Panasonic Electronic Components,EEF-CD0K470R,Digikey,PCE3606CT-ND,http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442,
-C197,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C198,100n,C4_Pretty:c_0805,,,,,,,,,,,
-C199,100n,C4_Pretty:c_0805,,,,,,,,,,,
-D1,SMBJ5339B,C4_Pretty:diode-DO214AA,,,,,,,,,,,
-D7,CONN_1,C4_Pretty:BreakOutPad,,,,,,,,,,,
-F1,miniSMDC200F/16,C4_Pretty:f_1812,,,,,,,,,,,
-L1,OSHW,C4_Pretty:Logo_silk_OSHW_6x6mm,,,,,,,,,,,
-L2,Wyolum,C4_Pretty:Logo-WL3,,,,,,,,,,,
-L3,Wyolum,C4_Pretty:Logo-WL3,,,,,,,,,,,
-L4,Chronogram,C4_Pretty:Logo_silk_OSHW_6x6mm,,,,,,,,,,,
-L5,Logo,C4_Pretty:Logo_silk_OSHW_6x6mm,,,,,,,,,,,
-LDR1,LDR,C4_Pretty:r_0805_ldr,,,,,,,,,,,
-LDR2,LDR,C4_Pretty:r_0805_ldr,,,,,,,,,,,
-LDR3,LDR,C4_Pretty:r_0805_ldr,,,,,,,,,,,
-LDR4,LDR,C4_Pretty:r_0805_ldr,,,,,,,,,,,
-LED1,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED2,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED3,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED4,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED5,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED6,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED7,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED8,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED9,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED10,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED11,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED12,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED13,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED14,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED15,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED16,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED17,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED18,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED19,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED20,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED21,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED22,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED23,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED24,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED25,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED26,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED27,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED28,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED29,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED30,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED31,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED32,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED33,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED34,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED35,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED36,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED37,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED38,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED39,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED40,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED41,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED42,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED43,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED44,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED45,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED46,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED47,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED48,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED49,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED50,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED51,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED52,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED53,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED54,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED55,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED56,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED57,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED58,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED59,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED60,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED61,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED62,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED63,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED64,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED65,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED66,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED67,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED68,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED69,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED70,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED71,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED72,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED73,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED74,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED75,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED76,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED77,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED78,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED79,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED80,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED81,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED82,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED83,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED84,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED85,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED86,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED87,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED88,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED89,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED90,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED91,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED92,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED93,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED94,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED95,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED96,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED97,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED98,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED99,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED100,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED101,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED102,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED103,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED104,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED105,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED106,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED107,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED108,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED109,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED110,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED111,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED112,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED113,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED114,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED115,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED116,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED117,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED118,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED119,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED120,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED121,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED122,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED123,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED124,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED125,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED126,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED127,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED128,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED129,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED130,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED131,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED132,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED133,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED134,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED135,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED136,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED137,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED138,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED139,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED140,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED141,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED142,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED143,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED144,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED145,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED146,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED147,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED148,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED149,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED150,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED151,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED152,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED153,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED154,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED155,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED156,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED157,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED158,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED159,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED160,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED161,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED162,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED163,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED164,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED165,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED166,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED167,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED168,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED169,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED170,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED171,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED172,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED173,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED174,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED175,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED176,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED177,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED178,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED179,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED180,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED181,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-LED182,WS2812B,C4_Pretty:RGB_WS2811B,,,,,,,,,,,
-P1,ICSP,C4_Pretty:ISP,,,,,,,,,,,
-P2,FTDI,C4_Pretty:Header_FTDI,,,,,,,,,,,
-P3,PWR_IN,C4_Pretty:Header_3x1_PWR,,,,,,,,,,,
-P5,PWR_IN,C4_Pretty:Header_3x1_PWR,,,,,,,,,,,
-P6,5VEN_L,C4_Pretty:r_0805,,,,,,,,,,,
-P7,I2C_L,C4_Pretty:STACK-L,,,,,,,,,,,
-P8,5VEN_R,C4_Pretty:r_0805,,,,,,,,,,,
-P9,I2C_R,C4_Pretty:STACK-R,,,,,,,,,,,
-P10,Marquee,C4_Pretty:Header_4x1,,,,,,,,,,,
-R1,470R,C4_Pretty:r_0805,,,,,,,,,,,
-R2,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R3,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R4,470R,C4_Pretty:r_0805,,,,,,,,,,,
-R5,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R6,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R7,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R8,4K7,C4_Pretty:r_0805,,,,,,,,,,,
-R9,4K7,C4_Pretty:r_0805,,,,,,,,,,,
-R10,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R11,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R12,0R,C4_Pretty:r_0805,,,,,,,,,,,
-R13,0R,C4_Pretty:r_0805,,,,,,,,,,,
-R14,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R15,10K,C4_Pretty:r_0805,,,,,,,,,,,
-R16,10K,C4_Pretty:r_0805,,,,,,,,,,,
-S1,CONN_1,C4_Pretty:Screw_3mm,,,,,,,,,,,
-S2,CONN_1,C4_Pretty:Screw_3mm,,,,,,,,,,,
-S3,CONN_1,C4_Pretty:Screw_3mm,,,,,,,,,,,
-S4,CONN_1,C4_Pretty:Screw_3mm,,,,,,,,,,,
-S5,CONN_1,C4_Pretty:MtgHole_3mm,,,,,,,,,,,
-S6,CONN_1,C4_Pretty:MtgHole_3mm,,,,,,,,,,,
-S10,CONN_1,C4_Pretty:Slot_tiewrap,,,,,,,,,,,
-S11,CONN_1,C4_Pretty:Slot_tiewrap,,,,,,,,,,,
-S12,CONN_1,C4_Pretty:Slot_tiewrap,,,,,,,,,,,
-S13,CONN_1,C4_Pretty:Slot_tiewrap,,,,,,,,,,,
-SW1,SW_RST,C4_Pretty:SW_SMD,,,,,,,,,,,
+X1,16MHz,C4_Pretty:Xtal_SMD3,
+S10,CONN_1,C4_Pretty:Slot_tiewrap,
+S11,CONN_1,C4_Pretty:Slot_tiewrap,
+S12,CONN_1,C4_Pretty:Slot_tiewrap,
+S13,CONN_1,C4_Pretty:Slot_tiewrap,
+P9,I2C_R,C4_Pretty:STACK-R,
+P7,I2C_L,C4_Pretty:STACK-L,
+C197,100n,C4_Pretty:c_0805,
+C198,100n,C4_Pretty:c_0805,
+P6,5VEN_L,C4_Pretty:r_0805,
+P8,5VEN_R,C4_Pretty:r_0805,
 SW2,SW_L,C4_Pretty:SW_SMD,,,,,,,,,,,Mode
 SW3,SW_R,C4_Pretty:SW_SMD,,,,,,,,,,,Color
-U1,ATMEGA328P,C4_Pretty:TQFP32,,,,,,,,,,,
-U2,DS3231N,C4_Pretty:DS3231,,,,,,,,,,,
-X1,16MHz,C4_Pretty:Xtal_SMD3,,,,,,,,,,,
+R10,10K,C4_Pretty:r_0805,
+R11,10K,C4_Pretty:r_0805,
+L3,Wyolum,C4_Pretty:Logo-WL3,
+R12,0R,C4_Pretty:r_0805,
+R13,0R,C4_Pretty:r_0805,
+B2,CONN_1,C4_Pretty:BreakOutPad,
+P10,Marquee,C4_Pretty:Header_4x1,
+C199,100n,C4_Pretty:c_0805,
+R3,10K,C4_Pretty:r_0805,
+R4,470R,C4_Pretty:r_0805,
+LDR1,LDR,C4_Pretty:r_0805_ldr,
+R5,10K,C4_Pretty:r_0805,
+LDR2,LDR,C4_Pretty:r_0805_ldr,
+R14,10K,C4_Pretty:r_0805,
+LDR3,LDR,C4_Pretty:r_0805_ldr,
+R15,10K,C4_Pretty:r_0805,
+P5,PWR_IN,C4_Pretty:Pin_Header_Angled_1x03,
+P3,PWR_IN,C4_Pretty:Header_3x1_PWR,
+L4,Chronogram,C4_Pretty:Logo_silk_OSHW_6x6mm,
+D1,SMBJ5339B,C4_Pretty:diode-DO214AA,
+F1,miniSMDC200F/16,C4_Pretty:f_1812,
+LDR4,LDR,C4_Pretty:r_0805_ldr,
+R16,10K,C4_Pretty:r_0805,
+L5,Logo,C4_Pretty:Logo_silk_OSHW_6x6mm,
+S5,CONN_1,C4_Pretty:MtgHole_3mm,
+S6,CONN_1,C4_Pretty:MtgHole_3mm,
+C12,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C13,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C14,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C15,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C16,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C17,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C18,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C19,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C20,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C21,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C22,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C23,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C24,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C25,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED1,WS2812B,C4_Pretty:RGB_WS2811B,
+LED2,WS2812B,C4_Pretty:RGB_WS2811B,
+LED3,WS2812B,C4_Pretty:RGB_WS2811B,
+LED4,WS2812B,C4_Pretty:RGB_WS2811B,
+LED5,WS2812B,C4_Pretty:RGB_WS2811B,
+LED6,WS2812B,C4_Pretty:RGB_WS2811B,
+LED7,WS2812B,C4_Pretty:RGB_WS2811B,
+LED8,WS2812B,C4_Pretty:RGB_WS2811B,
+LED9,WS2812B,C4_Pretty:RGB_WS2811B,
+LED10,WS2812B,C4_Pretty:RGB_WS2811B,
+LED11,WS2812B,C4_Pretty:RGB_WS2811B,
+LED12,WS2812B,C4_Pretty:RGB_WS2811B,
+LED13,WS2812B,C4_Pretty:RGB_WS2811B,
+LED14,WS2812B,C4_Pretty:RGB_WS2811B,
+C26,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C27,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C28,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C29,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C30,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C31,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C32,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C33,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C34,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C35,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C36,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C37,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C38,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C39,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED15,WS2812B,C4_Pretty:RGB_WS2811B,
+LED16,WS2812B,C4_Pretty:RGB_WS2811B,
+LED17,WS2812B,C4_Pretty:RGB_WS2811B,
+LED18,WS2812B,C4_Pretty:RGB_WS2811B,
+LED19,WS2812B,C4_Pretty:RGB_WS2811B,
+LED20,WS2812B,C4_Pretty:RGB_WS2811B,
+LED21,WS2812B,C4_Pretty:RGB_WS2811B,
+LED22,WS2812B,C4_Pretty:RGB_WS2811B,
+LED23,WS2812B,C4_Pretty:RGB_WS2811B,
+LED24,WS2812B,C4_Pretty:RGB_WS2811B,
+LED25,WS2812B,C4_Pretty:RGB_WS2811B,
+LED26,WS2812B,C4_Pretty:RGB_WS2811B,
+LED27,WS2812B,C4_Pretty:RGB_WS2811B,
+LED28,WS2812B,C4_Pretty:RGB_WS2811B,
+C40,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C41,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C42,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C43,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C44,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C45,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C46,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C47,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C48,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C49,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C50,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C51,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C52,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C53,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED29,WS2812B,C4_Pretty:RGB_WS2811B,
+LED30,WS2812B,C4_Pretty:RGB_WS2811B,
+LED31,WS2812B,C4_Pretty:RGB_WS2811B,
+LED32,WS2812B,C4_Pretty:RGB_WS2811B,
+LED33,WS2812B,C4_Pretty:RGB_WS2811B,
+LED34,WS2812B,C4_Pretty:RGB_WS2811B,
+LED35,WS2812B,C4_Pretty:RGB_WS2811B,
+LED36,WS2812B,C4_Pretty:RGB_WS2811B,
+LED37,WS2812B,C4_Pretty:RGB_WS2811B,
+LED38,WS2812B,C4_Pretty:RGB_WS2811B,
+LED39,WS2812B,C4_Pretty:RGB_WS2811B,
+LED40,WS2812B,C4_Pretty:RGB_WS2811B,
+LED41,WS2812B,C4_Pretty:RGB_WS2811B,
+LED42,WS2812B,C4_Pretty:RGB_WS2811B,
+C54,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C55,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C56,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C57,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C58,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C59,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C60,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C61,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C62,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C63,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C64,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C65,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C66,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C67,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED43,WS2812B,C4_Pretty:RGB_WS2811B,
+LED44,WS2812B,C4_Pretty:RGB_WS2811B,
+LED45,WS2812B,C4_Pretty:RGB_WS2811B,
+LED46,WS2812B,C4_Pretty:RGB_WS2811B,
+LED47,WS2812B,C4_Pretty:RGB_WS2811B,
+LED48,WS2812B,C4_Pretty:RGB_WS2811B,
+LED49,WS2812B,C4_Pretty:RGB_WS2811B,
+LED50,WS2812B,C4_Pretty:RGB_WS2811B,
+LED51,WS2812B,C4_Pretty:RGB_WS2811B,
+LED52,WS2812B,C4_Pretty:RGB_WS2811B,
+LED53,WS2812B,C4_Pretty:RGB_WS2811B,
+LED54,WS2812B,C4_Pretty:RGB_WS2811B,
+LED55,WS2812B,C4_Pretty:RGB_WS2811B,
+LED56,WS2812B,C4_Pretty:RGB_WS2811B,
+C68,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C69,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C70,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C71,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C72,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C73,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C74,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C75,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C76,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C77,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C78,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C79,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C80,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C81,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED57,WS2812B,C4_Pretty:RGB_WS2811B,
+LED58,WS2812B,C4_Pretty:RGB_WS2811B,
+LED59,WS2812B,C4_Pretty:RGB_WS2811B,
+LED60,WS2812B,C4_Pretty:RGB_WS2811B,
+LED61,WS2812B,C4_Pretty:RGB_WS2811B,
+LED62,WS2812B,C4_Pretty:RGB_WS2811B,
+LED63,WS2812B,C4_Pretty:RGB_WS2811B,
+LED64,WS2812B,C4_Pretty:RGB_WS2811B,
+LED65,WS2812B,C4_Pretty:RGB_WS2811B,
+LED66,WS2812B,C4_Pretty:RGB_WS2811B,
+LED67,WS2812B,C4_Pretty:RGB_WS2811B,
+LED68,WS2812B,C4_Pretty:RGB_WS2811B,
+LED69,WS2812B,C4_Pretty:RGB_WS2811B,
+LED70,WS2812B,C4_Pretty:RGB_WS2811B,
+C82,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C83,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C84,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C85,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C86,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C87,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C88,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C89,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C90,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C91,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C92,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C93,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C94,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C95,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED71,WS2812B,C4_Pretty:RGB_WS2811B,
+LED72,WS2812B,C4_Pretty:RGB_WS2811B,
+LED73,WS2812B,C4_Pretty:RGB_WS2811B,
+LED74,WS2812B,C4_Pretty:RGB_WS2811B,
+LED75,WS2812B,C4_Pretty:RGB_WS2811B,
+LED76,WS2812B,C4_Pretty:RGB_WS2811B,
+LED77,WS2812B,C4_Pretty:RGB_WS2811B,
+LED78,WS2812B,C4_Pretty:RGB_WS2811B,
+LED79,WS2812B,C4_Pretty:RGB_WS2811B,
+LED80,WS2812B,C4_Pretty:RGB_WS2811B,
+LED81,WS2812B,C4_Pretty:RGB_WS2811B,
+LED82,WS2812B,C4_Pretty:RGB_WS2811B,
+LED83,WS2812B,C4_Pretty:RGB_WS2811B,
+LED84,WS2812B,C4_Pretty:RGB_WS2811B,
+C96,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C97,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C98,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C99,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C100,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C101,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C102,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C103,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C104,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C105,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C106,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C107,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C108,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C109,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED85,WS2812B,C4_Pretty:RGB_WS2811B,
+LED86,WS2812B,C4_Pretty:RGB_WS2811B,
+LED87,WS2812B,C4_Pretty:RGB_WS2811B,
+LED88,WS2812B,C4_Pretty:RGB_WS2811B,
+LED89,WS2812B,C4_Pretty:RGB_WS2811B,
+LED90,WS2812B,C4_Pretty:RGB_WS2811B,
+LED91,WS2812B,C4_Pretty:RGB_WS2811B,
+LED92,WS2812B,C4_Pretty:RGB_WS2811B,
+LED93,WS2812B,C4_Pretty:RGB_WS2811B,
+LED94,WS2812B,C4_Pretty:RGB_WS2811B,
+LED95,WS2812B,C4_Pretty:RGB_WS2811B,
+LED96,WS2812B,C4_Pretty:RGB_WS2811B,
+LED97,WS2812B,C4_Pretty:RGB_WS2811B,
+LED98,WS2812B,C4_Pretty:RGB_WS2811B,
+C110,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C111,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C112,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C113,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C114,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C115,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C116,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C117,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C118,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C119,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C120,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C121,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C122,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C123,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED99,WS2812B,C4_Pretty:RGB_WS2811B,
+LED100,WS2812B,C4_Pretty:RGB_WS2811B,
+LED101,WS2812B,C4_Pretty:RGB_WS2811B,
+LED102,WS2812B,C4_Pretty:RGB_WS2811B,
+LED103,WS2812B,C4_Pretty:RGB_WS2811B,
+LED104,WS2812B,C4_Pretty:RGB_WS2811B,
+LED105,WS2812B,C4_Pretty:RGB_WS2811B,
+LED106,WS2812B,C4_Pretty:RGB_WS2811B,
+LED107,WS2812B,C4_Pretty:RGB_WS2811B,
+LED108,WS2812B,C4_Pretty:RGB_WS2811B,
+LED109,WS2812B,C4_Pretty:RGB_WS2811B,
+LED110,WS2812B,C4_Pretty:RGB_WS2811B,
+LED111,WS2812B,C4_Pretty:RGB_WS2811B,
+LED112,WS2812B,C4_Pretty:RGB_WS2811B,
+C124,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C125,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C126,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C127,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C128,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C129,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C130,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C131,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C132,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C133,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C134,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C135,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C136,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C137,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED113,WS2812B,C4_Pretty:RGB_WS2811B,
+LED114,WS2812B,C4_Pretty:RGB_WS2811B,
+LED115,WS2812B,C4_Pretty:RGB_WS2811B,
+LED116,WS2812B,C4_Pretty:RGB_WS2811B,
+LED117,WS2812B,C4_Pretty:RGB_WS2811B,
+LED118,WS2812B,C4_Pretty:RGB_WS2811B,
+LED119,WS2812B,C4_Pretty:RGB_WS2811B,
+LED120,WS2812B,C4_Pretty:RGB_WS2811B,
+LED121,WS2812B,C4_Pretty:RGB_WS2811B,
+LED122,WS2812B,C4_Pretty:RGB_WS2811B,
+LED123,WS2812B,C4_Pretty:RGB_WS2811B,
+LED124,WS2812B,C4_Pretty:RGB_WS2811B,
+LED125,WS2812B,C4_Pretty:RGB_WS2811B,
+LED126,WS2812B,C4_Pretty:RGB_WS2811B,
+C138,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C139,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C140,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C141,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C142,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C143,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C144,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C145,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C146,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C147,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C148,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C149,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C150,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C151,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED127,WS2812B,C4_Pretty:RGB_WS2811B,
+LED128,WS2812B,C4_Pretty:RGB_WS2811B,
+LED129,WS2812B,C4_Pretty:RGB_WS2811B,
+LED130,WS2812B,C4_Pretty:RGB_WS2811B,
+LED131,WS2812B,C4_Pretty:RGB_WS2811B,
+LED132,WS2812B,C4_Pretty:RGB_WS2811B,
+LED133,WS2812B,C4_Pretty:RGB_WS2811B,
+LED134,WS2812B,C4_Pretty:RGB_WS2811B,
+LED135,WS2812B,C4_Pretty:RGB_WS2811B,
+LED136,WS2812B,C4_Pretty:RGB_WS2811B,
+LED137,WS2812B,C4_Pretty:RGB_WS2811B,
+LED138,WS2812B,C4_Pretty:RGB_WS2811B,
+LED139,WS2812B,C4_Pretty:RGB_WS2811B,
+LED140,WS2812B,C4_Pretty:RGB_WS2811B,
+C152,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C153,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C154,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C155,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C156,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C157,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C158,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C159,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C160,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C161,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C162,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C163,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C164,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C165,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED141,WS2812B,C4_Pretty:RGB_WS2811B,
+LED142,WS2812B,C4_Pretty:RGB_WS2811B,
+LED143,WS2812B,C4_Pretty:RGB_WS2811B,
+LED144,WS2812B,C4_Pretty:RGB_WS2811B,
+LED145,WS2812B,C4_Pretty:RGB_WS2811B,
+LED146,WS2812B,C4_Pretty:RGB_WS2811B,
+LED147,WS2812B,C4_Pretty:RGB_WS2811B,
+LED148,WS2812B,C4_Pretty:RGB_WS2811B,
+LED149,WS2812B,C4_Pretty:RGB_WS2811B,
+LED150,WS2812B,C4_Pretty:RGB_WS2811B,
+LED151,WS2812B,C4_Pretty:RGB_WS2811B,
+LED152,WS2812B,C4_Pretty:RGB_WS2811B,
+LED153,WS2812B,C4_Pretty:RGB_WS2811B,
+LED154,WS2812B,C4_Pretty:RGB_WS2811B,
+C166,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C167,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C168,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C169,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C170,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C171,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C172,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C173,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C174,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C175,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C176,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C177,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C178,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C179,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED155,WS2812B,C4_Pretty:RGB_WS2811B,
+LED156,WS2812B,C4_Pretty:RGB_WS2811B,
+LED157,WS2812B,C4_Pretty:RGB_WS2811B,
+LED158,WS2812B,C4_Pretty:RGB_WS2811B,
+LED159,WS2812B,C4_Pretty:RGB_WS2811B,
+LED160,WS2812B,C4_Pretty:RGB_WS2811B,
+LED161,WS2812B,C4_Pretty:RGB_WS2811B,
+LED162,WS2812B,C4_Pretty:RGB_WS2811B,
+LED163,WS2812B,C4_Pretty:RGB_WS2811B,
+LED164,WS2812B,C4_Pretty:RGB_WS2811B,
+LED165,WS2812B,C4_Pretty:RGB_WS2811B,
+LED166,WS2812B,C4_Pretty:RGB_WS2811B,
+LED167,WS2812B,C4_Pretty:RGB_WS2811B,
+LED168,WS2812B,C4_Pretty:RGB_WS2811B,
+C180,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C181,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C182,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C183,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C184,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C185,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C186,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C187,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C188,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C189,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C190,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C191,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C192,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100n, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+C193,100n,C4_Pretty:c_0805_led,,CAP CER 0.1UF 25V 10% X7R 0805,100nF, 25V,Surface Mount, MLCC,Kemet,C0805C104K3RACTU,Digikey,399-1168-1-ND,http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443,,
+LED169,WS2812B,C4_Pretty:RGB_WS2811B,
+LED170,WS2812B,C4_Pretty:RGB_WS2811B,
+LED171,WS2812B,C4_Pretty:RGB_WS2811B,
+LED172,WS2812B,C4_Pretty:RGB_WS2811B,
+LED173,WS2812B,C4_Pretty:RGB_WS2811B,
+LED174,WS2812B,C4_Pretty:RGB_WS2811B,
+LED175,WS2812B,C4_Pretty:RGB_WS2811B,
+LED176,WS2812B,C4_Pretty:RGB_WS2811B,
+LED177,WS2812B,C4_Pretty:RGB_WS2811B,
+LED178,WS2812B,C4_Pretty:RGB_WS2811B,
+LED179,WS2812B,C4_Pretty:RGB_WS2811B,
+LED180,WS2812B,C4_Pretty:RGB_WS2811B,
+LED181,WS2812B,C4_Pretty:RGB_WS2811B,
+LED182,WS2812B,C4_Pretty:RGB_WS2811B,
