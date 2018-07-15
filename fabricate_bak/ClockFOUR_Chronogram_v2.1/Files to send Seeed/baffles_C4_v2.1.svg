@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3440"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="1119.685"
+   height="1119.685"
+   xml:space="preserve"
+   sodipodi:docname="baffles_C4_v2.1.pdf"><metadata
+     id="metadata3446"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs3444" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     id="namedview3442"
+     showgrid="false"
+     inkscape:zoom="0.21077355"
+     inkscape:cx="559.84253"
+     inkscape:cy="559.84253"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3448" /><g
+     id="g3448"
+     inkscape:groupmode="layer"
+     inkscape:label="baffles_C4_v2.1"
+     transform="matrix(1.25,0,0,-1.25,0,1119.685)"><text
+       transform="matrix(1,0,0,-1,345.172,867.4016)"
+       id="text3450"><tspan
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;font-variant:normal;font-weight:normal;font-size:12;writing-mode:lr;-inkscape-font-specification:Helvetica"
+         x="0 8.664 11.328 18 24 30 37.332 46.668 55.332 63.996 67.332 74.004 80.676 84.012 87.348 90.012 96.684 102.684 106.02 112.692 119.364 126.036 129.372 135.372 138.036 144.708 151.38 157.38 160.716 169.38 176.052 182.724 188.724 195.396 198.732"
+         y="0"
+         sodipodi:role="line"
+         id="tspan3452">ClockFOUR baffles and sides C4_v2.1</tspan></text>
+<g
+       id="g3454"
+       transform="translate(56.69291,56.69291)"><text
+         transform="matrix(1,0,0,-1,156.7566,255.1181)"
+         id="text3456"><tspan
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;font-variant:normal;font-weight:normal;font-size:12;writing-mode:lr;-inkscape-font-specification:Helvetica"
+           x="0 6.672 13.344 19.344 26.016 28.68 31.344 37.344 44.016 48.012 51.348 54.684 63.348 70.02 76.692 80.028 87.036 93.708 103.704 113.7 117.036 120.372 129.036 131.7 138.372 145.38 152.052 155.388 162.06 172.056 182.052 185.388 188.724 195.396 202.068 205.404 212.076 218.748 222.744 226.08 232.08 234.744 241.416 247.416"
+           y="0"
+           sodipodi:role="line"
+           id="tspan3458">Localizer: Rout=4mm, Rin=1.5mm; 12 per clock</tspan></text>
+<path
+         d="m 89.29134,283.4646 c 0,2.3483 -1.90367,4.2519 -4.25197,4.2519 -2.3483,0 -4.25197,-1.9036 -4.25197,-4.2519 0,-2.3483 1.90367,-4.252 4.25197,-4.252 2.3483,0 4.25197,1.9037 4.25197,4.252"
+         style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:0.566929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+         id="path3460" /><path
+         d="m 96.37795,283.4646 c 0,6.2621 -5.07645,11.3385 -11.33858,11.3385 -6.26213,0 -11.33858,-5.0764 -11.33858,-11.3385 0,-6.2622 5.07645,-11.3386 11.33858,-11.3386 6.26213,0 11.33858,5.0764 11.33858,11.3386"
+         style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:0.566929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+         id="path3462" /><text
+         transform="matrix(1,0,0,-1,46.02628,0)"
+         id="text3464"><tspan
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;font-variant:normal;font-weight:normal;font-size:12;writing-mode:lr;-inkscape-font-specification:Helvetica"
+           x="0 8.664 12 18.672 25.344 28.68 32.016 34.68 41.352 44.688 48.024 54.696 61.368 68.04 74.04 80.712 87.384 93.384 100.056 110.052 120.048 123.384 126.72 133.392 140.064 143.4 150.072 156.744 160.74 164.076 170.076 172.74 179.412 185.412"
+           y="0"
+           sodipodi:role="line"
+           id="tspan3466">H baffle: 218x16x2mm; 14 per clock</tspan></text>
+<path
+         d="m 0,28.34646 -11.33858,0 0,45.35433 7.937005,0 0,-26.07874 3.401575,0 3.401575,0 0,20.40945 35.716535,0 0,-20.40945 3.40158,0 3.40157,0 0,20.40945 35.71654,0 0,-20.40945 3.40157,0 3.40157,0 0,20.40945 35.71656,0 0,-20.40945 3.4016,0 3.4015,0 0,20.40945 35.7166,0 0,-20.40945 3.4015,0 3.4016,0 0,20.40945 35.7166,0 0,-20.40945 3.4015,0 3.4016,0 0,20.40945 35.7165,0 0,-20.40945 3.4016,0 3.4016,0 0,20.40945 35.7165,0 0,-20.40945 3.4016,0 3.4016,0 0,20.40945 35.7165,0 0,-20.40945 3.4016,0 3.4016,0 0,20.40945 35.7165,0 0,-20.40945 3.4016,0 3.4015,0 0,20.40945 35.7166,0 0,-20.40945 3.4016,0 3.4015,0 0,20.40945 35.7166,0 0,-20.40945 3.4015,0 3.4016,0 0,20.40945 35.7165,0 0,-20.40945 3.4016,0 3.4016,0 0,20.40945 35.7165,0 0,-20.40945 3.4016,0 3.4016,0 0,20.40945 35.7165,0 0,-20.40945 3.4016,0 3.4016,0 0,26.07874 7.937,0 0,-45.35433 -11.3386,0 -595.2756,0"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1;stroke-width:0.566929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+         id="path3468" /><text
+         transform="matrix(1,0,0,-1,46.35628,113.3858)"
+         id="text3470"><tspan
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;font-variant:normal;font-weight:normal;font-size:12;writing-mode:lr;-inkscape-font-specification:Helvetica"
+           x="0 8.004 11.34 18.012 24.684 28.02 31.356 34.02 40.692 44.028 47.364 54.036 60.708 67.38 73.38 80.052 86.724 92.724 99.396 109.392 119.388 122.724 126.06 132.732 139.404 142.74 149.412 156.084 160.08 163.416 169.416 172.08 178.752 184.752"
+           y="0"
+           sodipodi:role="line"
+           id="tspan3472">V baffle: 216x14x2mm; 15 per clock</tspan></text>
+<path
+         d="m 0,141.7323 -11.33858,0 0,39.685 7.937005,0 0,-20.4094 3.401575,0 3.401575,0 0,20.4094 38.551185,0 0,-20.4094 3.40157,0 3.40158,0 0,20.4094 38.55118,0 0,-20.4094 3.40157,0 3.40158,0 0,20.4094 38.55116,0 0,-20.4094 3.4016,0 3.4016,0 0,20.4094 38.5511,0 0,-20.4094 3.4016,0 3.4016,0 0,20.4094 38.5512,0 0,-20.4094 3.4016,0 3.4015,0 0,20.4094 38.5512,0 0,-20.4094 3.4016,0 3.4016,0 0,20.4094 38.5511,0 0,-20.4094 3.4016,0 3.4016,0 0,20.4094 38.5512,0 0,-20.4094 3.4015,0 3.4016,0 0,20.4094 38.5512,0 0,-20.4094 3.4016,0 3.4016,0 0,20.4094 38.5511,0 0,-20.4094 3.4016,0 3.4016,0 0,20.4094 38.5512,0 0,-20.4094 3.4015,0 3.4016,0 0,20.4094 38.5512,0 0,-20.4094 3.4016,0 3.4015,0 0,20.4094 38.5512,0 0,-20.4094 3.4016,0 3.4016,0 0,20.4094 7.937,0 0,-39.685 -11.3386,0 -589.6063,0"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1;stroke-width:0.566929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+         id="path3474" /><text
+         transform="matrix(1,0,0,-1,24.37828,-28.34646)"
+         id="text3476"><tspan
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;font-variant:normal;font-weight:normal;font-size:12;writing-mode:lr;-inkscape-font-specification:Helvetica"
+           x="0 8.664 11.328 18 24 30 37.332 46.668 55.332 63.996 70.668 76.668 83.34 86.676 94.68 101.352 104.688 108.024 110.688 117.36 123.36 126.696 133.368 143.364 153.36 156.696 164.7 171.372 179.376 188.04 196.044 199.38 207.384 213.384 217.38 223.38 226.044 228.708"
+           y="0"
+           sodipodi:role="line"
+           id="tspan3478">ClockFOUR_v2 Baffles 2mm BLACK Acrylic</tspan></text>
+</g></g></svg>

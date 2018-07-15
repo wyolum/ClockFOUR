@@ -1,0 +1,55 @@
+### Module positions - created on Tue Oct  6 18:04:49 2015 ###
+### Printed by Pcbnew version kicad (2015-07-01 BZR 5850)-product
+## Unit = inches, Angle = deg.
+## Side : bottom
+# Ref    Val                  Package         PosX       PosY        Rot     Side
+BT1      Batt_RTC         CR2032_SMD2         1.1811    -0.3622       0.0    bottom
+C1       100n             c_0805              3.2776    -1.6831     270.0    bottom
+C3       100n             c_0805              3.2480    -0.9547     270.0    bottom
+C5       22p              c_0805              3.0472    -1.9783      90.0    bottom
+C6       100n             c_0805              6.9488    -0.1870     180.0    bottom
+C7       22p              c_0805              3.0472    -1.6850      90.0    bottom
+C8       100n             c_0805              2.9823    -0.2559       0.0    bottom
+C9       100n             c_0805              1.9685    -0.1870       0.0    bottom
+C10      47u              c_2917              3.2480    -8.3858     270.0    bottom
+C11      100n             c_0805              4.4291    -8.3858       0.0    bottom
+C194     47u              c_2917              1.4764    -8.3858     270.0    bottom
+C195     47u              c_2917              2.0669    -8.3858     270.0    bottom
+C196     47u              c_2917              2.6575    -8.3858     270.0    bottom
+C197     100n             c_0805              5.0000    -0.6201     180.0    bottom
+C198     100n             c_0805              4.5472    -0.6201     180.0    bottom
+C199     100n             c_0805              0.7972    -8.4665      90.0    bottom
+D1       SMBJ5339B        diode-DO214AA       3.8386    -8.3858     270.0    bottom
+F1       miniSMDC200F/16  f_1812              5.0197    -8.3858     270.0    bottom
+G***     LOGO             wreath2             4.1339    -4.4882     180.0    bottom
+L3       Wyolum           Logo-WL3            0.9843    -7.4803     180.0    bottom
+L4       Chronogram       Logo_silk_OSHW_6    2.8051    -7.6280     180.0    bottom
+P2       FTDI             Header_FTDI         6.5354    -0.3150       0.0    bottom
+P6       5VEN_L           r_0805              4.8720    -0.6201      90.0    bottom
+P7       I2C_L            STACK-L             5.0000    -0.3150       0.0    bottom
+P8       5VEN_R           r_0805              4.6752    -0.6201     270.0    bottom
+P9       I2C_R            STACK-R             4.5276    -0.3150       0.0    bottom
+P10      Marquee          Header_4x1          0.8858    -8.7008     180.0    bottom
+R1       470R             r_0805              0.2717    -0.4882       0.0    bottom
+R2       10K              r_0805              7.0866    -0.1870     270.0    bottom
+R3       10K              r_0805              2.7854    -1.5256     270.0    bottom
+R4       470R             r_0805              2.9331    -1.5256      90.0    bottom
+R5       10K              r_0805              3.5433    -0.9055     270.0    bottom
+R6       10K              r_0805              1.3740    -1.4291     270.0    bottom
+R7       10K              r_0805              1.2717    -1.4291     270.0    bottom
+R8       4K7              r_0805              1.6654    -1.4291     270.0    bottom
+R9       4K7              r_0805              1.5630    -1.4291     270.0    bottom
+R10      10K              r_0805              7.2441    -0.9646     270.0    bottom
+R11      10K              r_0805              7.5591    -0.9646     270.0    bottom
+R12      0R               r_0805              2.5886    -1.3189     180.0    bottom
+R13      0R               r_0805              2.5886    -1.2106     180.0    bottom
+R14      10K              r_0805              3.7106    -0.9055     270.0    bottom
+R15      10K              r_0805              3.8780    -0.9055     270.0    bottom
+R16      10K              r_0805              4.0453    -0.9055     270.0    bottom
+SW1      SW_RST           SW_SMD              7.4016    -0.1772     270.0    bottom
+SW2      SW_L             SW_SMD              6.9291    -0.9646       0.0    bottom
+SW3      SW_R             SW_SMD              7.8740    -0.9646     180.0    bottom
+U1       ATMEGA328P       TQFP32              3.2480    -1.3386      90.0    bottom
+U2       DS3231N          DS3231              1.4685    -1.0787      90.0    bottom
+X1       16MHz            Xtal_SMD3           3.0472    -1.8327     180.0    bottom
+## End
